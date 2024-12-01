@@ -1,0 +1,92 @@
+\documentclass[11pt,english]{article}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%logic
+\usepackage{pgffor}
+\usepackage{ifthen}
+%science
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+%language
+\usepackage{babel}
+%formatting
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{titling}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+%images and plots
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{pgf}
+\usepackage{import}
+%tables
+\usepackage{booktabs}
+\usepackage{makecell}
+%citation, quatation and lists
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+%setup plugins
+\addbibresource{literature.bib}
+\captionsetup{justification=centering}
+
+\sisetup{locale=DE,separate-uncertainty=true,range-phrase = { bis }, list-final-separator = { und }}
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\bar{bar}
+
+% Custom \citeauthoryear command with hyperref -> Rost et al. (2019) 
+\DeclareCiteCommand{\citeauthoryear}
+{\boolfalse{citetracker}%
+\boolfalse{pagetracker}%
+\usebibmacro{prenote}}
+{\ifciteindex
+{\indexnames{labelname}\indexfield{year}}
+{}%
+\printtext[bibhyperref]{%
+    \printnames{labelname}%
+    \setunit{\addspace}%
+    \printtext{(}%
+    \printfield{year}%
+    \printtext{)}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+%  setup custom commands
+\newcommand{\imcite}[2][]{Aus \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Nach \cite[#1]{#2}.}
+\newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
+\newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
+
+%title properties
+  \title{Semiconductor Physics Laboratory \RN{1}\\A2: Scanning electron microscopy}
+\date{}
+\setlength{\droptitle}{-5em}
+  \renewcommand{\maketitlehookb}
+  {\centering Simon Legtenborg, 3773994\\Experiment conducted on 22.11.2024}
+
+% Document
+\begin{document}
+\pagenumbering{arabic}
+
+\maketitle
+\begin{multicols}{2}
+	\include{chapters/2_einleitung}
+
+	\include{chapters/3_theorie}
+	\include{chapters/4_messmethoden}
+	\include{chapters/5_auswertung}
+	\include{chapters/6_fazit}
+	\printbibliography[heading=bibintoc]
+	\newpage
+	\listoffigures
+	\newpage
+	\listoftables
+\end{multicols}
+\end{document}
