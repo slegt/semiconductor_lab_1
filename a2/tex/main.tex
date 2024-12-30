@@ -29,15 +29,19 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 %citation, quatation and lists
-\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
+url=false,isbn=false,eprint=false]{biblatex}
 \usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage{csquotes}
 \usepackage[nottoc]{tocbibind}
+\usepackage{acro}
+
+
 %setup plugins
 \addbibresource{literature.bib}
 \captionsetup{justification=centering}
+\hypersetup{colorlinks=true,linkcolor=blue}
 
-\sisetup{locale=DE,separate-uncertainty=true,range-phrase = { bis }, list-final-separator = { und }}
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}
 
@@ -59,11 +63,28 @@
 {\usebibmacro{postnote}}
 
 %  setup custom commands
-\newcommand{\imcite}[2][]{Aus \cite[#1]{#2}.}
-\newcommand{\imcitetwo}[2][]{Nach \cite[#1]{#2}.}
+\newcommand{\imcite}[2][]{From \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Based on \cite[#1]{#2}.}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
+%set up acronyms
+\DeclareAcronym{sem}{
+  short=SEM,
+  long=scanning electron microscope,
+}
+\DeclareAcronym{pe}{
+	short=PE,
+	long=primary electrons
+}
+\DeclareAcronym{se}{
+	short=SE,
+	long=secondary electrons
+}
+\DeclareAcronym{be}{
+	short=BE,
+	long=backscattered electrons
+}
 %title properties
   \title{Semiconductor Physics Laboratory \RN{1}\\A2: Scanning electron microscopy}
 \date{}
@@ -74,19 +95,15 @@
 % Document
 \begin{document}
 \pagenumbering{arabic}
-
 \maketitle
 \begin{multicols}{2}
 	\include{chapters/2_einleitung}
-
-	\include{chapters/3_theorie}
-	\include{chapters/4_messmethoden}
+	\input{chapters/3_emi}
+	\input{chapters/4_sem}
 	\include{chapters/5_auswertung}
 	\include{chapters/6_fazit}
-	\printbibliography[heading=bibintoc]
-	\newpage
-	\listoffigures
-	\newpage
-	\listoftables
 \end{multicols}
+\printbibliography[heading=bibintoc]
+\listoffigures
+\listoftables
 \end{document}
