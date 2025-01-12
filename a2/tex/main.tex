@@ -1,4 +1,4 @@
-\documentclass[11pt,english]{article}
+\documentclass[10pt, twocolumn]{article}
 
 %math
 \usepackage{amsmath}
@@ -11,18 +11,18 @@
 \usepackage{siunitx}
 \usepackage[version=4]{mhchem}
 %language
-\usepackage{babel}
+\usepackage[english]{babel}
 %formatting
 \usepackage[a4paper, portrait, margin=1in]{geometry}
-\usepackage{multicol}
-\usepackage{titling}
+\usepackage{cuted}
+\usepackage[small]{titlesec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{parskip}
 %images and plots
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
-\usepackage{float}
 \usepackage{subcaption}
+\usepackage{float}
 \usepackage{pgf}
 \usepackage{import}
 %tables
@@ -44,6 +44,9 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}
+\sisetup{
+	range-phrase = { to }
+}
 
 % Custom \citeauthoryear command with hyperref -> Rost et al. (2019) 
 \DeclareCiteCommand{\citeauthoryear}
@@ -85,25 +88,22 @@ url=false,isbn=false,eprint=false]{biblatex}
 	short=BE,
 	long=backscattered electrons
 }
-%title properties
-  \title{Semiconductor Physics Laboratory \RN{1}\\A2: Scanning electron microscopy}
-\date{}
-\setlength{\droptitle}{-5em}
-  \renewcommand{\maketitlehookb}
-  {\centering Simon Legtenborg, 3773994\\Experiment conducted on 22.11.2024}
 
 % Document
 \begin{document}
 \pagenumbering{arabic}
-\maketitle
-\begin{multicols}{2}
-	\include{chapters/2_einleitung}
-	\input{chapters/3_emi}
-	\input{chapters/4_sem}
-	\include{chapters/5_auswertung}
-	\include{chapters/6_fazit}
-\end{multicols}
-\printbibliography[heading=bibintoc]
-\listoffigures
-\listoftables
+\begin{strip}
+	\input{chapters/1_titel}
+\end{strip}
+\input{chapters/2_abstract.tex}
+\input{chapters/3_emi}
+\input{chapters/4_sem}
+\input{chapters/5_results}
+\clearpage
+\begin{strip}
+	\printbibliography[heading=bibintoc]
+	\listoffigures
+	\listoftables
+\end{strip}
+$\phantom{=}$
 \end{document}

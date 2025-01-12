@@ -1,7 +1,7 @@
 \section{Measurement Methods}
 
 \subsection{General Structure}
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.95\linewidth]{../assets/aufbau.png}
 	\caption{Setup of a scanning electron microscope. \imcite{rem_script}}
@@ -38,7 +38,7 @@ The cathode is surrounded by a Wehnelt-cylinder, on which a voltage is
 applied.
 The cylinder is used as a first focusing mechanism.
 This is schematically visualized in \cref{fig:wolfram}. 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.95\linewidth]{../assets/wolfram.png}
 	\caption{Geometric arrangement of the cathode and the Wehnelt-cylinder.
@@ -54,4 +54,41 @@ can work at a lower temperature.
 Apart from thermionic emission there also exist field emission, where
 the quantum mechanical tunneling effect is utilized to generate electrons.
 This provides a more precise beam but is also more complex to operate.
+
+\subsection{Electron Lenses}
+After being emitted by the cathode, the electron beam cross-section 
+needs to be reduced further. 
+In order to to achieve this, electron lenses are used.
+The most common architecture are magnetic coils with rotationally 
+symmetric fields. 
+The field amplitude is gaussian-shaped along the symmetry axis.
+When the electrons arrive at the coil, they are forced to move in a helix 
+trajectory and merged into the focal point. 
+
+As with optical lenses, electron lenses show a variety of  
+aberrations, which need to be considered.
+\begin{itemize}
+	\item \textit{Spherical aberration} occurs because off-axis electrons 
+		are deflected more strongly than on-axis electrons, resulting in a 
+		shorter focal point. Spherical aberration increases at large 
+		aperture angles. 
+	\item \textit{Axial astigmatism} is an imaging error related to the
+		magnetic inhomogenities which leads to a deviation from rotational 
+		symmetry. 
+		This deviation causes different focal points for different beam 
+		planes. 
+	\item \textit{Chromatic errors} are another type of aberration 
+		which originates from the velocity distribution of the electrons. 
+		Different velocities result in different wavelengths and different
+		focal points. 
+	\item \textit{Diffraction errors} occur because of the small aperture
+		angle and the resulting single slit interference of electron waves.
+		This leads to a blurred lens focus.
+		As diffraction errors increase with small angles and spherical 
+		aberrations increase with large angles, one can find an optimal 
+		angle which minimizes the total error. 
+\end{itemize}
+
+
+
 
