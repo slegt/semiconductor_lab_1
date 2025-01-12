@@ -9,7 +9,7 @@
 \end{figure*}
 
 The initial task involved calibrating the instrument's length scale with a calibration grid.
-\cref{fig:calibration} displays the silicon grid pattern
+\Cref{fig:calibration} displays the silicon grid pattern
 used for calibration.
 The orange dots indicate points used to assess the grid's periodicity.
 
@@ -25,86 +25,88 @@ $\alpha=d_{\mathrm{grid}} /d_{\mathrm{sem}} = \num{0.977}$.
 This calibration ensures that subsequent measurements are accurate and
 reliable.
 
-\subsection{Investigation of a semiconductor sample}
+\subsection{Investigation of an unknown semiconductor sample}
 \paragraph{SED and BSE}
-The first task of the lab course was to investigate an unknown sample which
-exhibits artifically created structures, see \cref{fig:sample_0}.
+The next task of the lab course was to investigate an unknown sample
+that exhibits artifically created structures, see \cref{fig:sample_0}.
 The pictures were made in the vicinity of a crossing
-point on which three vertical and three horizontal lines interserct.
+point on which three vertical and three horizontal lines intersect.
 
-With the help of different detector modes it is, according to theory,
-possible to observe different material properties.
-The first picture, see \cref{subfig:sample_0_sed}, shows a recording
-with an SED detector to obtain information about the samples topography.
-Surfaces of the same gray scale shoud have the same slope because of the
-dependendy $\delta_\mathrm{SE} \simeq \cos(\theta)$.
-Horizontal and vertical grooves are visible which were probably
+With the help of different detector modes, it is possible to observe
+different material properties.
+The first picture, see \cref{subfig:sample_0_sed}, displays a recording
+with an SED detector to obtain information about the sample's topography.
+Surfaces of the same gray scale should have the same slope because of the
+dependency $\delta_\mathrm{SE} \simeq \cos(\theta)$.
+Horizontal and vertical grooves are visible, that were probably
 fabricated by nanolithography.
 At the intersections of the individual lines, additional structures can
 be found.
-Irregular chunks of crystallites can be seen which indicate
-a type of crystal growth or residues from nanolithography.
+Irregular chunks of crystallites can be seen, which indicate
+some kind of crystal growth or residues from nanolithography.
 
 The second and the third picture, see
-\crefrange{subfig:sample_0_bsd_full}{subfig:sample_0_bsd_45}, show two
-recordings with a BSD detector.
+\crefrange{subfig:sample_0_bsd_full}{subfig:sample_0_bsd_45}, display two
+recordings captured with a BSD detector.
 Both images have a lower resolution due to the larger area of
 \ac{be}-interaction compared to \ac{se}-interaction.
 
-Figure \cref{subfig:sample_0_bsd_full} illustrates an intensity distribution
-where the signals from all BSD detectors have been combined.
-The picture show a clear intensity contrast between the large homogeneous
-areas and the line bundles, which indicates a material contrast.
-The crystallites show a similar intensity as the large areas, so they could
-originate from the same material.
+\Cref{subfig:sample_0_bsd_full} illustrates an intensity
+distribution where the signals from all BSD detectors have been combined.
+The picture displays a clear intensity contrast between the large
+homogeneous areas and the line bundles, therefore indicating a material
+contrast.
+The crystallites have a similar intensity as the large areas, so they
+could originate from the same material.
 
-Figure \ref{subfig:sample_0_bsd_45} presents a similar image, created by
+\Cref{subfig:sample_0_bsd_45} presents a similar image, created by
 combining signals from variously positioned detectors to simulate the
 perspective of a detector positioned at the azimuthal angle of
-\qty{45}{\degree}, at the top right of the image.
+\qty{45}{\degree} (at the top right of the image).
 Differences are visible between the two BSD recordings: The right
 half of the vertical lines and the upper half of the horizontal lines
 are significantly darker than their opposite area.
 Reason for this are no further material contrasts but rather the surface
-topographie and the position of the detector.
+topography and the position of the detector.
 To be more precise, the side walls of the grooves are blocking the signal and
 thus preventing the electrons	to reach the detector.
 
 \paragraph{Distance calculation}
 In \cref{subfig:sample_0_sed} there are also four distances labeled.
-This distances are listed in \cref{tab:distances}
+These distances are listed in \cref{tab:distances}.
 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{cccc}
 		\toprule
-		number & $d^*$ in \unit{\micro\meter} & $d$ in \unit{\micro\meter} \\
+		label & $d^*$ in \unit{\micro\meter} & $d$ in \unit{\micro\meter} \\
 		\midrule
-		1      & \num{3.0}                    & \num{2.93}                 \\
-		2      & \num{4.76}                   & \num{4.65}                 \\
-		3      & \num{3.04}                   & \num{2.97}                 \\
-		4      & \num{2.59}                   & \num{2.53}                 \\
+		1     & \num{3.0}                    & \num{2.93}                 \\
+		2     & \num{4.76}                   & \num{4.65}                 \\
+		3     & \num{3.04}                   & \num{2.97}                 \\
+		4     & \num{2.59}                   & \num{2.53}                 \\
 		\bottomrule
 	\end{tabular}
-	\caption{Distances}
+	\caption{Characteristic distances of the sample.}
 	\label{tab:distances}
 \end{table}
 
 \paragraph{EDX}
-To get a better understanding about the samples composition, one can
-conduct an edx spot analysis experiment.
+To get a better understanding of the sample's composition, one can
+conduct an \ac{edx} spot analysis experiment.
 In this lab course, three different spots, see \cref{subfig:edx_spots},
 were chosen for two different electron energies:
 \qty{10}{\kilo \electronvolt}
 and \qty{20}{\kilo\electronvolt}.
 
 The X-ray spectra for electrons with a kinetic energy of
-\qty{10}{\kilo\electronvolt} for the three selected spots are shown
+\qty{10}{\kilo\electronvolt} for the selected spots are shown
 in \crefrange{subfig:10kV_1_spectrum}{subfig:10kV_3_spectrum}.
-With the position of the peaks we can identify the elements
-\ce{Ga}, \ce{As} ans \ce{Si}.
+
+The peak positions allow identification of the elements \ce{Ga},
+\ce{As}, and \ce{Si}.
 The corresponding elemental concentrations are evaluated with the help
-of the data analysis program assosicated with the electron microscope and
+of the data analysis program associated with the electron microscope and
 are listed in \cref{tab:edx_1}.
 
 The measurements of the first spot show that \ce{Ga} and \ce{As} are
@@ -112,9 +114,8 @@ the only constituents and are distributed in an equimolar ratio.
 The measurement of the second spot returns \ce{Si} only.
 The sample therefore consists of a silicon substrate with a
 gallium arsenide thin film layer grown on top.
-The material composition of the third spot, which points to
-the unusal crystallites, is again gallium arsendide, with traces of
-silicon.
+The material composition of the third spot is gallium arsenide,
+with traces of silicon.
 
 \begin{table}
 	\centering
@@ -133,21 +134,23 @@ silicon.
 		\bottomrule
 	\end{tabular}
 	\caption{Atomic concentration percentage $c_\mathrm{a}$ and mass
-		concentration percentage $c_\mathrm{m}$ measured at \qty{10}{\kilo\electronvolt}}
+		concentration percentage $c_\mathrm{m}$ measured at
+		\qty{10}{\kilo\electronvolt}.}
 	\label{tab:edx_1}
 \end{table}
 
 The X-ray spectra for electrons with a kinetic energy of
 \qty{20}{\kilo \electronvolt} for the same spots are shown
 in \crefrange{subfig:20kV_1_spectrum}{subfig:20kV_3_spectrum}.
-The corresoinding elemental concentrations are listed in\cref{tab:edx_2}
-It is noticable that small amounts of silicon are found at the first spot,
-which was previously associated as a gallium arsenide thin film.
-The reason for that is the penetration depth of the primary electrons which is
-a function of the kinetic energy.
-Higher energies increase the penetration depth and therefore, primary electrons
-can reach the first silicon layer.
-This also explains the higher silicon concentration at spot 3.
+The corresponding elemental concentrations are listed in
+\cref{tab:edx_2}.
+Small amounts of silicon are found at the first spot,
+that was previously associated as a gallium arsenide thin film.
+The reason for that is the penetration depth of the primary electrons,
+which is a function of the kinetic energy.
+Higher energies increase the penetration depth and therefore, primary
+electrons can reach the first silicon layer.
+This also explains the higher silicon concentration at the third spot.
 
 \begin{table}
 	\centering
@@ -167,11 +170,12 @@ This also explains the higher silicon concentration at spot 3.
 		\bottomrule
 	\end{tabular}
 	\caption{Atomic concentration percentage $c_\mathrm{a}$ and mass
-		concentration percentage $c_\mathrm{m}$ measured at \qty{20}{\kilo\electronvolt}}
+		concentration percentage $c_\mathrm{m}$ measured at
+		\qty{20}{\kilo\electronvolt}.}
 	\label{tab:edx_2}
 \end{table}
 
-In addition to spot analysis experiments, EDX maps can be used to
+In addition to spot analysis experiments, \ac{edx} maps can be used to
 characterize large surface areas.
 These maps display the varying atomic concentrations across the
 surface, with each element represented by its own map.
@@ -180,21 +184,22 @@ interpretation that the sample is a gallium arsenide thin film
 on a silicon substrate.
 
 \subsection{Layer thickness determination}
-The last task was to determine the thickness of the upper
-sample layer.
+The last task was to determine the thickness of a notch that was
+previously cut into the sample using an ion beam.
 In order to do that, the sample was tilted by \qty{45}{\degree}.
-The schematic representation of the groove geometry is shown
+The schematic representation of the notch geometry is shown
 in \cref{fig:layer}.
 With some trigonometric considerations and the distance
-$d^*=\qty{1.04}{\micro\meter}$, which can be obtained from \cref{fig:depth}
+$d^*=\qty{1.04}{\micro\meter}$, that can be obtained from
+\cref{fig:depth},
 one finds the following formula for the layer thickness:
-$t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree}
-	=\qty{}{\micro\meter} = \qty{1.44}{\micro\meter}$
+$t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree})
+	= \qty{1.44}{\micro\meter}$.
 
-\begin{figure}
+\begin{figure}[!h]
 	\centering
 	\includegraphics{../assets/angle.pdf}
-	\caption{Geometrical arrangement of the tilted sample}
+	\caption{Geometrical arrangement of the tilted sample.}
 	\label{fig:layer}
 \end{figure}
 
@@ -203,22 +208,22 @@ $t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree}
 	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/sample_1_SED.pdf}
-		\caption{SED}
+		\caption{SED detector}
 		\label{subfig:sample_0_sed}
 	\end{subfigure}
 	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/sample_1_BSD_full.pdf}
-		\caption{BSD Full}
+		\caption{BSD detector,  mode: BSD Full}
 		\label{subfig:sample_0_bsd_full}
 	\end{subfigure}
 	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/sample_1_BSD_45.pdf}
-		\caption{BSD 45}
+		\caption{BSD detector, mode: BSD \qty{45}{\degree}}
 		\label{subfig:sample_0_bsd_45}
 	\end{subfigure}
-	\caption{Three simple graphs}
+	\caption{Various SEM images of the semiconductor sample.}
 	\label{fig:sample_0}
 \end{figure*}
 
@@ -227,46 +232,46 @@ $t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree}
 	\begin{subfigure}{0.7\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_10kV.pdf}
-		\caption{BSD Full}
+		\caption{spots used for \ac{edx} analysis}
 		\label{subfig:edx_spots}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_10kV_1_spectrum.pdf}
-		\caption{10kV 1}
+		\caption{\qty{10}{\kilo \electronvolt}, spot 1}
 		\label{subfig:10kV_1_spectrum}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_10kV_2_spectrum.pdf}
-		\caption{10kV 2}
+		\caption{\qty{10}{\kilo \electronvolt}, spot 2}
 		\label{subfig:10kV_2_spectrum}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_10kV_3_spectrum.pdf}
-		\caption{10kV 3}
+		\caption{\qty{10}{\kilo \electronvolt}, spot 3}
 		\label{subfig:10kV_3_spectrum}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_20kV_1_spectrum.pdf}
-		\caption{20kV 1}
+		\caption{\qty{20}{\kilo \electronvolt}, spot 1}
 		\label{subfig:20kV_1_spectrum}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_20kV_2_spectrum.pdf}
-		\caption{20kV 2}
+		\caption{\qty{20}{\kilo \electronvolt}, spot 2}
 		\label{subfig:20kV_2_spectrum}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/edx_20kV_3_spectrum.pdf}
-		\caption{20kV 3}
+		\caption{\qty{20}{\kilo \electronvolt}, spot 3}
 		\label{subfig:20kV_3_spectrum}
 	\end{subfigure}
-	\caption{EDX Plots}
+	\caption{X-ray spectra for different spots and electron energies.}
 	\label{fig:edx_plots}
 \end{figure*}
 
@@ -274,35 +279,29 @@ $t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree}
 	\centering
 	\begin{subfigure}{0.45\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/map.pdf}
-		\caption{Map}
-		\label{subfig:map_original}
-	\end{subfigure}
-	\begin{subfigure}{0.45\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{../plots/map_As.pdf}
-		\caption{Map \ce{As}}
+		\caption{\ce{As} }
 		\label{subfig:map_as}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/map_Ga.pdf}
-		\caption{Map \ce{Ga}}
+		\caption{\ce{Ga} }
 		\label{subfig:map_ga}
 	\end{subfigure}
 	\begin{subfigure}{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/map_Si.pdf}
-		\caption{Map \ce{Si}}
+		\caption{\ce{Si} }
 		\label{subfig:map_si}
 	\end{subfigure}
-	\caption{Concentration maps}
+	\caption{EDX concentration maps.}
 	\label{fig:edx_maps}
 \end{figure*}
 
 \begin{figure*}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{../plots/tilted.pdf}
-	\caption{Image of tilted sample}
+	\caption{Image of the tilted sample .}
 	\label{fig:depth}
 \end{figure*}
