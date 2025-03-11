@@ -1,0 +1,28 @@
+\section{Results and Discussion}
+
+\subsection{Zinc Oxide Bulk Sample }
+Temperature dependent Hall effect measurements for a bulk \ce{ZnO} sample 
+were performed in the Temperature range from \qty{20}{\kelvin} to \qty{500}{\kelvin}.
+Both the Hall mobility and Hall carrier concentration were determined for each temperature and are displayed in 
+\cref{fig:zno_hall_effect_n,fig:zno_hall_effect_mu} respectively.
+
+The graph of the Hall carrier concentration in \cref{fig:zno_hall_effect_n} shows a linear decrease with increasing inverse temperature. 
+This observation can be explained using the low temperature approximation \cref{eq:n_T_approx_low}:
+\begin{align}
+	&n = \text{const.} \cdot T^{3/2} \exp\left( \frac{-E_{\mathrm{D}}^{b}}{2 \mathrm{k}T} \right) \\
+	\ln(&n T^{-3/2}) = \ln(\text{const.}) - \frac{E_{\mathrm{D}}^{b}}{2 \mathrm{k}} \cdot \frac{1}{T}
+\end{align}
+Using a linear fit, one obtains a slope of 
+
+\begin{figure}
+	\centering
+	\includegraphics{../plots/task_2_n.pdf}
+	\caption{Hall carrier concentration of a bulk \ce{ZnO} sample as a function of temperature.}
+	\label{fig:zno_hall_effect_n}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics{../plots/task_2_mu.pdf}
+	\caption{Hall mobility of a bulk \ce{ZnO} sample as a function of temperature.}
+	\label{fig:zno_hall_effect_mu}
+\end{figure}

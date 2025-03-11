@@ -1,0 +1,116 @@
+\documentclass[10pt, twocolumn]{article}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%logic
+\usepackage{pgffor}
+\usepackage{ifthen}
+%science
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+%language
+\usepackage[english]{babel}
+%formatting
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{cuted}
+\usepackage[small]{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+%images and plots
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{pgf}
+\usepackage{import}
+%tables
+\usepackage{booktabs}
+\usepackage{makecell}
+%citation, quatation and lists
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
+url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+\usepackage{acro}
+
+
+%setup plugins
+\addbibresource{literature.bib}
+
+\captionsetup{justification=centering}
+\hypersetup{colorlinks=true,linkcolor=blue}
+
+
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\bar{bar}
+\sisetup{
+	range-phrase = { to }
+}
+
+% Custom \citeauthoryear command with hyperref -> Rost et al. (2019) 
+\DeclareCiteCommand{\citeauthoryear}
+{\boolfalse{citetracker}%
+\boolfalse{pagetracker}%
+\usebibmacro{prenote}}
+{\ifciteindex
+{\indexnames{labelname}\indexfield{year}}
+{}%
+\printtext[bibhyperref]{%
+    \printnames{labelname}%
+    \setunit{\addspace}%
+    \printtext{(}%
+    \printfield{year}%
+    \printtext{)}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+%  setup custom commands
+\newcommand{\imcite}[2][]{From \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Based on \cite[#1]{#2}.}
+\newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
+\newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
+
+%set up acronyms
+\DeclareAcronym{sem}{
+  short=SEM,
+  long=scanning electron microscope,
+}
+\DeclareAcronym{pe}{
+	short=PE,
+	long=primary electrons
+}
+\DeclareAcronym{se}{
+	short=SE,
+	long=secondary electrons
+}
+\DeclareAcronym{be}{
+	short=BE,
+	long=backscattered electrons
+}
+\DeclareAcronym{edx}{
+	short=edx,
+	long=energy-dispersive X-ray spectroscopy
+}
+
+% Document
+\begin{document}
+\pagenumbering{arabic}
+\begin{strip}
+	\input{chapters/1_titel}
+\end{strip}
+Die Breite einer Spalte beträgt: \the\columnwidth
+\input{chapters/2_abstract.tex}
+\input{chapters/3_fcs}
+\input{chapters/4_hall.tex}
+\input{chapters/5_results}
+\clearpage
+\begin{strip}
+	\printbibliography[heading=bibintoc]
+	\listoffigures
+	\listoftables
+\end{strip}
+$\phantom{=}$
+\end{document}
