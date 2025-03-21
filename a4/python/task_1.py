@@ -1,9 +1,7 @@
 import numpy as np
-from numpy import log, cosh, exp
-from scipy.constants import pi
-from scipy.optimize import fsolve
 
-B = 0.43  # T
+from reverse_engineering_functions import calculate_resistivities, get_meta_df
+
 
 P_SI = {
     "T": np.array([300, 300, 300, 300]),
@@ -12,6 +10,7 @@ P_SI = {
     "U2": np.array([-3.92, -3.92, 3.99, 4.02]) * 10**-4,
     "U3": np.array([1.84, -1.77, -1.72, 1.87]) * 10**-4,
     "U4": np.array([1.90, -1.72, -1.78, 1.81]) * 10**-4,
+    "d": 500e-6,
 }
 
 M_2 = {
@@ -41,56 +40,106 @@ M_4 = {
     "U4": np.array([-1.76, 1.43, 1.76, -1.43]) * 10e-2,
 }
 
+thicknesses = {
+    "p_si": 500e-6,  # m
+    "zn_o": 1e-6,  # m
+    "zto": 1.3e-6,  # m
+    "cu_i": 330e-6,  # m
+}
 
-def correction_function(f, r):
-    return cosh((r - 1) / (r + 1) * log(2) / f) - 1 / 2 * exp(log(2) / f)
+if __name__ == "__main__":
+    # P_SI Data
+    p_si_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/P-Si - Jorrit.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/P-Si.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/p-Si_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/p-Si_Christopher.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/Gruppe 5/p_si1.pra",
+    ]
+
+    print("p-Si")
+    for file_path in p_si_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    rhos = calculate_resistivities(P_SI)
+    print(rhos)
+
+    # ZnO Data
+    zno_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2022/E927.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/Gruppe 5/E927.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/E927_Christopher.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/ZnO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/ZnO-Jorrit.pra",
+    ]
+
+    print("zno")
+    for file_path in zno_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    for entry in [M_2, M_3, M_4]:
+        entry["d"] = thicknesses["zn_o"]
+        rhos = calculate_resistivities(entry)
+        print(rhos)
+
+    # ZTO Data
+    zto_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2022/E3266_ZTO.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/ZTO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/ZTO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/3/a-ZTO.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/2/a-ZTO.pra",
+    ]
+
+    print("zto")
+    for file_path in zto_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    for entry in [M_2, M_3, M_4]:
+        entry["d"] = thicknesses["zto"]
+        rhos = calculate_resistivities(entry)
+        print(rhos)
 
 
+    # CuI Data
+    cui_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/2/CuI.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/3/CuI.pra",
+    ]
 
-def f(r):
-    correction_function_fixed = lambda f: correction_function(f, r)
-    result = fsolve(func=correction_function_fixed, x0=0.6)[0]
-    return result
+    print("cu_i")
+    for file_path in cui_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
 
-
-def calculate_resistivities(measurement_dict):
-    rhos = []
-    d = 500e-6
-    for index in range(0, 4):
-        i_1 = measurement_dict["I"][index]
-        u_1 = measurement_dict["U1"][index]
-        r_1 = np.abs(u_1 / i_1)
-
-        i_2 = measurement_dict["I"][index]
-        u_2 = measurement_dict["U1"][index]
-        r_2 = np.abs(u_2 / i_2)
-
-        rho = pi * d / log(2) * (r_1 + r_2) / 2
-        rho = rho * f(r_1 / r_2)
-        rhos.append(rho)
-    return rhos
+    print("My data")
+    for entry in [M_2, M_3, M_4]:
+        entry["d"] = thicknesses["cu_i"]
+        rhos = calculate_resistivities(entry)
+        print(rhos)
 
 
-def calculate_hall_coefficient(measurement_dict):
-    hall_coefficients = []
-    d = 500e-6
-    for index in range(0, 4):
-        i = measurement_dict["I"][index]
-        u_3 = measurement_dict["U3"][index]
-        u_4 = measurement_dict["U4"][index]
+# print(calculate_resistivities(P_SI))
+# print(calculate_resistivities(M_2))
+# print(calculate_resistivities(M_3))
+# print(calculate_resistivities(M_4))
+# print("\n")
 
-        hall_coefficient = d / (i * B) * (u_3 - u_4)
-        hall_coefficients.append(hall_coefficient)
-    return hall_coefficients
-
-
-print(calculate_resistivities(P_SI))
-print(calculate_resistivities(M_2))
-print(calculate_resistivities(M_3))
-print(calculate_resistivities(M_4))
-print("\n")
-
-print(calculate_hall_coefficient(P_SI))
-print(calculate_hall_coefficient(M_2))
-print(calculate_hall_coefficient(M_3))
-print(calculate_hall_coefficient(M_4))
+# print(calculate_hall_coefficient(P_SI))
+# print(calculate_hall_coefficient(M_2))
+# print(calculate_hall_coefficient(M_3))
+# print(calculate_hall_coefficient(M_4))
