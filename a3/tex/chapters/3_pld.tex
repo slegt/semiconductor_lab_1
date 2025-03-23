@@ -219,100 +219,120 @@ film.
 Especially the oxygen concentration in oxide films is strongly influenced by the
 background pressure.
 
-\subsubsection{Nucleation and Growth of the Film}
-### Deposition of Ablated Material, Nucleation, and Growth of the Film
-- condensation of plasma at substrate surface
-- nucleation into solid structure
-- film growth
-- essential for structural quality
-- high-energetic species bombarding the substrate
-- causing defekt formation
-- forming near-surface collision region which serves as source for condensation
-- film nucleates and grows on substrate surface
-- laser parameter influencing nucleation process
-	- ionization degree of ablated material is related to laser fluescence
-	- affect film quality, stoichiometry and deposition flux
-- substrate temeperature
-	- nucleation density decreases as temperature is increased
-- substrate surface
-	- nucleation and growth can affect the surface preparation
-- background pressure
-	- oxygen for stochiometric transfer 
-	- if oxygen background is too low, the film composition deviates from target composition including a considerable oxygen deficiency
-- a large supersaturation occurs on the substrate during pulse
-- material pulse causes large nucleation density on substrate surface
-- the large density of adatoms induces a large density of nucleation centers
-- Three growth modes
-	- Layer-by-layer (Frank-van der Merwe)
-		- islands with monoatomic nucleate until critical density is reached
-		- with more material islands continue to grow laterally
-		- run into each other (coalescence)
-		- atoms diffuse into pits to complete the first monolayer
-	- 5-30 laser pulses required to grow a monolayer
-	- very precise control using in situ RHEED 
-- 3D growth
-	- once islands are formed, additional island nucleate on top, i.e. vertically
-	- not layer by layer but three-dimensional islands
-- step-flow 
-	- single-crystalline substrates with miscut
-	- miscut leads to atomic steps on surface
-	- atoms land on surface and diffuse to a step edge
-	- steps travelling across surface
+\subsubsection{Condensation and Growth of the Film}
+The plasma plume is directed towards the substrate, where it condenses on 
+the substrate surface and transforms again in a solid state.
+A nucleation process starts resulting in thin film growth. 
+This step is the most essential for thin film crystal quality.
 
+High-energetic species from the plasma plume are bombarding the substrate
+and eventually bond themselves as adatoms. 
+This can damage the substrates crystal structure.
+Together with other species from the plasma plume, a near-surface collision region is
+formed, that serves as a condensation nucleus. 
+A large supersaturation occurs on the substrate during the pulse, which leads to a
+large nucleation density on the substrate surface.
+As a result, other species from the plasma plume append on the condensation nuclei and
+the thin film starts to grow.
+
+The growth of the thin film can be divided into three different modes:
+
+\textbf{Layer-by-Layer Growth} is a common growth mode, where monoatomic islands 
+emerge until a critical density is reached. 
+More ablated material increases the size of the islands until they run into each other.
+This is known as coalescence. 
+Once coalescence is reached, additional material is used to diffuse into the pits and
+complete the first monolayer.
+About \numrange{5}{30} laser pulses are required to grow a monolayer.
+%TODO add RHEED reference and AC
+If the crystal grows layer-by-layer, in situ RHEED delivers very precise control to
+measure the number of atomic layers. 
+
+\textbf{3D-Growth} is another growth method, where monoatomic islands 
+emerge. 
+Once these islands are formed, additional islands nucleate on top.
+This leads to three-dimensional islands, which can have different in plane orientations.  
+
+\textbf{Step-Flow Growth} occurs on single-crystalline substrate with a miscut between
+the mechanical surface and the crystal lattice planes.
+This miscut leads to atomic steps on the surface.
+Plasma plume atoms land on the surface and diffuse into a step edge.
+This looks like steps travelling across the surface.
+
+The nucleation process depends on various \ac{pld} parameters, including.
+
+\textbf{Laser Parameters}, i.e. laser fluence and laser pulse energy.
+Both parameters influence the degree of ionization of the ablated material and therefore
+affect deposition flux, thin film quality and stoichiometry. 
+
+\textbf{Substrate Temperature} is another important parameter. 
+The nucleation density decreases with increasing substrate temperature, leading to 
+fever crystal defects.
+
+\textbf{Substrate Surface} characteristics, i.e. roughness, chemical composition, 
+crystal structure and miscut are also a crucial parameter.
+Due to the fact that the substrate is the growth template for the thin film, 
+the substrate surface determines thin film growth orientation as well as strain and 
+defects.
+
+\textbf{Background Pressure} is another important parameter as it determines
+the deposition rate as well as the stoichiometry of the deposited film.
+It strongly impacts the oxygen proportion in oxide thin films.
+High vacuum can lead to oxygen deficiency in the deposited film.
 
 \subsection{PLD in Comparison to other Thin Film Deposition Techniques}
 \subsubsection{Sputtering}
 \subsubsection{Thermal Evaporation}
 \subsubsection{MBE}
 
-\subsubsection{Drawbacks and Advantages compared to other Techniques}
+\subsubsection{Drawbacks compared to other Techniques}
+One big disadvantage of \ac{pld} is the trace element contamination of thin films due
+to the spatial expansion of the plasma plume as well as using multiple targets in
+one chamber.
+Target constituents are located all within the chamber and can lead to permanent damage 
+to the windows.
+This is a crucial issue, especially for high-purity requirements.
+Thin films fabricated by \ac{pld} generally have a higher trace element contamination 
+than thin films fabricated by MBE techniques.
 
+It also suffers from target preparation contamination, as the target is prepared by
+mechanical ball mills, press molds and sintering ovens.
+Also source powders are only available with low purities, which leads to additional 
+contamination. 
+Traces of construction alloy constituents are also visible at the edge positions of the
+thin film. 
 
-- considerable material all within the chamber. especially in windows
-	- leads to permanent damage
+Another important disadvantage is the droplet formation during the deposition process.
+These droplets can be found in the deposited film and have a size of typically
+\qty{1}{\micro \meter}.
+This reduces the thin film quality. 
+To avoid droplet formation, velocity filters can be used.
+Another method would be to arrange the target and the substrate perpendicular to each 
+other, such that only the light plasma constituents are scattered towards the substrate.
+Both methods reduce the deposition rate of the thin film and complicate the process 
+as well.
 
+\subsubsection{Advantages compared to other Techniques}
+The biggest advantage of a\ac{pld} system is its flexibility. 
+It is a versatile technique for a wide range of thin film and multilayer applications
+and offers often a stoichiometric transfer of multielement compounds from a single 
+target to a substrate.
+With that, it is possible to synthesize chemically complex materials. 
+Especially oxide films can be easily controlled by background pressure. 
+Most targets can be fabricated with simple lab equipment, for example ball mills and 
+sintering furnaces, and commercially available powders.
 
-### Introduction
-- basic equipment discussion
-- PLD is versatile technique for wide range of thin films and multilayer structures
-- attractive start-up cost
-- thin film quality is comparable to molecular beam epitaxy 
-- plasma energy source (laser) is independent from the deposition system
-- reliable and userfriendly excimer lasers are already made
-## Limitations of PLD and How to Overcome Them
-### Trace Element Contamination
-- trace element contamination of thin films is important issue
-- quantum hall mobility of PLD heterostructure reaches far smaller maximum than high-purity MBE techniques
-- PLD suffers from target preparation
-	- ball mills
-	- press molds
-	- sintering ovens
-	- source powders with low purities
-- PLD suffers from construction alloy constituents
-	- there are visible at edge positions (close to substrate holder)
-### Droplets and Outgrows
-- Particulates and globules, aka droplets, can be found in deposited film
-- droplets have size of typically $\pu{ 1\mu m }$ range
-- to avoid that
-	- velocity filter
-	- perpendicular target and substrate arrangement (only light plasma constituents are scattered towards substrate)
-	- PLD setups with colloding plasma plumes
-- droplet reduction often reduce deposition rate and make process more complicated
+Reliable and user-friendly excimer lasers are already available. 
+The laser operates independently of the deposition system, adhering to a separation 
+of concerns design principle, which enhances modularity and simplifies system 
+integration.
 
-## Advantages of PLD
-### Flexibility
-- stoichiometric transfer of multielement compounds from a single target to substrat
-- chemical composition of complex materials 
-- oxygen content of oxide films can be easily controlled by background pressure
-	- oxygen background gas can differ a lot
-- most targets can be fabricated by simple lab equipment and available powders
-- low daily running costs 
-- laser as external energy source  and deposition chamber are separated
-- clean process
-- laser energy can be controlled independently from background pressure
-- wide parameter space
-## Industrial Upscaling
-- high mass deposition on large areas
-	- up to 8-inch diameter
-- high laser pulse energy with high repetition rate
-	- excimer laser performance high pulse energy and higher focus area with lower wavelength
+\ac{pld} systems show an industrial upscaling potential. 
+High mass deposition on large areas, with capabilities of covering up to an 8-inch 
+diameter surface are already possible. 
+Excimer lasers, in particular, provide high pulse energy and a larger focus area at 
+lower wavelengths, making them ideal for industrial-scale applications.
+
+\ac{pld} also offers a wide parameter space, making it highly adaptable for various 
+applications for and offer tremendous optimization options as well as attractive 
+start-up costs.
