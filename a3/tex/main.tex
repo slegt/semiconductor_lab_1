@@ -39,7 +39,7 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 %setup plugins
 \addbibresource{literature.bib}
-
+\crefformat{equation}{#2(#1)#3}
 \captionsetup{justification=centering}
 \hypersetup{colorlinks=true,linkcolor=blue}
 
@@ -82,6 +82,11 @@ url=false,isbn=false,eprint=false]{biblatex}
 \DeclareAcronym{pvd}{
 	short=PVD,
 	long=physical vapor deposition
+}
+
+\DeclareAcronym{mbe}{
+	short=MBE,
+	long=molecular beam epitaxy
 }
 
 % Document
