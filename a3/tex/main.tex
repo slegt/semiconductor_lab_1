@@ -89,22 +89,30 @@ url=false,isbn=false,eprint=false]{biblatex}
 	long=molecular beam epitaxy
 }
 
+\DeclareAcronym{rheed}{
+	short=RHEED,
+	long=Reflection high-energy electron diffraction
+}
+
+\DeclareAcronym{xrd}{
+	short=XRD,
+	long=X-ray diffraction
+}
+
 % Document
 \begin{document}
 \pagenumbering{arabic}
 \begin{strip}
 	\input{chapters/1_titel}
 \end{strip}
-Die Breite einer Spalte beträgt: \the\columnwidth
-%\input{chapters/2_abstract.tex}
+\input{chapters/2_abstract.tex}
 \input{chapters/3_pld}
-%\input{chapters/4_hall.tex}
-%\input{chapters/5_results}
+\input{chapters/4_rheed}
+\input{chapters/5_results}
 \clearpage
 \begin{strip}
 	\printbibliography[heading=bibintoc]
 	\listoffigures
-	\listoftables
 \end{strip}
 $\phantom{=}$
 \end{document}

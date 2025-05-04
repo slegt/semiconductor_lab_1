@@ -1,8 +1,6 @@
-import numpy as np
-from numpy import log, cosh, exp
 import pandas as pd
-from scipy.constants import pi
-from scipy.optimize import fsolve
+
+from task_1 import P_SI, ZTO, CuI, ZnO, calculate_resistivities
 
 
 # count lines of a file
@@ -49,37 +47,85 @@ def get_meta_df(filepath):
     return data
 
 
-# calculate implicit correction function
-def correction_function(f, r):
-    return cosh((r - 1) / (r + 1) * log(2) / f) - 1 / 2 * exp(log(2) / f)
+if __name__ == "__main__":
+        # P_SI Data
+    p_si_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/P-Si - Jorrit.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/P-Si.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/p-Si_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/p-Si_Christopher.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/Gruppe 5/p_si1.pra",
+    ]
+
+    print("p-Si")
+    for file_path in p_si_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    rhos = calculate_resistivities(P_SI)
+    print(rhos)
+
+    # ZnO Data
+    zno_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2022/E927.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/Gruppe 5/E927.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/E927_Christopher.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/ZnO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/1/ZnO-Jorrit.pra",
+    ]
+
+    print("zno")
+    for file_path in zno_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    rhos = calculate_resistivities(ZnO)
+    print(rhos)
+
+    # ZTO Data
+    zto_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2022/E3266_ZTO.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/3/ZTO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2020/2/ZTO_Gruppe4.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/3/a-ZTO.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/2/a-ZTO.pra",
+    ]
+
+    print("zto")
+    for file_path in zto_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
+
+    print("My data")
+    rhos = calculate_resistivities(ZTO)
+    print(rhos)
 
 
-# calculate explicit correction function
-def f(r):
-    correction_function_fixed = lambda f: correction_function(f, r)
-    result = fsolve(func=correction_function_fixed, x0=0.6)[0]
-    return result
+    # CuI Data
+    cui_file_paths = [
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/2/CuI.pra",
+        "/run/media/simon/1C8A12CB8A12A0F6/A4/Prak/2019/3/CuI.pra",
+    ]
 
+    print("cu_i")
+    for file_path in cui_file_paths:
+        data = get_meta_df(file_path)
+        for entry in data:
+            rhos = calculate_resistivities(entry)
+            print(rhos)
 
-# calculate resistivities
-def calculate_resistivities(measurement_dict):
-    rhos = []
-    d = measurement_dict["d"]
-    for index in range(0, 4):
-        i_1 = measurement_dict["I"][index]
-        u_1 = measurement_dict["U1"][index]
-        r_1 = np.abs(u_1 / i_1)
-
-        i_2 = measurement_dict["I"][index]
-        u_2 = measurement_dict["U1"][index]
-        r_2 = np.abs(u_2 / i_2)
-
-        rho = pi * d / log(2) * (r_1 + r_2) / 2
-        rho = rho * f(r_1 / r_2)
-        rhos.append(rho)
-    return rhos
-
-
+    print("My data")
+    rhos = calculate_resistivities(CuI)
+    print(rhos)
+    
 # calculate hall coefficients
 def calculate_hall_coefficient(measurement_dict):
     hall_coefficients = []
@@ -90,5 +136,5 @@ def calculate_hall_coefficient(measurement_dict):
         u_4 = measurement_dict["U4"][index]
 
         hall_coefficient = d / (i * B) * (u_3 - u_4)
-        hall_coefficients.append(hall_coefficient)
+        hall_coefficients.append(float(hall_coefficient))
     return hall_coefficients

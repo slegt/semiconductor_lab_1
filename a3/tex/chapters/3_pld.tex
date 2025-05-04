@@ -1,12 +1,12 @@
 \section{Pulsed Laser Deposition}
 Thin film research is essential in science and 
-technology and has led to countless inventions such as integrated circuits, 
-microchips and many more. 
+technology and has led to countless inventions of electronic semiconductor devices.
 Therefore, it is crucial to have a reliable and precise way to fabricate thin films. 
-One method, which is not only reliable, but also flexible and comparatively inexpensive,
+One method, which is not only reliable but also flexible and comparatively inexpensive,
 is \ac{pld}. 
 For this reason, the following sections aim to present the \ac{pld} structure and its 
 working principles.
+This discussion summarizes the work of \citeauthor{lorenz} \cite{lorenz}.
 
 \subsection{PLD Explained in Steps}
 A basic \ac{pld} setup is depicted in \cref{fig:pld_chamber}.
@@ -65,13 +65,13 @@ With that, thinner layers can be ablated, which generally increases thin film qu
 An adjustable lens should be installed into the beam path to focus the laser beam onto 
 the target with a known spot size.
 
-Commercially lasers in this spectral range are available and technically sophisticated.
+Commercial lasers in this spectral range are available and technically sophisticated.
 Two commonly used laser architectures for \ac{pld} are Nd:YAG and excimer lasers.
 
 \textbf{Nd:YAG Lasers}
 are solid-state systems with an yttrium aluminum garnet (\ce{Y3AlO12}) host
 crystal.
-This crystal is doped with neodymium ion ($\ce{Nd^{{3+}}}$) impurities, that serve as an
+This crystal is doped with neodymium ion ($\ce{Nd^{{3+}}}$) impurities that serve as an
 active medium.
 The neodymium ions inside the YAG crystal are excited by flashlamps and can 
 relax into energetically lower states by emission of \qty{1064}{\nano\meter} photons. 
@@ -83,7 +83,7 @@ radiation, though this process significantly reduces the intensity.
 spectral range.
 The most common type is the krypton fluoride (\ce{KrF}) laser, which is used as 
 a representative example. 
-A gas mixture of krypton and fluorine is pumped into the gas chamber of the laser.
+A gas mixture of krypton and flouride is pumped into the gas chamber of the laser.
 This molecular gain medium has a metastable upper electronic state (excimer) 
 and a repulsive ground state.
 Through electric discharge, the constituents create excited species 
@@ -92,7 +92,7 @@ These molecules can relax by induced emission and emit photons \cref{eq:excimer 
 Due to the repulsive ground state, the ground state molecule is not stable and
 dissociates into its components \cref{eq:dissociation}.
 
-The formation of excimer molecules are complex and consists of several steps.
+The formation of excimer molecules is complex and consists of several steps.
 Only the most important reactions are listed below:
 \begin{align}
 	\label{eq:excited_species}
@@ -125,7 +125,7 @@ This can be another noble gas like argon or neon.
 \begin{figure}[h!]
 	\centering
 	\includegraphics{../assets/pld_chamber}
-	\caption{Schematic design of a \ac{pld} chamber.}
+	\caption{Schematic design of a \ac{pld} chamber. \imcitetwo{peter}}
 	\label{fig:pld_chamber}
 \end{figure}
 
@@ -154,15 +154,13 @@ Advanced systems have a target carousel, that can hold multiple targets and can 
 rotated to select the desired one.
 
 \subsection{Detailed Working Principle Analysis}
-The working principle of a \ac{pld} system can be divided into three main steps with
+The working principle of a \ac{pld} system can be divided into three main steps, with
 each step explained in detail in the following sections:
 \begin{itemize}
 	\item formation and composition of the laser plasma
 	\item expansion of the plasma
 	\item nucleation and growth of the film.
 \end{itemize}
-
-
 
 \subsubsection{Formation and Composition of the Laser Plasma}
 Using an adjustable lens, the laser beam is focused onto the target 
@@ -172,12 +170,12 @@ around \qty{e7}{\watt\per\centi\meter\squared}.
 As a result, the target material starts to ablate.
 
 This ablation process is complex and nonequilibrium due to the discontinuous nature 
-of the laser pulses, but can be categorized in different mechanisms. 
+of the laser pulses but can be categorized in different mechanisms. 
 The most common one is thermal ablation by absorption of the laser photons:
 The laser photons are absorbed by the target material.
 Due to their high energy, the target material ionizes and 
 free electrons are generated.
-Those electrons begin to oscillate as a response of the electromagnetic field 
+Those electrons begin to oscillate as a response to the electromagnetic field 
 and can collide with the atoms of the bulk material,
 thus transferring energy to the lattice of the target material.
 Electromagnetic energy is converted into thermal and chemical energy.
@@ -186,7 +184,7 @@ The material is heated up and begins to evaporate.
 Apart from thermal ablation, nonthermal, photoinduced electronic sputtering can occur.
 This mechanism is based on the direct interaction of the laser photons with the 
 electronic system.
-Due to electron excitation, chemical bonds can break resulting in the ejection of
+Due to electron excitation, chemical bonds can break, resulting in the ejection of
 atoms or molecules from the target surface, without any significant temperature change. 
 
 Droplets and flakes can be expelled from the target towards the substrate as a result
@@ -196,70 +194,80 @@ This leads to a reduction of thin film quality.
 The target surface is altered during the ablation process, which results in target 
 erosion.
 This leads to a deviation of the surface normal, therefore changing the plasma 
-plumes direction.
+plume's direction.
 In order to ensure a uniform material removal, the target is rotated and translated.
 
-\subsubsection{Plasma expansion}
-After the material is evaporated, it starts interacting with the laser photons too.
-As a result, the material is excited and ionized and a plasma plume arises.
+\subsubsection{Expansion of the Plasma}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\columnwidth]{../assets/plume.pdf}
+	\caption{Plasma plume in the PLD chamber used in the Leipzig 
+	semiconductor research group.}
+	\label{fig:plume}
+\end{figure}
+
+After the material is evaporated, it starts to interact with the laser photons too.
+As a result, the material is excited and ionized and a plasma plume arises, see 
+\cref{fig:plume}.
 Due to Coulomb interaction and recoil from the target surface, 
-the plasma expands perpendicular to the targets surface.
+the plasma expands perpendicular to the target's surface.
 
 The spatial dependence of the plume depends strongly on the background gas pressure.
-At a low background pressures around \qty{10e-4}{\milli \bar} or lower, the plume is
+At a low background pressures around \qty{e-4}{\milli \bar} or lower, the plume is
 narrow, and its constituents have a high velocity.
 Only a few scattering events occur.
 
-At intermediate pressures, between \qtyrange{10e-3}{10e-2}{\milli \bar}
-a splitting of high energetic from less energetic species can be observed.
-In high-pressure regions with a background pressure of \qty{10e-1}{\milli \bar} or 
+At intermediate pressures, between \qtyrange{e-3}{e-2}{\milli \bar}
+, a splitting of high energetic from less energetic species can be observed.
+In high-pressure regions with a background pressure of \qty{e-1}{\milli \bar} or 
 higher, the expansion of the plasma is diffusion-like.
 The plasma plume is wider and the velocity of the species is
 reduced further.
 
 The most important implication of increased background pressure is the slowdown of 
 the energetic species in the plasma plume. 
-A particular study demonstrated that the maximum kinetic energy of the constituents
+A study demonstrated that the maximum kinetic energy of the constituents
 with a laser fluence of \qty{2}{\joule \per \centi \meter \squared} at a background 
-pressure of \qty{10e-2}{\milli \bar} was approximately \qty{30}{\kilo \electronvolt}, 
-whereas at \qty{10e-1}{\milli \bar}, it was reduced to around 
-\qty{4}{\kilo \electronvolt}.
+pressure of \qty{e-2}{\milli \bar} was approximately \qty{30}{\kilo \electronvolt}, 
+whereas at \qty{e-1}{\milli \bar}, it was reduced to around 
+\qty{4}{\kilo \electronvolt} \cite{xu2014}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.98\columnwidth]{../assets/deposition_rate.png}
 	\caption{Deposition rate as a function of background pressure for helium, neon, 
-	argon and xenon background gases.}
+	argon and xenon background gases. \imcite{lorenz}}
 	\label{fig:pld_plasma}
 \end{figure}
 
 The deposition rate, defined as the film thickness difference per laser pulse, is also 
 influenced by the background pressure.
-In \cref{fig:pld_plasma} the deposition rate is shown as a function of the background
+In \cref{fig:pld_plasma}, the deposition rate is shown as a function of the background
 pressure for different background gases.
 It can be seen that the deposition rate for low background pressures is low.
-This is due to the high constituents velocity, which leads to resputtering of the
+This is due to the high constituent velocity, which leads to resputtering of the
 deposited material.
 At higher background pressures, the particle velocity is reduced and the deposition
 rate increases.
-For even higher pressures, the deposition rate decreases again, 
-as a result of the slower and wider spread plasma plume.
+For even higher pressures, the deposition rate decreases again 
+as a result of the slower and widespread plasma plume.
 
-Background gas pressure can also lead to a change in stoichiometry of the deposited 
+Background gas pressure can also lead to a change the stoichiometry of the deposited 
 film.
-Especially the oxygen concentration in oxide films is strongly influenced by the
+Especially oxygen concentration in oxide films is strongly influenced by the
 background pressure.
 
-\subsubsection{Condensation and Growth of the Film}
+\subsubsection{Nucleation and Growth of the Film.}
 The plasma plume is directed towards the substrate, where it condenses on 
 the substrate surface and transforms again into solid state.
-A nucleation process starts resulting in thin film growth. 
+A nucleation process starts, resulting in thin film growth. 
 This step is the most essential for thin film crystal quality.
 
-High-energetic species from the plasma plume are bombarding the substrate.
-This can damage the substrates crystal structure as well as sputtering off 
+High-energy species from the plasma plume bombard the substrate.
+This can damage the substrate's crystal structure as well as sputtering off 
 surface atoms.
-Sputtered substrate particles together with plasmas constituents form a near-surface 
+Sputtered substrate particles together with plasma's constituents form a near-surface 
 collision region that serves as a condensation nucleus. 
 Supersaturation occurs on the substrate during the laser pulse, which leads to a
 large nucleation density on the substrate surface.
@@ -275,7 +283,8 @@ Once coalescence is reached, additional material is used to diffuse into the pit
 complete the first monolayer.
 About \numrange{5}{30} laser pulses are required to grow a monolayer.
 %TODO add RHEED reference and AC
-If the crystal grows layer-by-layer, in situ RHEED delivers very precise control to
+If the crystal grows layer-by-layer, in situ \acs*{rheed}, see \cref{sec:in_situ_rheed},
+delivers very precise control to
 measure the number of atomic layers. 
 
 \textbf{3D-Growth} is another growth method, where monoatomic islands 
@@ -315,10 +324,16 @@ High vacuum can lead to oxygen deficiency in the deposited film.
 \subsection{PLD in Comparison to other Thin Film Deposition Techniques}
 In addition to \ac{pld}, there are a number of further deposition options 
 with different characteristics. 
-Sputtering and \ac{mbe} are two notable alternatives, that shall be explained briefly
+Sputtering and \ac{mbe} are two notable alternatives that shall be explained briefly
 before they can be compared to \ac{pld}.
 
 \subsubsection{Sputtering}
+\begin{figure}
+	\includegraphics{../assets/sputtering.pdf}
+	\caption{Schematic design of a sputtering chamber. \imcitetwo{jorrit}}
+	\label{fig:sputtering}
+\end{figure}
+
 Sputtering is another \ac{pvd} technique. 
 A target material is bombarded by energetic particles of a plasma or gas.
 Microscopic particles of a solid material are ejected from its surface.
@@ -332,11 +347,11 @@ energy, the atom will be ejected.
 The sputtered ions can originate from various sources: ion sources, radioactive material
 or solar winds.
 
-A schematic of a sputter chamber is depicted in FIGURE.
+A schematic of a sputter chamber is depicted in \cref{fig:sputtering}.
 The chamber is evacuated to create a vacuum environment, and a controlled background gas
 is let into the chamber to regulate the deposition atmosphere and avoid unwanted 
 chemical reactions.
-A dc-voltage is applied between the anode and cathode such that the cathode is 
+A DC voltage is applied between the anode and cathode such that the cathode is 
 negatively biased.
 If the voltage is high enough (hundreds of kilovolts), the electrical field ionizes
 the background gas and creates a plasma through glow discharge. 
@@ -348,14 +363,20 @@ across the chamber and eventually condenses as a thin film on the substrate.
 Thermal evaporation is a subgroup of \ac{pvd} techniques. 
 A target material is heated by electrical heating to temperatures near its boiling 
 point.
-The material begins to sublime and its vapor spreads through the chamber and condensed 
+The material begins to sublime and its vapor spreads through the chamber and condenses 
 eventually on a substrate.
 It is distinct from processes where the material vapor is altered after initial 
 evaporation, like \ac{pld}. 
 
 \subsubsection{Molecular Beam Epitaxy}
+\begin{figure}
+	\includegraphics{../assets/mbe.pdf}
+	\caption{Schematic design of a \ac{mbe} chamber. \imcitetwo{fernando}}
+	\label{fig:mbe}
+\end{figure}
+
 \Ac{mbe} is a specialized technique of thermal evaporation used for epitaxial growth.
-A schematic \ac{mbe} chamber is shown in FIGURE. 
+A schematic \ac{mbe} chamber is shown in \cref{fig:mbe}. 
 One or more molecular or atomic beams from so-called Knudsen cells are directed towards 
 a heated substrate.
 The solid source materials are placed in evaporation cells.
@@ -363,10 +384,10 @@ Those evaporation cells provide an angular atomic or molecular distribution of t
 As with \ac{pld}, the substrate is heated and rotated for growth homogeneity.
 
 A necessary condition to grow a sufficiently clean epilayer is ultra-high vacuum in the
-order of \qtyrange{1e-11}{1e-14}{\bar} as well as ultrapure target materials.
+order of \qtyrange{e-11}{e-14}{\bar} as well as ultrapure target materials.
 Often the vacuum chamber walls are cryogenically screened to minimize flux of 
 atoms from the chamber walls.
-With that, it is possible to grow thin films with monolayer precision just by opening 
+With that, it is possible to grow thin films with monolayer precision, just by opening 
 and closing mechanical shutters of the beam sources. 
 The ultra-high vacuum environment offers a reliable way to install in-situ measurement
 instruments, such as a RHEED system or a mass spectrometer. 
@@ -392,7 +413,7 @@ Compared to \ac{mbe}, \ac{pld} is less expensive, both in terms of initial inves
 and operational costs.
 Most targets can be fabricated with simple lab equipment, for example ball mills and 
 sintering furnaces, and commercially available powders.
-Together with its high deposition rates are, \ac{pld} is an excellent choice for
+Together with its high deposition rate, \ac{pld} is an excellent choice for
 rapid prototyping.    
 
 Reliable and user-friendly excimer lasers are already available. 
@@ -421,11 +442,11 @@ than thin films fabricated by \ac{mbe}.
 
 The process suffers from target preparation contamination too, as the target is 
 prepared by mechanical ball mills, press molds and sintering ovens.
-Source powders are only available with low purities, which leads to additional 
+Source powders are only available with low purities which leads to additional 
 contamination. 
 Traces of construction alloy constituents are also present on the thin film. 
 
-Another important disadvantage is droplet formation during deposition process.
+Another important disadvantage is droplet formation during the deposition process.
 These droplets can be found in the deposited film and have a size of typically
 \qty{1}{\micro \meter}.
 This reduces the thin film quality tremendously.
