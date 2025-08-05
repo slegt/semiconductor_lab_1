@@ -111,7 +111,7 @@ if __name__ == "__main__":
     zto_r = np.array(calculate_resistivities(ZTO))
     cui_r = np.array(calculate_resistivities(CuI))
 
-    df = pd.DataFrame(columns=["property", "P-Si", "ZnO", "ZTO", "CuI"])
+    df = pd.DataFrame(columns=["Property", "P-Si", "ZnO", "ZTO", "CuI"])
     for i in range(0, 4):
         df.loc[i] = [f"\\rho_{{{i + 1}}}", p_si_r[i], zno_r[i], zto_r[i], cui_r[i]]
     df.loc[4] = ["\\rho_\\text{avg}", np.mean(p_si_r), np.mean(zno_r), np.mean(zto_r), np.mean(cui_r)]
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     cui_h = np.array(calculate_hall_coefficient(CuI))
 
     for i in range(6, 10):
-        df.loc[i] = [f"R_\\mathrm{{H}},{i - 5}", p_si_h[i - 6], zno_h[i - 6], zto_h[i - 6], cui_h[i - 6]]
+        df.loc[i] = [f"R_{{\\mathrm{{H}},{i - 5}}}", p_si_h[i - 6], zno_h[i - 6], zto_h[i - 6], cui_h[i - 6]]
     df.loc[10] = ["R_{\\mathrm{H},\\text{avg}}", np.mean(p_si_h), np.mean(zno_h), np.mean(zto_h), np.mean(cui_h)]
     df.loc[11] = ["R_{\\mathrm{H},\\text{std}}", np.std(p_si_h), np.std(zno_h), np.std(zto_h), np.std(cui_h)]
 
