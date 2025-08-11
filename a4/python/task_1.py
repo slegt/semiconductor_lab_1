@@ -113,9 +113,9 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(columns=["Property", "P-Si", "ZnO", "ZTO", "CuI"])
     for i in range(0, 4):
-        df.loc[i] = [f"\\rho_{{{i + 1}}}", p_si_r[i], zno_r[i], zto_r[i], cui_r[i]]
-    df.loc[4] = ["\\rho_\\text{avg}", np.mean(p_si_r), np.mean(zno_r), np.mean(zto_r), np.mean(cui_r)]
-    df.loc[5] = ["\\rho_\\text{std}", np.std(p_si_r), np.std(zno_r), np.std(zto_r), np.std(cui_r)]
+        df.loc[i] = [f"$\\rho_{{{i + 1}}}$", p_si_r[i], zno_r[i], zto_r[i], cui_r[i]]
+    df.loc[4] = ["$\\rho_\\text{avg}$", np.mean(p_si_r), np.mean(zno_r), np.mean(zto_r), np.mean(cui_r)]
+    df.loc[5] = ["$\\rho_\\text{std}$", np.std(p_si_r), np.std(zno_r), np.std(zto_r), np.std(cui_r)]
 
     p_si_h = np.array(calculate_hall_coefficient(P_SI))
     zno_h = np.array(calculate_hall_coefficient(ZnO))
@@ -123,9 +123,9 @@ if __name__ == "__main__":
     cui_h = np.array(calculate_hall_coefficient(CuI))
 
     for i in range(6, 10):
-        df.loc[i] = [f"R_{{\\mathrm{{H}},{i - 5}}}", p_si_h[i - 6], zno_h[i - 6], zto_h[i - 6], cui_h[i - 6]]
-    df.loc[10] = ["R_{\\mathrm{H},\\text{avg}}", np.mean(p_si_h), np.mean(zno_h), np.mean(zto_h), np.mean(cui_h)]
-    df.loc[11] = ["R_{\\mathrm{H},\\text{std}}", np.std(p_si_h), np.std(zno_h), np.std(zto_h), np.std(cui_h)]
+        df.loc[i] = [f"$R_{{\\mathrm{{H}},{i - 5}}}$", p_si_h[i - 6], zno_h[i - 6], zto_h[i - 6], cui_h[i - 6]]
+    df.loc[10] = ["$R_{\\mathrm{H},\\text{avg}}$", np.mean(p_si_h), np.mean(zno_h), np.mean(zto_h), np.mean(cui_h)]
+    df.loc[11] = ["$R_{\\mathrm{H},\\text{std}}$", np.std(p_si_h), np.std(zno_h), np.std(zto_h), np.std(cui_h)]
 
     p_si_m = p_si_h / p_si_r
     zno_m = zno_h / zno_r
@@ -133,9 +133,9 @@ if __name__ == "__main__":
     cui_m = cui_h / cui_r
 
     for i in range(12, 16):
-        df.loc[i] = [f"\\mu_{{{i - 11}}}", p_si_m[i - 12], zno_m[i - 12], zto_m[i - 12], cui_m[i - 12]]
-    df.loc[16] = ["\\mu_\\text{avg}", np.mean(p_si_m), np.mean(zno_m), np.mean(zto_m), np.mean(cui_m)]
-    df.loc[17] = ["\\mu_\\text{std}", np.std(p_si_m), np.std(zno_m), np.std(zto_m), np.std(cui_m)]
+        df.loc[i] = [f"$\\mu_{{{i - 11}}}$", p_si_m[i - 12], zno_m[i - 12], zto_m[i - 12], cui_m[i - 12]]
+    df.loc[16] = ["$\\mu_\\text{avg}$", np.mean(p_si_m), np.mean(zno_m), np.mean(zto_m), np.mean(cui_m)]
+    df.loc[17] = ["$\\mu_\\text{std}$", np.std(p_si_m), np.std(zno_m), np.std(zto_m), np.std(cui_m)]
 
     p_si_n = np.abs(1 / e * 1 /p_si_h)
     zno_n = np.abs(1 / e * 1 /zno_h)
@@ -143,9 +143,9 @@ if __name__ == "__main__":
     cui_n = np.abs(1 / e * 1 /cui_h)
 
     for i in range(18, 22):
-        df.loc[i] = [f"n_{{{i - 17}}}", p_si_n[i - 18], zno_n[i - 18], zto_n[i - 18], cui_n[i - 18]]
-    df.loc[22] = ["n_\\text{avg}", np.mean(p_si_n), np.mean(zno_n), np.mean(zto_n), np.mean(cui_n)]
-    df.loc[23] = ["n_\\text{std}", np.std(p_si_n), np.std(zno_n), np.std(zto_n), np.std(cui_n)]
+        df.loc[i] = [f"$n_{{{i - 17}}}$", p_si_n[i - 18], zno_n[i - 18], zto_n[i - 18], cui_n[i - 18]]
+    df.loc[22] = ["$n_\\text{avg}$", np.mean(p_si_n), np.mean(zno_n), np.mean(zto_n), np.mean(cui_n)]
+    df.loc[23] = ["$n_\\text{std}$", np.std(p_si_n), np.std(zno_n), np.std(zto_n), np.std(cui_n)]
 
     df.to_latex(
         file_directory / ".." / "plots" / "resistivity_hall.tex",

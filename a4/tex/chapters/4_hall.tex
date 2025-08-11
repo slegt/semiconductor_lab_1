@@ -82,3 +82,50 @@ Therefore we find the following equation for $\mu_\mathrm{H}$:
 \begin{equation}
 	\mu_{\mathrm{H}}=\frac{E_{y}}{B_{z}E_{x}}
 \end{equation}
+
+\subsection{Van der Pauw Method}
+The Van der Pauw Method is a measuremtn technique to measure the resistivity as well as the hall coefficient.
+It is possible to measure samples with nearly arbitrary flat shapes and examine it's resistivity $\rho$, 
+mobility $\mu_\mathrm{H}$ as well as it's sheet carrier density $n$. 
+
+Only samples that met the subsequent conditions can be measured with the Van der Pauw method:
+\begin{itemize}
+	\item The contacts are at the circumference of the sample.
+	\item The contacts are sufficiently small (compared to the sample size).
+	\item The sample is homogeneous and isotropic cocerning doping as well as thickness.
+	\item The surface of the sampele is singly connected, i.e., the sample does not have isolated holes.
+\end{itemize}
+To utilize the Van der Pauw method, four ohmic contacts need to be placed on the sample.
+These contacts should be as small as possible and as close as possible to the samples periphery. 
+All contacts and all wires should be constructed from the same material. 
+
+After the ohmic contacts are places, the resistivity $\rho$ can be measured.
+Each contact is labeled counterclockwise with a number from 1 to 4.
+The current $I_{12}$ is then defined as the positive current injected into contact one and extracted from contact two.
+The voltage $V_{34}$ is given by the potential difference between contact three and four as $V_{34}=V_4-V_3$. 
+With these definitions, the resistivity can be calculated as $R_{12,34}=\frac{V_{34}}{I_{12}}$. 
+Van der Pauw's theorem states that the resistivity can be calculated as 
+$$
+\begin{align}
+\rho&=\frac{\pi d}{\ln(2)} \left( \frac{R_{12,34}+R_{23,41}}{2} \right)f
+\left( \frac{R_{12,34}}{R_{23,41}} \right) \\
+\label{eq:hall_resistivity}\\
+\frac{R_{12,34}-R_{23,41}}{R_{12,34}+R_{23,41}}&=f \, \text{arccosh}\left( \frac{\exp(\ln(2 /f))}{2} \right)
+\label{eq:hall_resistivity_f}
+\end{align}
+$$
+where $d$ is the thickness of the sample and $f$ is a correction factor that satisfies \cref{eq:hall_resistivity_f}. 
+The reciprocal theorem states that the resistances obey the relation $R_{12,34}=R_{34,12}$ and $R_{12,34}=R_{21,43}$.
+Therefore, we can measure the resistivity with four different contact configurations to increase measurement accuracy.
+
+Within the Van der Pauw configuration, it is also possible to determine the Hall coefficient $R_{\mathrm{H}}$ if 
+one can establish a homogeneous magnetic field $\mathbf{B}=B_{0} \hat{z}$ perpendicular to the samples surface. 
+The Hall coefficient can be calculated as
+$$
+R_{\mathrm{H}}=\frac{d}{IB_{z}} [U_{13}(B_{z}=0)-U_{13}(B_{z}=B_{0})].
+\label{eq:hall_coefficient}
+$$
+The difference in  \cref{eq:hall_coefficient} accounts for the Hall voltage that originates from the earths magnetic field.
+
+
+
