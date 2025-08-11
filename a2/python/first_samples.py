@@ -2,6 +2,11 @@ import os
 import pathlib
 from PIL import Image, ImageDraw, ImageSequence
 
+def d(alpha, d_star):
+    return alpha * d_star
+
+def delta_d(alpha, d_star, delta_alpha, delta_d_star):
+    return d_star * delta_alpha + alpha * delta_d_star
 
 current_path = pathlib.Path(__file__).parent.resolve()
 
@@ -31,6 +36,7 @@ for image in images:
     )
 
 conversion_factor = 20 / 487  # pixel per micrometer
+delta_d_star = conversion_factor / 2
 
 x1 = [744, 817]
 x2 = [817, 933]
@@ -71,14 +77,29 @@ draw.text((x4, y4[0] - 50), "4", anchor="mm", font_size=70, fill="orange")
 
 image.save(export_path)
 
+d_star_1 = (x1[1] - x1[0]) * conversion_factor
+d_star_2 = (x2[1] - x2[0]) * conversion_factor
+d_star_3 = (y3[1] - y3[0]) * conversion_factor
+d_star_4 = (y4[1] - y4[0]) * conversion_factor
 
-distance_1 = (x1[1] - x1[0]) * conversion_factor
-distance_2 = (x2[1] - x2[0]) * conversion_factor
-distance_3 = (y3[1] - y3[0]) * conversion_factor
-distance_4 = (y4[1] - y4[0]) * conversion_factor
+alpha = 0.98
+delta_alpha = 0.01
 
-c = 0.977
-print(f"measured distance 1: {distance_1} \t converted distance 1: {distance_1 * c}")
-print(f"measured distance 2: {distance_2} \t converted distance 2: {distance_2 * c}")
-print(f"measured distance 3: {distance_3} \t converted distance 3: {distance_3 * c}")
-print(f"measured distance 4: {distance_4} \t converted distance 4: {distance_4 * c}")
+d_1 = d(alpha, d_star_1)
+d_2 = d(alpha, d_star_2)
+d_3 = d(alpha, d_star_3)
+d_4 = d(alpha, d_star_4)
+delta_d_1 = delta_d(alpha, d_star_1, delta_alpha, delta_d_star)
+delta_d_2 = delta_d(alpha, d_star_2, delta_alpha, delta_d_star)
+delta_d_3 = delta_d(alpha, d_star_3, delta_alpha, delta_d_star)
+delta_d_4 = delta_d(alpha, d_star_4, delta_alpha, delta_d_star)
+
+print(f"d_1 = {d_1} +- {delta_d_1} micrometer")
+print(f"d_2 = {d_2} +- {delta_d_2} micrometer")
+print(f"d_3 = {d_3} +- {delta_d_3} micrometer")
+print(f"d_4 = {d_4} +- {delta_d_4} micrometer")
+
+print(f"d_star_1 = {d_star_1} +- {delta_d_star} micrometer")
+print(f"d_star_2 = {d_star_2} +- {delta_d_star} micrometer")
+print(f"d_star_3 = {d_star_3} +- {delta_d_star} micrometer")
+print(f"d_star_4 = {d_star_4} +- {delta_d_star} micrometer")

@@ -3,7 +3,7 @@
 
 \begin{figure*}
 	\centering
-	\includegraphics[width=0.7\linewidth]{../plots/calibration.pdf}
+	\includegraphics[width=0.6\linewidth]{../plots/calibration.pdf}
 	\caption{Silicon grid pattern for calibration.}
 	\label{fig:calibration}
 \end{figure*}
@@ -14,14 +14,25 @@ used for calibration.
 The orange dots indicate points used to assess the grid's periodicity.
 
 Using the picture, the distances between adjacent points have
-been calculated and averaged, whereby an average length of
-$d_{\mathrm{sem}}=\qty{10.1 \pm 0.5}{\micro\meter}$ was determined.
-The manufacturer of the silicon grid provides a periodicity length of
+been calculated and averaged to 
+$d_{\mathrm{sem}}=\qty{10.11 \pm 0.02}{\micro\meter}$.
+The error $\Delta d_{\mathrm{sem}}$ was determined by adding the standard 
+deviation of the mean obtained by the measurement series with the resolution of the \ac{sem}. 
+A resolution of half the length of a pixel was assumed.
+The periodicity of the grid is given by
 $d_{\mathrm{grid}}=\qty{9.87\pm 0.05}{\micro\meter}$.
 This minor deviation can be corrected using a linear
 correction function $d = \alpha d^*$, where $d$ is the calibrated
 distance, $d^*$ the measured distance and
-$\alpha=d_{\mathrm{grid}} /d_{\mathrm{sem}} = \num{0.977}$.
+$\alpha=d_{\mathrm{grid}} /d_{\mathrm{sem}} = \num{0.98} \pm \num{0.01}$.
+The error $\Delta \alpha$ can be obtained using worst-case error estimation:
+\begin{equation}
+	\Delta\alpha=\frac{\Delta d_{\mathrm{grid}}}{d_{\mathrm{sem}}}
+	+\frac{d_{\mathrm{grid}}\cdot\Delta d_{\mathrm{sem}}}{d_{\mathrm{sem}}^{2}}.
+	\label{eq:alpha_error}
+\end{equation}
+In \cref{eq:alpha_error} and subsequent equations, $\Delta$ before a quantity refers to 
+it's error. 
 This calibration ensures that subsequent measurements are accurate.
 
 \subsection{Investigation of an unknown semiconductor sample}
@@ -71,8 +82,10 @@ To be more precise, the side walls of the grooves are blocking the signal and
 thus preventing the electrons	to reach the detector.
 
 \paragraph{Distance calculation}
-In \cref{subfig:sample_0_sed} there are also four distances labeled.
+In \cref{subfig:sample_0_sed} there are four distances labeled.
 These distances are listed in \cref{tab:distances}.
+Half the resolution of the \ac{sem} is used as $\Delta d^*$. 
+Worst-case error estimation for $d$ results in  $\Delta d=d^{*}\Delta\alpha+\alpha\Delta d^{*}$.
 
 \begin{table}[h]
 	\centering
@@ -80,10 +93,10 @@ These distances are listed in \cref{tab:distances}.
 		\toprule
 		label & $d^*$ in \unit{\micro\meter} & $d$ in \unit{\micro\meter} \\
 		\midrule
-		1     & \num{3.0}                    & \num{2.93}                 \\
-		2     & \num{4.76}                   & \num{4.65}                 \\
-		3     & \num{3.04}                   & \num{2.97}                 \\
-		4     & \num{2.59}                   & \num{2.53}                 \\
+		1     & \num{3.00 \pm 0.02}                   & \num{2.94 \pm 0.05}                 \\
+		2     & \num{4.76 \pm 0.02}                   & \num{4.67 \pm 0.07}                 \\
+		3     & \num{3.04 \pm 0.02}                   & \num{2.98 \pm 0.05}                 \\
+		4     & \num{2.59 \pm 0.02}                   & \num{2.54 \pm 0.05}                 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Characteristic distances of the sample.}
@@ -185,23 +198,24 @@ on a silicon substrate.
 \subsection{Layer thickness determination}
 The last task was to determine the thickness of a notch that was
 previously cut into the sample using an ion beam.
-In order to do that, the sample was tilted by \qty{45}{\degree}.
+In order to do that, the sample was tilted by $\theta=\qty{45 \pm 5}{\degree}$.
 The schematic representation of the notch geometry is shown
 in \cref{fig:layer}.
 With some trigonometric considerations and the distance
-$d^*=\qty{1.04}{\micro\meter}$, that can be obtained from
+$d^*=\qty{1.042 \pm 0.005}{\micro\meter}$, that can be obtained from
 \cref{fig:depth},
-one finds the following formula for the layer thickness:
-$t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree})
-	= \qty{1.44}{\micro\meter}$.
-\vfill
+one finds the following formula for layer thickness:
+$t = d / \cos(\theta) = d^* \alpha / \cos(\theta)
+	= \qty{1.4\pm 0.1}{\micro\meter}$.
+The worst-case error ist determined as:
+\begin{align}
+	\Delta t=\frac{d^{*}\Delta\alpha}{\cos(\theta)}
+	+\frac{\alpha\Delta d^{*}}{\cos( \theta)}
+	+d^{*}\alpha\Delta\theta \frac{\tan(\theta)}{\cos(\theta)}
+\end{align}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics{../assets/angle.pdf}
-	\caption{Geometrical arrangement of the tilted sample.}
-	\label{fig:layer}
-\end{figure}
+
+
 
 \begin{figure*}[t!]
 	\centering
@@ -299,9 +313,20 @@ $t = d / \cos(\qty{45}{\degree}) = d^* \alpha / \cos(\qty{45}{\degree})
 	\label{fig:edx_maps}
 \end{figure*}
 
-\begin{figure*}[h]
+\begin{figure*}
 	\centering
-	\includegraphics[width=0.7\textwidth]{../plots/tilted.pdf}
-	\caption{Image of the tilted sample .}
-	\label{fig:depth}
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=0.625\textwidth]{../assets/angle.pdf}
+		\caption{Geometrical arrangement of the tilted sample.}
+		\label{fig:layer}
+	\end{subfigure}
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/tilted.pdf}
+		\caption{\ac{sem} Image of the tilted sample .}
+		\label{fig:depth}
+	\end{subfigure}
+	\caption{Layer thickness determination.}
 \end{figure*}
+	

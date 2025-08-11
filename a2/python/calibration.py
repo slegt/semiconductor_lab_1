@@ -2,6 +2,12 @@ import numpy as np
 from PIL import Image, ImageDraw
 import pathlib
 
+def alpha(d_grid, d_sem):
+    return d_grid / d_sem
+
+def delta_alpha(d_grid, d_sem, delta_d_grid, delta_d_sem):
+    return delta_d_grid / d_sem + d_grid * delta_d_sem / d_sem**2
+
 current_path = pathlib.Path(__file__).parent.resolve()
 
 # manually choose points rectangle edges
@@ -33,7 +39,10 @@ export_path = current_path / ".." / "plots" / "calibration.pdf"
 image.save(export_path)
 
 # calculate distances and convert in micrometer
-conversion_factor = 20 / 488
+conversion_factor = 20 / 488 # micro meter per pixel
+delta_mess = conversion_factor / 2
+
+
 distances = []
 
 # horizontal distances
@@ -57,5 +66,15 @@ for x in range(7):
         distance = distance * conversion_factor
         distances.append(distance)
 
-avg, std = np.average(distances), np.std(distances)
-print(f"The average distance is {avg}+-{std} micrometer")
+d_sem, std_sem = np.average(distances), np.std(distances, ddof=1)
+delta_stat = 1 / len(distances) * std_sem
+delta_d_sem = delta_stat + delta_mess
+print(f"The average distance is {d_sem}+-{delta_d_sem} micrometer")
+
+d_grid = 9.87
+delta_d_grid = 0.05
+print(f"The grid distance is {d_grid}+-{delta_d_grid} micrometer")
+
+alpha_param = alpha(d_grid, d_sem)
+delta_alpha_param = delta_alpha(d_grid, d_sem, delta_d_grid, delta_d_sem)
+print(f"The alpha parameter is {alpha_param}+-{delta_alpha_param}")
