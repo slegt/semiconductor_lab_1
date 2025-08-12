@@ -25,6 +25,7 @@
 \usepackage{float}
 \usepackage{pgf}
 \usepackage{import}
+\usepackage{jsonparse}
 %tables
 \usepackage{booktabs}
 \usepackage{makecell}
@@ -73,27 +74,14 @@ url=false,isbn=false,eprint=false]{biblatex}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
-%set up acronyms
-\DeclareAcronym{sem}{
-  short=SEM,
-  long=scanning electron microscope,
-}
-\DeclareAcronym{pe}{
-	short=PE,
-	long=primary electrons
-}
-\DeclareAcronym{se}{
-	short=SE,
-	long=secondary electrons
-}
-\DeclareAcronym{be}{
-	short=BE,
-	long=backscattered electrons
-}
-\DeclareAcronym{edx}{
-	short=edx,
-	long=energy-dispersive X-ray spectroscopy
-}
+%import json
+\JSONParseFromFile{\tasktwo}{../plots/task_2_data.json}
+\JSONParseValue[store in = \taskTwoSlope]{\tasktwo}{concentration_m}
+\JSONParseValue[store in = \taskTwoEnergy]{\tasktwo}{donor_energy}
+\JSONParseValue[store in = \taskTwoSlopeOne]{\tasktwo}{mu_m1}
+\JSONParseValue[store in = \taskTwoSlopeTwo]{\tasktwo}{mu_m2}
+\JSONParseValue[store in = \taskTwoSlopeThree]{\tasktwo}{mu_m3}
+
 
 % Document
 \begin{document}
