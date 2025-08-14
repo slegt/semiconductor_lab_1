@@ -75,8 +75,76 @@ The third region, where $\mu_\mathrm{H} \propto T^{-3 / 2}$, can be explained by
 	\label{fig:zno_hall_effect_mu}
 \end{figure}
 
-\section{Interpretation of an Unusual Data Set}
+\subsection{Interpretation of an Unusual Data Set}
+The last task of the lab course was to interpret temperature dependent Hall effect
+measurements of a \ce{ZnO} thin film sample.
+However, the dataset does not seem to match a single donor model, as the carrier 
+concentration raises with falling temperature.
+The uncorrected data is shown in \cref{zno_hall_n}, it does not show a linear trend. 
 
+This could indicate that the sample is not a single donor system. 
+However, \citeauthoryear{look} suggests, that the sample is a single donor system, 
+but a two-layer Hall analysis needs to be performed to correct the data. 
+Since \ce{ZnO} and sapphire have a large lattice mismatch, a highly dislocated region 
+at the interface between thin film and substrate is generated during growth. 
+This high-density region of stacking faults significantly affects the carrier 
+concentration as well as the mobility as a function of temperature. 
+
+For a two-layer Hall analysis, we index the \ce{ZnO} thin film as 1 and the dislocated 
+region at the interface as index 2. 
+Using equation EQUATION, we can find the following identities
+\begin{align}
+	\sigma_{\square}=e\mu_{\mathrm{H}1}n_{\mathrm{H} \square 1}
+	+e \mu_{\mathrm{H}2} n_{\mathrm{H} \square 2} \\
+	R_{\square} \sigma_{\square}^{2}=e \mu_{\mathrm{H} 1}^{2} n_{\mathrm{H} \square 1} 
+	+ e\mu_{\mathrm{H} 2}^{2} n_{\mathrm{H} \square 2}
+\end{align}
+It is possible to find an analytical expression for 
+$\mu_\mathrm{H}$ and $\n_\mathrm{H}$:
+\begin{align}
+	\mu_{\mathrm{H}}&=R_{\square} \sigma_{\square}
+	=\frac{R_{\square} \sigma_{\square}^{2} /d}{\sigma_{\square} / d} \\
+	&=\frac{\mu_{\mathrm{H}1}^{2}n_{\mathrm{H}1}
+	+\mu_\mathrm{H2}^{2} n_{\mathrm{H}\square2} /d}{\mu_{\mathrm{H}1}n_{\mathrm{H}1}
+	+\mu_{\mathrm{H}2}n_{\mathrm{H}\square{2}} /d} \\
+	n_{\mathrm{H}}=\frac{n_{\mathrm{H} \square}}{d}&=\frac{1}{eR_{\square}d}
+	= \frac{\sigma^{2}_{\square}/ d^{2}}{eR_{\square}\sigma_{\square}^{2} / d} \\
+	&=\frac{(\mu_{\mathrm{H}1}n_{\mathrm{H}1}
+	+\mu_{\mathrm{H}2}n_{\mathrm{H}\square2} /d)^{2}}{\mu_{\mathrm{H}1}^{2}n_{\mathrm{H}1}
+	+\mu_{\mathrm{H}2}^{2} n_{\mathrm{H} \square 2} /d}
+\end{align}
+Since the donor freeze at low temperatures, the interface layer must be dominant in this
+region. 
+Since the paper suggest that the layer's carrier concentration and mobility is 
+temperature independent, we can approximate
+$n_{\mathrm{H}}=n_{\mathrm{H} \square 2} / d$ and $\mu_{\mathrm{H}}=\mu_{\mathrm{H 2}}$
+for $T \to \qty{0}{\kelvin}$. 
+
+An expression for the corrected hall mobility $\mu_{\mathrm{H} 1}$ and  
+hall carrier concentration $n_{\mathrm{H}1}$ can now 
+be found:
+\begin{align}
+	\mu_{\mathrm{H} 1}=\frac{\mu_{\mathrm{H}}^{2} n_{\mathrm{H}}- \mu_{2} ^{2} 
+	n_{ \square 2} /d}{\mu_{\mathrm{H}} n_{\mathrm{H}} - \mu_{2} n_{\square 2} / d} \\
+	n_{\mathrm{H}1} = \frac{(\mu_{\mathrm{H}}n_{\mathrm{H}}-\mu_{2}n_{\square 2} 
+	/ d)^{2}}{\mu_{\mathrm{H}}^{2}n_{\mathrm{H}}-\mu_{2}^{2} n_{\square 2} / d}	
+\end{align}
+The corrected carrier density is also displayed in \cref{zno_hall_n} and can
+now be identified with the single-donor case.
+Using linear regression, a slope of 
+
+
+
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics{../plots/task_3_n.pdf}
+	\caption{Corrected and uncorrected Hall carrier concentration of a \ce{ZnO} thin 
+	film sample as a function of temperature.}
+	\label{zno_hall_n}
+\end{figure}
 
 \begin{table*}
 \centering
@@ -84,5 +152,3 @@ The third region, where $\mu_\mathrm{H} \propto T^{-3 / 2}$, can be explained by
 \caption{Hall effect quantities of p-Si, ZnO, ZTO and CUI thin film samples.}
 \label{tab:hall_results_detail}
 \end{table*}
-
-Hier ist ein neuer Absatz.

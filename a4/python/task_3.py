@@ -1,9 +1,12 @@
+import json
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
 import pathlib
 from scipy.optimize import curve_fit
+
+from task_2 import calculate_donor_energy
 
 
 latex_column_width = 221.48395  # pt
@@ -28,6 +31,7 @@ def linear(x, a, b):
 
 # file location
 file = pathlib.Path(__file__).parent.resolve()
+latex_data = dict()
 
 # Read the data from the csv file
 data = pd.read_csv(filepath_or_buffer=file.parent / "data" / "E771_Imax.txt", sep="\t")
@@ -53,6 +57,8 @@ n_over_t = np.log(n_1 * T ** (-3 / 4))
 
 # Fit the data to a linear model
 m, cov = curve_fit(linear, reciprocal_T[8:21], n_over_t[8:21])
+latex_data["concentration"] = round(m[0], 2)
+latex_data["donor_energy"] = round(calculate_donor_energy(m[0]), 2)
 
 plt.scatter(reciprocal_T * 1000, n_over_t_uncorrected, label=" Uncorrected", s=8)
 plt.scatter(reciprocal_T * 1000, n_over_t, label="Corrected", s=8)
@@ -75,8 +81,7 @@ plt.ylabel(r"$\ln(nT^{-3/4}) \quad [\ln(\unit{m^{-3} K^{-3 / 4}})]$")
 plt.tight_layout()
 plt.legend()
 plt.savefig(file.parent / "plots" / "task_3_n.pdf")
-plt.show()
-
+plt.close()
 
 mu_1 = (mu**2 * n - mu_2**2 * n_2) / (mu * n - mu_2 * n_2)
 T_log = np.log(T)
@@ -85,6 +90,8 @@ mu_log = np.log(mu)
 
 m1, cov1 = curve_fit(linear, T_log[2:12], mu_1_log[2:12])
 m3, cov3 = curve_fit(linear, T_log[25:], mu_1_log[25:])
+latex_data["mobility_1"] = round(m1[0], 2)
+latex_data["mobility_3"] = round(m3[0], 2)
 
 plt.scatter(T_log, mu_log, label="Uncorrected", s=8)
 plt.scatter(T_log, mu_1_log, label="Corrected", s=8)
@@ -114,4 +121,7 @@ plt.xlim(3, 5.9)
 plt.ylim(3.0, 6.2)
 plt.legend(bbox_to_anchor=(0.4, 0.5), bbox_transform=plt.gca().transAxes)
 plt.savefig(file.parent / "plots" / "task_3_mu.pdf")
-plt.show()
+plt.close()
+
+with open(file.parent / "plots" / "task_3_data.json", "w") as f:
+    json.dump(latex_data, f, indent=2)
