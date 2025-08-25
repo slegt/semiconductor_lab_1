@@ -1,21 +1,24 @@
 \section{Hall effect}
-\begin{figure*}
+A popular choice to gather information about charge carrier density and mobility
+is a Hall effect experiment.
+
+\begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{../assets/hall_geometry.png}
+	\includegraphics{../assets/hall_geometry.pdf}
 	\caption{Schematic structure for Hall effect measurements.
 		\imcite{grundmann}}
 	\label{fig:hall}
-\end{figure*}
+\end{figure}
 The geometrical arrangement required for Hall effect measurements
 is displayed in \cref{fig:hall}.
 A magnetic field $\mathbf{B}=B \cdot \hat{z}$ penetrates
 a semiconductor sample.
-A current $\mathbf{j}$ is flowing along the $x$-direction inside the sample 
+A current density $\mathbf{j}$ is induced along the $x$-direction inside the sample 
 as a response to an external electric field $\mathbf{E}=E_x \cdot \hat{x}$.
-Due to the magnetic force, the electrons are deflected and a current in
+Due to the magnetic force, electrons are deflected and a current in
 $y$-direction establishes until the resulting electric force in $y$-direction
 fully compensates the magnetic force.
-The system equilibrates for $j_y=0$.
+The system equilibrates for $\mathbf{j} = j_x \cdot \hat{x}$.
 
 To describe the system in detail for one majority charge carrier, one can use the 
 equation of motion from relaxation time approximation:
@@ -48,16 +51,20 @@ $\mathbf{E}=\hat{\rho}\mathbf{j}$ or more explicit:
 	\end{pmatrix}.
 \end{equation}
 The system equilibrates for $\mathbf{j} = j_x \cdot \hat{x}$ and with \cref{eq:mej}, the following
-relationship holds true: $E_{y} = B_{z} / (nq) j_{x} = R_{\mathrm{H}}B_{z}j_{x}$.
-This leads to an expression for the carrier density $n$ using directly measurable quantities.
+relationship holds true: $E_{y} = B_{z} / (nq) j_{x}$.
+Since $E_y$, $j_x$ and $B_z$ are directly measurable quantities,
+they are used to define the Hall coefficient $R_{\mathrm{H}}$.
+This directly relates the Hall coefficient to the carrier density $n$:
 \begin{align}
-	R_{\mathrm{H}}&=\frac{1}{nq}=\frac{E_{y}}{j_{x}B_{z}}
+	R_{\mathrm{H}}&=\frac{E_{y}}{j_{x}B_{z}}=\frac{1}{nq}
 	\label{eq:hall_coefficient} \\
 	n&=\frac{j_{x}B_{z}}{E_{y}q} = \frac{1}{R_{\mathrm{H}}q}.
 	\label{eq:hall_concentration}
 \end{align}
 
-Now we want to find an expression for the mobility.
+By using \cref{eq:mej} without additional substitutions and the mobility tensor 
+$\hat{\mu}$, a linear transformation $\mathbf{E}=\hat{\mu} \mathbf{v}$ 
+can be established:
 \begin{equation}
 	\begin{pmatrix}
 		E_{x} \\
@@ -74,66 +81,179 @@ Now we want to find an expression for the mobility.
 		v_{y} \\
 		v_{z}
 	\end{pmatrix}
+	\label{eq:mev}
 \end{equation}
-The hall mobility in this equation is defined as $\mu_{\mathrm{H}}=\frac{q\tau}{m^{*}}$.
-To see why this is useful, first, think of the limit $B_{z}\to 0$.
-Then, electric field and velocity indeed follow the relation $\mathbf{v}=\mu_{\mathrm{h}}\mathbf{E}$.
-Second with $\mathbf{v}=\mu_{\mathrm{h}}\mathbf{E}$ one can easily see that
-$v_{x} = \mu_{\mathrm{H}}E_{x}$ and $E_{y}=B_{z}v_{x}=B_{z}\mu_{\mathrm{H}}E_{x}$.
-Therefore we find the following equation for $\mu_\mathrm{H}$:
-\begin{equation}
-	\mu_{\mathrm{H}}=\frac{E_{y}}{B_{z}E_{x}} 
-\end{equation}
+The hall mobility in \cref{eq:mev} is defined as $\mu_{\mathrm{H}}=\frac{q\tau}{m^{*}}$.
+By applying the equilibrium condition $\mathbf{v}=v_x \cdot \hat{x}$ and evaluating 
+\cref{eq:mev} component-wise yields $v_{x} = \mu_{\mathrm{H}}E_{x}$ and 
+$E_{y}=B_{z}v_{x}=B_{z}\mu_{\mathrm{H}}E_{x}$.
 Using \cref{eq:hall_coefficient} and $\rho=E_x / j_x$, the hall mobility can be expressed as
 \begin{equation}
-	\mu_{\mathrm{H}}=\frac{1}{nq\rho}=\frac{R_{\mathrm{H}}}{\rho}.
+	\mu_{\mathrm{H}}=\frac{E_y}{B_z E_x} \frac{1}{nq\rho}=\frac{R_{\mathrm{H}}}{\rho}.
 	\label{eq:hall_mobility}
 \end{equation}
 
 \subsection{Van der Pauw Method}
-The Van der Pauw Method is a measuremtn technique to measure the resistivity as well as the hall coefficient.
-It is possible to measure samples with nearly arbitrary flat shapes and examine it's resistivity $\rho$, 
-mobility $\mu_\mathrm{H}$ as well as it's sheet carrier density $n$. 
 
-Only samples that met the subsequent conditions can be measured with the Van der Pauw method:
+\begin{figure}
+	\centering
+	\includegraphics{../assets/van_der_pauw.pdf}
+	\caption{Van der Pauw sample edges.
+		\imcite{grundmann}}
+	\label{fig:van_der_pauw}
+\end{figure}
+
+The Van der Pauw Method is a measurement technique to measure the resistivity as well 
+as the hall coefficient.
+It is possible to measure samples with nearly arbitrary flat shapes and examine its 
+resistivity $\rho$, mobility $\mu_\mathrm{H}$ as well as it's sheet carrier density $n$. 
+
+Only samples that met the subsequent conditions can be measured with the Van der Pauw 
+method:
 \begin{itemize}
-	\item The contacts are at the circumference of the sample.
-	\item The contacts are sufficiently small (compared to the sample size).
-	\item The sample is homogeneous and isotropic cocerning doping as well as thickness.
-	\item The surface of the sampele is singly connected, i.e., the sample does not have isolated holes.
+	\item The contacts are at the circumference of the sample
+	\item The contacts are sufficiently small (compared to the sample size)
+	\item The sample is homogeneous and isotropic cocerning doping as well as thickness
+	\item The surface of the sampele is singly connected, i.e., the sample does not 
+	have isolated holes.
 \end{itemize}
-To utilize the Van der Pauw method, four ohmic contacts need to be placed on the sample.
-These contacts should be as small as possible and as close as possible to the samples periphery. 
+To utilize the Van der Pauw method, four ohmic contacts need to be attached to the 
+sample.
+These contacts should be as small as possible and as close as possible to the sample's 
+periphery. 
 All contacts and all wires should be constructed from the same material. 
 
-After the ohmic contacts are places, the resistivity $\rho$ can be measured.
-Each contact is labeled counterclockwise with a number from 1 to 4.
-The current $I_{12}$ is then defined as the positive current injected into contact one and extracted from contact two.
-The voltage $V_{34}$ is given by the potential difference between contact three and four as $V_{34}=V_4-V_3$. 
-With these definitions, the resistivity can be calculated as $R_{12,34}=\frac{V_{34}}{I_{12}}$. 
-Van der Pauw's theorem states that the resistivity can be calculated as 
-
+A Van der Pauw experiment starts with measurement of the resistivity $\rho$.
+The four contacts on the sample are numbered from \num{0} to \num{3} in a 
+counterclockwise manner as shown in FIGURE. 
+To systemize the measurement, these contact labels can be identified with the 
+elements of the residue class ring $\mathbb{Z}/4\mathbb{Z}$ (i.e. $3+2=\mod(5,4)=1$).
+Let $i$ be an arbitrary element of $\mathbb{Z}/4\mathbb{Z}$.
+The current $I_{i, i+1}$ is defined as the positive current injected into contact $i$ 
+and extracted from contact $i+1$.
+The voltage $V_{i, i+1}$ is given by the potential difference between contact $i$ and 
+$i+1$ as $V_{i, i+i}=V_{i+i}-V_i$. 
+With these definitions, the resistivity can be calculated as 
+$R_{i, i+1; i+2, i+3}=V_{i+2, i+3} / {I_{i, i+1}}$. 
+Van der Pauw's theorem states that the resistivity can be calculated using 
+$r_1=R_{i, i+1; i+2, i+3}$ and $r_2=R_{i+1, i+2; i+3, i+4}$ as the two independent 
+resistances:
 \begin{align}
-	\rho=\frac{\pi d}{\ln(2)} \left( \frac{R_{12,34}+R_{23,41}}{2} \right)f
-	\left( \frac{R_{12,34}}{R_{23,41}} \right), \label{eq:hall_resistivity}\\
-	\frac{R_{12,34}-R_{23,41}}{R_{12,34}+R_{23,41}}=f \cosh^{-1} \left( \frac{\exp(\ln(2 /f))}{2} \right),
+	\rho=\frac{\pi d}{\ln(2)} \left( \frac{r_1+r_2}{2} \right)f
+	\left( \frac{r_1}{r_2} \right), \label{eq:hall_resistivity}\\
+	\frac{r_1-r_2}{r_1+r_2}=f \cosh^{-1} \left( \frac{\exp(\ln(2 /f))}{2} \right),
 	\label{eq:hall_resistivity_f}
 \end{align}
+where $d$ is the thickness of the sample and $f$ is a correction factor that satisfies 
+\cref{eq:hall_resistivity_f}. 
+The reciprocal theorem states that the resistances obey the relation 
+$R_{i, i+1; i+2, i+3}=R_{i+2, i+3; i+4, i+5}$ and 
+$R_{i, i+1;i+2, i+3}=R_{i+1, i; i+3, i+2}$.
+Therefore, we can measure the resistivity with four different contact configurations to 
+increase measurement accuracy.
 
-where $d$ is the thickness of the sample and $f$ is a correction factor that satisfies \cref{eq:hall_resistivity_f}. 
-The reciprocal theorem states that the resistances obey the relation $R_{12,34}=R_{34,12}$ and $R_{12,34}=R_{21,43}$.
-Therefore, we can measure the resistivity with four different contact configurations to increase measurement accuracy.
-
-Within the Van der Pauw configuration, it is also possible to determine the Hall coefficient $R_{\mathrm{H}}$ if 
-one can establish a homogeneous magnetic field $\mathbf{B}=B_{0} \hat{z}$ perpendicular to the samples surface. 
-Since $I= j A$ for a homogeneous current density $j$ and a cross-sectional area $A = d t$ and a Hall voltage $U_{13} = E_{y} t$,
+Within the Van der Pauw configuration, it is also possible to determine the Hall 
+coefficient $R_{\mathrm{H}}$ if a homogeneous magnetic field 
+$\mathbf{B}=B_{0} \hat{z}$ perpendicular to the samples surface is applied. 
+Since $I= j A$ for a homogeneous current density $j$ and a cross-sectional area 
+$A = d t$ and a Hall voltage $V_{13} = E_{y} t$,
 the Hall coefficient can be calculated using \cref{eq:hall_coefficient}:
 \begin{equation}
-	R_{\mathrm{H}}=\frac{d}{IB_{z}} [U_{13}(B_{z}=0)-U_{13}(B_{z}=B_{0})].
+	R_{\mathrm{H}}=\frac{d}{IB_{z}} [V_{13}(B_{z}=0)-V_{13}(B_{z}=B_{0})].
 	\label{eq:hall_coefficient_van_der_pauw}
 \end{equation}
-The difference in  \cref{eq:hall_coefficient} accounts for the Hall voltage that originates from the earths magnetic field.
+The difference term in  \cref{eq:hall_coefficient} accounts for the Hall voltage that 
+originates from the earths magnetic field.
 
+\subsection{Notational Conventions}
+In \cref{eq:hall_coefficient_van_der_pauw}, the thickness $d$ is
+not measured as part of the experiment, but is given as a constant and measured
+beforehand. 
+Therefore, the Hall-Experiment itself does not yield thickness information.
+To represent this via notation, thickness independent (sheet) quantities are defined and 
+denoted with '$\square$' as a subindex.
+For reference, $R_{\mathrm{H} \square}=R_\mathrm{H} / d$ is defined as the sheet 
+Hall-coefficient, $n_\square = n d = 1 / (R_\mathrm{H \square}q)$ is the sheet carrier 
+concentration. 
+Since $\mu_\mathrm{H}$ is independent of the thickness, 
+it is not denoted with a subindex.
 
+\begin{figure*}
+	\centering
+	\begin{subfigure}{0.45\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{../assets/multilayer_hall_1.pdf}
+			\caption{Geometric arrangement}
+			\label{fig:multilayer_hall_1}
+		\end{subfigure}
+		\begin{subfigure}{0.45\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{../assets/multilayer_hall_2.pdf}
+			\caption{Equivalent circuit}
+			\label{fig:multilayer_hall_2}
+		\end{subfigure}
+	\caption{Schematic representation of the Hall effect in multilayer samples}
+	\label{fig:multilayer_hall}
+\end{figure*}
 
+\subsection{ Multilayer Hall Analysis}
+For multilayer samples, Hall effect data analysis complicates due to the different
+contributions of each layer.
+As depicted in \cref{fig:multilayer_hall_1}, each layer $i$ with a specific thickness 
+$d_i$ and conductivity $\sigma_i$ carries a current $I_{xi}$ in $x$-direction.
+Since the layers are connected in parallel, the total current is 
+given by Kirchhoff's current law:
+\begin{equation}
+	I_x = \sum_i I_{xi}.
+\end{equation}
+Using Ohm's law and $I=jA$, where $A=t d = t \sum d_i$ is the cross-sectional area of 
+the sample perpendicular to the $x$-direction, a condition for the total Hall sheet 
+conductivity $\sigma_\mathrm{\square H}$ can be derived:
+\begin{align}
+	I_{x}&=j_{x}dt=\sigma E_{x} dt \notag\\
+	&=\sum_{i}I_{x i}=\sum_{i}j_{x i} d_{i}t \notag\\
+	&=\sum_{i}\sigma_{i} E_{x}d_{i}t  \\
+	\sigma d&=\sum_{i}\sigma_{i}d_{i} \\
+	\sigma_{\mathrm{\square}}&=\sum_{i} \sigma_{\square i}
+	\label{eq:multilayer_sum_1}
+\end{align}
 
+Using the equivalent circuit diagram in \cref{fig:multilayer_hall_2} and the conductance
+$G_i = R_i^{-1}$, an expression for the Hall voltage $V_{\mathrm{H}}$ can be derived:
+\begin{equation}
+	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}G_{i}}{\sum_{i}G_{i}}
+	\label{eq:multilayer_hall_voltage}
+\end{equation}
+The conductance depends on to the conductivity and the geometrical arrangement of the 
+sample as $G_i = \sigma_i d_i w/ t$. Substituting this into 
+\cref{eq:multilayer_hall_voltage} yields:
+\begin{equation}
+	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}  
+	\sigma_{i}d_{i}}{\sum_{i} \sigma_{i}d_{i}}
+	\label{eq:multilayer_hall_voltage_2}
+\end{equation}
+Using \cref{eq:mej}, $E_y t = V$ and $I_x=j_x d t$, one finds an expression 
+for the Hall voltage:
+\begin{align}
+	E_{y}&=R_{\mathrm{H}}j_{x}B_{z} \\
+	\frac{V_{\mathrm{H}}}{t}&=R_{\mathrm{H}}\frac{I_{x}}{t d}B_{z}.
+	\label{eq:multilayer_hall_r}
+\end{align}
+\Cref{eq:multilayer_hall_r} is valid for each layer with corresponding current density
+$j_{xi}$, hall voltage $V_{\mathrm{H}i}$ and thickness $d_i$ as well as for the total 
+system:
+\begin{align}
+	V_{\mathrm{H}i} &= \frac{R_{\mathrm{H}i}I_{xi} B}{d_{i}} \\
+	V_{\mathrm{H}}&=\frac{R_{\mathrm{H}}I_{x}B}{d}
+	\label{eq:multilayer_hall_r_2}
+\end{align}
+Substituting \cref{eq:multilayer_hall_r_2} into \cref{eq:multilayer_hall_voltage_2} and
+using the identity $I_{i} /I=\sigma_{i}d_{i} /\sigma d$ results in:
+\begin{align}
+	\frac{R_{\mathrm{H}}}{d}=\frac{\sum R_{\mathrm{H}i} \sigma_{i}^{2} d_{i}}{\sigma d} \\
+	R_{\mathrm{H \square}}\sigma_{\square}=\sum_{i}R_{\mathrm{H}\square i} 
+	\sigma_{\square i}^{2}
+	\label{eq:multilayer_sum_2}
+\end{align}
+\Cref{eq:multilayer_sum_1} and \cref{eq:multilayer_sum_2} are two main results of the 
+multilayer Hall analysis and are sufficient to analyze the unusual \ce{ZnO} sample.

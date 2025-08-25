@@ -81,12 +81,16 @@ url=false,isbn=false,eprint=false]{biblatex}
 \JSONParseValue[store in = \taskTwoSlopeOne]{\tasktwo}{mobility_1}
 \JSONParseValue[store in = \taskTwoSlopeTwo]{\tasktwo}{mobility_2}
 \JSONParseValue[store in = \taskTwoSlopeThree]{\tasktwo}{mobility_3}
+\JSONParseValue[store in = \taskTwoND]{\tasktwo}{n_d}
 
 \JSONParseFromFile{\taskthree}{../plots/task_3_data.json}
+\JSONParseValue[store in = \taskThreeInterfaceN]{\taskthree}{n_int}
+\JSONParseValue[store in = \taskThreeInterfaceM]{\taskthree}{m_int}
 \JSONParseValue[store in = \taskThreeSlope]{\taskthree}{slope}
 \JSONParseValue[store in = \taskThreeEnergy]{\taskthree}{donor_energy}
-\JSONParseValue[store in = \taskThreeSlopeOne]{\taskthree}{mobility_1}
-\JSONParseValue[store in = \taskThreeSlopeThree]{\taskthree}{mobility_3}
+\JSONParseValue[store in = \taskThreeMobilityOne]{\taskthree}{mobility_1}
+\JSONParseValue[store in = \taskThreeMobilityThree]{\taskthree}{mobility_3}
+\JSONParseValue[store in = \taskThreeND]{\taskthree}{n_d}
 
 
 
@@ -97,7 +101,6 @@ url=false,isbn=false,eprint=false]{biblatex}
 \begin{strip}
 	\input{chapters/1_titel}
 \end{strip}
-Die Breite einer Spalte beträgt: \the\columnwidth
 \input{chapters/2_abstract.tex}
 \input{chapters/3_fcs}
 \input{chapters/4_hall.tex}

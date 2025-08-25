@@ -43,6 +43,8 @@ mu = data["mu"].to_numpy()
 
 n_2 = n[0]
 mu_2 = mu[0]
+latex_data["n_int"] = round(n_2, 2)
+latex_data["m_int"] = round(mu_2, 2)
 
 T = T[1:]
 n = n[1:]
@@ -59,6 +61,7 @@ n_over_t = np.log(n_1 * T ** (-3 / 4))
 m, cov = curve_fit(linear, reciprocal_T[8:21], n_over_t[8:21])
 latex_data["concentration"] = round(m[0], 2)
 latex_data["donor_energy"] = round(calculate_donor_energy(m[0]), 2)
+latex_data["n_d"] = round(max(n_1), 2)
 
 plt.scatter(reciprocal_T * 1000, n_over_t_uncorrected, label=" Uncorrected", s=8)
 plt.scatter(reciprocal_T * 1000, n_over_t, label="Corrected", s=8)
@@ -83,7 +86,6 @@ plt.legend()
 plt.savefig(file.parent / "plots" / "task_3_n.pdf")
 plt.close()
 
-mu_1 = (mu**2 * n - mu_2**2 * n_2) / (mu * n - mu_2 * n_2)
 T_log = np.log(T)
 mu_1_log = np.log(mu_1)
 mu_log = np.log(mu)

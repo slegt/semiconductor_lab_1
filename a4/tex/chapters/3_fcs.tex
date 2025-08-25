@@ -22,8 +22,8 @@ Boltzmann constant and $T$ as temperature:
 	f_{\mathrm{e}}(E)
 	=\frac{1}{\exp((E-E_{\mathrm{F}})/(\mathrm{k}T))+1}.
 \end{equation}
-In order to solve the integral in \cref{eq:n_int}, one needs a functional
-expression for the density of states.
+In order to solve the integral in \cref{eq:n_int}, a functional
+expression for the density of states is required.
 A suitable approximation that utilizes the effective electron mass
 $m^*_\mathrm{e}$ are
 parabolic band edges which originates from the free-electron gas:
@@ -32,7 +32,7 @@ parabolic band edges which originates from the free-electron gas:
 	\left( \frac{2m^*_\mathrm{e}}{\hbar^2} \right)^{3 / 2} \sqrt{E}.
 	\label{eq:para_band_edges}
 \end{equation}
-If one substitutes \cref{eq:para_band_edges} into \cref{eq:n_int} and uses
+By substituting \cref{eq:para_band_edges} into \cref{eq:n_int} and applying
 the transformations $\eta=E_\mathrm{F}-E_\mathrm{C}$,
 $x = (E-E_\mathrm{C}) / (\mathrm{k} T)$, the integral can be brought into
 the following form:
@@ -43,22 +43,23 @@ the following form:
 	N_\mathrm{c} & = 2 \left( \frac{2 \pi m^*_\mathrm{e} \mathrm{k}T}{h^2}
 	\right)^{3 / 2}.
 \end{align}
-\Cref{eq:n_int_2} represesnts a form of the Fermi-Dirac integral
+\Cref{eq:n_int_2} represents a form of the Fermi-Dirac integral
 $F_{1 /2}(\eta  / (\mathrm{k}T))$.
 For $0 \gg \eta$,
 this function can be approximated by $F_{1 /2}(\eta  / (\mathrm{k}T))
 	\simeq \exp(\eta /(\mathrm{k}T))$.
 Semiconductors that fulfill this requirement all called degenerate.
 With that approximation, the free carrier density can be expressed as
-a function of Fermi-energy:
+a function of the Fermi-energy:
 \begin{equation}
 	n	= { N_{\mathrm{C}} }\exp\left( \frac{E_{\mathrm{F}}
 		-E_{\mathrm{C}}}{\mathrm{k_B}T} \right).
 	\label{eq:n}
 \end{equation}
-The same procedure can be applied analogous for holes instead of
+The same procedure can be applied in an analogous way for holes instead of
 electrons.
-One finds with similar assumptions:
+Let $p$ be the number of holes per volume in the valence band,
+one finds with similar assumptions:
 \begin{align}
 	p            & = N_\mathrm{V} \exp
 	\left( - \frac{E_{\mathrm{F}}-E_{\mathrm{V}}}{\mathrm{k}T} \right)^{3 / 2}
@@ -78,7 +79,7 @@ With this additional constraint, a formula for the free
 carrier concentration can be found that only depends on the
 band gap $E_\mathrm{g} = E_\mathrm{C} - E_\mathrm{V}$ by
 substituting \cref{eq:n} and \cref{eq:p}
-into the root:
+into the root below:
 \begin{align}
 	p & = n = \sqrt{n^2} = \sqrt{n \cdot p} \notag \\
 	  & =\sqrt{ N_{\mathrm{V}}N_{\mathrm{C}} }
@@ -128,10 +129,10 @@ finite probability to shift into the conduction band
 (they donate an electron) and
 can therefore be used for n-type doping.
 The probability for an electron to occupy the bound state $f^0$
-(where $0$ indicates that the donor is neutral) can be expressed
+(where '$0$' indicates that the donor is neutral) can be expressed
 by the Fermi-Dirac distribution.
 The probability for an electron to not occupy the bound state $f^+$
-(where $+$ indicates that the donor is ionized) can also be
+(where '$+$' indicates that the donor is ionized) can also be
 determined:
 \begin{align}
 	f_{0} & =\frac{1}{1+\frac{g_{+}}{g_{0}}\exp\left(
@@ -152,9 +153,9 @@ number of neutral donors and $N_\mathrm{d}^+$ the number of ionized donors.
 One finds the following relations:
 \begin{align}
 	N_{\mathrm{D}}     & =N_{\mathrm{D}}^{+}+N_{\mathrm{D}}^{0},        \\
-	N_{\mathrm{D}}^{0} & =N_{\mathrm{D}}f_0                             \\
+	N_{\mathrm{D}}^{0} & \simeq N_{\mathrm{D}}f_0                             \\
 	\label{eq:ndplus}
-	N_{\mathrm{D}}^{+} & =N_{\mathrm{D}}(1-f_{0}) =N_{\mathrm{D}}f_{+}.
+	N_{\mathrm{D}}^{+} & \simeq N_{\mathrm{D}}(1-f_{0}) =N_{\mathrm{D}}f_{+}.
 \end{align}
 
 \paragraph{Acceptors} are point defect atoms that are incorporated
@@ -171,13 +172,13 @@ where $E_\mathrm{A}^b$ can be represented by rescaled
 hydrogen orbitals.
 
 These levels are also displayed in \cref{fig:energy_level}.
-The total number of acceptors $N_\mathrm{A}$ can be separated into
-the number of ionized acceptors $N_\mathrm{A}^-$ and neutral
+The acceptor concentration $N_\mathrm{A}$ can be separated into
+the number per volume of ionized acceptors $N_\mathrm{A}^-$ and neutral
 acceptors $N_\mathrm{A}^0$, such that the relation
 $N_{\mathrm{A}}=N_{\mathrm{A}}^{0}+N_{\mathrm{A}}^{-}$ holds.
 Again the probability of finding an electron bound to an acceptor $f$ is
 equal to the probability of a hole shifted from the acceptor to the
-valence band and can be modelled by a Fermi-distribution:
+valence band and can be modelled by a Fermi-Dirac-distribution:
 \begin{equation}
 	f = \frac{1}{1+\hat{g}_{\mathrm{A}}\exp\left( -
 	\frac{E_{\mathrm{F}}-E_{\mathrm{A}}}{\mathrm{k}T} \right)}.
@@ -186,17 +187,18 @@ In this case, the ratio of the acceptor state degeneracies
 $\hat{g}_\mathrm{A}$ are nontrivial and need to be considered in detail.
 
 \subsection{Charge Neutrality Condition}
-The most general charge neutrality condition can be expressed as:
+Since donors and acceptors offer additional electrons or holes, the charge neutrality 
+condition needs to be modified:
 \begin{equation}
 	n = p -\sum_i N_{\mathrm{A}i}^- + \sum_j N_{\mathrm{D}j}^+.
+	\label{eq:charge_neutrality}
 \end{equation}
-This can be used to get an implicit functional dependence $f(n,T)$.
+\Cref{eq:charge_neutrality} can be used to get an implicit functional dependence $f(n,T)$.
 A simple example is a material that is doped by only one donator material.
-If one uses \cref{eq:ndplus} and additionally assume sufficient low
+By using \cref{eq:ndplus} and additionally assume sufficient low
 temperatures, intrinsic conduction can be neglected and the charge
 neutrality condition is reduced to $n = N_\mathrm{D}^+=N_\mathrm{D} f_+$.
-By substituting \cref{eq:n} and \cref{eq:fplus} and rearranging the
-equation, one obtains:
+Substituting \cref{eq:n} and \cref{eq:fplus} results in:
 \begin{align}
 	\notag
 	n     & =\frac{N_{\mathrm{D}}}{1+\hat{g}
@@ -204,8 +206,8 @@ equation, one obtains:
 	\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}                   \\
 	\notag
 	      & =\frac{N_{\mathrm{D}}}{1+ \hat{g}n /N_{\mathrm{C}}\cdot
-	\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)} \label{eq:n_quad} \\
-	      & =\frac{N_{\mathrm{D}}}{1+n / n_{1}}                                             \\
+	\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}, \label{eq:n_quad} \\
+	      & =\frac{N_{\mathrm{D}}}{1+n / n_{1}},                                             \\
 	n_{1} & =	\frac{N_{\mathrm{C}}}{\hat{g}}
 	\exp\left( -\frac{E_{\mathrm{D}}^{b}}{\mathrm{k}T} \right)
 \end{align}
@@ -215,25 +217,25 @@ This leads to an explicit temperature dependence that can be approximated
 for low and high temperature. 
 \begin{equation}
 	\label{eq:n_T}
-	n=\frac{2N_{\mathrm{D}}}
-	{1+\left( 1+4\hat{g} \frac{N_{\mathrm{D}}}{N_{\mathrm{C}}}
-		\exp\left( \frac{E_{\mathrm{D}}^{b}}{\mathrm{k}T} \right) \right)^{1/2}}.
+	n = \frac{2N_{\mathrm{D}}}{1+\left( 1+4\hat{g} \frac{N_{\mathrm{D}}}{N_{\mathrm{C}}}
+	\exp\left( \frac{E_{\mathrm{D}}^{b}}{\mathrm{k}T} \right) \right)^{1/2}},
 \end{equation}
 \begin{align}
 	\label{eq:n_T_approx_low}
 	n & \simeq \sqrt{ \frac{N_{\mathrm{D}}N_{\mathrm{C}}}{\hat{g}} }
-	\exp\left( \frac{-E_{\mathrm{D}}^{b}}{2 \mathrm{k}T} \right) & \mathrm{k}T\ll E_{\mathrm{D}}^{b} \\
+	\exp\left( \frac{-E_{\mathrm{D}}^{b}}{2 \mathrm{k}T} \right) & \mathrm{k}T\ll 
+	E_{\mathrm{D}}^{b} \\
+	\label{eq:n_T_approx_high}
 	n & \simeq N_{\mathrm{D}} & \mathrm{k}T\gg E_{\mathrm{D}}^{b}
 \end{align}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\linewidth]{../assets/charge_carrier_density_temperature.png}
+	\includegraphics[width=0.75\linewidth]{../assets/charge_carrier_density_temperature.png}
 	\caption{Charge carrier density as a function of temperature for 
 	silicon doped with phosphor. \imcite{grundmann}}
 	\label{fig:carrier_temperature}
 \end{figure}
-The function $n(T)$ is visualized in \cref{fig:carrier_temperature}.
+$n(T)$ is visualized in \cref{fig:carrier_temperature}.
 Note that intrinsic conduction cannot be neglected for sufficient high
 temperatures.
-\imcite{grundmann}
