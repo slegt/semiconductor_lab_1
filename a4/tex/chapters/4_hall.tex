@@ -1,17 +1,19 @@
 \section{Hall effect}
 A popular choice to gather information about charge carrier density and mobility
-is a Hall effect experiment.
+is a Hall effect experiment. 
+This section introduces the theoretical background of the Hall effect 
+by summarizing \citeauthoryear{grundmann}, chapter 15.2.1.
 
 \begin{figure}
 	\centering
 	\includegraphics{../assets/hall_geometry.pdf}
 	\caption{Schematic structure for Hall effect measurements.
-		\imcite{grundmann}}
+		\imcitetwo{grundmann}}
 	\label{fig:hall}
 \end{figure}
 The geometrical arrangement required for Hall effect measurements
 is displayed in \cref{fig:hall}.
-A magnetic field $\mathbf{B}=B \cdot \hat{z}$ penetrates
+A magnetic field $\mathbf{B}=B_z \cdot \hat{z}$ penetrates
 a semiconductor sample.
 A current density $\mathbf{j}$ is induced along the $x$-direction inside the sample 
 as a response to an external electric field $\mathbf{E}=E_x \cdot \hat{x}$.
@@ -26,8 +28,8 @@ equation of motion from relaxation time approximation:
 	m^{*} \frac{\mathbf{v}}{\tau}=q(\mathbf{E}
 	+\mathbf{v}\times \mathbf{B}).
 \end{equation}
-In this equation, $m^{*}$ is the effective mass of the charge carrier, $\mathbf{v}$ the
-average electron velocity and $\tau$ the relaxation time constant.
+In this equation, $m^{*}$ is the effective mass of the charge carrier,$q$ is the charge, 
+$\mathbf{v}$ the average electron velocity and $\tau$ the relaxation time constant.
 With $\mathbf{j}=nq\mathbf{v}$ and the resistivity tensor $\hat{\rho}$, 
 this vector equation can be brought into a linear transformation of the form
 $\mathbf{E}=\hat{\rho}\mathbf{j}$ or more explicit:
@@ -56,7 +58,7 @@ Since $E_y$, $j_x$ and $B_z$ are directly measurable quantities,
 they are used to define the Hall coefficient $R_{\mathrm{H}}$.
 This directly relates the Hall coefficient to the carrier density $n$:
 \begin{align}
-	R_{\mathrm{H}}&=\frac{E_{y}}{j_{x}B_{z}}=\frac{1}{nq}
+	R_{\mathrm{H}}&=\frac{E_{y}}{j_{x}B_{z}}=\frac{1}{nq},
 	\label{eq:hall_coefficient} \\
 	n&=\frac{j_{x}B_{z}}{E_{y}q} = \frac{1}{R_{\mathrm{H}}q}.
 	\label{eq:hall_concentration}
@@ -80,33 +82,33 @@ can be established:
 		v_{x} \\
 		v_{y} \\
 		v_{z}
-	\end{pmatrix}
+	\end{pmatrix}.
 	\label{eq:mev}
 \end{equation}
-The hall mobility in \cref{eq:mev} is defined as $\mu_{\mathrm{H}}=\frac{q\tau}{m^{*}}$.
-By applying the equilibrium condition $\mathbf{v}=v_x \cdot \hat{x}$ and evaluating 
+The hall mobility in \cref{eq:mev} is defined as $\mu_{\mathrm{H}}= q\tau / m^{*}$.
+Applying the equilibrium condition $\mathbf{v}=v_x \cdot \hat{x}$ and evaluating 
 \cref{eq:mev} component-wise yields $v_{x} = \mu_{\mathrm{H}}E_{x}$ and 
 $E_{y}=B_{z}v_{x}=B_{z}\mu_{\mathrm{H}}E_{x}$.
-Using \cref{eq:hall_coefficient} and $\rho=E_x / j_x$, the hall mobility can be expressed as
+Using \cref{eq:hall_coefficient} and the sample's resistivity $\rho=E_x / j_x$, 
+the hall mobility can be expressed as
 \begin{equation}
-	\mu_{\mathrm{H}}=\frac{E_y}{B_z E_x} \frac{1}{nq\rho}=\frac{R_{\mathrm{H}}}{\rho}.
+	\mu_{\mathrm{H}}=\frac{E_y}{B_z E_x} =\frac{R_{\mathrm{H}}}{\rho} =\frac{1}{nq\rho}.
 	\label{eq:hall_mobility}
 \end{equation}
 
 \subsection{Van der Pauw Method}
-
 \begin{figure}
 	\centering
 	\includegraphics{../assets/van_der_pauw.pdf}
-	\caption{Van der Pauw sample edges.
-		\imcite{grundmann}}
+	\caption{Van der Pauw sample edges.}
 	\label{fig:van_der_pauw}
 \end{figure}
 
 The Van der Pauw Method is a measurement technique to measure the resistivity as well 
 as the hall coefficient.
 It is possible to measure samples with nearly arbitrary flat shapes and examine its 
-resistivity $\rho$, mobility $\mu_\mathrm{H}$ as well as it's sheet carrier density $n$. 
+resistivity, mobility as well as it's carrier density. 
+The derivations in this section follow \citeauthoryear{van_der_pauw}.
 
 Only samples that met the subsequent conditions can be measured with the Van der Pauw 
 method:
@@ -125,7 +127,7 @@ All contacts and all wires should be constructed from the same material.
 
 A Van der Pauw experiment starts with measurement of the resistivity $\rho$.
 The four contacts on the sample are numbered from \num{0} to \num{3} in a 
-counterclockwise manner as shown in FIGURE. 
+counterclockwise manner as shown in \cref{fig:van_der_pauw}. 
 To systemize the measurement, these contact labels can be identified with the 
 elements of the residue class ring $\mathbb{Z}/4\mathbb{Z}$ (i.e. $3+2=\mod(5,4)=1$).
 Let $i$ be an arbitrary element of $\mathbb{Z}/4\mathbb{Z}$.
@@ -147,19 +149,21 @@ resistances:
 where $d$ is the thickness of the sample and $f$ is a correction factor that satisfies 
 \cref{eq:hall_resistivity_f}. 
 The reciprocal theorem states that the resistances obey the relation 
-$R_{i, i+1; i+2, i+3}=R_{i+2, i+3; i+4, i+5}$ and 
+$R_{i, i+1; i+2, i+3}=R_{i+2, i+3; i, i+1}$ and 
 $R_{i, i+1;i+2, i+3}=R_{i+1, i; i+3, i+2}$.
 Therefore, we can measure the resistivity with four different contact configurations to 
 increase measurement accuracy.
 
-Within the Van der Pauw configuration, it is also possible to determine the Hall 
-coefficient $R_{\mathrm{H}}$ if a homogeneous magnetic field 
-$\mathbf{B}=B_{0} \hat{z}$ perpendicular to the samples surface is applied. 
-Since $I= j A$ for a homogeneous current density $j$ and a cross-sectional area 
-$A = d t$ and a Hall voltage $V_{13} = E_{y} t$,
+Within the Van der Pauw configuration and the geometry depicted in 
+\cref{fig:van_der_pauw}, it is also possible to determine the Hall 
+coefficient $R_{\mathrm{H}}$ if a homogeneous magnetic field perpendicular to the 
+samples surface is applied.
+Since $I_{i, i+2}= j_x A$ for a cross-sectional area 
+$A = \sqrt{2} d t$ and a Hall voltage $V_{i+1 i+3} = E_y \sqrt{2} t$ for an 
 the Hall coefficient can be calculated using \cref{eq:hall_coefficient}:
 \begin{equation}
-	R_{\mathrm{H}}=\frac{d}{IB_{z}} [V_{13}(B_{z}=0)-V_{13}(B_{z}=B_{0})].
+	R_{\mathrm{H}}=\frac{d}{I_{i, i+2}B_{z}} 
+	[V_{i+1, i+3}(B_{z}=0)-V_{i+1, i+3}(B_{z}>0)].
 	\label{eq:hall_coefficient_van_der_pauw}
 \end{equation}
 The difference term in  \cref{eq:hall_coefficient} accounts for the Hall voltage that 
@@ -183,20 +187,22 @@ it is not denoted with a subindex.
 	\begin{subfigure}{0.45\linewidth}
 			\centering
 			\includegraphics[width=\linewidth]{../assets/multilayer_hall_1.pdf}
-			\caption{Geometric arrangement}
+			\caption{Geometric arrangement.}
 			\label{fig:multilayer_hall_1}
 		\end{subfigure}
 		\begin{subfigure}{0.45\linewidth}
 			\centering
 			\includegraphics[width=\linewidth]{../assets/multilayer_hall_2.pdf}
-			\caption{Equivalent circuit}
+			\caption{Equivalent circuit.}
 			\label{fig:multilayer_hall_2}
 		\end{subfigure}
-	\caption{Schematic representation of the Hall effect in multilayer samples}
+	\caption{Schematic representation of the Hall effect in multilayer samples. 
+	\imcitetwo{multilayer}}
 	\label{fig:multilayer_hall}
 \end{figure*}
 
 \subsection{ Multilayer Hall Analysis}
+This section follows \citeauthoryear{multilayer}.
 For multilayer samples, Hall effect data analysis complicates due to the different
 contributions of each layer.
 As depicted in \cref{fig:multilayer_hall_1}, each layer $i$ with a specific thickness 
@@ -206,7 +212,7 @@ given by Kirchhoff's current law:
 \begin{equation}
 	I_x = \sum_i I_{xi}.
 \end{equation}
-Using Ohm's law and $I=jA$, where $A=t d = t \sum d_i$ is the cross-sectional area of 
+Using Ohm's law and $I_x=j_x A$, where $A=t d = t \sum d_i$ is the cross-sectional area of 
 the sample perpendicular to the $x$-direction, a condition for the total Hall sheet 
 conductivity $\sigma_\mathrm{\square H}$ can be derived:
 \begin{align}
@@ -219,7 +225,7 @@ conductivity $\sigma_\mathrm{\square H}$ can be derived:
 \end{align}
 
 Using the equivalent circuit diagram in \cref{fig:multilayer_hall_2} and the conductance
-$G_i = R_i^{-1}$, an expression for the Hall voltage $V_{\mathrm{H}}$ can be derived:
+$G_i = R_i^{-1}$, an expression for the Hall voltage $V_{\mathrm{H}}$ is found:
 \begin{equation}
 	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}G_{i}}{\sum_{i}G_{i}}
 	\label{eq:multilayer_hall_voltage}
@@ -248,10 +254,11 @@ system:
 	\label{eq:multilayer_hall_r_2}
 \end{align}
 Substituting \cref{eq:multilayer_hall_r_2} into \cref{eq:multilayer_hall_voltage_2} and
-using the identity $I_{i} /I=\sigma_{i}d_{i} /\sigma d$ results in:
+using the identity $I_{xi} /I=\sigma_{i}d_{i} /\sigma d$ results in:
 \begin{align}
-	\frac{R_{\mathrm{H}}}{d}=\frac{\sum R_{\mathrm{H}i} \sigma_{i}^{2} d_{i}}{\sigma d} \\
-	R_{\mathrm{H \square}}\sigma_{\square}=\sum_{i}R_{\mathrm{H}\square i} 
+	\frac{R_{\mathrm{H}}}{d}=\frac{\sum R_{\mathrm{H}i} \sigma_{i}^{2} d_{i}}
+	{(\sigma d)^2} \\
+	R_{\mathrm{H \square}}\sigma_{\square}^2=\sum_{i}R_{\mathrm{H}\square i} 
 	\sigma_{\square i}^{2}
 	\label{eq:multilayer_sum_2}
 \end{align}

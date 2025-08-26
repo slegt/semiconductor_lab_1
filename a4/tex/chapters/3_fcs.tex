@@ -3,6 +3,7 @@ In order to draw conclusions about material properties by analyzing
 the temperature dependence of the charge carrier density,
 free carrier statistics and especially the influence of doping shall be
 discussed.
+This section follows derivations of \citeauthoryear{grundmann}, chapter 7.
 \subsection{Charge Carrier Density}
 The number of electrons per volume in the conduction band $n$ is
 determined by the following expression:
@@ -53,13 +54,14 @@ With that approximation, the free carrier density can be expressed as
 a function of the Fermi-energy:
 \begin{equation}
 	n	= { N_{\mathrm{C}} }\exp\left( \frac{E_{\mathrm{F}}
-		-E_{\mathrm{C}}}{\mathrm{k_B}T} \right).
+		-E_{\mathrm{C}}}{\mathrm{k}T} \right).
 	\label{eq:n}
 \end{equation}
 The same procedure can be applied in an analogous way for holes instead of
 electrons.
-Let $p$ be the number of holes per volume in the valence band,
-one finds with similar assumptions:
+Let $p$ be the number of holes per volume in the valence band, $E_\mathrm{V}$ 
+the maximum energy level of the valence band and $m^*_\mathrm{h}$ the
+effective hole mass. One finds with similar assumptions:
 \begin{align}
 	p            & = N_\mathrm{V} \exp
 	\left( - \frac{E_{\mathrm{F}}-E_{\mathrm{V}}}{\mathrm{k}T} \right)^{3 / 2}
@@ -113,8 +115,8 @@ which is a result of the higher charge of the donor's core.
 The energy level of this electron can be estimated by assuming
 energetically rescaled hydrogen orbitals.
 This rescaling originates from the effective electron mass and
-the screening of the coulomb interaction by the dielectric constant
-of the material.
+the screening of the coulomb interaction by the dielectric constant 
+$\epsilon_{\mathrm{r}}$ of the material.
 The absolute energetic position of the bound electron is
 $E_{\mathrm{D}}=E_{\mathrm{C}}-E_{\mathrm{D}}^{b}$ with
 \begin{equation}
@@ -128,10 +130,10 @@ Similar to intrinsic conduction, the additional electrons have a
 finite probability to shift into the conduction band
 (they donate an electron) and
 can therefore be used for n-type doping.
-The probability for an electron to occupy the bound state $f^0$
+The probability for an electron to occupy the bound state $f_0$
 (where '$0$' indicates that the donor is neutral) can be expressed
 by the Fermi-Dirac distribution.
-The probability for an electron to not occupy the bound state $f^+$
+The probability for an electron to not occupy the bound state $f_+$
 (where '$+$' indicates that the donor is ionized) can also be
 determined:
 \begin{align}
@@ -141,15 +143,15 @@ determined:
 	f_{+} & =(1-f_{0})=\frac{1}{1+\frac{g_{0}}{g_{+}}\exp\left(
 		\frac{E_{\mathrm{F}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}.
 \end{align}
-Note that the degeneracy of the states impact the distribution.
-A neutral donor has a degeneracy of $g^0=2$, since the bound
+Note that the degeneracy of states impact the distribution.
+A neutral donor has a degeneracy of $g_0=2$, since the bound
 electron can take two spin states, the degeneracy of the
-ionized donor is simply $g^+=1$.
+ionized donor is simply $g_+=1$.
 
 Either the electron occupies the bound state or it shifts into the
 conduction band.
-Let $N_\mathrm{d}$ be the donor concentration, $N_\mathrm{d}^0$ the
-number of neutral donors and $N_\mathrm{d}^+$ the number of ionized donors.
+Let $N_\mathrm{D}$ be the donor concentration, $N_\mathrm{D}^0$ the
+number of neutral donors and $N_\mathrm{D}^+$ the number of ionized donors.
 One finds the following relations:
 \begin{align}
 	N_{\mathrm{D}}     & =N_{\mathrm{D}}^{+}+N_{\mathrm{D}}^{0},        \\
@@ -198,18 +200,19 @@ A simple example is a material that is doped by only one donator material.
 By using \cref{eq:ndplus} and additionally assume sufficient low
 temperatures, intrinsic conduction can be neglected and the charge
 neutrality condition is reduced to $n = N_\mathrm{D}^+=N_\mathrm{D} f_+$.
-Substituting \cref{eq:n} and \cref{eq:fplus} results in:
+Substituting \cref{eq:n}, \cref{eq:fplus} and using $\hat{g}=g_0/g_+$
+results in:
 \begin{align}
 	\notag
-	n     & =\frac{N_{\mathrm{D}}}{1+\hat{g}
-		\exp\left( \frac{E_{\mathrm{F}}-E_{\mathrm{C}}}{\mathrm{k}T} \right)
-	\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}                   \\
-	\notag
-	      & =\frac{N_{\mathrm{D}}}{1+ \hat{g}n /N_{\mathrm{C}}\cdot
-	\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}, \label{eq:n_quad} \\
-	      & =\frac{N_{\mathrm{D}}}{1+n / n_{1}},                                             \\
+	n& =\frac{N_{\mathrm{D}}}{1+\hat{g}\exp\left( 
+		\frac{E_{\mathrm{F}}-E_{\mathrm{C}}}{\mathrm{k}T} \right)
+		\exp\left( \frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)}\\
+		\notag
+	& =\frac{N_{\mathrm{D}}}{1+ \hat{g}n /N_{\mathrm{C}}\cdot\exp\left( 
+		\frac{E_{\mathrm{C}}-E_{\mathrm{D}}}{\mathrm{k}T} \right)} \label{eq:n_quad} \\
+	& =\frac{N_{\mathrm{D}}}{1+n / n_{1}},\\
 	n_{1} & =	\frac{N_{\mathrm{C}}}{\hat{g}}
-	\exp\left( -\frac{E_{\mathrm{D}}^{b}}{\mathrm{k}T} \right)
+	\exp\left( -\frac{E_{\mathrm{D}}^{b}}{\mathrm{k}T} \right).
 \end{align}
 \Cref{eq:n_quad} is a quadratic equation in terms of $n$ and thus
 analytically solvable.
@@ -222,11 +225,11 @@ for low and high temperature.
 \end{equation}
 \begin{align}
 	\label{eq:n_T_approx_low}
-	n & \simeq \sqrt{ \frac{N_{\mathrm{D}}N_{\mathrm{C}}}{\hat{g}} }
+	n & \simeq \sqrt{ \frac{N_{\mathrm{D}}N_{\mathrm{C}}}{\hat{g}}}
 	\exp\left( \frac{-E_{\mathrm{D}}^{b}}{2 \mathrm{k}T} \right) & \mathrm{k}T\ll 
-	E_{\mathrm{D}}^{b} \\
+	E_{\mathrm{D}}^{b}, \\
 	\label{eq:n_T_approx_high}
-	n & \simeq N_{\mathrm{D}} & \mathrm{k}T\gg E_{\mathrm{D}}^{b}
+	n & \simeq N_{\mathrm{D}} & \mathrm{k}T\gg E_{\mathrm{D}}^{b}.
 \end{align}
 
 \begin{figure}

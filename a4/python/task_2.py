@@ -50,7 +50,7 @@ n_over_t = np.log(n * T_1 ** (-3 / 4))
 m, cov = curve_fit(linear, reciprocal_T[8:], n_over_t[8:])
 latex_data["slope"] = round(m[0], 2)
 latex_data["donor_energy"] = round(calculate_donor_energy(m[0]), 2)
-latex_data["n_d"] = round(max(n), 2)
+latex_data["n_d"] = f"{max(n):.2e}"
 
 plt.scatter(reciprocal_T * 1000, n_over_t, label="Data", s=8)
 plt.plot(

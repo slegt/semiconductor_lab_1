@@ -59,9 +59,9 @@ n_over_t = np.log(n_1 * T ** (-3 / 4))
 
 # Fit the data to a linear model
 m, cov = curve_fit(linear, reciprocal_T[8:21], n_over_t[8:21])
-latex_data["concentration"] = round(m[0], 2)
+latex_data["slope"] = round(m[0], 2)
 latex_data["donor_energy"] = round(calculate_donor_energy(m[0]), 2)
-latex_data["n_d"] = round(max(n_1), 2)
+latex_data["n_d"] = f"{max(n_1):.2e}"
 
 plt.scatter(reciprocal_T * 1000, n_over_t_uncorrected, label=" Uncorrected", s=8)
 plt.scatter(reciprocal_T * 1000, n_over_t, label="Corrected", s=8)
