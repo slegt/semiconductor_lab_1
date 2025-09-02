@@ -1,0 +1,80 @@
+\documentclass{beamer}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%logic
+\usepackage{pgffor}
+\usepackage{ifthen}
+%science
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+%language
+\usepackage[english]{babel}
+%formatting
+\usepackage{parskip}
+%images and plots
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{pgf}
+\usepackage{import}
+\usepackage{jsonparse}
+%tables
+\usepackage{booktabs}
+\usepackage{makecell}
+%citation, quatation and lists
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
+url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{csquotes}
+\usepackage{acro}
+
+
+%setup plugins
+\addbibresource{literature.bib}
+
+\captionsetup{justification=centering}
+\hypersetup{colorlinks=true,linkcolor=blue}
+
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\bar{bar}
+\sisetup{range-phrase = { to }}
+
+\usetheme{default}
+\setbeameroption{show notes on second screen=right}
+
+\title{Small Signal MOSFET Models}
+\subtitle{Derivation, Application and Generalization}
+\author{Simon Legtenborg}
+\date{\today}
+
+
+% Document
+\begin{document}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \input{chapters/1_introduction.tex}
+    \begin{frame}{Outline}
+        \tableofcontents
+
+        \note[item]{MOSFET is the simplest model.}
+        \note[item]{It is the most researched.}
+        \note[item]{It serves as the best introductory example.}
+        \note[item]{Zoom in for application.}
+        \note[item]{Zoom out for the greater picture.}
+    \end{frame}
+    \input{chapters/2_model.tex}
+    
+    
+
+
+
+    \section{Application in Circuit Analysis}
+    \section{Generalization to Other Transistor Types}
+
+\end{document}
