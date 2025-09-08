@@ -11,10 +11,10 @@ fi
 # Change to the tex directory relative to the script's location
 cd "$SCRIPT_DIR/tex" || exit
 
-xelatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
 biber main
-xelatex -shell-escape -interaction=nonstopmode main.tex
-xelatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
 
 # Create the build folder if it doesn't exist
 mkdir -p "$SCRIPT_DIR/build"

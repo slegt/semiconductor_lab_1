@@ -1,5 +1,4 @@
-\documentclass{beamer}
-
+\documentclass[10pt]{beamer}
 %math
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -26,6 +25,7 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 %citation, quatation and lists
+\usepackage{hyperref}
 \usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
 url=false,isbn=false,eprint=false]{biblatex}
 \usepackage[noabbrev,nameinlink]{cleveref}
@@ -35,9 +35,11 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 %setup plugins
 \addbibresource{literature.bib}
+\def\pgfsysdriver{pgfsys-dvipdfm.def}
+\usefonttheme{serif}
 
-\captionsetup{justification=centering}
 \hypersetup{colorlinks=true,linkcolor=blue}
+\captionsetup{justification=centering}
 
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}
@@ -51,30 +53,36 @@ url=false,isbn=false,eprint=false]{biblatex}
 \author{Simon Legtenborg}
 \date{\today}
 
+\makeatletter
+\newcommand{\printfontsize}{\f@size pt}
+\makeatother
 
 % Document
 \begin{document}
     \begin{frame}
         \titlepage
     \end{frame}
+    \begin{frame}
+         The total width of this slide is: \the\paperwidth \\
+         The total height of this slide is: \the\paperheight 
+         The font size is \printfontsize
+    \end{frame}
 
     \input{chapters/1_introduction.tex}
     \begin{frame}{Outline}
         \tableofcontents
 
-        \note[item]{MOSFET is the simplest model.}
-        \note[item]{It is the most researched.}
-        \note[item]{It serves as the best introductory example.}
-        \note[item]{Zoom in for application.}
-        \note[item]{Zoom out for the greater picture.}
+        \note[itemize]
+        {
+            \item MOSFET is the simplest model.
+            \item It is the most researched.
+            \item It serves as the best introductory example.
+            \item Zoom in for application.
+            \item Zoom out for the greater picture.
+        }
     \end{frame}
     \input{chapters/2_model.tex}
-    
-    
-
-
-
-    \section{Application in Circuit Analysis}
-    \section{Generalization to Other Transistor Types}
+    \input{chapters/3_application.tex}
+    \input{chapters/4_generalization.tex}
 
 \end{document}
