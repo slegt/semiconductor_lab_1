@@ -28,7 +28,7 @@ equation of motion from relaxation time approximation:
 	m^{*} \frac{\mathbf{v}}{\tau}=q(\mathbf{E}
 	+\mathbf{v}\times \mathbf{B}).
 \end{equation}
-In this equation, $m^{*}$ is the effective mass of the charge carrier,$q$ is the charge, 
+In this equation, $m^{*}$ is the effective mass of the charge carrier, $q$ is the charge, 
 $\mathbf{v}$ the average electron velocity and $\tau$ the relaxation time constant.
 With $\mathbf{j}=nq\mathbf{v}$ and the resistivity tensor $\hat{\rho}$, 
 this vector equation can be brought into a linear transformation of the form
@@ -90,7 +90,7 @@ Applying the equilibrium condition $\mathbf{v}=v_x \cdot \hat{x}$ and evaluating
 \cref{eq:mev} component-wise yields $v_{x} = \mu_{\mathrm{H}}E_{x}$ and 
 $E_{y}=B_{z}v_{x}=B_{z}\mu_{\mathrm{H}}E_{x}$.
 Using \cref{eq:hall_coefficient} and the sample's resistivity $\rho=E_x / j_x$, 
-the hall mobility can be expressed as
+the hall mobility can be expressed as:
 \begin{equation}
 	\mu_{\mathrm{H}}=\frac{E_y}{B_z E_x} =\frac{R_{\mathrm{H}}}{\rho} =\frac{1}{nq\rho}.
 	\label{eq:hall_mobility}
@@ -113,10 +113,10 @@ The derivations in this section follow \citeauthoryear{van_der_pauw}.
 Only samples that met the subsequent conditions can be measured with the Van der Pauw 
 method:
 \begin{itemize}
-	\item The contacts are at the circumference of the sample
-	\item The contacts are sufficiently small (compared to the sample size)
-	\item The sample is homogeneous and isotropic cocerning doping as well as thickness
-	\item The surface of the sampele is singly connected, i.e., the sample does not 
+	\item The contacts are at the circumference of the sample.
+	\item The contacts are sufficiently small (compared to the sample size).
+	\item The sample is homogeneous and isotropic cocerning doping as well as thickness.
+	\item The surface of the sampele is singly connected, i.e., the sample does not
 	have isolated holes.
 \end{itemize}
 To utilize the Van der Pauw method, four ohmic contacts need to be attached to the 
@@ -134,7 +134,7 @@ Let $i$ be an arbitrary element of $\mathbb{Z}/4\mathbb{Z}$.
 The current $I_{i, i+1}$ is defined as the positive current injected into contact $i$ 
 and extracted from contact $i+1$.
 The voltage $V_{i, i+1}$ is given by the potential difference between contact $i$ and 
-$i+1$ as $V_{i, i+i}=V_{i+i}-V_i$. 
+$i+1$ as $V_{i, i+1}=V_{i+1}-V_i$. 
 With these definitions, the resistivity can be calculated as 
 $R_{i, i+1; i+2, i+3}=V_{i+2, i+3} / {I_{i, i+1}}$. 
 Van der Pauw's theorem states that the resistivity can be calculated using 
@@ -151,7 +151,7 @@ where $d$ is the thickness of the sample and $f$ is a correction factor that sat
 The reciprocal theorem states that the resistances obey the relation 
 $R_{i, i+1; i+2, i+3}=R_{i+2, i+3; i, i+1}$ and 
 $R_{i, i+1;i+2, i+3}=R_{i+1, i; i+3, i+2}$.
-Therefore, we can measure the resistivity with four different contact configurations to 
+Therefore, the resistivity can be measured with four different contact configurations to
 increase measurement accuracy.
 
 Within the Van der Pauw configuration and the geometry depicted in 
@@ -159,7 +159,7 @@ Within the Van der Pauw configuration and the geometry depicted in
 coefficient $R_{\mathrm{H}}$ if a homogeneous magnetic field perpendicular to the 
 samples surface is applied.
 Since $I_{i, i+2}= j_x A$ for a cross-sectional area 
-$A = \sqrt{2} d t$ and a Hall voltage $V_{i+1 i+3} = E_y \sqrt{2} t$ for an 
+$A = \sqrt{2} d t$ and the Hall voltage $V_{i+1, i+3} = E_y \sqrt{2} t$,
 the Hall coefficient can be calculated using \cref{eq:hall_coefficient}:
 \begin{equation}
 	R_{\mathrm{H}}=\frac{d}{I_{i, i+2}B_{z}} 
@@ -171,7 +171,7 @@ originates from the earths magnetic field.
 
 \subsection{Notational Conventions}
 In \cref{eq:hall_coefficient_van_der_pauw}, the thickness $d$ is
-not measured as part of the experiment, but is given as a constant and measured
+not measured as part of the experiment, but is given as a constant and was measured
 beforehand. 
 Therefore, the Hall-Experiment itself does not yield thickness information.
 To represent this via notation, thickness independent (sheet) quantities are defined and 
@@ -212,22 +212,22 @@ given by Kirchhoff's current law:
 \begin{equation}
 	I_x = \sum_i I_{xi}.
 \end{equation}
-Using Ohm's law and $I_x=j_x A$, where $A=t d = t \sum d_i$ is the cross-sectional area of 
+Using Ohm's law and $I_x=j_x A$, where $A=t d = t \sum_i d_i$ is the cross-sectional area of 
 the sample perpendicular to the $x$-direction, a condition for the total Hall sheet 
 conductivity $\sigma_\mathrm{\square H}$ can be derived:
 \begin{align}
 	I_{x}&=j_{x}dt=\sigma E_{x} dt \notag\\
 	&=\sum_{i}I_{x i}=\sum_{i}j_{x i} d_{i}t \notag\\
-	&=\sum_{i}\sigma_{i} E_{x}d_{i}t  \\
-	\sigma d&=\sum_{i}\sigma_{i}d_{i} \\
-	\sigma_{\mathrm{\square}}&=\sum_{i} \sigma_{\square i}
+	&=\sum_{i}\sigma_{i} E_{x}d_{i}t, \\
+	\sigma d&=\sum_{i}\sigma_{i}d_{i}, \\
+	\sigma_{\mathrm{\square}}&=\sum_{i} \sigma_{\square i}.
 	\label{eq:multilayer_sum_1}
 \end{align}
 
 Using the equivalent circuit diagram in \cref{fig:multilayer_hall_2} and the conductance
 $G_i = R_i^{-1}$, an expression for the Hall voltage $V_{\mathrm{H}}$ is found:
 \begin{equation}
-	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}G_{i}}{\sum_{i}G_{i}}
+	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}G_{i}}{\sum_{i}G_{i}}.
 	\label{eq:multilayer_hall_voltage}
 \end{equation}
 The conductance depends on to the conductivity and the geometrical arrangement of the 
@@ -235,13 +235,13 @@ sample as $G_i = \sigma_i d_i w/ t$. Substituting this into
 \cref{eq:multilayer_hall_voltage} yields:
 \begin{equation}
 	V_{\mathrm{H}}=\frac{\sum_{i}V_{\mathrm{H}i}  
-	\sigma_{i}d_{i}}{\sum_{i} \sigma_{i}d_{i}}
+	\sigma_{i}d_{i}}{\sum_{i} \sigma_{i}d_{i}}.
 	\label{eq:multilayer_hall_voltage_2}
 \end{equation}
 Using \cref{eq:mej}, $E_y t = V$ and $I_x=j_x d t$, one finds an expression 
 for the Hall voltage:
 \begin{align}
-	E_{y}&=R_{\mathrm{H}}j_{x}B_{z} \\
+	E_{y}&=R_{\mathrm{H}}j_{x}B_{z},\\
 	\frac{V_{\mathrm{H}}}{t}&=R_{\mathrm{H}}\frac{I_{x}}{t d}B_{z}.
 	\label{eq:multilayer_hall_r}
 \end{align}
@@ -249,17 +249,17 @@ for the Hall voltage:
 $j_{xi}$, hall voltage $V_{\mathrm{H}i}$ and thickness $d_i$ as well as for the total 
 system:
 \begin{align}
-	V_{\mathrm{H}i} &= \frac{R_{\mathrm{H}i}I_{xi} B}{d_{i}} \\
-	V_{\mathrm{H}}&=\frac{R_{\mathrm{H}}I_{x}B}{d}
+	V_{\mathrm{H}i} &= \frac{R_{\mathrm{H}i}I_{xi} B_z}{d_{i}}, \\
+	V_{\mathrm{H}}&=\frac{R_{\mathrm{H}}I_{x}B_z}{d}.
 	\label{eq:multilayer_hall_r_2}
 \end{align}
 Substituting \cref{eq:multilayer_hall_r_2} into \cref{eq:multilayer_hall_voltage_2} and
 using the identity $I_{xi} /I=\sigma_{i}d_{i} /\sigma d$ results in:
 \begin{align}
 	\frac{R_{\mathrm{H}}}{d}=\frac{\sum R_{\mathrm{H}i} \sigma_{i}^{2} d_{i}}
-	{(\sigma d)^2} \\
+	{(\sigma d)^2}, \\
 	R_{\mathrm{H \square}}\sigma_{\square}^2=\sum_{i}R_{\mathrm{H}\square i} 
-	\sigma_{\square i}^{2}
+	\sigma_{\square i}^{2}.
 	\label{eq:multilayer_sum_2}
 \end{align}
 \Cref{eq:multilayer_sum_1} and \cref{eq:multilayer_sum_2} are two main results of the 
