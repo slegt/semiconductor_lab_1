@@ -1,15 +1,22 @@
 \section{Introduction}
 \begin{frame}{Introduction}
+	What is small signal analysis?
 	\begin{itemize}
-		\item Linear electrical systems are well researched.
-		\item Analytical solutions can be found.
-		\item Problems in circuit theory arise if nonlinear elements are part of the circuit.
-		\item It is only natural to find a linear approximation for circuits to utilize the standard
-		tool-set for circuit analysis.
-		\item The approximation is only valid in a small interval; only small signals can be 
-		analyzed.
+		\item Analyzing circuits with input and output signals containing nonlinear elements.
+		\item Input signal = DC bias + small AC signal.
+		\item Output signal = DC bias + small AC signal.
+		\item Goal: Relate input and output AC signals analytically. 
+		\item Solution: Linearize nonlinear elements around DC operating point (small signal model).
+		\item Analyze resulting linear circuit.
 	\end{itemize}
 \end{frame}
+\note[itemize]{
+		\item Linear electrical systems are well researched, allowing analytical solutions.
+		\item Nonlinear elements complicate circuit theory.
+		\item Linear approximations enable the use of standard circuit analysis tools.
+		\item Approximation is valid only for small signals within a limited interval.
+}
+
 \begin{frame}{Introduction}
 	\begin{figure}
 		\centering

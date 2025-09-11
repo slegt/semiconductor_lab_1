@@ -7,75 +7,90 @@
         $v_{\mathrm{gs}}$
         \item Superpositions of both quantities are labeled with lowercase variables and 
         UPPERCASE subindices: $v_{\mathrm{GS}}=V_{\mathrm{GS}}+v_{\mathrm{gs}}$
-
-        \begin{figure}
-            \centering
-            \includegraphics{../plots/notational_convention.pdf}
-            \caption{Notational conventions for DC and AC quantities.}
-            \label{fig:signal_convention}
-        \end{figure}
     \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics{../plots/notational_convention.pdf}
+        \caption{Notational conventions for DC and AC quantities.}
+        \label{fig:signal_convention}
+    \end{figure}
 \end{frame}
+\note[itemize]{
+    \item Entering small signal theory.
+    \item Superimposed quantity.
+}
+    
 
 \begin{frame}{Derivation: MOSFET Current-Voltage Characteristics}
     \vspace{0.5cm}
     \begin{figure}
         \centering
         \includegraphics{../plots/cv_characteristics.pdf}
-        \caption{MOSFET current-voltage characteristics.}
+        \caption{MOSFET current-voltage characteristics. Left: saturation drain current 
+        as a function of gate-to-source voltage. Right: drain current as a function of drain-to-source voltage
+        for different gate-to-source voltages.}
         \label{fig:mosfet_characteristics}
     \end{figure}
     \begin{itemize}
         \item Require saturation-region operation: $V_{\mathrm{DS}}\gg V_{\mathrm{GS}}-V_{\mathrm{t}}$
         \item In this regime, the following current-voltage characteristics are valid:
-            \begin{itemize}
-                \item $i_{\mathrm{drain}}=\frac{1}{2}k_{\mathrm{n}}(v_{\mathrm{gate}}-V_{\mathrm{t}})^{2}$
-                \item $i_{\mathrm{gate}}=0$
-            \end{itemize}
+        $i_{\mathrm{drain}}=\frac{1}{2}k_{\mathrm{n}}(v_{\mathrm{gate}}-V_{\mathrm{t}})^{2}$, 
+        $i_{\mathrm{gate}}=0$
     \end{itemize}
 \end{frame}
+\note[itemize]{
+    \item drain- and gate- voltage are relative to source.
+    \item depending on mode of operation, different behavior, different models
+    \item parabola intersects curve for $v_\mathrm{drain}=v_\mathrm{gate}-V_\mathrm{t}$
+}
 
 \begin{frame}{Derivation: Signal Current in Drain Terminal}
     \begin{itemize}
         \item Apply a signal $v_{\mathrm{GS}}=V_{\mathrm{GS}}+v_{\mathrm{gs}}$ to the gate terminal.
         \item This results in the following drain current:
     \end{itemize}
-    \begin{block}{}
-        \setlength{\abovedisplayskip}{0pt}
-        \setlength{\belowdisplayskip}{0pt}
-        \begin{align*}
-            i_{\mathrm{D}}&=\frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}+v_{\mathrm{gs}}
-            -V_{\mathrm{t}})^{2} \\
-            &=\underbrace{ \frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})^{2} }_{ =I_{\mathrm{D}}}+
-            k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})v_{\mathrm{gs}}
-            +\frac{1}{2}k_{\mathrm{n}}v_{\mathrm{gs}}^{2}
-        \end{align*}
-    \end{block}
+    \begin{align*}
+        i_{\mathrm{D}}&=\frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}+v_{\mathrm{gs}}
+        -V_{\mathrm{t}})^{2} \\
+        &=\underbrace{ \frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})^{2} }_{ =I_{\mathrm{D}}}
+        +\underbrace{k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})v_{\mathrm{gs}}}_{=i_{\mathrm{d}}}
+        +\underbrace{\frac{1}{2}k_{\mathrm{n}}v_{\mathrm{gs}}^{2}}_{ \text{negligible} }
+    \end{align*}
     \begin{itemize}
         \item The third term is negligible for sufficiently small $v_{\mathrm{gs}}$, i.e. 
         $v_{\mathrm{gs}}\ll 2(V_{\mathrm{GS}}-V_{\mathrm{t}})$.
-
     \end{itemize}
 \end{frame}
+\note[itemize]{
+    \item apply DC-bias and small AC signal to gate terminal
+    \item expand quadratic expression 
+    \item map terms to DC and AC components
+    \item first term corresponds to drain current originating from DC bias voltage
+    \item second term corresponds to small signal current originating from small signal voltage
+    \item third term quadratic in small signal voltage, negligible for sufficiently small signals
+}
 
 \begin{frame}{Derivation: Signal Current in Drain Terminal}
-    \begin{block}{}
-        \begin{itemize}
-            \item Neglecting the third term under the specified condition results in the following 
-            expression for the drain current $i_{\mathrm{D}}$:
-        \end{itemize}
-        \begin{align*}
-                i_{\mathrm{D}}&=I_{\mathrm{D}}+i_{\mathrm{d}} \\
-                I_{\mathrm{D}}&=\frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})^{2} \\
-                i_{\mathrm{d}}&=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})v_{\mathrm{gs}}
-        \end{align*}
-    \end{block}
-
     \begin{itemize}
-        \item the parameter, that related $i_{\mathrm{d}}$ and $v_{\mathrm{gs}}$ is called the 
-        transconductance $g_{\mathrm{m}}=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})$ 
+        \item Neglecting the third term under the specified condition results in the following 
+        expression for the drain current $i_{\mathrm{D}}$:
+    \end{itemize}
+    \begin{align*}
+            i_{\mathrm{D}}&=I_{\mathrm{D}}+i_{\mathrm{d}} \\
+            I_{\mathrm{D}}&=\frac{1}{2}k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})^{2} \\
+            i_{\mathrm{d}}&=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})v_{\mathrm{gs}}
+    \end{align*}
+    \begin{itemize}
+        \item The small signal current $i_{\mathrm{d}}$ depends linearly on the small signal voltage
+        $v_{\mathrm{gs}}$, which is a necessary condition for small signal models.
+        \item The parameter, that related $i_{\mathrm{d}}$ and $v_{\mathrm{gs}}$ is called the 
+        transconductance $g_{\mathrm{m}}=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})$.
     \end{itemize} 
 \end{frame}
+\note[itemize]{
+    \item conductance: relates current and voltage
+    \item trans: voltage and current terminals do not match
+}
 
 \begin{frame}{Derivation: Linear Circuit}
     \begin{itemize}
@@ -98,13 +113,15 @@
 
 \begin{frame}{Deviation: Small-Signal Equivalent Circuit}
     \begin{itemize}
-        \item Signal analysis can be simplified by separating DC calculation from small-signal calculation.
-        \item Only care about the signal components and assume one steady bias point.
-        \item From the preceding analysis, we get the following equations.
-        \begin{itemize}
-            \item $i_{\mathrm{g}}(v_{\mathrm{gs}}, v_{\mathrm{ds}})=0$ \\
-            \item $i_{\mathrm{d}}(v_{\mathrm{gs}}, v_{\mathrm{ds}})=g_{\mathrm{m}}v_{\mathrm{gs}}$
-        \end{itemize}
+        \item The small-signal model focuses on small-signal quantities only and operates as a 
+        linear circuit.
+        \item It assumes a steady DC bias point, treating DC quantities as constants that do not 
+        directly enter the circuit.
+        \item The analysis leads to the following equations for the small-signal behavior:
+        \begin{align*}
+            i_{\mathrm{g}}(v_{\mathrm{gs}}, v_{\mathrm{ds}}) &= 0 \\
+            i_{\mathrm{d}}(v_{\mathrm{gs}}, v_{\mathrm{ds}}) &= g_{\mathrm{m}}v_{\mathrm{gs}}
+        \end{align*}
         \item A circuit that satisfies these equations is called a small-signal equivalent circuit.
     \end{itemize}
 \end{frame}
@@ -116,4 +133,13 @@
         \caption{Small-signal equivalent circuit of a MOSFET.}
         \label{fig:mosfet_small_signal_model}
     \end{figure}
+    \begin{align*}
+        i_{\mathrm{g}}(v_{\mathrm{gs}}, v_{\mathrm{ds}}) &= 0 \\
+        i_{\mathrm{d}}(v_{\mathrm{gs}}, v_{\mathrm{ds}}) &= g_{\mathrm{m}}v_{\mathrm{gs}}
+    \end{align*}
 \end{frame}
+\note[itemize]{
+    \item open connection between gate and source, gate current zero
+    \item linear voltage controlled current source between drain and source
+    \item enough theory to analyze circuits
+}

@@ -8,23 +8,25 @@
         $i_{\mathrm{gate}}(v_{\mathrm{gate}}, v_{\mathrm{drain}})$
         \item Linearize the large signal models using a Taylor approximation
     \end{itemize}
-    \begin{align}
+    \begin{align*}
         i_{\mathrm{drain}}(&V_{\mathrm{GS}}+v_{\mathrm{gs}},
-        V_{\mathrm{DS}}+v_{\mathrm{ds}})=i_{\mathrm{drain}}
+        V_{\mathrm{DS}}+v_{\mathrm{ds}})\simeq i_{\mathrm{drain}}
         (V_{\mathrm{GS}},V_{\mathrm{DS}}) \\
         &+\left.\frac{\partial i_{\mathrm{drain}}}{\partial v_{\mathrm{gate}}}\right|
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{gs}} 
         + \left. \frac{\partial i_{\mathrm{drain}}}{\partial v_{\mathrm{drain}}} \right|
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{ds}} \\
         i_\mathrm{gate}(&V_{\mathrm{GS}}+v_{\mathrm{gs}},
-        V_{\mathrm{DS}}+v_{\mathrm{ds}})=i_{\mathrm{gate}}
+        V_{\mathrm{DS}}+v_{\mathrm{ds}})\simeq i_{\mathrm{gate}}
         (V_{\mathrm{GS}},V_{\mathrm{DS}}) \\
         &+\left.\frac{\partial i_\mathrm{gate}}{\partial v_{\mathrm{gate}}}\right|
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{gs}} 
         + \left. \frac{\partial i_\mathrm{gate}}{\partial v_{\mathrm{drain}}} \right|
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{ds}}
-    \end{align}
-    \note{item high frequency models can be derived by including $\dot{v}_{\mathrm{gate}}$ and 
-        $\dot{v}_\mathrm{drain}$ in the current voltage characteristics. 
-    }
+    \end{align*}
 \end{frame}
+\note[itemize]{
+    \item high frequency models can be derived by including $\dot{v}_{\mathrm{gate}}$ and 
+        $\dot{v}_\mathrm{drain}$ in the current voltage characteristics. 
+    \item partial derivatives are expression for conductance of transconductance in circuit
+    }

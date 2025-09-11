@@ -48,7 +48,7 @@ url=false,isbn=false,eprint=false]{biblatex}
 \usetheme{default}
 \setbeameroption{show notes on second screen=right}
 
-\title{Small Signal MOSFET Models}
+\title{A Small Signal MOSFET Model}
 \subtitle{Derivation, Application and Generalization}
 \author{Simon Legtenborg}
 \date{\today}
@@ -59,9 +59,16 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 % Document
 \begin{document}
+
     \begin{frame}
         \titlepage
     \end{frame}
+    \note[itemize]{
+        \item Welcome to this presentation
+        \item talk roughly 10 minutes about Small Signal Model, cover derivation, 
+        application and generalization
+    }
+
     \begin{frame}
          The total width of this slide is: \the\paperwidth \\
          The total height of this slide is: \the\paperheight 
@@ -69,20 +76,27 @@ url=false,isbn=false,eprint=false]{biblatex}
     \end{frame}
 
     \input{chapters/1_introduction.tex}
+
     \begin{frame}{Outline}
         \tableofcontents
-
-        \note[itemize]
+    \end{frame}
+    \note[itemize]
         {
             \item MOSFET is the simplest model.
             \item It is the most researched.
             \item It serves as the best introductory example.
             \item Zoom in for application.
+            \item Small signal model is only useful if one knows small signal analysis.
             \item Zoom out for the greater picture.
         }
-    \end{frame}
+
     \input{chapters/2_model.tex}
     \input{chapters/3_application.tex}
     \input{chapters/4_generalization.tex}
+
+    \begin{frame}{References}
+          \nocite{*}
+          \printbibliography
+    \end{frame}
 
 \end{document}
