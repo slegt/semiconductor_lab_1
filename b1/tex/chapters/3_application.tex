@@ -10,16 +10,19 @@
 
     What is the amplification $v_\mathrm{out}/v_\mathrm{in}$ of this amplification circuit?
     \begin{enumerate}
-        \item Identify DC operating point.
-        \item Replace MOSFET with small signal model.
-        \item Analyze resulting linear circuit.
+        \item Identify DC operating point
+        \item Replace MOSFET with small signal model, analyze small signal circuit
+        \item Sum DC and AC contributions
     \end{enumerate}
 \end{frame}
+\note[itemize]{
+    \item DC operating point: circuit state with only DC signals
+}
 
 \begin{frame}{Application: DC Operating Point}
     \begin{itemize}
         \item Replace AC sources with short circuits
-        \item large capacitors act as open circuits for DC signals
+        \item Large capacitors act as open circuits for DC signals
     \end{itemize}
     \begin{figure}
         \centering
@@ -39,7 +42,7 @@
 \begin{frame}{Application: Small Signal Replacement}
     \begin{itemize}
         \item Replace DC sources with short circuits
-        \item large capacitors act as short circuits for high frequency signals
+        \item Large capacitors act as short circuits for high frequency signals
         \item Simplify circuit using linear circuit analysis
     \end{itemize}
     \begin{figure}
@@ -62,7 +65,7 @@
     \end{figure}
 
     \begin{align*}
-        R'=R_\mathrm{D} \parallel R_\mathrm{L} &= \qty{5000}{\ohm} \\
+        R'=R_\mathrm{D} \parallel R_\mathrm{L} &= \qty{5}{\kilo \ohm} \\
         v_{\mathrm{in}}-v_{\mathrm{out}}&=R_{\mathrm{G}} i_{\mathrm{i}} \\
         (g_{\mathrm{m}}v_{\mathrm{gs}})+v_{\mathrm{out}} /R'&=i_{\mathrm{i}}
     \end{align*}
@@ -83,5 +86,4 @@
         v_{\mathrm{out}}\left( -1-\frac{R_{\mathrm{G}}}{R'} \right)&=v_{\mathrm{in}}(-1+R_{\mathrm{G}}g_{\mathrm{m}}) \\
         \frac{v_{\mathrm{out}}}{v_{\mathrm{in}}}&=\frac{1-R_{\mathrm{G}}g_{\mathrm{m}}}{1+R_{\mathrm{g}} / R'}=\num{-3.6}
     \end{align*}
-    
 \end{frame}

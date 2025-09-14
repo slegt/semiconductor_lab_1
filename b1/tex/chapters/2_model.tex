@@ -16,8 +16,10 @@
     \end{figure}
 \end{frame}
 \note[itemize]{
-    \item Entering small signal theory.
-    \item Superimposed quantity.
+    \item Entering small signal theory
+    \item Superimposed quantity
+    \item DC: direct current
+    \item AC: alternating current
 }
     
 
@@ -27,8 +29,8 @@
         \centering
         \includegraphics{../plots/cv_characteristics.pdf}
         \caption{MOSFET current-voltage characteristics. Left: saturation drain current 
-        as a function of gate-to-source voltage. Right: drain current as a function of drain-to-source voltage
-        for different gate-to-source voltages.}
+        as a function of gate voltage. Right: drain current as a function of 
+        drain voltage for different gate voltages.}
         \label{fig:mosfet_characteristics}
     \end{figure}
     \begin{itemize}
@@ -39,14 +41,15 @@
     \end{itemize}
 \end{frame}
 \note[itemize]{
-    \item drain- and gate- voltage are relative to source.
-    \item depending on mode of operation, different behavior, different models
-    \item parabola intersects curve for $v_\mathrm{drain}=v_\mathrm{gate}-V_\mathrm{t}$
+    \item Drain- and gate- voltage are relative to source.
+    \item Depending on mode of operation, different behavior, different models
+    \item Parabola intersects curve for $v_\mathrm{drain}=v_\mathrm{gate}-V_\mathrm{t}$
+    \item Plots data was made using NGSpice
 }
 
 \begin{frame}{Derivation: Signal Current in Drain Terminal}
     \begin{itemize}
-        \item Apply a signal $v_{\mathrm{GS}}=V_{\mathrm{GS}}+v_{\mathrm{gs}}$ to the gate terminal.
+        \item Apply a signal $v_{\mathrm{GS}}=V_{\mathrm{GS}}+v_{\mathrm{gs}}$ to the gate terminal
         \item This results in the following drain current:
     \end{itemize}
     \begin{align*}
@@ -58,16 +61,16 @@
     \end{align*}
     \begin{itemize}
         \item The third term is negligible for sufficiently small $v_{\mathrm{gs}}$, i.e. 
-        $v_{\mathrm{gs}}\ll 2(V_{\mathrm{GS}}-V_{\mathrm{t}})$.
+        $v_{\mathrm{gs}}\ll 2(V_{\mathrm{GS}}-V_{\mathrm{t}})$
     \end{itemize}
 \end{frame}
 \note[itemize]{
-    \item apply DC-bias and small AC signal to gate terminal
-    \item expand quadratic expression 
+    \item Apply DC-bias and small AC signal to gate terminal
+    \item Expand quadratic expression 
     \item map terms to DC and AC components
-    \item first term corresponds to drain current originating from DC bias voltage
-    \item second term corresponds to small signal current originating from small signal voltage
-    \item third term quadratic in small signal voltage, negligible for sufficiently small signals
+    \item First term corresponds to drain current originating from DC bias voltage
+    \item Second term corresponds to small signal current originating from small signal voltage
+    \item Third term quadratic in small signal voltage, negligible for sufficiently small signals
 }
 
 \begin{frame}{Derivation: Signal Current in Drain Terminal}
@@ -82,36 +85,17 @@
     \end{align*}
     \begin{itemize}
         \item The small signal current $i_{\mathrm{d}}$ depends linearly on the small signal voltage
-        $v_{\mathrm{gs}}$, which is a necessary condition for small signal models.
+        $v_{\mathrm{gs}}$, which is a necessary condition for small signal models
         \item The parameter, that related $i_{\mathrm{d}}$ and $v_{\mathrm{gs}}$ is called the 
-        transconductance $g_{\mathrm{m}}=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})$.
+        transconductance $g_{\mathrm{m}}=k_{\mathrm{n}}(V_{\mathrm{GS}}-V_{\mathrm{t}})$
     \end{itemize} 
 \end{frame}
 \note[itemize]{
-    \item conductance: relates current and voltage
-    \item trans: voltage and current terminals do not match
+    \item Conductance: relates current and voltage
+    \item Trans: voltage and current terminals do not match
 }
 
-\begin{frame}{Derivation: Linear Circuit}
-    \begin{itemize}
-        \item A linear circuit is a circuit that obeys the superposition principle:
-        \begin{itemize}
-            \item Let the output of the circuit be $F(x)$.
-            \item Let the input signal be a linear combination $a x_{1}(t)+b x_{2}(t)$.
-            \item The circuit satisfies $F(a x_{1}(t) + b x_{2}(t)) = a F(x_{1}(t)) + b F(x_{2}(t))$.
-        \end{itemize}
-        \item Circuits made of ideal resistors, capacitors, inductors, voltage- and current sources are linear circuits.
-        \item Circuits are nonlinear if they have nonlinear components (e.g., diodes, transistors).
-        \item When small signals are applied, transistors tend to behave approximately linearly:
-        \begin{itemize}
-            \item They can be replaced with a small signal model.
-            \item This allows the use of linear analysis techniques.
-        \end{itemize}
-    \end{itemize}
-    \note[item]{Other components, whole digital logic circuits}
-\end{frame}
-
-\begin{frame}{Deviation: Small-Signal Equivalent Circuit}
+\begin{frame}{Derivation: Small-Signal Equivalent Circuit}
     \begin{itemize}
         \item The small-signal model focuses on small-signal quantities only and operates as a 
         linear circuit.
@@ -126,7 +110,7 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Deviation: Small-Signal Equivalent Circuit}
+\begin{frame}{Derivation: Small-Signal Equivalent Circuit}
     \begin{figure}
         \centering
         \includegraphics{../assets/small_signal.pdf}
@@ -139,7 +123,7 @@
     \end{align*}
 \end{frame}
 \note[itemize]{
-    \item open connection between gate and source, gate current zero
-    \item linear voltage controlled current source between drain and source
-    \item enough theory to analyze circuits
+    \item Open connection between gate and source, gate current zero
+    \item Linear voltage controlled current source between drain and source
+    \item Enough theory to analyze circuits
 }

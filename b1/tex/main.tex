@@ -26,8 +26,8 @@
 \usepackage{makecell}
 %citation, quatation and lists
 \usepackage{hyperref}
-\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
-url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[style=numeric,maxcitenames=2,sorting=nty,doi=false,
+url=false,isbn=false,eprint=false,note=false,giveninits=true]{biblatex}
 \usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage{csquotes}
 \usepackage{acro}
@@ -50,8 +50,8 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 \title{A Small Signal MOSFET Model}
 \subtitle{Derivation, Application and Generalization}
-\author{Simon Legtenborg}
-\date{\today}
+\author{Simon Legtenborg, 3773994}
+\date{September 16, 2025}
 
 \makeatletter
 \newcommand{\printfontsize}{\f@size pt}
@@ -65,15 +65,9 @@ url=false,isbn=false,eprint=false]{biblatex}
     \end{frame}
     \note[itemize]{
         \item Welcome to this presentation
-        \item talk roughly 10 minutes about Small Signal Model, cover derivation, 
+        \item Talk roughly 10 minutes about small signal model, cover derivation, 
         application and generalization
     }
-
-    \begin{frame}
-         The total width of this slide is: \the\paperwidth \\
-         The total height of this slide is: \the\paperheight 
-         The font size is \printfontsize
-    \end{frame}
 
     \input{chapters/1_introduction.tex}
 
@@ -84,7 +78,7 @@ url=false,isbn=false,eprint=false]{biblatex}
         {
             \item MOSFET is the simplest model.
             \item It is the most researched.
-            \item It serves as the best introductory example.
+            \item It serves as the best introductory example for short presentation
             \item Zoom in for application.
             \item Small signal model is only useful if one knows small signal analysis.
             \item Zoom out for the greater picture.
@@ -95,8 +89,8 @@ url=false,isbn=false,eprint=false]{biblatex}
     \input{chapters/4_generalization.tex}
 
     \begin{frame}{References}
-          \nocite{*}
-          \printbibliography
+        \nocite{*}
+        \printbibliography[shortauthor=true]
     \end{frame}
 
 \end{document}
