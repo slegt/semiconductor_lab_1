@@ -16,13 +16,6 @@
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{gs}} 
         + \left. \frac{\partial i_{\mathrm{drain}}}{\partial v_{\mathrm{drain}}} \right|
         _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{ds}} \\
-        i_\mathrm{gate}(&V_{\mathrm{GS}}+v_{\mathrm{gs}},
-        V_{\mathrm{DS}}+v_{\mathrm{ds}})\simeq i_{\mathrm{gate}}
-        (V_{\mathrm{GS}},V_{\mathrm{DS}}) \\
-        &+\left.\frac{\partial i_\mathrm{gate}}{\partial v_{\mathrm{gate}}}\right|
-        _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{gs}} 
-        + \left. \frac{\partial i_\mathrm{gate}}{\partial v_{\mathrm{drain}}} \right|
-        _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{ds}}
     \end{align*}
 \end{frame}
 \note[itemize]{
@@ -30,3 +23,24 @@
         $\dot{v}_\mathrm{drain}$ in the current voltage characteristics
     \item Partial derivatives are expression for conductance of transconductance in circuit
     }
+
+\section{Generalization}
+\begin{frame}{Generalization}
+    \begin{itemize}
+        \item The procedure for deriving small signal models can be generalized to other 
+        transistor types and more complex models
+        \item Find large signal models (for low frequency): 
+        $i_{\mathrm{drain}}(v_{\mathrm{gate}}, v_{\mathrm{drain}})$ and 
+        $i_{\mathrm{gate}}(v_{\mathrm{gate}}, v_{\mathrm{drain}})$
+        \item Linearize the large signal models using a Taylor approximation
+    \end{itemize}
+    \begin{align*}
+        \underbrace{ i_{\mathrm{drain}}(V_{\mathrm{GS}}+v_{\mathrm{gs}},
+        V_{\mathrm{DS}}+v_{\mathrm{ds}}) }_{ i_{\mathrm{D}} }\simeq \underbrace{ i_{\mathrm{drain}}
+        (V_{\mathrm{GS}},V_{\mathrm{DS}}) }_{ I_{\mathrm{D}} } \\
+        +\underbrace{ \left.\frac{\partial i_{\mathrm{drain}}}{\partial v_{\mathrm{gate}}}\right|
+        _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{gs}}
+        + \left. \frac{\partial i_{\mathrm{drain}}}{\partial v_{\mathrm{drain}}} \right|
+        _{(V_{\mathrm{GS}},V_{\mathrm{DS}})} v_{\mathrm{ds}}}_{ i_{\mathrm{d}} } \\
+    \end{align*}
+\end{frame}

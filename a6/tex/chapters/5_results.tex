@@ -1,0 +1,185 @@
+\section{Results and Discussion}
+\subsection{Hall Effect Measurements at Room Temperature}
+Measurements were performed on p-type silicon (\ce{p-Si}, $d=\qty{500}{\micro\meter}$), 
+zinc oxide (\ce{ZnO}, $d=\qty{1}{\micro\meter}$), zinc tin oxide (\ce{ZTO}, 
+$d=\qty{1.3}{\micro\meter}$) and copper iodide (\ce{CuI}, $d=\qty{0.339}{\micro\meter}$) 
+thin film samples.
+Using the Van der Pauw method, the resistivity, Hall carrier concentration and Hall 
+coefficients were determined for each sample.
+
+With four distinct sample contact configurations, four measurements were performed 
+per sample. 
+The resistivity $\rho$ was calculated using \cref{eq:hall_resistivity}, 
+the Hall coefficient $R_{\mathrm{H}}$ using \cref{eq:hall_coefficient_van_der_pauw},
+the carrier concentration $n$ using \cref{eq:hall_concentration} 
+and the Hall mobility $\mu_{\mathrm{H}}$ using \cref{eq:hall_mobility}.
+The results are displayed in \cref{tab:hall_results_detail}.
+
+An important observation is the varying sign of $R_{\mathrm{H}}$. 
+Since the sign of the Hall coefficient is determined by the majority charge carrier
+(positive for holes, negative for electrons), this indicates that holes are the majority
+charge carrier for \ce{p-Si} and \ce{CuI}. 
+Electrons are the majority charge carrier for \ce{ZnO} and \ce{ZTO}. 
+
+\subsection{Temperature Dependent Hall Effect Measurements}
+Temperature dependent Hall effect measurements for a bulk \ce{ZnO} sample 
+were performed in the Temperature range from \qty{20}{\kelvin} to \qty{325}{\kelvin}.
+Both the Hall mobility and Hall carrier concentration were determined for each 
+temperature and are displayed in 
+\cref{fig:zno_hall_effect_n,fig:zno_hall_effect_mu} respectively.
+
+The graph of the Hall carrier concentration in \cref{fig:zno_hall_effect_n} shows a 
+linear decrease with increasing inverse temperature. 
+This observation can be explained using the low temperature approximation 
+\cref{eq:n_T_approx_low}:
+
+\begin{align}
+	&n = \text{const.} \cdot T^{3/2} \exp\left( \frac{-E_{\mathrm{D}}^{b}}{2 \mathrm{k}T} \right), \\
+	\ln(&n T^{-3/2}) = \ln(\text{const.}) - \frac{E_{\mathrm{D}}^{b}}{2 \mathrm{k}} \frac{1}{T}.
+	\label{eq:n_T_approx_low_linear}
+\end{align}
+
+Using a linear fit, one obtains a slope of \qty{\taskTwoSlope}{\kelvin}.
+With \cref{eq:n_T_approx_low_linear}, this slope can be used to determine the donor energy 
+$E_{\mathrm{D}}^{b} = \qty{\taskTwoEnergy}{\milli \electronvolt}$.
+For high temperatures, the carrier concentration saturates, since all donors are ionized.
+By applying \cref{eq:n_T_approx_high}, the donor concentration can be estimated to be
+$N_{\mathrm{D}} = \qty{\taskTwoND}{\per \meter\cubed}$.
+
+The Hall mobility in \cref{fig:zno_hall_effect_mu} can be parted into three distinct 
+regions.
+For every region, the data follows a linear trend, that can be described using three 
+linear fits.
+The first region has a slope of \num{\taskTwoSlopeOne}, the second region has a slope of
+\num{\taskTwoSlopeTwo} 
+and the third region has a slope of \num{\taskTwoSlopeThree}.
+
+In a $\log-\log$ plot, a linear function indicates a power law relationship, whereby the
+slope of the line corresponds to the exponent of the power law. 
+Since the mobility is determined by scattering processes, that have a characteristic 
+temperature dependence, different scattering mechanisms can be identified. 
+The first region, where $\mu_\mathrm{H} \propto T^{3 / 2}$, can be explained by 
+ionized impurity scattering.
+The second region, where $\mu_\mathrm{H} \propto T^{\taskTwoSlopeTwo} \simeq T^{-1/2}$, 
+can be explained by piezoelectric potential scattering.
+The third region, where $\mu_\mathrm{H} \propto T^{\taskTwoSlopeThree} 
+\simeq T^{-3 / 2}$, can be explained by deformation potential scattering.
+
+\begin{figure*}
+	\centering
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics{../plots/task_2_n.pdf}
+		\caption{Hall carrier concentration of a bulk \ce{ZnO} sample as a function of temperature.}
+		\label{fig:zno_hall_effect_n}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics{../plots/task_2_mu.pdf}
+		\caption{Hall mobility of a bulk \ce{ZnO} sample as a function of temperature.}
+		\label{fig:zno_hall_effect_mu}
+	\end{subfigure}
+	\caption{Temperature-dependent Hall effect measurements of a bulk \ce{ZnO} sample.}
+	\label{fig:zno_hall_effect_combined}
+\end{figure*}
+
+\subsection{Interpretation of an Unusual Data Set}
+Temperature dependent Hall effect measurements of a \ce{ZnO} thin film sample
+were performed in the temperature range from \qty{20}{\kelvin} to \qty{325}{\kelvin}.
+However, the dataset does not seem to match a single donor model, as the carrier 
+concentration raises with falling temperature.
+The uncorrected data is shown in \cref{zno_hall_n}, it does not show a linear trend. 
+
+This could indicate that the sample is not a single donor system. 
+However, \citeauthoryear{look} suggest, that the sample is a single donor system, 
+but a two-layer Hall analysis needs to be performed to correct the data. 
+Since \ce{ZnO} and sapphire have a large lattice mismatch, a highly dislocated region 
+at the interface between thin film and substrate is generated during growth. 
+This high-density region of stacking faults significantly affects the carrier 
+concentration as well as the mobility as a function of temperature.
+
+For a two-layer Hall analysis, the \ce{ZnO} thin film is indexed as '\num{1}' and the 
+dislocated region at the interface as '\num{2}'. 
+Using \cref{eq:multilayer_sum_1,eq:multilayer_sum_2} the following expressions can be found:
+\begin{align}
+	\sigma_{\square}=e\mu_{\mathrm{H}1}n_{ \square 1}
+	+e \mu_{\mathrm{H}2} n_{ \square 2}, \\
+	R_{\square} \sigma_{\square}^{2}=e \mu_{\mathrm{H} 1}^{2} n_{ \square 1} 
+	+ e\mu_{\mathrm{H} 2}^{2} n_{ \square 2}.
+\end{align}
+It is possible to find an analytical expression for 
+$\mu_\mathrm{H}$ and $n$:
+\begin{align}
+	\mu_{\mathrm{H}}&=R_{\square} \sigma_{\square}
+	=\frac{R_{\square} \sigma_{\square}^{2} /d}{\sigma_{\square} / d}\notag \\
+	&=\frac{\mu_{\mathrm{H}1}^{2}n_{1}
+	+\mu_\mathrm{H2}^{2} n_{\square2} /d}{\mu_{\mathrm{H}1}n_{1}
+	+\mu_{\mathrm{H}2}n_{\square{2}} /d}, \\
+	n_{}=\frac{n_{ \square}}{d}&=\frac{1}{eR_{\square}d}
+	= \frac{\sigma^{2}_{\square}/ d^{2}}{eR_{\square}\sigma_{\square}^{2} / d} \notag  \\
+	&=\frac{(\mu_{\mathrm{H}1}n_{1}
+	+\mu_{\mathrm{H}2}n_{\square2} /d)^{2}}{\mu_{\mathrm{H}1}^{2}n_{1}
+	+\mu_{\mathrm{H}2}^{2} n_{ \square 2} /d}.
+\end{align}
+Since the donor atoms freeze at low temperatures, the interface layer must be dominant 
+in this region. 
+The paper suggest that the layer's carrier concentration and mobility is 
+temperature independent, resulting in
+$n=n_{ \square 2} / d = \qty{\taskThreeInterfaceN}{\per\meter\cubed}$ 
+and 
+$\mu_{\mathrm{H}}=\mu_{\mathrm{H 2}} = \qty{\taskThreeInterfaceM}{\centi\meter\squared\per\volt\per\second}$
+for $T \to \qty{0}{\kelvin}$. 
+
+An expression for the corrected hall mobility $\mu_{\mathrm{H} 1}$ and  
+hall carrier concentration $n_{1}$ can thus be found:
+\begin{align}
+	\mu_{\mathrm{H} 1}=\frac{\mu_{\mathrm{H}}^{2} n_{}- \mu_{2} ^{2} 
+	n_{ \square 2} /d}{\mu_{\mathrm{H}} n_{} - \mu_{2} n_{\square 2} / d}, \\
+	n_{1} = \frac{(\mu_{\mathrm{H}}n_{}-\mu_{2}n_{\square 2} 
+	/ d)^{2}}{\mu_{\mathrm{H}}^{2}n_{}-\mu_{2}^{2} n_{\square 2} / d}.
+\end{align}
+The corrected carrier density is displayed in \cref{zno_hall_n} and can
+now be identified with the single-donor case.
+Using linear regression, a slope of \num{\taskThreeSlope} and a corresponding donor 
+energy of $\qty{\taskThreeEnergy}{\milli \electronvolt}$ can be determined.
+The donor concentration was estimated using \cref{eq:n_T_approx_high} to be
+$N_{\mathrm{D}} = \qty{\taskThreeND}{\per\meter \cubed}$.
+
+The corrected mobility is displayed in \cref{zno_hall_mu} and shows a linear trend with a 
+slope of \num{\taskThreeMobilityOne} for the first region and a slope of 
+\num{\taskThreeMobilityThree} for the second region.
+The log-log plot indicates a power law relationship, that can be explained by
+deformation potential scattering since 
+$\mu_\mathrm{H} \propto T^{\taskThreeMobilityThree} \simeq T^{-3/2}$.
+
+\begin{figure*}
+	\centering
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics{../plots/task_3_n.pdf}
+		\caption{Corrected and uncorrected Hall carrier concentration of a \ce{ZnO} thin 
+		film sample as a function of temperature.}
+		\label{zno_hall_n}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics{../plots/task_3_mu.pdf}
+		\caption{Corrected and uncorrected Hall mobility of a \ce{ZnO} thin film sample as 
+		a function of temperature.}
+		\label{zno_hall_mu}
+	\end{subfigure}
+	\caption{Corrected and uncorrected Hall effect measurements of a \ce{ZnO} thin film sample.}
+	\label{fig:zno_hall_effect_corrected}
+\end{figure*}
+
+\begin{table*}
+	\centering
+	\input{../plots/resistivity_hall.tex}
+	\caption{Hall effect quantities of p-Si, ZnO, ZTO and CUI thin film samples.
+	$\rho$ in \unit{\ohm \meter}, $R_{\mathrm{H}}$ in \unit{\meter\cubed\per\coulomb},
+	$n$ in \unit{\per\meter\cubed} and $\mu_{\mathrm{H}}$ in 
+	\unit{\meter\squared\per\volt\per\second}.}
+	\label{tab:hall_results_detail}
+\end{table*}
