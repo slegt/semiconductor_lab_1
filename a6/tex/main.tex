@@ -75,33 +75,28 @@ url=false,isbn=false,eprint=false]{biblatex}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
-%import json
-
+\DeclareAcronym{zno}{
+    short = \ce{ZnO},
+    long = zinc oxide
+}
+\DeclareAcronym{hrxrd}{
+    short = HRXRD,
+    long = high-resolution x-ray diffraction
+}
 
 
 
 
 % Document
 \begin{document}
-\pagenumbering{arabic}
-\begin{figure*}
-    \centering
-    \begin{subfigure}{0.3\linewidth}
-        \includegraphics{../assets/pseudomorphic.pdf}
-        \caption{Pseudomorphical growth of a thin film on a substrate}
-    \end{subfigure}
-    \begin{subfigure}{0.3\linewidth}
-        \includegraphics{../assets/partially_relaxed.pdf}
-        \caption{Partially relaxed thin film on a substrate}
-    \end{subfigure}
-        \begin{subfigure}{0.3\linewidth}
-        \includegraphics{../assets/fully_relaxed.pdf}
-        \caption{Fully relaxed thin film on a substrate}
-    \end{subfigure}
-    \caption{(a) The unit cells of the substrate and the thin film are shown. The lattice constant 
-    of the thin film is larger than that of the substrate. (b) The thin film is grown 
-    pseudomorphically on the substrate. The in-plane lattice constant of the thin film is compressed 
-    to match that of the substrate, while the out-of-plane lattice constant is expanded.}
-\end{figure*}
+    \pagenumbering{arabic}
 
+    \input{chapters/3_theory}
+    \clearpage
+    \begin{strip}
+        \printbibliography
+        \listoffigures
+        \listoftables
+    \end{strip}
+    \phantom{T}
 \end{document}
