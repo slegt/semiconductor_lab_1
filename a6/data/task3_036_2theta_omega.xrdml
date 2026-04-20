@@ -1,0 +1,136 @@
+<xrdMeasurements xmlns="http://www.xrdml.com/XRDMeasurement/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xrdml.com/XRDMeasurement/2.1 http://www.xrdml.com/XRDMeasurement/2.1/XRDMeasurement.xsd" status="Completed">
+	<comment>
+		<entry>Configuration=Factory configuration, Owner=User-1, Creation date=7/8/2013 4:01:53 PM</entry>
+		<entry>Goniometer=PW3050/65 (Theta/2Theta); Minimum step size 2Theta:0.0001; Minimum step size Omega:0.0001</entry>
+		<entry>Sample stage=MRD Cradle; Minimum step size Phi:0.01; Minimum step size Chi:0.01; Minimum step size X:0.01; Minimum step size Y:0.01; Minimum step size Z:0.001</entry>
+		<entry>Diffractometer system=XPERT-PRO</entry>
+		<entry>Measurement program=Manual, Owner=User-1, Creation date=3/14/2025 1:14:06 PM</entry>
+		<entry>Fine Calibration Offset for 2Theta = 0.0088 deg</entry>
+	</comment>
+	<sample type="To be analyzed">
+		<id></id>
+		<name></name>
+		<preparedBy></preparedBy>
+	</sample>
+	<xrdMeasurement measurementType="Scan" status="Completed" sampleMode="Reflection">
+		<comment>
+			<entry>PHD Lower Level = 5.63 (keV), PHD Upper Level = 12.88 (keV)</entry>
+		</comment>
+		<usedWavelength intended="K-Alpha 1">
+			<kAlpha1 unit="Angstrom">1.5405980</kAlpha1>
+			<kAlpha2 unit="Angstrom">1.5444260</kAlpha2>
+			<kBeta unit="Angstrom">1.3922500</kBeta>
+			<ratioKAlpha2KAlpha1>0.5000</ratioKAlpha2KAlpha1>
+		</usedWavelength>
+		<incidentBeamPath>
+			<radius unit="mm">320.00</radius>
+			<xRayTube id="1010048" name="Empyrean Cu LFF HR (9430 033 7310x) DK442154">
+				<tension unit="kV">40.0</tension>
+				<current unit="mA">40.0</current>
+				<anodeMaterial>Cu</anodeMaterial>
+				<focus type="Line">
+					<length unit="mm">12.0</length>
+					<width unit="mm">0.4</width>
+					<takeOffAngle unit="deg">4.2</takeOffAngle>
+				</focus>
+			</xRayTube>
+			<xRayMirror id="27090001" name="Inc. Beam Cu W/Si (hybrid MRD)" hybrid="true">
+				<crystal type="Graded" shape="Parabolic">W/Si</crystal>
+				<acceptanceAngle unit="deg">0.800</acceptanceAngle>
+				<length unit="mm">60.0</length>
+			</xRayMirror>
+			<monochromator id="23090002" name="Hybrid monochr. 2xGe(220) Cu asym." hybrid="true">
+				<crystal type="Asymmetric" shape="Flat">Ge</crystal>
+				<numberOfReflections>2</numberOfReflections>
+				<hkl>
+					<h>2</h>
+					<k>2</k>
+					<l>0</l>
+				</hkl>
+			</monochromator>
+			<sollerSlit id="21010002" name="Soller slits 0.04 rad.">
+				<opening unit="rad">0.0400</opening>
+			</sollerSlit>
+			<divergenceSlit id="22010007" name="Fixed slit 1/8°" xsi:type="fixedDivergenceSlitType">
+				<distanceToSample unit="mm">220.00</distanceToSample>
+				<height unit="mm">0.19</height>
+			</divergenceSlit>
+		</incidentBeamPath>
+		<sampleOffset>
+			<position axis="2Theta" unit="deg">0.0000</position>
+			<position axis="Omega" unit="deg">0.1017</position>
+			<position axis="Phi" unit="deg">-270.00</position>
+		</sampleOffset>
+		<diffractedBeamPath>
+			<radius unit="mm">320.00</radius>
+			<monochromator id="23010018" name="3xGe(220) sym. Cu" hybrid="false">
+				<crystal type="Symmetric" shape="Flat">Ge</crystal>
+				<numberOfReflections>3</numberOfReflections>
+				<hkl>
+					<h>2</h>
+					<k>2</k>
+					<l>0</l>
+				</hkl>
+			</monochromator>
+			<detector id="7010011" name="Proportional detector Xe" xsi:type="pointDetectorType">
+				<phd unit="%">
+					<lowerLevel>35.0</lowerLevel>
+					<upperLevel>80.0</upperLevel>
+				</phd>
+			</detector>
+		</diffractedBeamPath>
+		<scan appendNumber="0" mode="Continuous" scanAxis="2Theta-Omega" status="Completed">
+			<header>
+				<startTimeStamp>2025-03-14T13:47:06+01:00</startTimeStamp>
+				<endTimeStamp>2025-03-14T13:51:18+01:00</endTimeStamp>
+				<author>
+					<name>PRO-MRD</name>
+				</author>
+				<source>
+					<applicationSoftware version="6.1b">Data Collector</applicationSoftware>
+					<instrumentControlSoftware version="7.0E 20130304">XPERT-PRO</instrumentControlSoftware>
+					<instrumentID>0000000011142674</instrumentID>
+				</source>
+			</header>
+			<scanAxisCenter>
+				<position axis="2Theta" unit="deg">83.2190</position>
+				<position axis="Omega" unit="deg">41.6215</position>
+			</scanAxisCenter>
+			<reflection>
+				<material>Al2O3 (012) r</material>
+				<hkl>
+					<h>0</h>
+					<k>3</k>
+					<l>6</l>
+				</hkl>
+			</reflection>
+			<dataPoints>
+				<positions axis="2Theta" unit="deg">
+					<startPosition>82.9700</startPosition>
+					<endPosition>83.4680</endPosition>
+				</positions>
+				<positions axis="Omega" unit="deg">
+					<startPosition>41.49700</startPosition>
+					<endPosition>41.74600</endPosition>
+				</positions>
+				<positions axis="Phi" unit="deg">
+					<commonPosition>0.00</commonPosition>
+				</positions>
+				<positions axis="Chi" unit="deg">
+					<commonPosition>0.00</commonPosition>
+				</positions>
+				<positions axis="X" unit="mm">
+					<commonPosition>0.00</commonPosition>
+				</positions>
+				<positions axis="Y" unit="mm">
+					<commonPosition>0.00</commonPosition>
+				</positions>
+				<positions axis="Z" unit="mm">
+					<commonPosition>9.300</commonPosition>
+				</positions>
+				<commonCountingTime unit="seconds">0.50</commonCountingTime>
+				<counts unit="counts">1 1 0 0 1 2 0 0 0 1 0 0 2 1 1 1 1 1 0 1 1 0 0 2 1 1 1 0 1 0 0 1 0 0 2 1 0 0 4 1 1 2 0 1 2 2 1 0 0 0 0 1 1 2 0 1 2 1 0 3 0 1 1 0 3 0 0 1 1 1 1 0 0 2 0 1 1 1 1 1 1 1 4 1 1 1 2 0 3 0 2 4 1 0 2 2 3 1 0 1 1 0 0 1 2 1 2 3 0 4 1 3 2 0 1 3 5 2 0 1 1 2 4 5 3 2 6 1 2 2 2 2 4 1 5 2 2 1 3 2 3 5 2 4 4 1 3 4 3 5 2 5 5 4 6 3 6 7 3 9 4 3 8 5 4 5 6 8 12 7 10 4 7 7 5 3 12 12 13 15 18 13 11 11 17 21 17 17 24 27 40 39 46 55 55 66 80 89 94 113 134 152 182 255 250 334 293 392 458 529 595 710 705 809 956 1079 1180 1247 1414 1604 1839 2110 2288 2477 2878 3226 3432 3784 4219 4745 5272 5663 6372 7136 7718 8773 10004 11102 12534 14371 15616 18119 20349 22475 24858 26926 29510 31109 32127 33236 32604 31858 30236 28370 25913 23387 21298 18768 16484 15138 13330 12298 11231 10424 9141 8402 7692 7054 6146 5760 5017 4492 3812 3393 2997 2611 2138 1905 1582 1313 1151 995 858 717 674 528 459 394 341 263 238 230 176 135 177 109 107 77 75 55 55 42 49 26 21 26 23 14 20 12 15 13 16 17 11 6 12 10 8 10 4 9 8 4 10 6 7 3 3 5 5 5 2 3 5 3 9 4 6 9 3 7 4 5 2 1 3 4 5 5 3 9 2 5 4 7 4 4 2 2 5 4 5 3 0 1 2 3 2 2 2 2 4 5 7 4 4 3 8 5 4 1 5 4 5 4 6 7 4 6 5 3 4 1 0 3 0 2 1 2 2 2 3 2 1 2 3 0 1 1 2 2 0 0 0 1 2 1 1 0 0 2 0 0 1 0 0 0 0 0 1 1 2 0 0 0 1 0 1 2 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0</counts>
+			</dataPoints>
+		</scan>
+	</xrdMeasurement>
+</xrdMeasurements>

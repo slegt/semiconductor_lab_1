@@ -25,14 +25,15 @@ crystal systems, which are listed in \cref{tab:crystal_systems} \autocite{Hunkli
     \centering
     \begin{tabular}{c c c c}
         \toprule
-        Crystal System           & Lattice Constants & Angles                                       & Fold \\ \midrule
-        Triclinic                & $a \neq b \neq c$ & $\alpha \neq\beta \neq\gamma$                & 1          \\
-        Monoclinic               & $a \neq b \neq c$ & $\alpha=\gamma=\ang{90},\beta \neq \ang{90}$ & 2          \\
-        Orthorhombic             & $a \neq b \neq c$ & $\alpha=\beta=\gamma=\ang{90}$               & 2 (two)    \\
-        Tetragonal               & $a = b \neq c$    & $\alpha=\beta=\gamma=\ang{90}$               & 4          \\
-        Hexagonal                & $a = b \neq c$    & $\alpha=\beta=\ang{90}, \gamma=\ang{120}$    & 6          \\
-        Trigonal (Rhombohedral)  & $a=b=c$           & $\alpha=\beta=\gamma \neq \ang{90}$          & 3          \\
-        Cubic                    & $a=b=c$           & $\alpha=\beta=\gamma=\ang{90}$               & 3 (four)   \\ \bottomrule
+        Crystal System           & \CellWithForceBreak{Restriction of  \\ Lattice Constants} & \CellWIthForceBreak{Restriction of Angles} & Maximal Symmetry \\ 
+        \midrule
+        Triclinic                & None & None & \bar{1}          \\
+        Monoclinic               & None & $\alpha=\gamma=\ang{90}$ & $2/m$ \\
+        Orthorhombic             & None & $\alpha=\beta=\gamma=\ang{90}$ & $mmm$    \\
+        Tetragonal               & $a = b$ & $\alpha=\beta=\gamma=\ang{90}$ & $4/mmm$          \\
+        Hexagonal                & $a = b$ & $\alpha=\beta=\ang{90}, \gamma=\ang{120}$ & $6/mmm$           \\
+        Trigonal (Rhombohedral)  & $a = b$ & $\alpha=\beta=\ang{90}, \gamma=\ang{120}$ & $\bar{3}/m$          \\
+        Cubic                    & $a=b=c$ & $\alpha=\beta=\gamma=\ang{90}$ & $m\bar{3}m$   \\ \bottomrule
     \end{tabular}
     \caption{Classification of the different crystal systems. \imcite{Hunklinger}}
     \label{tab:crystal_systems}

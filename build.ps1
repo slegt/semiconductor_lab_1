@@ -17,10 +17,10 @@ if (!(Test-Path $texDir)) {
 Set-Location $texDir
 
 # LaTeX/Biber bauen
-xelatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
 biber main
-xelatex -shell-escape -interaction=nonstopmode main.tex
-xelatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
+pdflatex -shell-escape -interaction=nonstopmode main.tex
 
 # build-Ordner anlegen
 $buildDir = Join-Path $ScriptDir "build"
