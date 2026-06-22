@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
+from numpy.typing import NDArray
 
-# Abstract quantities
+import numpy as np
 
 
 @dataclass
@@ -22,10 +23,10 @@ class LatticePlane:
 class Position:
     axis: str
     unit: str
-    value: Optional[float]
-    start_position: Optional[float]
-    end_position: Optional[float]
-    common_position: Optional[float]
+    value: Optional[float] = None
+    start_position: Optional[float] = None
+    end_position: Optional[float] = None
+    common_position: Optional[float] = None
 
 
 @dataclass
@@ -133,6 +134,28 @@ class Scan:
     counts: List[int]
     counts_unit: str
 
+    def get_plot_data(self) -> dict[str, NDArray[np.float64]]:
+        start_position: Optional[float] = None
+        end_position: Optional[float] = None
+
+        plot_data: dict[str, NDArray[np.float64]] = {}
+        for position in self.positions:
+            if position.start_position is not None and position.end_position is not None:
+                start_position = position.start_position
+                end_position = position.end_position
+                name = str(position.axis).lower()
+                plot_data[name] = np.linspace(start_position, end_position, num=len(self.counts))
+
+
+        plot_data["intensity"] = np.array([float(count) for count in self.counts])
+        return plot_data
+
+    def get_position(self, axis: str) -> float:
+        for position in self.positions:
+            if position.axis == axis and position.common_position:
+                return position.common_position
+        raise ValueError("axis value not found")
+
 
 @dataclass
 class Sample:
@@ -156,7 +179,7 @@ class XRDMeasurement:
 
 
 @dataclass
-class XRDMeasurements:
+class XRDSession:
     status: str
     comments: List[str]
     sample: Sample
