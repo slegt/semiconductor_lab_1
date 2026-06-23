@@ -165,10 +165,13 @@ class XRDMLParser:
                 )
             )
 
-        scan_elem = elem.find("xrd:scan", cls.NAMESPACE)
-        if scan_elem is None:
+        scan_elems = elem.findall("xrd:scan", cls.NAMESPACE)
+        if not scan_elems:
             raise ValueError("No scan information found in the XRDML file.")
-        scan: Scan = cls._parse_scan(scan_elem)
+        scans: list[Scan] = [cls._parse_scan(scan_elem) for scan_elem in scan_elems]
+        # keep a single Scan for single-scan files (backwards compatible),
+        # return the full list for multi-scan files such as the task 4 RSM.
+        scan: Scan | list[Scan] = scans[0] if len(scans) == 1 else scans
 
         return XRDMeasurement(
             measurement_type=elem.attrib.get("measurementType", ""),
@@ -266,12 +269,12 @@ class XRDMLParser:
             type=elem.attrib.get("xsi:type", ""),
             phd_lower=MeasurementQuantity(value=float(phd_lower_elem.text), unit=phd_unit),
             phd_upper=MeasurementQuantity(value=float(phd_upper_elem.text), unit=phd_unit),
-            mode=cls._get_text(elem, "xrd:mode"),
-            active_channel_equatorial=cls._get_text(elem, "xrd:activeChannelsEquatorial"),
-            active_channel_axial=cls._get_text(elem, "xrd:activeChannelsAxial"),
-            pitch_equatorial=cls._get_quantity(elem, "xrd:pitchEquatorial"),
-            pitch_axial=cls._get_quantity(elem, "xrd:pitchAxial"),
-            read_out_period=cls._get_quantity(elem, "xrd:readOutPeriod"),
+            mode=cls._get_optional_text(elem, "xrd:mode"),
+            active_channel_equatorial=cls._get_optional_text(elem, "xrd:activeChannelsEquatorial"),
+            active_channel_axial=cls._get_optional_text(elem, "xrd:activeChannelsAxial"),
+            pitch_equatorial=cls._get_optional_quantity(elem, "xrd:pitchEquatorial"),
+            pitch_axial=cls._get_optional_quantity(elem, "xrd:pitchAxial"),
+            read_out_period=cls._get_optional_quantity(elem, "xrd:readOutPeriod"),
         )
 
     @classmethod
@@ -350,29 +353,27 @@ class XRDMLParser:
             raise ValueError("Scan end time information is missing in the XRDML file.")
         end_time: str = end_time_elem.text
 
+        # scanAxisCenter, reflection material and hkl are absent in some scans
+        # (e.g. the individual frames of the task 4 RSM), so treat them as optional.
+        center_position: Optional[Position] = None
         center_pos_elem: Optional[Element] = elem.find("xrd:scanAxisCenter", cls.NAMESPACE)
-        if center_pos_elem is None:
-            raise ValueError("Scan center position information is missing in the XRDML file.")
-        center_position: Position = Position(
-            axis=center_pos_elem.attrib.get("axis", ""),
-            unit=center_pos_elem.attrib.get("unit", ""),
-            value=cls._get_float(center_pos_elem, "xrd:position"),
-        )
+        if center_pos_elem is not None:
+            center_position = Position(
+                axis=center_pos_elem.attrib.get("axis", ""),
+                unit=center_pos_elem.attrib.get("unit", ""),
+                value=cls._get_float(center_pos_elem, "xrd:position"),
+            )
 
-        material_elem: Optional[Element] = elem.find("./xrd:reflection/xrd:material", cls.NAMESPACE)
-        if material_elem is None or material_elem.text is None:
-            raise ValueError("Scan reflection material information is missing in the XRDML file.")
-        material: str = material_elem.text
+        material: Optional[str] = cls._get_optional_text(elem, "./xrd:reflection/xrd:material")
 
+        lattice_plane: Optional[LatticePlane] = None
         hkl_elem: Optional[Element] = elem.find("./xrd:reflection/xrd:hkl", cls.NAMESPACE)
-        if hkl_elem is None:
-            raise ValueError("Scan reflection information is missing in the XRDML file.")
-
-        lattice_plane = LatticePlane(
-            h=cls._get_int(hkl_elem, "xrd:h"),
-            k=cls._get_int(hkl_elem, "xrd:k"),
-            l=cls._get_int(hkl_elem, "xrd:l"),
-        )
+        if hkl_elem is not None:
+            lattice_plane = LatticePlane(
+                h=cls._get_int(hkl_elem, "xrd:h"),
+                k=cls._get_int(hkl_elem, "xrd:k"),
+                l=cls._get_int(hkl_elem, "xrd:l"),
+            )
 
         dp_elem: Optional[Element] = elem.find("xrd:dataPoints", cls.NAMESPACE)
         if dp_elem is None:

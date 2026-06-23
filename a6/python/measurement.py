@@ -126,9 +126,9 @@ class Scan:
     status: str
     start_time: str
     end_time: str
-    center_position: Position
-    material: str
-    lattice_plane: LatticePlane
+    center_position: Optional[Position]
+    material: Optional[str]
+    lattice_plane: Optional[LatticePlane]
     positions: list[Position]
     common_counting_time: MeasurementQuantity
     counts: List[int]
@@ -167,7 +167,7 @@ class Sample:
 
 @dataclass
 class XRDMeasurement:
-    scan: Scan
+    scan: Scan | list[Scan]
     measurement_type: str
     status: str
     sample_mode: str

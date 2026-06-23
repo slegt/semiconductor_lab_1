@@ -13,8 +13,8 @@ file_path = Path(__file__).resolve()
 destination = file_path.parent.parent / "plots"
 
 # import files
-filepath006 = "/home/simon/ProjectsTex/semiconductor_lab/a6/data/Task2_006_rockingcurve2.xrdml"
-session = XRDMLParser.parse_file(filepath006)
+filepath = "/home/simon/ProjectsTex/semiconductor_lab/a6/data/Task2_006_rockingcurve2.xrdml"
+session = XRDMLParser.parse_file(filepath)
 
 data = session.measurement.scan.get_plot_data()
 two_theta = session.measurement.scan.get_position("2Theta")
