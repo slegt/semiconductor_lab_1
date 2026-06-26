@@ -89,10 +89,10 @@ for i in range(2):
 # export quantities
 exportable_data = {}
 for i in range(2):
-    exportable_data[f"peak_{i}_2theta"] = f"{params[i]["center"]:.4f}"
-    exportable_data[f"peak_{i}_fwhm"] = f"{params[i]["fwhm"]:.4f}"
-    exportable_data[f"peak_{i}_c"] = f"{params[i]["c"]:.5e}"
-    exportable_data[f"peak_{i}_c_err"] = f"{params[i]["c_err"]:.0e}"
+    exportable_data[f"peak_{i}_2theta"] = params[i]["center"]
+    exportable_data[f"peak_{i}_fwhm"] = params[i]["fwhm"]
+    exportable_data[f"peak_{i}_c"] = params[i]["c"]
+    exportable_data[f"peak_{i}_c_err"] = params[i]["c_err"]
 # exportable_data["edge_dislocation_density"] = f"{rho_edge:.2e}"
 
 update_json_file(data_dict=exportable_data, key="task_3_006")

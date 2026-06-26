@@ -58,9 +58,9 @@ delta_gamma = np.sqrt(cov[0][0])
 
 # export quantities
 exportable_data = {
-    "theta": f"{theta:.2f}",
-    "gamma": f"{gamma:.2f}",
-    "delta_gamma": f"{delta_gamma:.2f}"
+    "theta": theta,
+    "gamma": gamma,
+    "delta_gamma": delta_gamma
 }
 update_json_file(data_dict=exportable_data, key="task_1")
 

@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import numpy as np
@@ -66,22 +67,41 @@ amplitude, center, fwhm, eta = popt[1:5]
 center_err = perr[2]
 fwhm_err = perr[3]
 
+# read c values from export.json (task_3_006)
+export_path = file_path.parent.parent / "plots" / "export.json"
+with open(export_path, "r", encoding="utf-8") as f:
+    export_data = json.load(f)
+
+c_0 = float(export_data["task_3_006"]["peak_0_c"])
+c_1 = float(export_data["task_3_006"]["peak_1_c"])
+
 # caclulating quantities
 k = 3
 l = 6
 center_err = max(perr[2], spacing / 2)
 theta = np.deg2rad(center) / 2
 theta_err = np.deg2rad(center_err) / 2
-c = 1.29930e-09
-denom = 4 * np.sin(theta)**2 / wavelength**2 - l**2 / c**2
-a = np.sqrt(4 / 3 * k**2 / denom)
-a_err = a / (2 * denom) * 4 * np.sin(2 * theta) / wavelength**2 * theta_err
+
+
+def lattice_a(c):
+    """Compute the in-plane lattice parameter ``a`` (and its error) for a given
+    out-of-plane lattice parameter ``c`` from the measured (h k l) reflection."""
+    denom = 4 * np.sin(theta)**2 / wavelength**2 - l**2 / c**2
+    a = np.sqrt(4 / 3 * k**2 / denom)
+    a_err = a / (2 * denom) * 4 * np.sin(2 * theta) / wavelength**2 * theta_err
+    return a, a_err
+
+
+a_0, a_0_err = lattice_a(c_0)
+a_1, a_1_err = lattice_a(c_1)
 
 # export quantities
 exportable_data = {
-    "peak_2theta": f"{center}",
-    "a": f"{a}",
-    "a_err": f"{a_err}"
+    "peak_2theta": center,
+    "a_0": a_0,
+    "a_0_err": a_0_err,
+    "a_1": a_1,
+    "a_1_err": a_1_err,
 }
 
 update_json_file(data_dict=exportable_data, key="task_3_036")

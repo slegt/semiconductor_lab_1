@@ -95,11 +95,11 @@ rho_screw = fwhm_rad**2 / (4.35 * c**2)
 # export quantities
 exportable_data = {}
 for label, center, center_err, fwhm, fwhm_err in peaks:
-    exportable_data[f"{label}_omega"] = f"{center:.4f}"
-    exportable_data[f"{label}_fwhm"] = f"{fwhm:.4f}"
-exportable_data["coherence_length"] = f"{L:.2e}"
-exportable_data["coherence_length_delta"] = f"{delta_L:.2e}"
-exportable_data["screw_dislocation_density"] = f"{rho_screw:.2e}"
+    exportable_data[f"{label}_omega"] = center
+    exportable_data[f"{label}_fwhm"] = fwhm
+exportable_data["coherence_length"] = L
+exportable_data["coherence_length_delta"] = delta_L
+exportable_data["screw_dislocation_density"] = rho_screw
 update_json_file(data_dict=exportable_data, key="task_2_006")
 
 # plot
@@ -118,7 +118,7 @@ for i, (label, _, _, _, _) in enumerate(peaks):
     ax.plot(omega_smooth, component, "--", lw=0.8, label=f"peak {i + 1}")
 
 ax.set_yscale("log")
-ax.set_xlim(20.80, 20.95)
+ax.set_xlim(20.80, 20.949)
 ax.set_ylim(bottom=2e2)
 ax.set_xlabel(r"$\Omega$ [deg]")
 ax.set_ylabel(r"$I$ [arb. unit]")

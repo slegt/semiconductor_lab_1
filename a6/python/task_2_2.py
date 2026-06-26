@@ -73,10 +73,10 @@ rho_edge = (fwhm_rad * 4 / 3) **2 / (4.35 * a**2)
 
 # export quantities
 exportable_data = {}
-exportable_data["peak_omega"] = f"{center:.4f}"
-exportable_data["peak_fwhm"] = f"{fwhm:.4f}"
-exportable_data["eta"] = f"{eta:.4f}"
-exportable_data["edge_dislocation_density"] = f"{rho_edge:.2e}"
+exportable_data["peak_omega"] = center
+exportable_data["peak_fwhm"] = fwhm
+exportable_data["eta"] = eta
+exportable_data["edge_dislocation_density"] = rho_edge
 update_json_file(data_dict=exportable_data, key="task_2_024")
 
 # plot
