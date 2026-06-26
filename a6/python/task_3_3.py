@@ -56,5 +56,5 @@ ax_006.set_ylabel(r"$I$ [arb. unit]")
 
 ax_006.legend(handles=[line_006, line_036], loc="upper left", fontsize=7)
 
-fig.savefig(destination / "task_3_3.pdf")
+fig.savefig(destination / "task_3_omega.pdf")
 plt.close(fig)
