@@ -1,0 +1,271 @@
+\section{Scattering Theory }
+\subsection{Spherical Waves}
+A spherical electromagnetic wave is of the following form:
+
+\begin{equation}
+	E(\mathbf{r}, t)=\frac{E_{0}}{\lvert \mathbf{r} \rvert }\exp(\mathrm{i}(k \lvert
+	\mathbf{r}\rvert - \omega t))
+\end{equation}
+
+\subsection{Planar Approximation}
+
+If the wave is observed in a small region $\mathcal{M}$ far away from its origin,
+it can be approximated as a planar wave. Let the center of $\mathcal{M}$ be at
+$\mathbf{R}$, and $\mathbf{r}\in \mathcal{M}$. By expressing $\mathbf{r}$
+relative to $\mathbf{R}$ using the (small) distance vector
+$\mathbf{r}-\mathbf{R}=\Delta{\mathbf{r}}$, an approximation for the magnitude can
+be made:
+
+\begin{align}
+	\lvert \mathbf{r}\rvert & =\lvert \mathbf{R}+\Delta \mathbf{r}\rvert =\sqrt{ R^{2}+2\mathbf{R}\cdot\Delta \mathbf{r}+\Delta r^{2}}                         \\
+	                        & \simeq R \sqrt{ 1+\frac{2\mathbf{R}\cdot\Delta \mathbf{r}}{R^{2}}}                                                               \\
+	                        & \simeq R\cdot\left( 1+\frac{\mathbf{R}\cdot\Delta \mathbf{r}}{R^{2}}\right) =\hat{\mathbf{R}}\cdot(\mathbf{R}+\Delta \mathbf{r})
+\end{align}
+Defining $\mathbf{k}=k \hat{\mathbf{R}}$ and substituting the above relation into
+the spherical electromagnetic wave equation directly results in a planar wave:
+
+\begin{align}
+	E(\mathbf{R}+\Delta\mathbf{r}, t) & =\frac{E_{0}}{\lvert \mathbf{R}+\Delta\mathbf{r} \rvert }\exp(\mathrm{i}(k \lvert \mathbf{R}+\Delta\mathbf{r}\rvert - \omega t)) \\
+	                                  & \simeq \frac{E_{0}}{\lvert \mathbf{R} \rvert }\exp(\mathrm{i}(\mathbf{k}\cdot(\mathbf{R}+\Delta \mathbf{r})-\omega t))
+\end{align}
+
+\subsection{X-Ray Scattering Intensity}
+
+A suitable framework to describe the interaction between light and solids is the kinematic
+scattering theory. Assume an X-ray source emitting spherical waves far away from
+the solid. The material center is located at $\mathbf{R}$. Every point inside
+the material can be described by $\mathbf{r}=\mathbf{R}+\Delta \mathbf{r}$ with
+$\Delta \mathbf{r}\ll \mathbf{R}$. As discussed in Spherical Wave, the wave
+observed by the material is approximately planar. Defining $\mathbf{k}=k \hat{\mathbf{R}}$
+and $k=2\pi /\lambda$ ($\lambda$ is the X-ray wavelength) leads to:
+
+\begin{equation}
+	E_{\mathrm{in}}(\mathbf{R}+\Delta\mathbf{r}, t) \simeq \frac{E_{0}}{\lvert
+	\mathbf{R} \rvert }\exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot(\mathbf{R}
+	+\Delta \mathbf{r})-\omega t\right)\right)
+\end{equation}
+The position of the material relative to the X-ray source dictates the direction of
+the planar wave vector. Its magnitude is defined via $\lambda$. Incoming radiation
+induces harmonic oscillations of shell electrons inside the solid. This leads to
+spherical electromagnetic emission. The process is called Thomson scattering. It
+is an elastic scattering mechanism that implies
+$\lvert \mathbf{k}_{\mathrm{out}}\rvert=\lvert \mathbf{k}_{\mathrm{in}}\rvert$. The
+outgoing spherical wave originating from a single point $\mathbf{P}=\mathbf{R}+\Delta
+\mathbf{r}$ with scattering strength $f$ can be described as:
+
+\begin{equation}
+	E_{\mathrm{out}}(\mathbf{r},t)_{\mathbf{P}}=f E_{\mathrm{in}}(\mathbf{P}, t) \frac{\exp(\mathrm{i}k_{\mathrm{out}}\lvert
+	\mathbf{r}-\mathbf{P}\rvert )}{\lvert \mathbf{r}-\mathbf{P} \rvert }
+\end{equation}
+Assume that an X-ray detector is located far away from the sample at position $\mathbf{D}
+=\mathbf{R}+\mathbf{R}'$. The electric field at the detector's position is given
+by:
+
+\begin{equation}
+	E_{\mathrm{out}}(\mathbf{D}, t)_{\mathbf{P}}=f E_{\mathrm{in}}(\mathbf{P},t) \frac{\exp(\mathrm{i}k_{\mathrm{out}}\lvert
+	\mathbf{R}' -\Delta \mathbf{r}\rvert )}{\lvert \mathbf{R}'-\Delta \mathbf{r} \rvert
+	}
+\end{equation}
+Since $\mathbf{R}'\gg \Delta \mathbf{r}$, the spherical wave can be approximated by
+a planar wave using $\mathbf{k}_{\mathrm{out}}=k_{\mathrm{out}}\hat{\mathbf{R}}'$.
+By setting the position of the detector relative to the sample, the direction of $\mathbf{k}
+_{\mathrm{out}}$ is defined. Substituting $E_{\mathrm{in}}$ gives:
+
+\begin{strip}
+	\begin{align*}
+		E_{\mathrm{out}}(\mathbf{D}, t)_{\mathbf{P}} & =\frac{f E_{0}}{\lvert \mathbf{R} \rvert \lvert \mathbf{R}' \rvert }\exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot(\mathbf{R}+\Delta \mathbf{r})-\omega t\right)\right) \exp\left(\mathrm{i}\mathbf{k}_{\mathrm{out}}\cdot(\mathbf{R}'-\Delta \mathbf{r})\right)                                                                                              \\
+		                                             & =\frac{f}{\lvert \mathbf{R}' \rvert }\cdot \underbrace{ \frac{E_{0}}{\lvert \mathbf{R} \rvert } \exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot\mathbf{R}+\mathbf{k}_{\mathrm{out}}\cdot\mathbf{R}'\right)-\mathrm{i}\omega t\right) }_{ =E_{0}' }\cdot \exp\left(\mathrm{i}(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot \Delta \mathbf{r}\right) \\
+		                                             & =f \frac{E_{0}'}{\lvert \mathbf{R}' \rvert }\exp\left(\mathrm{i}(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot\Delta \mathbf{r}\right)
+	\end{align*}
+\end{strip}
+The expression above defines the electromagnetic response of a single atom. To find
+the total material response, one needs to integrate this quantity with respect
+to $\mathbf{P}$ over the crystal volume. Integration with respect to $\mathbf{P}$
+is identical to integration with respect to $\Delta \mathbf{r}$. Since the
+scattering is no longer originating from a single point but rather from a
+density of electron scatterers, $f$ is replaced by the electron density $n(\Delta
+\mathbf{r})$, resulting in:
+
+\begin{strip}
+	\begin{equation}
+		E_{\mathrm{out}}(\mathbf{D}, t) \propto \frac{E_{0}'(\mathbf{R}, \mathbf{R}',
+		t)}{\lvert \mathbf{R} '\rvert }\int_{V}n(\Delta \mathbf{r}) \exp\left(\mathrm{i}
+		(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot\Delta \mathbf{r}\right
+		) \, \mathrm{d}V(\Delta \mathbf{r})
+	\end{equation}
+\end{strip}
+By defining the scattering vector
+$\mathbf{q}=\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}$, which depends only
+on the experimental geometry, the intensity is expressed as:
+
+\begin{equation}
+	I(\mathbf{q}) \propto \frac{\lvert \langle E_{0}'(\mathbf{R}, \mathbf{R}') \rangle_{t}\rvert^{2}}{\lvert
+	\mathbf{R}' \rvert^{2}}\left\lvert \int_{V}n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}
+	\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert^{2}
+\end{equation}
+The intensity is proportional to the modulus of the Fourier transform of the
+electron density in the crystal.
+
+\subsection{Scattering Intensity for Periodic Structures}
+
+The scattering intensity of an electron density far away from the electromagnetic
+source and detector was derived in X-Ray Scattering Intensity and is given by:
+
+\begin{equation}
+	I(\mathbf{q}) \propto \left\lvert \int_{V}n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}
+	\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert^{2}
+\end{equation}
+If the electron density is a periodic function, which is true for electrons in a
+solid, it can be represented using the Reciprocal Lattice:
+
+\begin{equation}
+	I(\mathbf{q}) \propto \left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}
+	(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert
+	^{2}
+\end{equation}
+The integral evaluates to:
+
+\begin{align}
+	\int_{V}\exp(\mathrm{i}(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) & =\prod_{j=1}^{3}\int_{-l_{j} /2}^{l_{j} /2}\exp(\mathrm{i}(G_{j}-q_{j})x_{j})\, \mathrm{d}x_{j}                        \\
+	                                                                                          & =\prod_{j=1}^{3}\left[ \frac{\exp(\mathrm{i}(G_{j}-q_{j})x_{j})}{\mathrm{i}(G_{j}-q_{j})}\right]^{l_{j} /2}_{-l_{j}/2} \\
+	                                                                                          & =\prod_{j=1}^{3}\frac{\sin\left( l_{j}\frac{1}{2}(G_{j}-q_{j}) \right)}{\frac{1}{2}(G_{j}-q_{j})}                      \\
+	                                                                                          & \simeq l_{x}l_{y}l_{z}\delta(\mathbf{q}, \mathbf{G})=V\delta(\mathbf{q}, \mathbf{G})
+\end{align}
+Substituting this back into the intensity expression yields the Laue condition:
+
+\begin{align}
+	I(\mathbf{q}) & \propto\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert^{2}                                                             \\
+	              & =\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}V \delta(\mathbf{q}, \mathbf{G}) \right\rvert^{2}=\left\{ \begin{matrix}\lvert n_{\mathbf{q}}\rvert^{2}V^{2}&\mathbf{q}\in \mathcal{G}\\ 0&\mathrm{else}\end{matrix} \right.
+\end{align}
+Reflexes can only be observed if $\mathbf{q}=\mathbf{G}$. The scattering is
+proportional to $V^{2}$ and therefore proportional to $N^{2}$, with $N$ being the
+number of lattice points.
+
+\subsection{Structure Factor}
+
+\subsection{Derivation}
+
+The Laue condition, see Scattering intensity for periodic structures, yields:
+
+\begin{equation}
+	I(\mathbf{q})\propto \left\{
+	\begin{matrix}
+		\lvert n_{\mathbf{q}}\rvert^{2}V^{2} & \mathbf{q}\in \mathcal{G} \\
+		0                                    & \mathrm{else}
+	\end{matrix}
+	\right.
+\end{equation}
+As stated earlier, reflexes can only occur for $\mathbf{q}\in \mathcal{G}$. However,
+if $n_{\mathbf{q}}=0$, no intensity is measured. These reflexes are called
+forbidden. To determine when this happens, use the Fourier transform of the
+electron density:
+
+\begin{equation}
+	n(\mathbf{q}) =\mathcal{F}^{-1}[n(\mathbf{r})] =\frac{1}{V_{\mathrm{uc}}}\int_{{\mathrm{uc}}}
+	n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}
+	)
+\end{equation}
+Due to the periodicity of the electron density, the region of integration reduces
+to the unit cell with volume $V_{\mathrm{uc}}$. Since the main contribution to
+the scattered X-rays originates from core electrons, where delocalization effects
+can be neglected, the electron density can be approximated as a sum of atomic
+densities $n_{\alpha}(\boldsymbol{\rho})$ within the unit cell:
+
+\begin{align}
+	n(\mathbf{r}) & = \sum_{\alpha}n_{\alpha}(\mathbf{r}-\mathbf{r}_{\alpha})                                                                                    \\
+	              & = \sum_{\alpha}\int n_{\alpha}(\boldsymbol{\rho}) \delta(\mathbf{r}-\mathbf{r}_{\alpha}-\boldsymbol{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) \\
+	              & =\sum_{\alpha}n_{\alpha}(\mathbf{r}) * \delta(\mathbf{r}-\mathbf{r}_{\alpha})
+\end{align}
+The last term is a sum over all basis atoms' electron densities convolved with the
+delta distribution centered at $\mathbf{r}_{\alpha}$. Substituting this back
+into the Fourier transform yields:
+
+\begin{align}
+	n(\mathbf{q}) & =\sum_{\alpha}\mathcal{F}^{-1}[\delta(\mathbf{r}-\mathbf{r}_{\alpha})] \cdot \mathcal{F}^{-1}[n_{\alpha}(\mathbf{r})]                                                                                                                                         \\
+	              & =\frac{1}{V_{\mathrm{uc}}}\sum_{\alpha}\exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}_{\alpha}) \underbrace{ \int n_{\alpha}(\boldsymbol{\rho}) \exp(-\mathrm{i} \mathbf{q}\cdot\boldsymbol{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) }_{ f_{\alpha}(\mathbf{q}) }
+\end{align}
+$f_{\alpha}(\mathbf{q})$ is the Fourier transform of the atomic electron density
+and is also called the atomic scattering factor. The quantity $n(\mathbf{q})$ is also
+known as the structure factor $S_{hkl}$ by setting $\mathbf{q}_{hkl}=h \mathbf{b}
+_{1}+k\mathbf{b}_{2}+l\mathbf{b}_{3}$:
+
+\begin{equation}
+	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-\mathrm{i}\mathbf{q}_{hkl}
+	\cdot \mathbf{r}_{\alpha})
+\end{equation}
+Representing $\mathbf{r}_{\alpha}=u_{\alpha}\mathbf{a}_{1}+v_{\alpha}\mathbf{a}_{2}
++w_{\alpha}\mathbf{a}_{3}$ with $u_{\alpha}, v_{\alpha}, w_{\alpha}\in[0, 1)$,
+the structure factor can be expressed as
+
+\begin{equation}
+	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-2\pi \mathrm{i}(hu_{\alpha}
+	+kv_{\alpha}+l w_{\alpha}))
+\end{equation}
+\subsection{Example}
+
+The ideal wurtzite lattice contains four basis atoms. Oxygen atoms are located at
+$(000)$ and $\left( \frac{1}{3}\frac{2}{3}\frac{1}{2}\right)$, zinc atoms at
+$\left ( 0 0 \frac{3}{8}\right)$ and
+$\left( \frac{1}{3}\frac{2}{3}\frac{7}{8}\right)$. By assuming constant scattering
+factors for zinc and oxygen, respectively, the structure factor simplifies to:
+
+\begin{align}
+	S_{hkl} & =f_{\ce{O}}\left[ 1+\exp\left( -2\pi \mathrm{i}\left( \frac{h}{3}+\frac{2k}{3}+\frac{l}{2}\right) \right) \right]                                                                  \\
+	        & +f_{\ce{Zn}}\left[ \exp\left( -2\pi \mathrm{i}\left( \frac{3l}{8}\right) \right) + \exp\left( -2\pi \mathrm{i}\left( \frac{h}{3}+\frac{2k}{3}+\frac{7}{8}l \right) \right) \right]
+\end{align}
+Analyzing the $(00L)$ directions reveals forbidden reflexes:
+
+\begin{equation}
+	S_{00L}=2 \left( f_{\ce{O}}+f_{\ce{Zn}}\exp\left( -\frac{3\pi}{4}\mathrm{i}l \right
+	) \right) \mathbb{1}_{l \text{ even}}
+\end{equation}
+
+\subsection{Bragg Equation}
+
+The Laue condition from Scattering intensity for periodic structures states that reflexes
+can only be observed if $\mathbf{q}$ matches a reciprocal space vector,
+therefore $\mathbf{q}=z \mathbf{G}_{hkl}$ with $z \in\mathbb{Z}$. A visual explanation
+of this result is obtained using the lattice spacing equation from Reciprocal Lattice:
+$d_{hkl}={2\pi}/{\lvert \mathbf{G}_{hkl} \rvert }$. Representing $\lvert \mathbf{q}
+\rvert$ using the diffractometer angles from XRD Coordinate Systems yields the \textbf{Bragg
+equation}:
+
+\begin{align}
+	d_{hkl}  & =\frac{2\pi n}{2\sin\theta\cdot2\pi /\lambda} \\
+	n\lambda & =2d_{hkl}\sin( \theta)
+\end{align}
+The lattice planes partially reflect the incident wave. If the path difference for
+waves reflected by adjacent lattice planes is an integer multiple of the wavelength,
+constructive interference is expected.
+
+\subsection{Maximum Error Estimation}
+
+Performing maximum error estimation of the Bragg equation results in:
+
+\begin{equation}
+	\frac{\Delta\lambda}{\lambda}=\cot(\theta) \Delta\theta+\frac{\Delta d_{hkl}}{d_{hkl}}
+\end{equation}
+To determine the distance $d_{hkl}$ accurately, it is essential to use a highly
+monochromatic incident beam and a detector with excellent angular resolution.
+
+\subsection{Ewald Sphere}
+
+The Laue condition, derived in Scattering intensity for periodic structures, states:
+
+\begin{align}
+	I(\mathbf{q}) & \propto \left\{ \begin{matrix}\lvert n_{\mathbf{q}}\rvert^{2}V^{2}&\mathbf{q}\in \mathcal{G}\\ 0&\mathrm{else}\end{matrix} \right.
+\end{align}
+The intensity is only nonzero if $\mathbf{q}$ is a reciprocal space vector. Each
+intensity maximum can therefore be labeled with its corresponding reciprocal
+lattice index $( hkl)$. Since the magnitude $\lvert \mathbf{k}_{\mathrm{in}}\rvert
+=\lvert \mathbf{k}_{\mathrm{out}}\rvert$ is defined as $k=2 \pi /\lambda$, the
+scattering vector satisfies
+
+\begin{equation}
+	\lvert \mathbf{q}\rvert =\lvert \mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}
+	\rvert \leq 2k
+\end{equation}
+In reciprocal space, this defines the \textbf{Ewald Sphere} for $\mathbf{q}$ with
+radius $2k$. Observable reflexes correspond to reciprocal lattice points within
+that sphere. Assuming that the laboratory system is aligned with the crystallographic
+coordinate system, see XRD Coordinate Systems, leads to the diagram below:
