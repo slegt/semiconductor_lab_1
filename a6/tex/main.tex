@@ -1,4 +1,4 @@
-\documentclass[10pt, twocolumn]{article}
+\documentclass[10pt]{article}
 
 %math
 \usepackage{amsmath}
@@ -14,10 +14,10 @@
 \usepackage[english]{babel}
 %formatting
 \usepackage[a4paper, portrait, margin=1in]{geometry}
-\usepackage{cuted}
 \usepackage[small]{titlesec}
 \usepackage[hidelinks]{hyperref}
 \usepackage{parskip}
+\usepackage[doublespacing]{setspace}
 %images and plots
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
@@ -75,9 +75,9 @@ url=false,isbn=false,eprint=false]{biblatex}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
-\DeclareAcronym{zno}{
-    short = \ce{ZnO},
-    long = zinc oxide
+\DeclareAcronym{algao}{
+    short = \ce{(Al_xGa_{1-x})_2O_3},
+    long = aluminum gallium oxide
 }
 \DeclareAcronym{hrxrd}{
     short = HRXRD,
@@ -88,19 +88,17 @@ url=false,isbn=false,eprint=false]{biblatex}
 \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 
-
-
 % Document
 \begin{document}
     \pagenumbering{arabic}
+    \input{chapters/1_titel.tex}
+    \input{chapters/2_introduction.tex}
     \input{chapters/3_theory_crystal.tex}
     \input{chapters/3_theory_diffraction.tex}
-    \input{chapters/4_methods.tex}
+    \input{chapters/4_diffractometer.tex}
+    \input{chapters/5_scanning_methods.tex}
     \clearpage
-    \begin{strip}
-        \printbibliography
-        \listoffigures
-        \listoftables
-    \end{strip}
-    \phantom{T}
+    \printbibliography
+    \listoffigures
+    \listoftables
 \end{document}
