@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import numpy as np
@@ -62,26 +63,47 @@ film = find_peak(3.51, 3.58)
 for name, (px, pz, pi) in [("substrate", substrate), ("film", film)]:
     print(f"{name:9s}: q_parallel = {px:.4f}  q_perp = {pz:.4f}  I = {pi:.0f}")
 
+
+export_path = file_path.parent.parent / "plots" / "export.json"
+with open(export_path, "r", encoding="utf-8") as f:
+    export_data = json.load(f)
+
+q_film = np.sqrt(film[0] ** 2 + film[1] ** 2)  * 1e10
+c_film = float(export_data["task_3_006"]["peak_film_c"])
+l = 4
+k = 2
+
+
+def lattice_a(q, c):
+    b3 = 2 * np.pi / c
+    b2 = np.sqrt((q**2 - l**2 * b3) / k**2)
+    return 4 * np.pi / (np.sqrt(3) * b2)
+
+
 # export peak positions
 exportable_data = {
     "substrate_q_parallel": float(substrate[0]),
     "substrate_q_perp": float(substrate[1]),
     "film_q_parallel": float(film[0]),
     "film_q_perp": float(film[1]),
+    "film_a": float(lattice_a(q_film, c_film)),
 }
 update_json_file(data_dict=exportable_data, key="task_4")
 
-fig, (ax_full, ax_zoom) = plt.subplots(
-    1, 2, figsize=DOUBLE_COLUMN["figure.figsize"], constrained_layout=True
-)
+fig, (ax_full, ax_zoom) = plt.subplots(1, 2, figsize=DOUBLE_COLUMN["figure.figsize"], constrained_layout=True)
 
 norm = LogNorm(vmin=1, vmax=intensity.max())
 clipped = np.clip(intensity, 1, None)
 
 for ax in (ax_full, ax_zoom):
     mesh = ax.pcolormesh(
-        q_x, q_z, clipped, norm=norm, cmap="inferno",
-        shading="gouraud", rasterized=True,
+        q_x,
+        q_z,
+        clipped,
+        norm=norm,
+        cmap="inferno",
+        shading="gouraud",
+        rasterized=True,
     )
     ax.set_xlabel(r"$q_\parallel$ [\AA$^{-1}$]")
 
@@ -95,8 +117,8 @@ ax_zoom.set_ylim(*zoom_ylim)
 
 # mark the two prominent reflections in the zoom
 for (px, pz, _), label, color in [
-    (substrate, "substrate", "cyan"),
-    (film, "film", "lime"),
+    (substrate, "substrate (024)", "cyan"),
+    (film, "film (024)", "lime"),
 ]:
     ax_zoom.scatter(px, pz, s=30, facecolors="none", edgecolors=color, lw=1.0)
     ax_zoom.annotate(
@@ -115,7 +137,9 @@ ax_full.add_patch(
         (zoom_xlim[0], min(zoom_ylim)),
         zoom_xlim[1] - zoom_xlim[0],
         abs(zoom_ylim[1] - zoom_ylim[0]),
-        fill=False, edgecolor="white", lw=0.8,
+        fill=False,
+        edgecolor="white",
+        lw=0.8,
     )
 )
 

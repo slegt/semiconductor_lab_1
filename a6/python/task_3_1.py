@@ -88,14 +88,14 @@ for i in range(2):
 
 # export quantities
 exportable_data = {}
-for i in range(2):
-    exportable_data[f"peak_{i}_2theta"] = params[i]["center"]
-    exportable_data[f"peak_{i}_fwhm"] = params[i]["fwhm"]
-    exportable_data[f"peak_{i}_c"] = params[i]["c"]
-    exportable_data[f"peak_{i}_c_err"] = params[i]["c_err"]
-# exportable_data["edge_dislocation_density"] = f"{rho_edge:.2e}"
+for i, name in zip([0, 1], ["film", "substrate"]):
+    exportable_data[f"peak_{name}_2theta"] = params[i]["center"]
+    exportable_data[f"peak_{name}_fwhm"] = params[i]["fwhm"]
+    exportable_data[f"peak_{name}_c"] = params[i]["c"]
+    exportable_data[f"peak_{name}_c_err"] = params[i]["c_err"]
 
 update_json_file(data_dict=exportable_data, key="task_3_006")
+
 # plot
 fig, ax = plt.subplots(figsize=SINGLE_COLUMN["figure.figsize"])
 fig.subplots_adjust(left=0.17, right=0.93, top=0.98, bottom=0.15)

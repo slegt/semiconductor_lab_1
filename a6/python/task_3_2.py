@@ -72,16 +72,15 @@ export_path = file_path.parent.parent / "plots" / "export.json"
 with open(export_path, "r", encoding="utf-8") as f:
     export_data = json.load(f)
 
-c_0 = float(export_data["task_3_006"]["peak_0_c"])
-c_1 = float(export_data["task_3_006"]["peak_1_c"])
+c_substrate = float(export_data["task_3_006"]["peak_substrate_c"])
 
 # caclulating quantities
 k = 3
 l = 6
+
 center_err = max(perr[2], spacing / 2)
 theta = np.deg2rad(center) / 2
 theta_err = np.deg2rad(center_err) / 2
-
 
 def lattice_a(c):
     """Compute the in-plane lattice parameter ``a`` (and its error) for a given
@@ -92,16 +91,13 @@ def lattice_a(c):
     return a, a_err
 
 
-a_0, a_0_err = lattice_a(c_0)
-a_1, a_1_err = lattice_a(c_1)
+a_substrate, a_substrate_error = lattice_a(c_substrate)
 
 # export quantities
 exportable_data = {
     "peak_2theta": center,
-    "a_0": a_0,
-    "a_0_err": a_0_err,
-    "a_1": a_1,
-    "a_1_err": a_1_err,
+    "a_substrate": a_substrate,
+    "a_substrate_error": a_substrate_error,
 }
 
 update_json_file(data_dict=exportable_data, key="task_3_036")
