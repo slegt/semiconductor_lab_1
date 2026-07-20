@@ -17,9 +17,6 @@ filepath = "/home/simon/ProjectsTex/semiconductor_lab/a6/data/Task2_006_rockingc
 session = XRDMLParser.parse_file(filepath)
 
 data = session.measurement.scan.get_plot_data()
-two_theta = session.measurement.scan.get_position("2Theta")
-theta_B = two_theta / 2.0
-wavelength = session.measurement.used_wavelength.k_alpha_1.value * 1e-10
 
 omega = data["omega"]
 intensity = data["intensity"].astype(float)
@@ -81,15 +78,13 @@ for i, label in enumerate(labels):
 for label, center, center_err, fwhm, fwhm_err in peaks:
     print(f"{label}: omega = {center:.4f} +/- {center_err:.4f} deg   FWHM = {fwhm:.4f} +/- {fwhm_err:.4f} deg")
 
-# calculate coherence length and screw type dislocation density
+# calculate screw type dislocation density
 substrate_fwhm = peaks[1][3]
-substrate_fwhm_err = peaks[1][4]
 fwhm_rad = np.deg2rad(substrate_fwhm)
-L = 0.9 * wavelength / (fwhm_rad * np.sin(np.deg2rad(theta_B)))
-delta_L = L * (substrate_fwhm_err / substrate_fwhm)
 
+a = 4.7577e-10
 c = 12.9907e-10
-rho_screw = fwhm_rad**2 / (4.35 * c**2)
+rho_edge = fwhm_rad**2 / (4.35 * a**2)
 
 
 # export quantities
@@ -97,9 +92,7 @@ exportable_data = {}
 for label, center, center_err, fwhm, fwhm_err in peaks:
     exportable_data[f"{label}_omega"] = center
     exportable_data[f"{label}_fwhm"] = fwhm
-exportable_data["coherence_length"] = L
-exportable_data["coherence_length_delta"] = delta_L
-exportable_data["screw_dislocation_density"] = rho_screw
+exportable_data["edge_dislocation_density"] = rho_edge
 update_json_file(data_dict=exportable_data, key="task_2_006")
 
 # plot

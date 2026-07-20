@@ -24,6 +24,7 @@ wavelength = session.measurement.used_wavelength.k_alpha_1.value * 1e-10  # [m]
 omega = data["omega"]
 intensity = data["intensity"].astype(float)
 
+
 # define peak functions
 def pseudo_voigt(x, amplitude, center, fwhm, eta):
     """A single peak: a mix of a Gaussian and a Lorentzian that share the same
@@ -38,9 +39,18 @@ def pseudo_voigt(x, amplitude, center, fwhm, eta):
 def model(x, background, a, c, w, e):
     """The model we fit: a flat background plus single pseudo-Voigt peaks
     (substrate, film, and a third tilted domain / fringe)."""
-    return (
-        background + pseudo_voigt(x, a, c, w, e)
-    )
+    return background + pseudo_voigt(x, a, c, w, e)
+
+
+a = 4.7577e-10
+c = 12.9907e-10
+
+
+def get_lattice_vector(u, v, w):
+    a1 = a / 2 * np.array([np.sqrt(3), 1, 0])
+    a2 = a / 2 * np.array([np.sqrt(3), -1, 0])
+    a3 = c * np.array([0, 0, 1])
+    return u * a1 + v * a2 + w * a3
 
 
 # initial guess and limits
@@ -56,7 +66,11 @@ omega_fit = omega[window]
 intensity_fit = intensity[window]
 
 popt, pcov = curve_fit(
-    model, omega_fit, intensity_fit, p0=p0, bounds=(lower, upper),
+    model,
+    omega_fit,
+    intensity_fit,
+    p0=p0,
+    bounds=(lower, upper),
 )
 perr = np.sqrt(np.diag(pcov))
 
@@ -66,17 +80,27 @@ center_err = perr[2]
 fwhm_err = perr[3]
 
 # calculate edge type dislocations
-a = 4.7577e-10
-fwhm_rad = np.deg2rad(fwhm)
 
-rho_edge = (fwhm_rad * 4 / 3) **2 / (4.35 * a**2)
+fwhm_rad = np.deg2rad(fwhm)
+b_para = np.linalg.norm(get_lattice_vector(2, 4, 1))
+
+rho_screw = (fwhm_rad) ** 2 / (4.35 * b_para**2)
+
+# calculate lateral coherence length from the symmetric (024) rocking curve.
+# On r-sapphire the (024) is the surface-parallel reflection, so its rocking
+# width maps cleanly to the in-plane coherence length (unlike the inclined 006).
+L = 0.9 * wavelength / (2 * fwhm_rad * np.sin(np.deg2rad(theta_B)))
+delta_L = L * (fwhm_err / fwhm)
 
 # export quantities
 exportable_data = {}
 exportable_data["peak_omega"] = center
 exportable_data["peak_fwhm"] = fwhm
 exportable_data["eta"] = eta
-exportable_data["edge_dislocation_density"] = rho_edge
+exportable_data["b_para"] = b_para
+exportable_data["screw_dislocation_density"] = rho_screw
+exportable_data["coherence_length"] = L
+exportable_data["coherence_length_delta"] = delta_L
 update_json_file(data_dict=exportable_data, key="task_2_024")
 
 # plot

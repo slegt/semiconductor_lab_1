@@ -1,10 +1,49 @@
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any, Dict
 
+import numpy as np
+
 current_file = Path(__file__).resolve().parent
 destination = current_file.parent / "plots" / "export.json"
+
+# Beträge außerhalb dieses Bereichs werden in Exponentialschreibweise
+# geschrieben, damit die JSON-Datei lesbar bleibt (z.B. 7.39e+10 statt
+# 73872613828.30818). Alles dazwischen bleibt als Dezimalzahl.
+SCI_UPPER = 1e5
+SCI_LOWER = 1e-4
+_RAW_PREFIX = "@@RAWFLOAT@@"
+
+
+def _format_float(value: float) -> str:
+    """Kürzeste, verlustfrei rücklesbare Darstellung eines Floats; große oder
+    sehr kleine Beträge in wissenschaftlicher Notation."""
+    value = float(value)  # numpy-Skalare in einen echten Python-float wandeln
+    if value != 0 and (abs(value) >= SCI_UPPER or abs(value) < SCI_LOWER):
+        return np.format_float_scientific(value, unique=True, trim="0")
+    return repr(value)
+
+
+def _wrap_floats(obj: Any) -> Any:
+    """Ersetzt (rekursiv) alle endlichen Floats durch einen markierten String,
+    dessen Anführungszeichen beim Schreiben wieder entfernt werden."""
+    if isinstance(obj, float):
+        if np.isfinite(obj):
+            return _RAW_PREFIX + _format_float(obj)
+        return obj  # nan/inf: json-Standardverhalten beibehalten
+    if isinstance(obj, dict):
+        return {k: _wrap_floats(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_wrap_floats(v) for v in obj]
+    return obj
+
+
+def _dumps(data: Dict[str, Any]) -> str:
+    text = json.dumps(_wrap_floats(data), indent=4, ensure_ascii=False)
+    # Anführungszeichen (und Marker) um die Float-Tokens wieder entfernen
+    return re.sub('"' + re.escape(_RAW_PREFIX) + r'([^"]*)"', r"\1", text)
 
 
 
@@ -45,4 +84,4 @@ def update_json_file(key: str, data_dict: Dict[str, Any], file_path: Path = dest
 
     # Daten formatiert zurückschreiben
     with open(file_path, "w", encoding="utf-8") as f:
-        json.dump(current_data, f, indent=4, ensure_ascii=False)
+        f.write(_dumps(current_data))

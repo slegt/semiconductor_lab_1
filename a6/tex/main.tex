@@ -18,6 +18,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{parskip}
 \usepackage[doublespacing]{setspace}
+\usepackage{layouts}
 %images and plots
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
@@ -90,6 +91,7 @@ url=false,isbn=false,eprint=false]{biblatex}
 
 % Document
 \begin{document}
+    \printinunitsof{cm}\prntlen{\textwidth}
     \pagenumbering{arabic}
     \input{chapters/1_titel.tex}
     \input{chapters/2_introduction.tex}
@@ -97,6 +99,7 @@ url=false,isbn=false,eprint=false]{biblatex}
     \input{chapters/3_theory_diffraction.tex}
     \input{chapters/4_diffractometer.tex}
     \input{chapters/5_scanning_methods.tex}
+    \input{chapters/6_results.tex}
     \clearpage
     \printbibliography
     \listoffigures

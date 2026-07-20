@@ -2,10 +2,22 @@
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\linewidth]{../assets/xrd_setup.png}
-	\caption{XRD Setup}
-	\label{fig:xrd_setup}
+	\begin{subfigure}[t]{0.6\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/xrd_setup.png}
+		\caption{XRD Setup}
+		\label{fig:xrd_setup}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/source.png}
+		\caption{X-ray tube design}
+		\label{fig:xray_tube}
+	\end{subfigure}
+	\caption{XRD instrument setup and the internal design of the x-ray tube.}
+	\label{fig:xrd_setup_full}
 \end{figure}
+
 
 A typical XRD Setup is depicted above. An X-Ray Source with a tungsten cathode
 and a copper anode generates incident $\ce{Cu}_{\mathrm{K}_{\alpha}}$ x-rays
@@ -54,6 +66,24 @@ for example:
 		damage.
 \end{itemize}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/optics.png}
+		\caption{Incident and receiving optics}
+		\label{fig:optics}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/goniometer.png}
+		\caption{Goniometer geometry}
+		\label{fig:goniometer}
+	\end{subfigure}
+	\caption{Incident and receiving optics and the goniometer geometry.}
+	\label{fig:optics_goniometer}
+\end{figure}
+
 \subsection{Incident and Receiving Optics}
 
 A major challenge of the diffraction setup is to condition the divergent x-rays
@@ -98,6 +128,33 @@ An XRD experiment features two coordinate systems:
 
 	\item The Reciprocal Lattice (blue), which is defined by the crystal lattice.
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\newlength{\coordSysWidth}
+	\settowidth{\coordSysWidth}{\includegraphics{../assets/coordinate_system_1.pdf}}
+	\begin{subfigure}[t]{\coordSysWidth}
+		\centering
+		\includegraphics{../assets/coordinate_system_1.pdf}
+		\caption{Laboratory frame}
+		\label{fig:coordinate_system_1}
+	\end{subfigure}
+	\settowidth{\coordSysWidth}{\includegraphics{../assets/coordinate_system_2.pdf}}
+	\begin{subfigure}[t]{\coordSysWidth}
+		\centering
+		\includegraphics{../assets/coordinate_system_2.pdf}
+		\caption{Reciprocal lattice}
+		\label{fig:coordinate_system_2}
+	\end{subfigure}
+	\begin{subfigure}[t]{\coordSysWidth}
+		\centering
+		\includegraphics{../assets/coordinate_system_3.pdf}
+		\caption{Reciprocal lattice}
+		\label{fig:coordinate_system_2}
+	\end{subfigure}
+	\caption{Laboratory frame and reciprocal lattice coordinate systems.}
+	\label{fig:coordinate_systems}
+\end{figure}
 
 The operations of the goniometer either change the relative position of both coordinate
 systems or the scattering vector $\mathbf{q}$.

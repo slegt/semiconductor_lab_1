@@ -54,13 +54,15 @@ for index, scan in enumerate(scans):
 
 m, cov = curve_fit(f=fit_func, xdata=angles, ydata=omega_peaks, p0=[1, 1])
 gamma = m[0]
+phi_0 = m[1]
 delta_gamma = np.sqrt(cov[0][0])
 
 # export quantities
 exportable_data = {
     "theta": theta,
     "gamma": gamma,
-    "delta_gamma": delta_gamma
+    "delta_gamma": delta_gamma,
+    "phi_0": phi_0
 }
 update_json_file(data_dict=exportable_data, key="task_1")
 

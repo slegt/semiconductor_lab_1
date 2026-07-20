@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from matplotlib.colors import LogNorm
 from matplotlib.patches import Rectangle
 from config import DOUBLE_COLUMN
+from exporter import update_json_file
 from parser import XRDMLParser
 
 plt.rcParams.update(DOUBLE_COLUMN)
@@ -37,16 +38,38 @@ tt = np.deg2rad(two_theta)
 q_x = k * (np.cos(tt - om) - np.cos(om))
 q_z = k * (np.sin(tt - om) + np.sin(om))
 
-# location of the intensity maximum (the reflection) in reciprocal space
-max_idx = np.unravel_index(np.argmax(intensity), intensity.shape)
-q_x_max = q_x[max_idx]
-q_z_max = q_z[max_idx]
-q_radius = np.hypot(q_x_max, q_z_max)
-
-# plot
-# zoom region (interesting reflection)
+# locate the two prominent reflections in reciprocal space. Both sit at
+# essentially the same in-plane q_parallel; they differ in q_perp: the
+# stronger substrate peak near q_perp = 3.61 and the weaker thin-film peak
+# near q_perp = 3.55. Search for the intensity maximum inside a q_perp band
+# around each, restricted to the in-plane window of the zoom region.
 zoom_xlim = (-0.01, 0.03)
 zoom_ylim = (3.5, 3.65)
+
+x_window = (q_x > zoom_xlim[0]) & (q_x < zoom_xlim[1])
+
+
+def find_peak(q_perp_lo, q_perp_hi):
+    """Return (q_x, q_z, intensity) of the maximum within a q_perp band."""
+    band = x_window & (q_z > q_perp_lo) & (q_z < q_perp_hi)
+    idx = np.unravel_index(np.argmax(np.where(band, intensity, -np.inf)), intensity.shape)
+    return q_x[idx], q_z[idx], intensity[idx]
+
+
+substrate = find_peak(3.58, 3.64)
+film = find_peak(3.51, 3.58)
+
+for name, (px, pz, pi) in [("substrate", substrate), ("film", film)]:
+    print(f"{name:9s}: q_parallel = {px:.4f}  q_perp = {pz:.4f}  I = {pi:.0f}")
+
+# export peak positions
+exportable_data = {
+    "substrate_q_parallel": float(substrate[0]),
+    "substrate_q_perp": float(substrate[1]),
+    "film_q_parallel": float(film[0]),
+    "film_q_perp": float(film[1]),
+}
+update_json_file(data_dict=exportable_data, key="task_4")
 
 fig, (ax_full, ax_zoom) = plt.subplots(
     1, 2, figsize=DOUBLE_COLUMN["figure.figsize"], constrained_layout=True
@@ -70,10 +93,23 @@ ax_zoom.set_title("zoom", fontsize=8)
 ax_zoom.set_xlim(*zoom_xlim)
 ax_zoom.set_ylim(*zoom_ylim)
 
-# paths through the intensity maximum
-ax_zoom.axhline(q_z_max, color="cyan", lw=0.8, label="horizontal")
-ax_zoom.axvline(q_x_max, color="lime", lw=0.8, label="vertical")
-# arc segment at constant |q| through the maximum: the mosaicity direction
+# mark the two prominent reflections in the zoom
+for (px, pz, _), label, color in [
+    (substrate, "substrate", "cyan"),
+    (film, "film", "lime"),
+]:
+    ax_zoom.scatter(px, pz, s=30, facecolors="none", edgecolors=color, lw=1.0)
+    ax_zoom.annotate(
+        f"{label}\n$q_\\perp={pz:.3f}$",
+        xy=(px, pz),
+        xytext=(6, 0),
+        textcoords="offset points",
+        color=color,
+        fontsize=6,
+        va="center",
+        ha="left",
+    )
+# mark the zoom region on the full map
 ax_full.add_patch(
     Rectangle(
         (zoom_xlim[0], min(zoom_ylim)),
