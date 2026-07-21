@@ -22,7 +22,7 @@ three-dimensional direct lattice. The distances between two adjacent lattice poi
 i.e., the magnitudes $\lvert \mathbf{a}_{i}\rvert$, are called lattice constants \autocite{Ashcroft}.
 Depending on how the crystal behaves under symmetry operations, different
 conditions arise for the lattice constants and the angles between the lattice
-vectors. A simple categorization are the six crystal families, summarized in
+vectors. A simple categorization is given by the six crystal families, summarized in
 \cref{tab:crystal_families}.
 
 With the definition of a basis and a direct lattice, any ideal crystal can be described.
@@ -100,21 +100,22 @@ group symmetry.
 		[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/corundum_2.pdf}
-		\caption{Bottom oxide layer and interstical mesh with aluminum submesh.}
+		\caption{Bottom oxide layer and interstitial mesh with aluminum submesh.}
 		\label{fig:corundum_2}
 	\end{subfigure}
 	\begin{subfigure}
 		[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/corundum_3.pdf}
-		\caption{3D view of interstical meshes with holes and aluminum atoms.}
+		\caption{3D view of interstitial meshes with holes and aluminum atoms.}
 		\label{fig:corundum_3}
 	\end{subfigure}
-	\caption{Selected crystal lattices for investigating \ac{zno}\label{fig:lattice_structures}}
+	\caption{Selected crystal lattices for investigating the corundum structure\label{fig:lattice_structures}}
 \end{figure*}
 
-Understanding the corundum structure requires first considering the simple
-hexagonal structure, defined by the primitive vectors \autocite{Ashcroft}:
+The sapphire substrate examined in this work crystallizes in the corundum
+structure. Understanding it requires first considering the simple hexagonal
+structure, defined by the primitive vectors \autocite{Ashcroft}:
 \begin{equation}
 	\mathbf{a}_{1}= a\hat{x}, \quad \mathbf{a}_{2}= a/2 (\hat{x}+ \sqrt{3}\hat{y}),
 	\quad \mathbf{a}_{3}= c \hat{z}. \label{eq:hex}
@@ -125,35 +126,35 @@ the centers of its hexagonal faces, as shown in \cref{hex}. The hexagonal close-
 lattice positions $(0,0,0)$ and $(\mathbf{a}_{1}/3 + \mathbf{a}_{2}/3 + \mathbf{a}
 _{3}/2)$, as shown in \cref{hcp} \autocite{Ashcroft}.
 
-The sapphire (\ce{Al2O3}) structure features a hcp oxygen sublattice. In this structure,
+The sapphire (\ce{Al2O3}) structure features an hcp oxygen sublattice. In this structure,
 empty spaces between the closely packed oxygen atoms exist. Since every empty space
 is surrounded by six oxygen atoms that form an octahedron, these spaces are
 referred to as octahedral interstices and depicted in \cref{fig:corundum}. The interstices
 lie on planes midway between two adjacent oxygen hcp layers and are occupied by aluminum
-atoms. Since the third hcp layer is directly above the first, the second interstical
-layer is directly above the first. Therefore, all hexagonal interstical meshes are
+atoms. Since the third hcp layer is directly above the first, the second interstitial
+layer is directly above the first. Therefore, all hexagonal interstitial meshes are
 above each other, leading to a hexagonal arrangement of interstices.
 
 \Cref{fig:corundum_2} displays the arrangement of aluminum atoms in the in-plane
-interstical hexagonal mesh. Since the number of interstices corresponds to the number
-of the oxygen layer below and since the stochiometry of aluminum oxide is $\ce{Al2O3}$,
+interstitial hexagonal mesh. Since the number of interstices corresponds to the number
+of the oxygen layer below and since the stoichiometry of aluminum oxide is $\ce{Al2O3}$,
 2/3 of these interstices are occupied by aluminum atoms. The remaining 1/3 of the
 interstices are empty and are called holes. These holes are regions of negative
 localized charge. The requirement of an ordered aluminum sublattice leads to an in-plane
 solution maximizing the hole separation due to their negative charge. To fulfill
 this condition in-plane, the holes are arranged in a wider hexagonal "hole" mesh as
-a subset of the interstical mesh, shown in \cref{fig:corundum_2}.
+a subset of the interstitial mesh, shown in \cref{fig:corundum_2}.
 
-The arrangement of holes between adjacent meshes is not arbitrary. Requireing an ordered
+The arrangement of holes between adjacent meshes is not arbitrary. Requiring an ordered
 sublattice with maximum separation between the holes uniquely determines the arrangement.
 The holes in adjacent meshes are shifted relative to each other in the direction
-of the closest packed direction of the oxygen hcp lattice by a magnitude of an
+of the close-packed direction of the oxygen hcp lattice by a magnitude of an
 oxygen-oxygen distance. This out-of-plane shift of the holes is depicted in \cref{fig:corundum_3}.
-Since a translation of 3 out-of-plane shift-vectors results in an identical
-arrangement, three different hole layers exist, that are labeled A, B, and C. The
+Since a translation of three out-of-plane shift vectors results in an identical
+arrangement, three different hole layers exist, labeled A, B, and C. The
 oxygen hcp meshes are labeled with '1' and '2'. The structural repeat unit of
-the corundum strucutre is then given by the sequence 1A2B1C2A1B2C consisting of
-6 oxygen layers.
+the corundum structure is then given by the sequence 1A2B1C2A1B2C consisting of
+six oxygen layers.
 
 \subsection{Reciprocal Space}
 
@@ -243,7 +244,7 @@ $\langle h\, k \, l \rangle$ is used accordingly.
 	\begin{subfigure}
 		{0.3\linewidth}
 		\includegraphics{../assets/pseudomorphic.pdf}
-		\caption{Pseudomorphical growth of a thin film on a substrate}
+		\caption{Pseudomorphic growth of a thin film on a substrate}
 	\end{subfigure}
 	\begin{subfigure}
 		{0.3\linewidth}
@@ -260,7 +261,7 @@ $\langle h\, k \, l \rangle$ is used accordingly.
 \end{figure*}
 
 As the crystal is in energy exchange with its environment, it minimizes the free
-energy $F=U-TS$ instead of its inner energy $U$. This introduces deviations from the
+energy $F=U-TS$ instead of its internal energy $U$. This introduces deviations from the
 ideal crystal structure, i.e. defects. A small concentration of defects can
 fundamentally influence the crystal's properties.
 
@@ -275,7 +276,8 @@ degree of relaxation is given as:
 \end{equation}
 In this equation $a_{\mathrm{film}}$ is the measured lattice constant of a thin
 film and $a_{\mathrm{film}}^{\mathrm{relax}}$ is the totally relaxed lattice
-constant. $r=0$ yields a pseudomorphical growth while $r=1$ a fully relaxed film.
+constant. $r=0$ corresponds to pseudomorphic growth, while $r=1$ corresponds to a fully
+relaxed film.
 
 As the strain of the film increases per deposited layer, strain energy is
 released by one-dimensional defects: dislocations. The dislocation's orientation
@@ -288,11 +290,11 @@ $\mathbf{b}$ relative to $\mathbf{L}$, one can distinguish between screw-type
 dislocations ($\mathbf{b}\parallel \mathbf{L}$) and edge-type dislocations ($\mathbf{b}
 \perp \mathbf{L}$).
 
-Edge type dislocations prefer to group together in order to minimize the total
+Edge-type dislocations prefer to group together in order to minimize the total
 strain energy. This agglomeration of dislocations results in grain boundaries which
 separate monocrystalline regions of the thin film, called crystallites. They are twisted
-by an angle $\delta$. By analog reasoning, an agglomeration of screw type dislocations
-result in a tilt of the crystallites.
+by an angle $\delta$. By analog reasoning, an agglomeration of screw-type dislocations
+results in a tilt of the crystallites.
 
 \begin{figure}
 	\centering

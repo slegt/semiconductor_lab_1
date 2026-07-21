@@ -13,7 +13,7 @@ Different constraints on the Euler-cradle motion lead to a variety of scanning
 methods. Each has a different trajectory through the [[Ewald Sphere]] and therefore
 reveals different information about the sample. Popular scanning methods are:
 
-\subsection{Miscut Identification}
+\subsection{Miscut Identification}\label{sec:miscut}
 
 \begin{figure}
 	\centering
@@ -189,9 +189,10 @@ Similar to the discussion in 2TO-Scans, this leads to a peak broadening in $q_{\
 direction. For a symmetrical rocking curve, assuming that the limited coherence size
 is the only reason for peak broadening, the coherence length can be estimated as:
 
-\[
+\begin{equation}
 	L_{\parallel}=\frac{0.9 \lambda}{2\Delta\Omega\cdot \sin(\theta)}
-\]
+	\label{eq:coherence_length}
+\end{equation}
 \subsubsection{Mosaicity}
 
 Another broadening mechanism originates from the tilt of the crystallites. A
@@ -216,12 +217,10 @@ is the $\{ 1 0 1 \}$ peak, which can be measured directly.
 By assuming that broadening of rocking curves is only due to tilt and twist, it is
 possible to calculate the dislocation densities with respect to the $[001]$-axis:
 
-\[
-	\begin{align}
-		\rho_{\mathrm{screw}} & = \frac{\Delta\Omega_{002}^{2}}{4.35 \lvert \mathbf{b}_{\mathrm{screw}}\rvert^{2}} \\
-		\rho_{\mathrm{edge}}  & =\frac{\Delta\Omega_{101}^{2}}{4.35 \lvert \mathbf{b}_{\mathrm{edge}}\rvert^{2}}
-	\end{align}
-\]
+\begin{align}
+	\rho_{\mathrm{screw}} & = \frac{\Delta\Omega_{002}^{2}}{4.35 \lvert \mathbf{b}_{\mathrm{screw}}\rvert^{2}} \label{eq:rho_screw} \\
+	\rho_{\mathrm{edge}}  & =\frac{\Delta\Omega_{101}^{2}}{4.35 \lvert \mathbf{b}_{\mathrm{edge}}\rvert^{2}} \label{eq:rho_edge}
+\end{align}
 In this case $\mathbf{b}_{\mathrm{screw}}=\mathbf{b}_{3}$ and $\mathbf{b}_{\mathrm{edge}}
 =1 /3 \cdot[ 110]a$.
 
