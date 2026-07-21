@@ -15,6 +15,16 @@ reveals different information about the sample. Popular scanning methods are:
 
 \subsection{Miscut Identification}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{../assets/scan_miscut.png}
+	\caption{A miscut tilts the reciprocal-lattice vector $\mathbf{G}$ by the angle
+		$\gamma$ out of the $\hat{q}_{\perp}$ direction. Rotating the sample about
+		$\varphi$ sweeps the projection onto the scattering plane, which is measured
+		at $\varphi = 0^\circ, 90^\circ, 180^\circ, 270^\circ$.}
+	\label{fig:scan_miscut}
+\end{figure}
+
 An XRD instrument offers a very high resolution in the scattering plane, but a
 lower resolution perpendicular to it. The axial acceptance describes the angular range,
 out of the scattering plane, over which the diffractometer can still detect a reflection.
@@ -32,8 +42,8 @@ system as:
 		\cos(\gamma)
 	\end{pmatrix}
 \]
-![[Drawing 2026-06-19 13.35.50.excalidraw]] A perfectly aligned crystal features $\gamma
-=0$. Since the miscut is small, the reflex lies within the axial acceptance for all
+
+A perfectly aligned crystal features $\gamma =0$. Since the miscut is small, the reflex lies within the axial acceptance for all
 $\varphi$. Therefore, the projection is measured as:
 
 \[
@@ -50,8 +60,6 @@ Systems, a relation $\omega(\varphi)$ can be established to fit the data:
 	\omega-\theta_{\mathrm{B}}=\arctan\left( \frac{q_{\parallel}}{q_{\perp}}\right)
 	=\arctan[\tan(\gamma)\cos(\varphi+\varphi_{0})] \\
 \]
-\subsection{Relation to the Paper's Method}
-
 The paper defines the following helper angles, which are related to the miscut
 angle $\gamma$ as:
 
@@ -88,7 +96,25 @@ scattering vector is defined as (see XRD Coordinate Systems):
 vector parallel to $\hat{q}_{\perp}$. By setting $\Omega=\theta$, these reflexes can
 be observed.
 
-\subsection{Peak Broadening}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{0.55\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/scan_2to.png}
+		\caption{Trajectories through reciprocal space.}
+		\label{fig:scan_2to}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/scan_2to_error.png}
+		\caption{Peak broadening in $\hat{q}_{\perp}$ direction.}
+		\label{fig:scan_2to_error}
+	\end{subfigure}
+	\caption{The $2\theta\Omega$-scan changes only the magnitude of the scattering
+		vector $\mathbf{q}$, while its direction remains fixed.}
+	\label{fig:scan_2to_full}
+\end{figure}
 
 Since thin films exhibit columnar growth, the vertical coherence length is not infinite
 but limited by the layer thickness, which is around a couple of $\pu{ 100 nm}$. The
@@ -122,8 +148,6 @@ is:
 
 \subsection{Omega Scans}
 
-![[Pasted image 20260421103627.png|400]]
-
 In an $\Omega$-scan, the sample is rotated around the $\Omega$-axis, while
 $\theta$, $\varphi$ and $\chi$ are kept constant. This routine moves the
 scattering vector on a circular path around the origin (see XRD Coordinate Systems):
@@ -135,6 +159,26 @@ scattering vector on a circular path around the origin (see XRD Coordinate Syste
 		\cos(\Omega-\theta)
 	\end{pmatrix}
 \]
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/scan_omega.png}
+		\caption{Trajectory through reciprocal space.}
+		\label{fig:scan_omega}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../assets/scan_omega_error.png}
+		\caption{Peak broadening in $\hat{q}_{\parallel}$ direction.}
+		\label{fig:scan_omega_error}
+	\end{subfigure}
+	\caption{The $\Omega$-scan moves the scattering vector $\mathbf{q}$ on a
+		circular path around the origin.}
+	\label{fig:scan_omega_full}
+\end{figure}
+
 \subsection{Peak Broadening}
 
 \subsubsection{Lateral Coherence Length}

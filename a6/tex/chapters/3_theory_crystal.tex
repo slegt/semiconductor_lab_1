@@ -1,50 +1,50 @@
 \section{Crystal Theory}
-To understand the sapphire substrate, the \ac{algao} thin film as well as \ac{hrxrd},
-a fundamental understanding of the structure of crystalline solids is essential. The
-following pages therefore serve as a summary of the concepts from solid-state physics
-relevant to this work.
+To understand the sapphire substrate, the \ac{algao} thin film as well as the
+diffraction process in general, a fundamental understanding of the structure of crystalline
+solids is essential. The following pages therefore serve as a summary of the
+concepts from solid-state physics relevant to this work.
 
-\subsection{Direct Lattice, Unit Cell, and Basis}
-The model of an ideal crystal is used as an idealization for many solids.
-According to \citeauthoryear{Hunklinger}, an ideal crystal is a three-dimensional,
-infinitely extended arrangement composed of identical, periodically repeating
-building blocks. These building blocks are referred to as the basis. They can
-represent individual atoms as well as complex atomic structures. If one reduces each
-building block to a single point, a simple-to-describe point lattice is formed.
+\subsection{Direct Lattice, Unit Cell and Basis}
+The model of an ideal crystal is used as an idealization for many solids. According
+to \citeauthoryear{Hunklinger}, an ideal crystal is a three-dimensional,
+infinitely extended arrangement composed of identical, periodically repeating building
+blocks. These building blocks are referred to as the basis. They can represent individual
+atoms as well as complex atomic structures. If one reduces each building block
+to a single point, a simple-to-describe point lattice is formed.
 
-Considering the translation operators $T(\mathbf{O})$ that map the lattice onto
-itself, one recognizes the relationship $\mathbf{O}= n_{1}\mathbf{a}_{1}+n_{2}\mathbf{a}
-_{2}+n_{3}\mathbf{a}_{3}$ due to the periodicity of the lattice, where
-$\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}, i\in \{1,2,3\}$ \autocite{Hunklinger}.
-The vectors $\mathbf{a}_{i}$ define a skew-angled coordinate system and are
-called primitive lattice vectors. They span the so-called three-dimensional direct
-lattice. The distances between two adjacent lattice points, i.e., the magnitudes $\lvert
-\mathbf{a}_{i}\rvert$, are called lattice constants \autocite{Ashcroft}.
-Depending on how the crystal behaves under symmetry operations, different conditions
-arise for the lattice constants and the angles between the lattice vectors. A
-simple categorization are the six crystal families, summarized in \cref{tab:crystal_families}.
+Considering the translation operators $T(\mathbf{O})$ that map the lattice onto itself,
+one recognizes the relationship
+$\mathbf{O}= n_{1}\mathbf{a}_{1}+n_{2}\mathbf{a}_{2}+n_{3}\mathbf{a}_{3}$ due to
+the periodicity of the lattice, where $\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}
+, i\in \{1,2,3\}$ \autocite{Hunklinger}. The vectors $\mathbf{a}_{i}$ define a skew-angled
+coordinate system and are called primitive lattice vectors. They span the so-called
+three-dimensional direct lattice. The distances between two adjacent lattice points,
+i.e., the magnitudes $\lvert \mathbf{a}_{i}\rvert$, are called lattice constants \autocite{Ashcroft}.
+Depending on how the crystal behaves under symmetry operations, different
+conditions arise for the lattice constants and the angles between the lattice
+vectors. A simple categorization are the six crystal families, summarized in
+\cref{tab:crystal_families}.
 
-With the definition of a basis and a direct lattice, any ideal crystal can be
-described. A crystal structure is built by placing identical copies of the basis at
-every point of the direct lattice \autocite{Ashcroft}. By defining $N$ basis vectors
-$\mathbf{c}_{j}$, $j=1, \dots, N$, relative to the nearest direct lattice point,
-each atom in the crystal can be described as:
+With the definition of a basis and a direct lattice, any ideal crystal can be described.
+A crystal structure is built by placing identical copies of the basis at every
+point of the direct lattice \autocite{Ashcroft}. By defining $N$ basis vectors
+$\mathbf{c}_{j}$, $j=1, \dots, N$, relative to the nearest direct lattice point, each
+atom in the crystal can be described as:
 \begin{equation}
 	\mathbf{r}_{uvw, j}= u \mathbf{a}_{1}+ v \mathbf{a}_{2}+ w \mathbf{a}_{3}+ \mathbf{c}
 	_{j}
 \end{equation}
 
-According to \citeauthoryear{Ashcroft}, by cleverly choosing subsets of real
-space, the entire space can be filled completely without overlap by arranging these
-subsets next to each other. Such sets are called unit cells. If the unit cell is chosen
-to contain only one lattice point, it is called a primitive unit cell. With a primitive
-unit cell, the space can be tiled without gaps or overlaps by translating the
-cell along each direct lattice vector. A simple construction yields a parallelepiped
-spanned by the three basis vectors. The volume
-$V_{\mathrm{UC}}= \lvert \mathbf{a}_{1}\cdot (\mathbf{a}_{2}\times \mathbf{a}_{3}
-) \rvert$
-of this parallelepiped gives the effective volume per lattice point \autocite{Ashcroft}.
-Usually, the basis vectors are defined within the parallelepiped.
+According to \citeauthoryear{Ashcroft}, by cleverly choosing subsets of real space,
+the entire space can be filled completely without overlap by arranging these
+subsets next to each other. Such sets are called unit cells. If the unit cell is
+chosen to contain only one direct lattice point, it is called a primitive unit cell.
+With a primitive unit cell, the space can be tiled without gaps or overlaps by translating
+the cell along each direct lattice vector. A simple construction yields a
+parallelepiped spanned by the three basis vectors. The volume $V_{\mathrm{UC}}= \lvert
+\mathbf{a}_{1}\cdot (\mathbf{a}_{2}\times \mathbf{a}_{3}) \rvert$ of this parallelepiped
+gives the effective volume per lattice point \autocite{Ashcroft}. Usually, the
+basis vectors are defined within the unit cell.
 
 \begin{table*}
 	\centering
@@ -62,14 +62,14 @@ Usually, the basis vectors are defined within the parallelepiped.
 	\label{tab:crystal_families}
 \end{table*}
 
-An even more precise classification of a crystal structure is given by its space
-group, a collection of symmetry operations that leaves the crystal invariant. In
-three dimensions, there exist 230 distinct space groups. Once the space group of
-a crystal is known, only a minimal, non-redundant set of atomic coordinates, the so-called
-structure parameters, needs to be specified. The complete basis is then obtained by
-applying every symmetry operation of the space group to these structure parameters,
-generating new atoms until the structure becomes invariant under the space group
-symmetry.
+An even more precise classification of a crystal structure is given by its space group,
+a collection of symmetry operations that leaves the crystal invariant. In three dimensions,
+there exist 230 distinct space groups. Once the space group of a crystal is known,
+only a minimal, non-redundant set of atomic coordinates, the so-called structure
+parameters, needs to be specified. The complete basis is then obtained by
+applying every symmetry operation of the space group to these structure
+parameters, generating new atoms until the structure becomes invariant under the space
+group symmetry.
 
 \subsection{Corundum Structure}
 \begin{figure*}
@@ -113,136 +113,129 @@ symmetry.
 	\caption{Selected crystal lattices for investigating \ac{zno}\label{fig:lattice_structures}}
 \end{figure*}
 
-To understand the corundum structure, one first considers the simple hexagonal
-structure, defined by the primitive vectors \autocite{Ashcroft}:
+Understanding the corundum structure requires first considering the simple
+hexagonal structure, defined by the primitive vectors \autocite{Ashcroft}:
 \begin{equation}
 	\mathbf{a}_{1}= a\hat{x}, \quad \mathbf{a}_{2}= a/2 (\hat{x}+ \sqrt{3}\hat{y}),
 	\quad \mathbf{a}_{3}= c \hat{z}. \label{eq:hex}
 \end{equation}
-This forms a lattice with points at the corners of a hexagon and at the centers of
-its hexagonal faces, as shown in \cref{hex}. From the simple hexagonal structure,
-the hexagonal close-packed (hcp) structure arises. This is based on a simple hexagonal
-lattice with a two-atom basis at the lattice positions $(0,0,0)$ and $(\mathbf{a}
-_{1}/3 + \mathbf{a}_{2}/3 + \mathbf{a}_{3}/2)$, as shown in \cref{hcp} \autocite{Ashcroft}.
+These vectors create a lattice featuring points at the corners of a hexagon and at
+the centers of its hexagonal faces, as shown in \cref{hex}. The hexagonal close-packed
+(hcp) structure arises as a simple hexagonal lattice with a two-atom basis at the
+lattice positions $(0,0,0)$ and $(\mathbf{a}_{1}/3 + \mathbf{a}_{2}/3 + \mathbf{a}
+_{3}/2)$, as shown in \cref{hcp} \autocite{Ashcroft}.
 
-To describe the $\ce{Al2O3}$ structure, one starts with a hcp oxygen sublattice. In
-this structure, empty spaces between the closely packed oxygen atoms exist. Since
-every empty space is surrounded by six oxygen atoms that form an octahedron,
-these spaces are referred to as octahedral interstices and depicted in
-\cref{fig:corundum}. Most of these interstices are occupied by aluminum atoms.
-The interstices lie on planes midway between two adjacent oxygen hcp layers. Since
-the third hcp layer is directly above the first, the second interstical layer is
-directly above the first. Therefore, all hexagonal interstical meshes are above
-each other, leading to a hexagonal arrangement of interstices.
+The sapphire (\ce{Al2O3}) structure features a hcp oxygen sublattice. In this structure,
+empty spaces between the closely packed oxygen atoms exist. Since every empty space
+is surrounded by six oxygen atoms that form an octahedron, these spaces are
+referred to as octahedral interstices and depicted in \cref{fig:corundum}. The interstices
+lie on planes midway between two adjacent oxygen hcp layers and are occupied by aluminum
+atoms. Since the third hcp layer is directly above the first, the second interstical
+layer is directly above the first. Therefore, all hexagonal interstical meshes are
+above each other, leading to a hexagonal arrangement of interstices.
 
-\Cref{fig:corundum_2} shows the arrangement of aluminum atoms in the in-plane interstical
-hexagonal mesh. Since the number of interstices corresponds to the number of the
-oxygen layer below and since the stochiometry of aluminum oxide is $\ce{Al2O3}$, 2/3
-of these interstices are occupied by aluminum atoms. The remaining 1/3 of the
-interstices are empty and are called holes. These holes are regions of negative localized
-charge. If one requires that the aluminum sublattice is ordered, there exist an in-plane
-solution since one requires maximum separation between the holes due to their negative
-charge. To fulfill this condition in-plane, the holes are arranged in a wider hexagonal
-"hole" mesh as a subset of the interstical mesh, as shown in
-\cref{fig:corundum_2}.
+\Cref{fig:corundum_2} displays the arrangement of aluminum atoms in the in-plane
+interstical hexagonal mesh. Since the number of interstices corresponds to the number
+of the oxygen layer below and since the stochiometry of aluminum oxide is $\ce{Al2O3}$,
+2/3 of these interstices are occupied by aluminum atoms. The remaining 1/3 of the
+interstices are empty and are called holes. These holes are regions of negative
+localized charge. The requirement of an ordered aluminum sublattice leads to an in-plane
+solution maximizing the hole separation due to their negative charge. To fulfill
+this condition in-plane, the holes are arranged in a wider hexagonal "hole" mesh as
+a subset of the interstical mesh, shown in \cref{fig:corundum_2}.
 
-The arrangement of holes between adjacent meshes is not arbitrary. Again the requirement
-of an ordered sublattice with maximum separation between the holes uniquely determines
-the arrangement. The holes in adjacent meshes are shifted relative to each other
-in the direction of the closest packed direction of the oxygen hcp lattice by a
-magnitude of an oxygen-oxygen distance. This out-of-plane shift of the holes is depicted
-in \cref{fig:corundum_3}. Since a translation of 3 times the out-of-plane shift
-vector results in an identical arrangement, three different hole layers exist,
-that are labeled A, B, and C. The oxygen meshes are labeled with '1' and '2' to distinguish
-between the two oxygen layers. The structural repeat unit of the corundum
-strucutre is then given by the sequence 1A2B1C2A1B2C consisting of 6 oxygen
-layers.
+The arrangement of holes between adjacent meshes is not arbitrary. Requireing an ordered
+sublattice with maximum separation between the holes uniquely determines the arrangement.
+The holes in adjacent meshes are shifted relative to each other in the direction
+of the closest packed direction of the oxygen hcp lattice by a magnitude of an
+oxygen-oxygen distance. This out-of-plane shift of the holes is depicted in \cref{fig:corundum_3}.
+Since a translation of 3 out-of-plane shift-vectors results in an identical
+arrangement, three different hole layers exist, that are labeled A, B, and C. The
+oxygen hcp meshes are labeled with '1' and '2'. The structural repeat unit of
+the corundum strucutre is then given by the sequence 1A2B1C2A1B2C consisting of
+6 oxygen layers.
 
 \subsection{Reciprocal Space}
 
-The reciprocal lattice plays a fundamental role in the further consideration of periodic
-structures. The goal is to construct a function that is lattice-periodic in the
-Bravais lattice. This function should therefore satisfy $f(\mathbf{x})=f(\mathbf{x}
+The reciprocal lattice is an important concept in the subsequent considerations of
+periodic structures. The goal is to construct a function that is lattice-periodic
+in the direct lattice. This function should therefore satisfy $f(\mathbf{x})=f(\mathbf{x}
 +\mathbf{O})$, if $\mathbf{O}=\sum_{i=1}^{3}\alpha_{i}\mathbf{a}_{i}$. Using a series
-expansion, the following general form is obtained:
+expansion, the following form is obtained:
 \begin{align}
-	f(\mathbf{x})            & =\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot\mathbf{x}), \notag                                                                                     \\
-	f(\mathbf{x}+\mathbf{O}) & =\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{x})\cdot \notag \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 } \\
-	                         & \stackrel{!}{=}f(\mathbf{x}).
+	f(\mathbf{x})            & =\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot\mathbf{x}), \notag                                                                                                                  \\
+	f(\mathbf{x}+\mathbf{O}) & =\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{x})\cdot \notag \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 }\stackrel{!}{=}f(\mathbf{x}).
 \end{align}
-The necessary condition $\exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1$ is evident.
-This is equivalent to the statement $\mathbf{R}\cdot \mathbf{O}=2\pi z$ with
-$z \in \mathbb{Z}$. With this preliminary consideration, it is possible to
-define the reciprocal lattice by the set
-$\{ \mathbf{R}\,\vert\, \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1 \quad \forall
-\mathbf{O}\in \text{span}(\mathbf{a}_{i}) \}$
-\autocite{Ashcroft}. Analogous to real space, primitive vectors can also be formed
-here with the following rule:
+This implies the necessary condition $\exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=
+1$, that is equivalent to $\mathbf{R}\cdot \mathbf{O}=2\pi z$ with
+$z \in \mathbb{Z}$. It is possible to define the reciprocal lattice by the set $\{
+\mathbf{R}\,\vert\, \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1 \quad \forall \mathbf{O}
+\in \text{span}(\mathbf{a}_{i}) \}$ \autocite{Ashcroft}. Analogous to real space,
+primitive vectors can also be formed as:
 \begin{equation}
 	\mathbf{b}_{1}= 2\pi \cdot \frac{\mathbf{a}_{2}\times \mathbf{a}_{3}}{V_{\mathrm{UC}}}
 	\quad \mathbf{b}_{2}= 2\pi \cdot \frac{\mathbf{a}_{3}\times \mathbf{a}_{1}}{V_{\mathrm{UC}}}
 	\quad \mathbf{b}_{3}= 2\pi \cdot \frac{\mathbf{a}_{1}\times \mathbf{a}_{2}}{V_{\mathrm{UC}}}
 	.
 \end{equation}
-Every point in the reciprocal lattice can be described by
-$\sum_{i=1}^{3}\beta_{i}\mathbf{b}_{i}$ with
-$\beta_{i}\in \mathbb{Z}, i\in\{1,2,3\}$. The relation $\mathbf{b}_{i}\cdot \mathbf{a}
-_{j}=2 \pi \delta_{ij}$ holds, where $\delta_{ij}$ is the Kronecker delta
-\autocite{Ashcroft}.
+Every point in the reciprocal lattice can be described by $\sum_{i=1}^{3}\beta_{i}
+\mathbf{b}_{i}$ with $\beta_{i}\in \mathbb{Z}, i\in\{1,2,3\}$. The relation
+$\mathbf{b}_{i}\cdot \mathbf{a}_{j}=2 \pi \delta_{ij}$ holds, where $\delta_{ij}$
+is the Kronecker delta \autocite{Ashcroft}.
 
 \subsection{Lattice Planes and Directions}
 This section is based on the findings of \citeauthoryear{Ashcroft} \autocite{Ashcroft}.
 
-The first important application of the reciprocal lattice is the characterization
-of lattice planes. A lattice plane is any plane lying in the Bravais lattice
-that contains at least three non-collinear lattice points. Due to crystal symmetry,
-infinitely many other lattice points lie within this plane. Using translational symmetry,
-one can find parallel lattice planes separated by a distance $d$. These are grouped
+An important application of the reciprocal lattice is the characterization of
+lattice planes. A lattice plane is any plane lying in the direct lattice that contains
+at least three non-collinear lattice points. Due to crystal symmetry, infinitely many
+other lattice points lie within this plane. Using translational symmetry, one can
+find parallel lattice planes separated by a distance $d$. These are grouped
 together as families of lattice planes.
 
-Families of lattice planes can be characterized using the reciprocal lattice,
-because for every family of lattice planes with spacing $d$, there exist vectors of
-the reciprocal lattice that are perpendicular to the planes. For a unique
-description, the shortest of these vectors, $\mathbf{r}$, is chosen, which
-always has the length $2 \pi / d$. The converse is also true: for every vector
-$\mathbf{R}$ from the reciprocal lattice, there exists a family of perpendicular lattice
-planes. The spacing $d$ of these planes is linked to the magnitude of the
-smallest vector $\mathbf{r}$ parallel to $\mathbf{R}$ by
-$\lvert \mathbf{r}\rvert=2\pi /d$. Thus, there is a simple way to uniquely
-identify lattice planes using reciprocal lattice vectors.
+Families of lattice planes can be characterized using the reciprocal lattice, because
+for every family with spacing $d$, there exist vectors of the reciprocal lattice
+that are perpendicular to the planes. For a unique description, the shortest of
+these vectors, $\mathbf{b}$, is chosen, which always has the length $2 \pi / d$.
+The converse is also true: for every vector $\mathbf{B}$ from the reciprocal lattice,
+there exists a family of perpendicular lattice planes. The spacing $d$ of these planes
+is linked to the magnitude of the smallest vector $\mathbf{r}$ parallel to $\mathbf{B}$
+by $\lvert \mathbf{b}\rvert=2\pi /d$. Thus, there is a simple way to uniquely identify
+lattice planes using reciprocal lattice vectors.
 
-To label families of lattice planes, Miller indices are used. Let $\mathbf{r}$
-be the shortest reciprocal lattice vector perpendicular to the plane being
-characterized. This can be represented as $\mathbf{r}= h \mathbf{b_1}+ k \mathbf{b_2}
-+ l \mathbf{b_3}$. The tuple $(h\, k\, l)$ are the Miller indices, which by definition
-must be integers.
+To label families of lattice planes, Miller indices are used. Let $\mathbf{r}$ be
+the shortest reciprocal lattice vector perpendicular to the plane being characterized.
+This can be represented as
+$\mathbf{r}= h \mathbf{b_1}+ k \mathbf{b_2}+ l \mathbf{b_3}$. The tuple $(h\, k\,
+l)$ are the Miller indices, which by definition must be integers.
 
-There is a geometric interpretation that allows for the visualization of the indices
-in real space. For every lattice plane, a corresponding $A$ can be found such that
-the plane equation $\mathbf{r}\cdot \mathbf{x}= A$ is satisfied. Now, one defines
-the intercepts of the plane with the coordinate axes spanned by the primitive vectors
-$\mathbf{a}_{i}$ by the terms $x_{1}\mathbf{a}_{1}, x_{2}\mathbf{a}_{2}, x_{3}\mathbf{a}
-_{3}$. Since the intercepts lie on the plane, the plane equation $\mathbf{r}\cdot
-(x_{i}\mathbf{a}_{i})=A$ is satisfied, and with
-$\mathbf{r}\cdot\mathbf{a}_{1}=2\pi h$, $\mathbf{r}\cdot \mathbf{a}_{2}=2\pi k$,
-$\mathbf{r}\cdot \mathbf{a}_{3}=2\pi l$, the following relationship is found:
+There is a geometric interpretation that allows for the visualization of the
+indices in real space. For every lattice plane, a corresponding
+$A \in \mathbb{R}$ can be found such that the plane equation
+$\mathbf{r}\cdot \mathbf{x}= A$ is satisfied. By defining the intercepts of the plane
+with the coordinate axes spanned by the primitive vectors $\mathbf{a}_{i}$ as $x_{1}
+\mathbf{a}_{1}, x_{2}\mathbf{a}_{2}, x_{3}\mathbf{a}_{3}$, the plane equation
+$\mathbf{r}\cdot (x_{i}\mathbf{a}_{i})=A$ is satisfied, and with $\mathbf{r}\cdot
+\mathbf{a}_{1}=2\pi h$, $\mathbf{r}\cdot \mathbf{a}_{2}=2\pi k$, $\mathbf{r}\cdot
+\mathbf{a}_{3}=2\pi l$, the following relationship is obtained:
 \begin{equation}
 	x_{1}=\frac{A}{2\pi h}, \quad x_{2}=\frac{A}{2\pi k}, \quad x_{3}=\frac{A}{2\pi
 	l}.
 \end{equation}
-If the axial intercepts $x_{i}$ are known, the Miller indices can be found by choosing
-the smallest possible parameter $A$ such that $h$, $k$, and $l$ are integers.
+If the axial intercepts $x_{i}$ are known, the Miller indices can be found by
+choosing the smallest possible parameter $A$ such that $h$, $k$, and $l$ are
+integers.
 
-Not only lattice planes but also lattice directions can be indexed in a similar way.
-The tuple $[h\,k\,l]$ describes the direction given by the vector
-$\mathbf{O}= h\mathbf{a}_{1}+k\mathbf{a}_{2}+ l\mathbf{a}_{3}$. It should be noted
-that direction vectors in this context exist in real space, whereas plane normal
-vectors are represented by vectors in reciprocal space. To emphasize this,
-square brackets are used instead of round ones. Furthermore, a special notation
-exists to denote equivalent families of lattice planes and directions. In this context,
-this means that it is possible to transform equivalent families of planes and
-directions into one another through symmetry operations. Equivalent planes are denoted
-by $\{h \,k\, l \}$, and for directions, $\langle h\, k \, l \rangle$ is used accordingly.
+Lattice directions can be indexed in a similar way. The tuple $[h\,k\,l]$ describes
+the direction given by the vector $\mathbf{r}= h\mathbf{a}_{1}+k\mathbf{a}_{2}+ l
+\mathbf{a}_{3}$. It should be noted that direction vectors in this context exist
+in real space, whereas plane normal vectors are represented by vectors in reciprocal
+space. To emphasize this, square brackets are used instead of parentheses.
+Furthermore, a special notation exists to denote equivalent families of lattice planes
+and directions. In this context, this means that it is possible to transform equivalent
+families of planes and directions into one another through symmetry operations.
+Equivalent planes are denoted by $\{h \,k\, l \}$, and for directions,
+$\langle h\, k \, l \rangle$ is used accordingly.
 
 \subsection{Real Crystals}
 \begin{figure*}
@@ -266,10 +259,10 @@ by $\{h \,k\, l \}$, and for directions, $\langle h\, k \, l \rangle$ is used ac
 	\label{fig:film_growth}
 \end{figure*}
 
-As the crystal is in energy exchange with its environment, it minimizes the free energy
-$F=U-TS$ instead of the inner energy $U$. This introduces deviations from the
-ideal crystal structure, i.e. defects. A small concentration of defects can fundamentally
-influence the crystal's properties. Doping is a famous example.
+As the crystal is in energy exchange with its environment, it minimizes the free
+energy $F=U-TS$ instead of its inner energy $U$. This introduces deviations from the
+ideal crystal structure, i.e. defects. A small concentration of defects can
+fundamentally influence the crystal's properties.
 
 Most thin films differ chemically from their substrate. In that case, the film
 grows heteroepitactically, depicted in \cref{fig:film_growth}. If the lattice
@@ -288,19 +281,18 @@ As the strain of the film increases per deposited layer, strain energy is
 released by one-dimensional defects: dislocations. The dislocation's orientation
 is characterized by a dislocation vector $\mathbf{L}$. Most of the time,
 dislocations appear parallel to the growth direction. By moving in a loop around the
-dislocation using the local lattice coordinate system, one does not arrive at
-the starting point. The difference between start and end point is defined by the Burgers
-vector $\mathbf{b}$, depicted in \cref{fig:dislocations}. Depending on the orientation
-of $\mathbf{b}$ relative to $\mathbf{L}$, one can distinguish between screw-type
-dislocations ($\mathbf{b}\parallel \mathbf{L}$) and edge-type dislocations 
-($\mathbf{b} \perp \mathbf{L}$).
+dislocation using the local lattice coordinate system, the starting point is not
+reached. The difference between start and end point is defined by the Burgers vector
+$\mathbf{b}$, depicted in \cref{fig:dislocations}. Depending on the orientation of
+$\mathbf{b}$ relative to $\mathbf{L}$, one can distinguish between screw-type
+dislocations ($\mathbf{b}\parallel \mathbf{L}$) and edge-type dislocations ($\mathbf{b}
+\perp \mathbf{L}$).
 
 Edge type dislocations prefer to group together in order to minimize the total
-strain energy. This agglomeration of dislocations results in grain boundaries.
-Two monocrystalline regions of the thin film, called crystallites, are separated
-by a grain boundary. They are twisted by an angle $\delta$.
-By analog reasoning, an agglomeration of screw type dislocations result in a tilt of
-the crystallites. 
+strain energy. This agglomeration of dislocations results in grain boundaries which
+separate monocrystalline regions of the thin film, called crystallites. They are twisted
+by an angle $\delta$. By analog reasoning, an agglomeration of screw type dislocations
+result in a tilt of the crystallites.
 
 \begin{figure}
 	\centering
