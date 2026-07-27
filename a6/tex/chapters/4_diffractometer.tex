@@ -112,15 +112,11 @@ multiple directions.
 \subsection{Coordinate Systems}
 \label{sec:coordinate_systems}
 
-An XRD experiment features two coordinate systems:
+An XRD experiment features two coordinate systems, see \cref{fig:coordinate_system_1}:
+The two-dimensional laboratory frame (red), defined by the Goniometer axes and the
+reciprocal lattice (blue), which is defined by the crystal structure.
 
-\begin{itemize}
-	\item A two-dimensional laboratory frame (red), defined by the Goniometer axes.
-
-	\item The Reciprocal Lattice (blue), which is defined by the crystal lattice.
-\end{itemize}
-
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\newlength{\coordSysWidth}
 	\settowidth{\coordSysWidth}{\includegraphics{
@@ -139,92 +135,72 @@ An XRD experiment features two coordinate systems:
 	\begin{subfigure}
 		[t]{\coordSysWidth}
 		\centering
-		\includegraphics{../assets/coordinate_system_2.pdf}
+		\includegraphics{../assets/coordinate_system_3.pdf}
 		\caption{Reciprocal lattice}
 		\label{fig:coordinate_system_2}
 	\end{subfigure}
 	\begin{subfigure}
 		[t]{\coordSysWidth}
 		\centering
-		\includegraphics{../assets/coordinate_system_3.pdf}
+		\includegraphics{../assets/coordinate_system_2.pdf}
 		\caption{Reciprocal lattice}
-		\label{fig:coordinate_system_2}
+		\label{fig:coordinate_system_3}
 	\end{subfigure}
+
 	\caption{Laboratory frame and reciprocal lattice coordinate systems.}
 	\label{fig:coordinate_systems}
 \end{figure}
 
-The operations of the goniometer either change the relative position of both
-coordinate systems or the scattering vector $\mathbf{q}$.
+The laboratory frame coincides with the incidence plane, which is spanned by
+$\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$. The frame is fixed by
+the goniometer and does not depend on the crystal. Its two basis vectors are
+defined as: $\hat{q}_{\parallel}$ - the vector lies in the incidence plane and in the sample
+holder surface $\hat{q}_{\perp}$ - the vector lies in the incidence plane and is perpendicular
+to $\hat{q}_{\parallel}$. The scattering vector's coordinates along these two axes
+are denoted $q_{\parallel}$ and $q_{\perp}$.
 
-The laboratory frame coincides with the incidence plane, which is spanned by $\mathbf{k}
-_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$. The frame is fixed by the
-goniometer and does not move with the crystal. Its two basis vectors are defined as:
+The operations of the goniometer either change the relative position of both coordinate
+systems ($\varphi$ and $\chi$ rotation) or the scattering vector $\mathbf{q}$ ($\omega$
+and $2\theta$ rotation).
 
-\begin{itemize}
-	\item $q_{\perp}$ - perpendicular to the line where the sample holder plane intersects
-		the incidence plane
-
-	\item $q_{\parallel}$ - perpendicular to $q_{\perp}$ and therefore lies in the sample
-		holder plane.
-\end{itemize}
-
-Two angles $\theta$ and $\omega$ are used to describe $\mathbf{q}$ within the
-laboratory frame and can be set using the goniometer. $2\theta$ is the angle between
-$\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$ and $\omega$ is the angle
-between the sample holder surface and $\mathbf{k}_{\mathrm{in}}$:
-
+Two angles $\theta$ and $\omega$ are used to describe $\mathbf{q}$ within the laboratory
+frame and can be set using the goniometer, see \cref{fig:coordinate_system_2}. $2
+\theta$ is the angle between $\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$
+and $\omega$ is the angle between the sample holder surface and $\mathbf{k}_{\mathrm{in}}$:
 The magnitude of $\mathbf{q}$ can be represented using only $\theta$ as:
+\begin{align}
+	\lvert \mathbf{q}\rvert^{2} & =\lvert \mathbf{k}_{\mathrm{out}}- \mathbf{k}_{\mathrm{in}}\rvert^{2}=k^{2}+k^{2}-2k^{2}\cos(2\theta)=2k^{2}(1-\cos(2\theta))=4k^{2}\sin^{2}(\theta) \\
+	\lvert \mathbf{q}\rvert     & =2k \sin(\theta)
+\end{align}
+This reproduces the chord length of the Ewald sphere construction shown in
+\cref{fig:ewald_sphere}, which could previously only be expressed in terms of
+$\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$, since the diffractometer
+angles $\theta$ and $\omega$ had not yet been introduced.
 
-\[
-	\begin{align}
-		\lvert \mathbf{q}\rvert^{2} & =\lvert \mathbf{k}_{\mathrm{out}}- \mathbf{k}_{\mathrm{in}}\rvert^{2}=k^{2}+k^{2}-2k^{2}\cos(2\theta)=2k^{2}(1-\cos(2\theta))=4k^{2}\sin^{2}(\theta) \\
-		\lvert q \rvert             & =2k \sin(\theta)
-	\end{align}
-\]
-It can also be shown that the angle between the lattice plane perpendicular to $\mathbf{q}$
-and $\mathbf{k}_{\mathrm{out}}$ is $\theta$. Define $\alpha$ as the angle
-between $\mathbf{q}$ and $\mathbf{k}_{\mathrm{out}}$:
-
-\[
-	\begin{align}
-		\mathbf{k}_{\mathrm{out}}\cdot \mathbf{q} & =\mathbf{k}_{\mathrm{out}}\cdot(\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}})=k^{2}-k^{2}\cos(2\theta)=2k^{2}\sin^{2}(\theta)            \\
-		\cos(\alpha)                              & =\frac{\mathbf{k}_{\mathrm{out}}\cdot \mathbf{q}}{ k \cdot q }=\frac{2k^{2}\sin^{2}(\theta)}{2k^{2}\sin(\theta)}=\sin(\theta)=\cos(90°-\theta)
-	\end{align}
-\]
-
-$\alpha=90°-\theta$ is the angle between lattice plane normal and $\mathbf{k}_{\mathrm{out}}$
-and therefore $\theta$ is the angle between lattice plane and $\mathbf{k}_{\mathrm{out}}$.
-
-To represent $\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$ using $\theta$
-and $\omega$, note that $\omega$ is just the negative polar angle of
-$\mathbf{k}_{\mathrm{in}}$, and $\mathbf{k}_{\mathrm{out}}$ is obtained by rotating
+To represent $\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$ using
+$\theta$ and $\omega$, note that $\omega$ is just the negative polar angle of $\mathbf{k}
+_{\mathrm{in}}$, and $\mathbf{k}_{\mathrm{out}}$ is obtained by rotating
 $\mathbf{k}_{\mathrm{in}}$ by $2\theta$:
+\begin{align}
+	\mathbf{k}_{\mathrm{in}}  & = k \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix}                                                                                                                                                                                                                            \\
+	\mathbf{k}_{\mathrm{out}} & = k \begin{pmatrix}\cos(2 \theta) & -\sin(2\theta) \\ +\sin(2\theta) & \cos(2\theta)\end{pmatrix} \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix} =k \begin{pmatrix}\cos(2\theta-\omega) \\ \sin(2\theta-\omega)\end{pmatrix}                                                  \\
+	\mathbf{q}                & =\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}=k \begin{pmatrix}\cos(2\theta-\omega)-\cos(\omega) \\ \sin(2\theta-\omega) + \sin(\omega)\end{pmatrix} = 2k \sin(\theta) \begin{pmatrix}\sin(\omega-\theta) \\ \cos(\omega-\theta)\end{pmatrix} \label{eq:coordinate_transformation}
+\end{align}
+This equation also implies $q_{\parallel}/ q_{\perp}=\tan(\omega-\theta)$.
 
-\[
-	\begin{align}
-		\mathbf{k}_{\mathrm{in}}  & = k \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix}                                                                                                                                                                                       \\
-		\mathbf{k}_{\mathrm{out}} & = k \begin{pmatrix}\cos(2 \theta) & -\sin(2\theta) \\ +\sin(2\theta) & \cos(2\theta)\end{pmatrix} \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix} =k \begin{pmatrix}\cos(2\theta-\omega) \\ \sin(2\theta-\omega)\end{pmatrix}             \\
-		\mathbf{q}                & =\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}=k \begin{pmatrix}\cos(2\theta-\omega)-\cos(\omega) \\ \sin(2\theta-\omega) + \sin(\omega)\end{pmatrix} = 2k \sin(\theta) \begin{pmatrix}\sin(\omega-\theta) \\ \cos(\omega-\theta)\end{pmatrix}
-	\end{align}
-\]
+Both angles act on the system in different ways. Changing $2\theta$ only rotates
+the detector, while leaving the orientation of the laboratory and crystallographic
+frames untouched. Changing $\omega$ rotates the laboratory frame as well as the
+reciprocal lattice by the same amount, so that the reciprocal lattice does not move
+relative to the laboratory frame. Because the laboratory frame itself has turned,
+the coordinates of the scattering vector change accordingly, as captured by
+\cref{eq:coordinate_transformation}.
 
-This equation also implies $q_{\parallel}/ q_{\perp}=\tan(\omega-\theta)$. These two
-angles act on the system in different ways. Changing $\theta$ only modifies the
-scattering vector $\mathbf{q}$ through the relations above. It leaves the orientation
-of the laboratory and crystallographic frames untouched. Changing $\omega$
-rotates the laboratory frame as well as the reciprocal lattice by the same
-amount, so that the reciprocal lattice does not move relative to the laboratory frame.
-Because the laboratory frame itself has turned, the coordinates of the scattering
-vector change accordingly, as captured by the formula for $\mathbf{q}$.
-
-The reciprocal lattice orientation depends on the direct lattice, and therefore on
-the position of the crystal with respect to the sample holder. As $\theta$ only
-moves the detector and $\omega$ moves both the laboratory frame and the
-reciprocal lattice, neither angle changes the relative position between the two coordinate
-systems.
-
-The two angles that operate on the reciprocal lattice, $\chi$ and $\varphi$, share
-an important property: neither of them rotates the laboratory frame. Instead,
-they rotate only the reciprocal lattice, which changes its orientation \emph{relative
-to} the laboratory frame.
+The reciprocal lattice orientation depends on the direct lattice, and therefore
+on the position of the crystal with respect to the sample holder. As $\theta$ only
+moves the detector and $\omega$ moves both the laboratory frame and the reciprocal
+lattice, neither angle changes the relative position between the two coordinate
+systems. The two angles that operate on the reciprocal lattice, $\chi$ and $\varphi$,
+share an important property: neither of them rotates the laboratory frame.
+Instead, they rotate only the reciprocal lattice, which changes its orientation
+relative to the laboratory frame, as depicted in \cref{fig:coordinate_system_3}.
