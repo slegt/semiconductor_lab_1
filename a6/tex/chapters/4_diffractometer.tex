@@ -20,8 +20,8 @@ with a tungsten cathode and a copper anode generates incident
 $\ce{Cu}_{\mathrm{K}_{\alpha}}$ x-rays with a wavelength of
 $\lambda=\qty{1.540592(2)}{\angstrom}$. The beam goes through the \ac{xrd}
 incident optics and hits the sample at an angle $\omega$. The sample is glued onto
-the sample holder of a Goniometer. This device can rotate the sample around the
-three Euler angles $\omega$, $\varphi$ and $\chi$.The scattered x-ray beam passes
+the sample holder of a goniometer. This device can rotate the sample around the
+three Euler angles $\omega$, $\varphi$ and $\chi$. The scattered x-ray beam passes
 the receiving optics and is detected by an x-ray detector that is mounted on a rocking
 cantilever. It encloses an angle of $2\theta$ with the incident beam. The instrument
 is contained in a radiation enclosure, controlled by a computer.
@@ -36,7 +36,7 @@ the anode and ionize the copper atoms. During subsequent electronic relaxation, 
 photon is emitted. Its energy depends on the available energy levels of the
 material. The strongest radiation originates from the $K$-lines ($K_{\alpha 1}, K
 _{\alpha2}, K_{\beta}$). $K_{\alpha 1}$ radiation is used for measurement while
-$K_{\alpha 2}$ and $K_{\beta}$ is undesirable and therefore often filtered using
+$K_{\alpha 2}$ and $K_{\beta}$ are undesirable and therefore often filtered using
 a monochromator. Excessive use of a tungsten cathode leads to tungsten contamination
 on the anode. This results in additional peaks in the spectrum.
 
@@ -52,9 +52,9 @@ counts per second (cps). There exists a variety of types, depending on the
 underlying physics, for example: proportional counters, scintillation counters and
 solid-state detectors.
 
-Detectors can either measure a pointlike region, a line or an area. As a consequence,
+Detectors can measure a pointlike region, a line or an area. As a consequence,
 a finite window in reciprocal space is sampled during measurement. An important metric
-is the maximum count rate. By overstepping this limit, the detector starts responding
+is the maximum count rate. If this limit is exceeded, the detector starts responding
 non-linearly or even sustains damage.
 
 \subsection{Incident and Receiving Optics}
@@ -78,10 +78,10 @@ A major challenge of the diffraction setup is to condition the divergent x-rays 
 leave the source into a parallel beam before it reaches the sample. This
 conditioning occurs within the incident beam optics. The procedure is necessary to
 avoid divergence errors, as small deviations of the incoming radiation direction
-smear out the scattering vector. A suitable condition device is a laterally graded
+smear out the scattering vector. A suitable conditioning device is a laterally graded
 multilayer mirror. This mirror is designed for a specific wavelength, thus reducing
 the unwanted $K_{\beta}$ radiation as well as Bremsstrahlung. It does not reduce
-the x-ray intensity significantly. Since the divergence in axial direction is unaffected
+the x-ray intensity significantly. Since the divergence in the axial direction is unaffected
 by the mirror, it must be constrained through Soller slits. Installing an axial slit
 reduces the beam spot size.
 
@@ -100,7 +100,7 @@ in the beam path can be used as an attenuator.
 
 \subsection{Goniometer}
 
-The goniometer, depicted in \cref{fig:goniometer} can adjust the different
+The goniometer, depicted in \cref{fig:goniometer}, can adjust the different
 angles between x-ray source, sample and x-ray detector. Diffractometers used for
 thin film characterization usually feature a four-axis goniometer. In this setup,
 the source is installed in a fixed position, while the sample stage can be rotated
@@ -113,7 +113,7 @@ multiple directions.
 \label{sec:coordinate_systems}
 
 An XRD experiment features two coordinate systems, see \cref{fig:coordinate_system_1}:
-The two-dimensional laboratory frame (red), defined by the Goniometer axes and the
+the two-dimensional laboratory frame (red), defined by the goniometer axes and the
 reciprocal lattice (blue), which is defined by the crystal structure.
 
 \begin{figure}
@@ -155,7 +155,7 @@ The laboratory frame coincides with the incidence plane, which is spanned by
 $\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$. The frame is fixed by
 the goniometer and does not depend on the crystal. Its two basis vectors are
 defined as: $\hat{q}_{\parallel}$ - the vector lies in the incidence plane and in the sample
-holder surface $\hat{q}_{\perp}$ - the vector lies in the incidence plane and is perpendicular
+holder surface. $\hat{q}_{\perp}$ - the vector lies in the incidence plane and is perpendicular
 to $\hat{q}_{\parallel}$. The scattering vector's coordinates along these two axes
 are denoted $q_{\parallel}$ and $q_{\perp}$.
 
@@ -166,7 +166,7 @@ and $2\theta$ rotation).
 Two angles $\theta$ and $\omega$ are used to describe $\mathbf{q}$ within the laboratory
 frame and can be set using the goniometer, see \cref{fig:coordinate_system_2}. $2
 \theta$ is the angle between $\mathbf{k}_{\mathrm{in}}$ and $\mathbf{k}_{\mathrm{out}}$
-and $\omega$ is the angle between the sample holder surface and $\mathbf{k}_{\mathrm{in}}$:
+and $\omega$ is the angle between the sample holder surface and $\mathbf{k}_{\mathrm{in}}$.
 The magnitude of $\mathbf{q}$ can be represented using only $\theta$ as:
 \begin{align}
 	\lvert \mathbf{q}\rvert^{2} & =\lvert \mathbf{k}_{\mathrm{out}}- \mathbf{k}_{\mathrm{in}}\rvert^{2}=k^{2}+k^{2}-2k^{2}\cos(2\theta)=2k^{2}(1-\cos(2\theta))=4k^{2}\sin^{2}(\theta) \\

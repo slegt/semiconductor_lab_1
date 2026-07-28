@@ -86,6 +86,23 @@ a = 4.7577e-10
 c = 12.9907e-10
 rho_edge = fwhm_rad**2 / (4.35 * a**2)
 
+# calculate angle between (006) and (024)
+
+def get_reciprocal_vector(h, k, l):
+    b1 = 2* np.pi / (np.sqrt(3) * a) * np.array([1, np.sqrt(3), 0])
+    b2 = 2* np.pi / (np.sqrt(3) * a) * np.array([1, -np.sqrt(3), 0])
+    b3 = 2* np.pi / c * np.array([0, 0, 1])
+    return h * b1 + k *  b2 + l * b3
+
+def angle_between(u, v):
+    cos_theta = np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
+    cos_theta = np.clip(cos_theta, -1.0, 1.0)  
+    return np.rad2deg(np.arccos(cos_theta))
+
+plane_006 = get_reciprocal_vector(0, 0, 6)
+plane_024 = get_reciprocal_vector(0, 2, 4)
+plane_angle = angle_between(plane_006, plane_024)
+
 
 # export quantities
 exportable_data = {}
@@ -93,6 +110,7 @@ for label, center, center_err, fwhm, fwhm_err in peaks:
     exportable_data[f"{label}_omega"] = center
     exportable_data[f"{label}_fwhm"] = fwhm
 exportable_data["edge_dislocation_density"] = rho_edge
+exportable_data["plane_angle"] = plane_angle
 update_json_file(data_dict=exportable_data, key="task_2_006")
 
 # plot
