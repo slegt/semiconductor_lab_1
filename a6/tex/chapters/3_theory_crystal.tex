@@ -18,7 +18,7 @@ _{2}+n_{3}\mathbf{a}_{3}$ due to the periodicity of the lattice, where
 $\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}, i\in \{1,2,3\}$ \autocite{Hunklinger}.
 The vectors $\mathbf{a}_{i}$ define a skew-angled coordinate system and are
 called primitive lattice vectors. They span the so-called three-dimensional direct
-lattice. The distances between two adjacent lattice points, i.e., the magnitudes $\lvert
+lattice. The distances between adjacent lattice points, i.e., the magnitudes $\lvert
 \mathbf{a}_{i}\rvert$, are called lattice constants \autocite{Ashcroft}.
 Depending on how the crystal behaves under symmetry operations, different conditions
 arise for the lattice constants and the angles between the lattice vectors. A
@@ -78,14 +78,14 @@ symmetry.
 		[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/hex}
-		\caption{hexagonal lattice}
+		\caption{Hexagonal lattice.}
 		\label{hex}
 	\end{subfigure}
 	\begin{subfigure}
 		[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/hcp}
-		\caption{hcp lattice}
+		\caption{Hexagonal close-packed (hcp) lattice.}
 		\label{hcp}
 	\end{subfigure}
 	\par
@@ -113,7 +113,7 @@ symmetry.
 		atoms (black).}
 		\label{fig:corundum_3}
 	\end{subfigure}
-	\caption{Selected crystal lattices for investigating the corundum structure. (c)-(e)
+	\caption{Selected crystal lattices for investigating the corundum structure. (c)--(e)
 	adapted from \autocite{kronberg_plastic_1957}.}
 	\label{fig:lattice_structures}
 \end{figure*}
@@ -152,7 +152,7 @@ $(\mathbf{a}_{1}/3 + \mathbf{a}_{2}/3 + \mathbf{a}_{3}/2)$, as shown in \cref{hc
 The sapphire (\ce{Al2O3}) structure features an hcp oxygen sublattice. In this
 structure, empty spaces exist between the closely packed oxygen atoms. Since
 every empty space is surrounded by six oxygen atoms that form an octahedron, these
-spaces are referred to as octahedral interstices and depicted in \cref{fig:corundum}.
+spaces are referred to as octahedral interstices and are depicted in \cref{fig:corundum}.
 The interstices lie on planes midway between two adjacent oxygen hcp layers and
 are occupied by aluminum atoms. Since the third hcp layer is directly above the first,
 the second interstitial layer is directly above the first. Therefore, all
@@ -165,25 +165,25 @@ oxygen layer below and since the stoichiometry of aluminum oxide is $\ce{Al2O3}$
 2/3 of these interstices are occupied by aluminum atoms. The remaining 1/3 of
 the interstices are empty and are called holes. These holes are regions of negative
 localized charge. The requirement of an ordered aluminum sublattice leads to an
-in-plane solution maximizing the hole separation due to their negative charge. To
-fulfill this condition in-plane, the holes are arranged in a wider hexagonal "hole"
+in-plane solution maximizing the separation of the holes due to their negative charge. To
+fulfill this condition in-plane, the holes are arranged in a wider hexagonal ``hole''
 mesh as a subset of the interstitial mesh, shown in \cref{fig:corundum_2}.
 
 The arrangement of holes between adjacent meshes is not arbitrary. Requiring an
 ordered sublattice with maximum separation between the holes uniquely determines
 the arrangement. The holes in adjacent meshes are shifted relative to each other along
-the close-packed direction of the oxygen hcp lattice by a magnitude of an oxygen-oxygen
+the close-packed direction of the oxygen hcp lattice by one oxygen-oxygen
 distance. This out-of-plane shift of the holes is depicted in
 \cref{fig:corundum_3}. Since a translation of three out-of-plane shift vectors results
 in an identical arrangement, three different hole layers exist, labeled A, B, and
-C. The oxygen hcp meshes are labeled with '1' and '2'. The structural repeat unit
-of the corundum structure is then given by the sequence 1A2B1C2A1B2C consisting of
+C. The oxygen hcp meshes are labeled with `1' and `2'. The structural repeat unit
+of the corundum structure is then given by the sequence 1A2B1C2A1B2C, consisting of
 six oxygen layers.
 
 The corundum structure is illustrated using \ce{Al2O3} as a representative
-material, with reference to the hcp oxygen sublattice and an alumuminum intersticial
-mesh, though this may in general be substituted by other anions/cations. \ac{algao}
-also crystallizes in corundum structure, where Al and Ga occupy the interstitial lattice
+material, with reference to the hcp oxygen sublattice and an aluminum interstitial
+mesh, though these may in general be substituted by other anions/cations. \ac{algao}
+also crystallizes in the corundum structure, where Al and Ga occupy the interstitial lattice
 \autocite{peelaers_structural_2018}.
 
 \subsection{Reciprocal Space}
@@ -192,17 +192,17 @@ also crystallizes in corundum structure, where Al and Ga occupy the interstitial
 The reciprocal lattice is an important concept in the subsequent considerations of
 periodic structures. The goal is to construct a function that is lattice-periodic
 in the direct lattice. This function should therefore satisfy $f(\mathbf{x})=f(\mathbf{x}
-+\mathbf{A})$, if $\mathbf{A}=\sum_{i=1}^{3}\alpha_{i}\mathbf{a}_{i}$. Using a series
++\mathbf{A})$ if $\mathbf{A}=\sum_{i=1}^{3}\alpha_{i}\mathbf{a}_{i}$. Using a series
 expansion, the following form is obtained:
 \begin{align}
 	f(\mathbf{x})            & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot\mathbf{x}), \notag                                                                                                                  \\
 	f(\mathbf{x}+\mathbf{A}) & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{x})\cdot \notag \underbrace{ \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A}) }_{ \stackrel{!}{=}1 }\stackrel{!}{=}f(\mathbf{x}).
 \end{align}
 This implies the necessary condition $\exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A})=
-1$, that is equivalent to $\mathbf{B}\cdot \mathbf{A}=2\pi z$ with
-$z \in \mathbb{Z}$. It is possible to define the reciprocal lattice by the set $\{
+1$, which is equivalent to $\mathbf{B}\cdot \mathbf{A}=2\pi z$ with
+$z \in \mathbb{Z}$. It is possible to define the reciprocal lattice as the set $\{
 \mathbf{B}\,\vert\, \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A})=1 \quad \forall \mathbf{A}
-\in \text{span}(\mathbf{a}_{i}) \}$ \autocite{Ashcroft}. Analogous to real space,
+\in \text{span}(\mathbf{a}_{i}) \}$ \autocite{Ashcroft}. Analogously to real space,
 primitive vectors can also be formed as:
 \begin{equation}
 	\mathbf{b}_{1}= 2\pi \cdot \frac{\mathbf{a}_{2}\times \mathbf{a}_{3}}{V_{\mathrm{UC}}}
@@ -245,8 +245,8 @@ together as families of lattice planes.
 Families of lattice planes can be characterized using the reciprocal lattice, because
 for every family with spacing $d$, there exist vectors of the reciprocal lattice
 that are perpendicular to the planes. For a unique description, the shortest of
-these vectors, $\mathbf{b}$, is chosen, which always has the length $2 \pi / d$.
-The converse is also true: for every vector $\mathbf{B}$ from the reciprocal lattice,
+these vectors, $\mathbf{b}$, is chosen, which always has a length of $2 \pi / d$.
+The converse is also true: for every vector $\mathbf{B}$ of the reciprocal lattice,
 there exists a family of perpendicular lattice planes. The spacing $d$ of these planes
 is linked to the magnitude of the smallest vector $\mathbf{b}$ parallel to $\mathbf{B}$
 by $\lvert \mathbf{b}\rvert=2\pi /d$. Thus, there is a simple way to uniquely identify
@@ -255,7 +255,7 @@ lattice planes using reciprocal lattice vectors.
 To label families of lattice planes, Miller indices are used. Let $\mathbf{b}$ be
 the shortest reciprocal lattice vector perpendicular to the plane being characterized.
 This can be represented as
-$\mathbf{b}= h \mathbf{b_1}+ k \mathbf{b_2}+ l \mathbf{b_3}$. The tuple $(h\,k\,l
+$\mathbf{b}= h \mathbf{b_1}+ k \mathbf{b_2}+ l \mathbf{b_3}$. The entries of the tuple $(h\,k\,l
 )$ are the Miller indices, which by definition must be integers.
 
 There is a geometric interpretation that allows the indices to be visualized in
@@ -292,17 +292,17 @@ $\langle u\,v\,w\rangle$ is used accordingly.
 	\begin{subfigure}
 		{0.3\linewidth}
 		\includegraphics{../assets/pseudomorphic.pdf}
-		\caption{Pseudomorphic growth of a thin film on a substrate}
+		\caption{Pseudomorphic growth of a thin film on a substrate.}
 	\end{subfigure}
 	\begin{subfigure}
 		{0.3\linewidth}
 		\includegraphics{../assets/partially_relaxed.pdf}
-		\caption{Partially relaxed thin film on a substrate}
+		\caption{Partially relaxed thin film on a substrate.}
 	\end{subfigure}
 	\begin{subfigure}
 		{0.3\linewidth}
 		\includegraphics{../assets/fully_relaxed.pdf}
-		\caption{Fully relaxed thin film on a substrate}
+		\caption{Fully relaxed thin film on a substrate.}
 	\end{subfigure}
 	\caption{Heteroepitaxial thin film growth. Adapted from \autocite{wsi2007hrxrd}.}
 	\label{fig:film_growth}
@@ -310,13 +310,13 @@ $\langle u\,v\,w\rangle$ is used accordingly.
 
 This subsection is based on \autocite{wsi2007hrxrd}.
 
-As the crystal is in energy exchange with its environment, it minimizes the free energy
+As the crystal exchanges energy with its environment, it minimizes the free energy
 $F=U-TS$ instead of its internal energy $U$. This introduces deviations from the
 ideal crystal structure, i.e. defects. A small concentration of defects can fundamentally
 influence the crystal's properties.
 
 Most thin films differ chemically from their substrate. In that case, the film grows
-heteroepitaxially, depicted in \cref{fig:film_growth}. If the lattice constants do
+heteroepitaxially, as depicted in \cref{fig:film_growth}. If the lattice constants do
 not differ too much, the film adopts the substrate's in-plane lattice constant
 $a$. This is called pseudomorphic growth. A figure of merit to quantify the
 degree of relaxation is given as:
@@ -331,19 +331,19 @@ while $r=1$ corresponds to a fully relaxed film. $r<1$ induces material strain.
 
 As the strain of the film increases with each deposited layer, strain energy is released
 by one-dimensional defects: dislocations. The dislocation's orientation is characterized
-by a dislocation vector $\mathbf{L}$. Most of the time, dislocations appear parallel
-to the growth direction. By moving in a loop around the dislocation using the
+by a dislocation vector $\mathbf{L}$. In most cases, dislocations appear parallel
+to the growth direction. When moving in a loop around the dislocation using the
 local lattice coordinate system, the starting point is not reached. The
-difference between start and end point is defined by the Burgers vector
+difference between the start and end points is defined by the Burgers vector
 $\mathcal{B}$, depicted in \cref{fig:dislocations}. Depending on the orientation
 of $\mathcal{B}$ relative to $\mathbf{L}$, one can distinguish between screw-type
 dislocations ($\mathcal{B}\parallel \mathbf{L}$) and edge-type dislocations ($\mathcal{B}
 \perp \mathbf{L}$).
 
 Edge-type dislocations prefer to group together in order to minimize the total strain
-energy. This agglomeration of dislocations results in grain boundaries which
+energy. This agglomeration of dislocations results in grain boundaries that
 separate monocrystalline regions of the thin film, called crystallites. They are
-twisted by an angle $\delta$. By analog reasoning, an agglomeration of screw-type
+twisted by an angle $\delta$. By analogous reasoning, an agglomeration of screw-type
 dislocations results in a tilt of the crystallites.
 
 \begin{figure}

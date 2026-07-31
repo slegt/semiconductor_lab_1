@@ -12,7 +12,7 @@ A spherical electromagnetic wave is of the following form:
 	\mathbf{r}\rvert - \omega t)). \label{eq:spherical_wave}
 \end{equation}
 If the wave is observed in a small region $\mathcal{M}$ far away from its origin,
-it can be approximated as a planar wave. Let the center of $\mathcal{M}$ be at
+it can be approximated as a plane wave. Let the center of $\mathcal{M}$ be at
 $\mathbf{R}$, and $\mathbf{r}\in \mathcal{M}$. By expressing $\mathbf{r}$
 relative to $\mathbf{R}$ using the (small) distance vector
 $\mathbf{r}-\mathbf{R}=\Delta{\mathbf{r}}$, $\lvert \mathbf{r}\rvert$ can be approximated
@@ -25,7 +25,7 @@ as:
 \end{equation}
 Defining $\mathbf{k}_{\mathrm{in}}=k \hat{\mathbf{R}}$ and substituting
 \cref{eq:norm_approximation} into \cref{eq:spherical_wave} directly results in a
-planar wave:
+plane wave:
 \begin{equation}
 	E(\mathbf{R}+\Delta\mathbf{r}, t) =\frac{E_{0}}{\lvert \mathbf{R}+\Delta\mathbf{r}
 	\rvert }\exp(\mathrm{i}(k \lvert \mathbf{R}+\Delta\mathbf{r}\rvert - \omega t))
@@ -57,7 +57,7 @@ is the x-ray wavelength) leads to:
 	+\Delta \mathbf{r})-\omega t\right)\right).
 \end{equation}
 The position of the material relative to the x-ray source dictates the direction of
-the planar wave vector. Its magnitude is defined via $\lambda$. Incoming radiation
+the plane wave vector. Its magnitude is defined via $\lambda$. Incoming radiation
 induces harmonic oscillations of shell electrons inside the solid. This leads to
 spherical electromagnetic emission. The process is called Thomson scattering. It
 is an elastic scattering mechanism that implies
@@ -77,7 +77,7 @@ is given by:
 	}.
 \end{equation}
 Since $\mathbf{R}'\gg \Delta \mathbf{r}$, the spherical wave can be approximated by
-a planar wave using $\mathbf{k}_{\mathrm{out}}=k_{\mathrm{out}}\hat{\mathbf{R}}'$.
+a plane wave using $\mathbf{k}_{\mathrm{out}}=k_{\mathrm{out}}\hat{\mathbf{R}}'$.
 By setting the position of the detector relative to the sample, the direction of $\mathbf{k}
 _{\mathrm{out}}$ is defined. Substituting $E_{\mathrm{in}}$ results in:
 \begin{equation}
@@ -114,7 +114,7 @@ electron density in the crystal.
 \subsection{Scattering Intensity for Periodic Structures}
 
 If the electron density is a periodic function, which is true for electrons in a solid,
-it can be represented using the Reciprocal Lattice:
+it can be represented using the reciprocal lattice:
 \begin{equation}
 	I(\mathbf{q}) \propto \left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}
 	(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert
@@ -148,7 +148,7 @@ number of lattice points.
 \subsection{Structure Factor}
 Reflexes can only occur for $\mathbf{q}\in \mathcal{G}$. However, if $n_{\mathbf{q}}
 =0$, no intensity is measured. These reflexes are called forbidden. To determine
-when this happens, use the Fourier transform of the electron density:
+when this happens, one uses the Fourier transform of the electron density:
 \begin{equation}
 	n(\mathbf{q}) =\mathcal{F}^{-1}[n(\mathbf{r})] =\frac{1}{V_{\mathrm{uc}}}\int_{{\mathrm{uc}}}
 	n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}
@@ -156,7 +156,7 @@ when this happens, use the Fourier transform of the electron density:
 \end{equation}
 Due to the periodicity of the electron density, the region of integration reduces
 to the unit cell with volume $V_{\mathrm{UC}}$. Since the main contribution to
-the scattered X-rays originates from core electrons, where delocalization effects
+the scattered x-rays originates from core electrons, where delocalization effects
 can be neglected, the electron density can be approximated as a sum of atomic
 densities $n_{\alpha}(\boldsymbol{\rho})$ within the unit cell:
 \begin{equation}
@@ -172,19 +172,19 @@ the Fourier transform yields:
 	n(\mathbf{q}) & =\sum_{\alpha}\mathcal{F}^{-1}[\delta(\mathbf{r}-\mathbf{r}_{\alpha})] \cdot \mathcal{F}^{-1}[n_{\alpha}(\mathbf{r})]                                                                                                                                         \\
 	              & =\frac{1}{V_{\mathrm{uc}}}\sum_{\alpha}\exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}_{\alpha}) \underbrace{ \int n_{\alpha}(\boldsymbol{\rho}) \exp(-\mathrm{i} \mathbf{q}\cdot\boldsymbol{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) }_{ f_{\alpha}(\mathbf{q}) }.
 \end{align}
-$f_{\alpha}(\mathbf{q})$ is the Fourier transform of the atomic electron density
+The function $f_{\alpha}(\mathbf{q})$ is the Fourier transform of the atomic electron density
 and is also called the atomic scattering factor. The quantity $n(\mathbf{q})$ is also
-known as the structure factor $S_{hkl}$ by setting $\mathbf{q}_{hkl}=h \mathbf{b}
+known as the structure factor $S_{hkl}$ when setting $\mathbf{q}_{hkl}=h \mathbf{b}
 _{1}+k\mathbf{b}_{2}+l\mathbf{b}_{3}$:
 \begin{equation}
 	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-\mathrm{i}\mathbf{q}_{hkl}
 	\cdot \mathbf{r}_{\alpha}).
 \end{equation}
-Representing
+By representing
 $\mathbf{r}_{\alpha}=u_{\alpha}\mathbf{a}_{1}+v_{\alpha}\mathbf{a}_{2}+w_{\alpha}
 \mathbf{a}_{3}$
 with $u_{\alpha}, v_{\alpha}, w_{\alpha}\in[0, 1)$, the structure factor can be expressed
-as
+as:
 \begin{equation}
 	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-2\pi \mathrm{i}(hu_{\alpha}
 	+kv_{\alpha}+l w_{\alpha})).
@@ -195,7 +195,7 @@ as
 \begin{figure}
 	\centering
 	\includegraphics[width=0.95\linewidth]{../assets/bragg.png}
-	\caption{ Visualization of the Laue Condition: (a) Definition of the angle
+	\caption{ Visualization of the Laue condition: (a) Definition of the angle
 	$2\theta$, used to describe the scattering vector. (b) Interference at
 	diffracting (lattice) planes. Image taken from \autocite{wsi2007hrxrd}.}
 	\label{fig:bragg}
@@ -206,7 +206,7 @@ matches a reciprocal space vector, therefore $\mathbf{q}=z \mathbf{G}_{hkl}$ wit
 $z \in\mathbb{Z}$. A visual explanation of this result is obtained using the
 lattice-plane spacing relation from \cref{sec:lattice_planes_and_directions}: $d_{hkl}
 ={2\pi}/{\lvert \mathbf{G}_{hkl} \rvert }$. Representing
-$\lvert \mathbf{q}\rvert$ using the diffractometer angles, defined in \cref{sec:coordinate_systems}
+$\lvert \mathbf{q}\rvert$ using the diffractometer angles, defined in \cref{sec:coordinate_systems},
 yields the Bragg equation:
 \begin{align}
 	d_{hkl}  & =\frac{2\pi n}{2\sin\theta\cdot2\pi /\lambda} \\
@@ -219,7 +219,7 @@ visualized in \cref{fig:bragg}. If the path difference for waves reflected by ad
 lattice planes is an integer multiple of the wavelength, constructive
 interference is expected.
 
-Performing maximum error estimation of the Bragg equation results in:
+Performing a maximum error estimation of the Bragg equation results in:
 \begin{equation}
 	\frac{\Delta\lambda}{\lambda}=\cot(\theta) \Delta\theta+\frac{\Delta d_{hkl}}{d_{hkl}}.
 \end{equation}
@@ -231,7 +231,7 @@ monochromatic incident beam and a detector with excellent angular resolution.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\linewidth]{../assets/ewald_sphere.png}
-	\caption{Visualization of the Laue Condition: Ewald Sphere, intensity is only
+	\caption{Visualization of the Laue condition: Ewald sphere, intensity is only
 	measured if $\mathbf{q}$ is identical to a reciprocal space vector. Image taken
 	from \autocite{wsi2007hrxrd}.}
 	\label{fig:ewald_sphere}
@@ -249,6 +249,6 @@ Since the magnitude $\lvert \mathbf{k}_{\mathrm{in}}\rvert =\lvert \mathbf{k}_{\
 	\lvert \mathbf{q}\rvert =\lvert \mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}
 	\rvert \leq 2k.
 \end{equation}
-In reciprocal space, this defines the Ewald Sphere for $\mathbf{q}$ with radius $2
+In reciprocal space, this defines the Ewald sphere for $\mathbf{q}$ with radius $2
 k$. Observable reflexes correspond to reciprocal lattice points within that
 sphere.
