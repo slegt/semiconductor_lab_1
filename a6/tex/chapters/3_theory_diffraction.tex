@@ -38,7 +38,8 @@ planar wave:
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\linewidth]{../assets/scattering_intensity.png}
-	\caption{Geometrical setup of radiation source, sample and detector.}
+	\caption{Geometrical setup of radiation source, sample and detector. Image
+	taken from \autocite{wsi2007hrxrd}}
 	\label{fig:scattering_setup}
 \end{figure}
 
@@ -138,8 +139,7 @@ condition:
 		\lvert n_{\mathbf{q}}\rvert^{2}V^{2} & \mathbf{q}\in \mathcal{G} \\
 		0                                    & \mathrm{else}
 	\end{matrix}
-	\right.
-	\label{eq:periodic_intensity}
+	\right. \label{eq:periodic_intensity}
 \end{equation}
 Reflexes can only be observed if $\mathbf{q}=\mathbf{G}$. The scattering is
 proportional to $V^{2}$ and therefore proportional to $N^{2}$, with $N$ being the
@@ -195,18 +195,19 @@ as
 \begin{figure}
 	\centering
 	\includegraphics[width=0.95\linewidth]{../assets/bragg.png}
-	\caption{Visualization of the Laue Condition: Bragg planes are partially reflecting
-	mirrors}
+	\caption{ Visualization of the Laue Condition: (a) Definition of the angle
+	$2\theta$, used to describe the scattering vector. (b) Interference at
+	diffracting (lattice) planes. Image taken from \autocite{wsi2007hrxrd}}.
 	\label{fig:bragg}
 \end{figure}
 
 The Laue condition states that reflexes can only be observed if $\mathbf{q}$
 matches a reciprocal space vector, therefore $\mathbf{q}=z \mathbf{G}_{hkl}$ with
 $z \in\mathbb{Z}$. A visual explanation of this result is obtained using the
-lattice-plane spacing relation from \cref{sec:lattice_planes_and_directions}: $d_{hkl}={2\pi}/
-{\lvert \mathbf{G}_{hkl} \rvert }$. Representing $\lvert \mathbf{q}\rvert$ using
-the diffractometer angles, defined in \cref{sec:coordinate_systems} yields the Bragg
-equation:
+lattice-plane spacing relation from \cref{sec:lattice_planes_and_directions}: $d_{hkl}
+={2\pi}/{\lvert \mathbf{G}_{hkl} \rvert }$. Representing
+$\lvert \mathbf{q}\rvert$ using the diffractometer angles, defined in \cref{sec:coordinate_systems}
+yields the Bragg equation:
 \begin{align}
 	d_{hkl}  & =\frac{2\pi n}{2\sin\theta\cdot2\pi /\lambda} \\
 	n\lambda & =2d_{hkl}\sin( \theta)
@@ -229,25 +230,24 @@ monochromatic incident beam and a detector with excellent angular resolution.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\linewidth]{../assets/ewald_sphere.png}
+	\includegraphics[width=0.6\linewidth]{../assets/ewald_sphere.png}
 	\caption{Visualization of the Laue Condition: Ewald Sphere, intensity is only
-	measuref if $\mathbf{q}$ is identical to a reciprocal space vector}
+	measured if $\mathbf{q}$ is identical to a reciprocal space vector.}
 	\label{fig:ewald_sphere}
 \end{figure}
 
 As the observed intensity is only nonzero if $\mathbf{q}$ is a reciprocal space
-vector, each intensity maximum can be labeled with its corresponding reciprocal
-lattice index $(h\,k\,l)$. Assuming that the laboratory system is aligned with the
+vector, each intensity maximum can be labeled with its corresponding reciprocal lattice
+index $(h\,k\,l)$. Assuming that the laboratory system is aligned with the
 crystallographic coordinate system (\cref{sec:coordinate_systems}), the resulting
 geometric construction is shown in \cref{fig:ewald_sphere}.
 
-Since the magnitude $\lvert \mathbf{k}
-_{\mathrm{in}}\rvert =\lvert \mathbf{k}_{\mathrm{out}}\rvert$ is defined as $k=2 \pi
-/\lambda$, the scattering vector satisfies
+Since the magnitude $\lvert \mathbf{k}_{\mathrm{in}}\rvert =\lvert \mathbf{k}_{\mathrm{out}}
+\rvert$ is defined as $k=2 \pi /\lambda$, the scattering vector satisfies
 \begin{equation}
 	\lvert \mathbf{q}\rvert =\lvert \mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}
 	\rvert \leq 2k
 \end{equation}
-In reciprocal space, this defines the Ewald Sphere for $\mathbf{q}$
-with radius $2k$. Observable reflexes correspond to reciprocal lattice points within
-that sphere. 
+In reciprocal space, this defines the Ewald Sphere for $\mathbf{q}$ with radius $2
+k$. Observable reflexes correspond to reciprocal lattice points within that
+sphere.

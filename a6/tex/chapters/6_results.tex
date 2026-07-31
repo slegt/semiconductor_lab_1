@@ -1,11 +1,12 @@
 \clearpage
 \section{Results}
-This semiconductor laboratory experiment explores the characterization of an \ac{algao} thin film
-grown on an r-sapphire substrate. To characterize this system, first the miscut of
-the substrate is identified. After that, $\omega$-scans of substrate peaks are conducted
-to estimate its dislocation densities. Subsequent $2\theta\text{-}\omega$ scans
-provide information about the lattice parameters of the thin film and substrate. Finally,
-an RSM scan visualizes the Ewald sphere and demonstrates different broadening mechanisms.
+This semiconductor laboratory experiment explores the characterization of an \ac{algao}
+thin film grown on an r-sapphire substrate. To characterize this system, first the
+miscut of the substrate is identified. After that, $\omega$-scans of substrate peaks
+are conducted to estimate its dislocation densities. Subsequent
+$2\theta\text{-}\omega$ scans provide information about the lattice parameters
+of the thin film and substrate. Finally, an RSM scan visualizes the Ewald sphere
+and demonstrates different broadening mechanisms.
 
 \subsection{Miscut Determination}
 
@@ -30,21 +31,20 @@ an RSM scan visualizes the Ewald sphere and demonstrates different broadening me
 
 To measure the miscut angle $\gamma$ of the sapphire substrate, four $\omega$-scans
 for different azimuthal angles $\varphi= \SIlist{0;90;180;270}{\degree}$ were conducted
-for $\theta_{\mathrm{B}}= \ang{26.27}$, examining the sapphire $(024)$ plane. For
-each scan, the maximum intensity $I_{\mathrm{max}}$ as well as the corresponding
-angle $\omega_{\mathrm{max}}$ was extracted, as depicted in \cref{fig:task1_omega}.
-As discussed in \cref{sec:miscut}, the $(024)$ reciprocal lattice vector rotates
-around the $\hat{q}_{\parallel}$ axis, resulting in an alternating projection at
+for $\theta = \ang{26.27}$, examining the sapphire $(024)$ plane. For each scan,
+the maximum intensity $I_{\mathrm{max}}$ as well as the corresponding angle
+$\omega_{\mathrm{max}}$ was extracted, as depicted in \cref{fig:task1_omega}. As
+discussed in \cref{sec:miscut}, the $(024)$ reciprocal lattice vector rotates around
+the $\hat{q}_{\parallel}$ axis, resulting in an alternating projection at
 different $\omega$ values. The data $\omega_{\mathrm{max}}(\varphi)$ can be fitted
 as:
 \begin{equation}
-	\omega_{\mathrm{max}}-\theta_{\mathrm{B}}=\arctan[\tan(\gamma)\cos(\varphi+\varphi
+	\omega_{\mathrm{max}}-\theta=\arctan[\tan(\gamma)\cos(\varphi+\varphi
 	_{0})]
 \end{equation}
-The resulting fit, shown in \cref{fig:task1_phi}, yields an offset angle of $\varphi_{0}
-=\ang{-24}$ and a miscut angle of $\gamma=\ang{0.18}$.
+The resulting fit, shown in \cref{fig:task1_phi}, yields an offset angle of
+$\varphi_{0}=\ang{-24.044}$ and a miscut angle of $\gamma=\ang{0.18(1)}$.
 
-\clearpage
 \subsection{Sapphire Rocking Curves}
 
 \begin{figure}
@@ -52,53 +52,56 @@ The resulting fit, shown in \cref{fig:task1_phi}, yields an offset angle of $\va
 	\begin{subfigure}
 		[t]{0.48\linewidth}
 		\centering
-		\includegraphics[width=\textwidth]{../plots/task_2_006_omega.pdf}
-		\caption{$(006)$ reflection}
-		\label{fig:task2_006}
-	\end{subfigure}
-	\begin{subfigure}
-		[t]{0.48\linewidth}
-		\centering
 		\includegraphics[width=\textwidth]{../plots/task_2_024_omega.pdf}
 		\caption{$(024)$ reflection}
 		\label{fig:task2_024}
 	\end{subfigure}
-	\caption{$\omega$-rocking curves of the symmetric $(006)$ and asymmetric
-	$(024)$ reflections, each fitted with pseudo-Voigt peaks.}
+	\begin{subfigure}
+		[t]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{../plots/task_2_006_omega.pdf}
+		\caption{$(006)$ reflection}
+		\label{fig:task2_006}
+	\end{subfigure}
+	\caption{$\omega$-rocking curves of the symmetric $(024)$ and asymmetric
+	$(006)$ reflections, each fitted with pseudo-Voigt peaks.}
 	\label{fig:task2}
 \end{figure}
 
-Rocking curves were recorded for the symmetric $(024)$ and the asymmetric $(006)$
-reflections to determine the coherence length and the dislocation densities, see
-\cref{fig:task2}. The intensity graph of \cref{fig:task2_006} can be reconstructed
-using three individual pseudo-Voigt functions. A possible explanation of this
-complex shape is the formation of three distinct crystallographic domains. Alternatively,
-the data could be interpreted as showing a substrate peak, a film peak, and a
-single sub-domain. \Cref{fig:task2_024} displays two well-separated peaks. The
-right peak corresponds to the substrate's $(024)$ reflection. The left peak could
-be an artifact originating from the thin film, as its broad
-intensity distribution is captured by the wide-acceptance detector.
+Rocking curves were recorded for the symmetric $(024)$ and the asymmetric
+$(006)$ reflections to determine the coherence length and the dislocation
+densities, see \cref{fig:task2}. \Cref{fig:task2_024} displays two well-separated
+peaks. The right peak corresponds to the substrate's $(024)$ reflection. The
+left peak could be an artifact originating from the thin film, as its broad intensity
+distribution is captured by the wide-acceptance detector. The intensity graph of
+\cref{fig:task2_006} can be reconstructed using three individual pseudo-Voigt
+functions. A possible explanation of this complex shape is the formation of three
+distinct crystallographic domains. Alternatively, the data could be interpreted as
+showing a substrate peak, a film peak, and a single sub-domain.
 
-The central peak of \cref{fig:task2_006} is located at \ang{20.887} and features an
-FWHM of \ang{0.015}. Using \cref{eq:coherence_length} yields an upper bound for
-the coherence length of $L_{\parallel}<\qty{902}{\nano \meter}$. As the
-dislocation orientation $\mathbf{L}$ is defined parallel to the $(012)$
-direction, screw-type dislocations form parallel to $(012)$.
+The main peak of \cref{fig:task2_024} is located at \ang{26.29} and features an
+FWHM of \ang{0.01}. Using \cref{eq:coherence_length} yields an upper bound for
+the coherence length of $L_{\parallel}<\qty{902}{\nano \meter}$. As the dislocation
+orientation $\mathbf{L}$ is defined parallel to the $(012)$ direction, screw-type
+dislocations form parallel to $(012)$.
 
-A suitable Burgers vector must be a direct lattice vector parallel to $\mathbf{L}$.
-Taking the ansatz $\mathbf{b}\propto \mathbf{b}_{2}+ 2 \mathbf{b}_{3}$ yields:
+A suitable Burgers vector must be a direct lattice vector parallel to
+$\mathbf{L}$. Taking the ansatz $\mathcal{B}=u \mathbf{a}_{1}+ v \mathbf{a}_{2}+ w
+\mathbf{a}_{3}\propto \mathbf{b}_{2}+ 2 \mathbf{b}_{3}$ yields with $\lambda \in \mathbb{R}$:
 \begin{equation}
 	u=\lambda\quad v = 2\lambda \quad w=3 \frac{a^{2}}{c^{2}}\lambda \simeq 0.4 \lambda
 \end{equation}
 A promising approximation is the $[241]$ direction, with a magnitude of \qty{28}{\angstrom}.
-Using \cref{eq:rho_screw}, this yields a screw-type dislocation density of
-$\rho_{\mathrm{screw}}=\qty{0.86e9}{\per\meter\squared}$.
+Using \cref{eq:rho_screw}, this yields a screw-type dislocation density of $\rho_{\mathrm{screw}}
+=\qty{0.86e9}{\per\meter\squared}$.
 
-The right peak in \cref{fig:task2_024} is located at \ang{26.29} and features an FWHM
-of \ang{0.01}. A suitable Burgers vector must be perpendicular to $\mathbf{L}$ and is given by $\mathbf{a}
-_{1}$, since $\mathbf{a}_{1}\circ (\mathbf{b}_{2}+2\mathbf{b}_{3})=0$. Although the
-$(006)$ direction is not perpendicular to $(024)$, using \cref{eq:rho_edge}, one can
-estimate an edge-type dislocation density of $\rho_{\mathrm{edge}}=\qty{73.9e9}{\per\meter\squared}$.
+The centarl peak in \cref{fig:task2_006} is located at \ang{20.887} and features
+an FWHM of \ang{0.01}. A suitable Burgers vector must be perpendicular to
+$\mathbf{L}$ and is given by $\mathbf{a}_{1}$, since $\mathbf{a}_{1}\circ (\mathbf{b}
+_{2}+2\mathbf{b}_{3})=0$. Although the $(006)$ reflection is not purely in-plane
+but encloses an angle of \ang{57.61} with the symmetric $(024)$ direction,
+\cref{eq:rho_edge} can still be used to estimate an edge-type dislocation
+density of $\rho_{\mathrm{edge}}=\qty{73.9e9}{\per\meter\squared}$.
 
 \subsection{Lattice Parameter Determination}
 
@@ -131,9 +134,9 @@ estimate an edge-type dislocation density of $\rho_{\mathrm{edge}}=\qty{73.9e9}{
 	\label{fig:task3}
 \end{figure}
 
-$2\theta\text{-}\omega$-scans of the $(006)$, see \cref{fig:task3_006_2to}, and $(
-036)$, see \cref{fig:task3_036_2to}, reflections were recorded to determine the lattice
-constants $a$ and $c$ of the substrate and thin film, respectively.
+$2\theta\text{-}\omega$-scans of the $(006)$, see \cref{fig:task3_006_2to}, and
+$( 036)$, see \cref{fig:task3_036_2to}, reflections were recorded to determine
+the lattice constants $a$ and $c$ of the substrate and thin film, respectively.
 \Cref{fig:task3_006_2to} displays two peaks, a small one centered at \ang{41.509}
 and a prominent one at \ang{41.675}. The prominent peak corresponds to the
 substrate $(006)$ reflection. The small peak does not originate from the $K_{\alpha
@@ -143,23 +146,24 @@ explanation of this peak is the thin film $(006)$ reflection.
 \Cref{fig:task3_036_2to} displays a single peak, corresponding to the $(036)$ substrate
 reflection. Rocking curves of both reflections were compared, see \cref{fig:task3}.
 
-As stated in \cref{sec:coordinate_systems}, the scattering vector length can
-be calculated as $\lvert \mathbf{q}\rvert =4\pi /\lambda \cdot \sin(\theta)$. Assuming
-that both peaks relate to their respective $(006)$ reflection, the scattering vector
-is related to the lattice constant as
+As stated in \cref{sec:coordinate_systems}, the scattering vector length can be
+calculated as $\lvert \mathbf{q}\rvert =4\pi /\lambda \cdot \sin(\theta)$. Assuming
+that both peaks relate to their respective $(006)$ reflection, the scattering
+vector is related to the lattice constant as
 $\lvert \mathbf{q}_{006}\rvert = 6 \lvert \mathbf{b}_{3}\rvert =6 \cdot 2\pi /c$.
-This results in a substrate lattice constant of
-$c_{\mathrm{substrate}}=\qty{1.29929(1)}{\nano \meter}$ and a thin film lattice
-constant of $c_{\mathrm{film}}=\qty{1.3042(5)}{\nano\meter}$.
+This results in a substrate lattice constant of $c_{\mathrm{substrate}}=\qty{1.29929(1)}
+{\nano \meter}$ and a thin film lattice constant of $c_{\mathrm{film}}=\qty{1.3042(5)}
+{\nano\meter}$.
 
-The magnitude of the $(036)$ reflection is related to both $a$ and $c$ lattice
-constants:
+The peak in \cref{fig:task3_036_2to} is centered at \ang{83.21}. The magnitude of
+the $(036)$ reflection is related to both $a$ and $c$ lattice constants:
+
 \begin{equation}
 	\lvert \mathbf{q}_{036}\rvert^{2}=k^{2}\lvert \mathbf{b}_{2}\rvert^{2}+l^{2}\lvert
 	\mathbf{b}_{3}\rvert^{2}=3^{2}\frac{16\pi^{2}}{3a^{2}}+6^{2}\frac{4\pi^{2}}{c^{2}}
 \end{equation}
-Substituting $c_{\mathrm{substrate}}$ yields $a_{\mathrm{substrate}}=\qty{4.75925(1)}
-{\nano\meter}$.
+Substituting $c_{\mathrm{substrate}}$ yields
+$a_{\mathrm{substrate}}=\qty{4.75925(1)}{\angstrom}$.
 
 \subsection{Reciprocal Space Map}
 
@@ -171,18 +175,20 @@ Substituting $c_{\mathrm{substrate}}$ yields $a_{\mathrm{substrate}}=\qty{4.7592
 	\label{fig:task4_rsm}
 \end{figure}
 
-A reciprocal space map was recorded around the symmetrical $(024)$ sapphire reflection,
-see \cref{fig:task4_rsm}. The left-hand side shows the full map, while the right-hand side displays the region of interest. A high-intensity peak can be observed
-at $q_{\parallel}= \qty{3.61}{\angstrom}$, and a broader peak below at $q_{\parallel}= \qty{3.549}
-{\angstrom}$, corresponding to the thin film. Using $c_{\mathrm{film}}=\qty{1.3042(5)}
-{\nano\meter}$, the thin film in-plane lattice constant can be calculated:
+A reciprocal space map was recorded around the symmetrical $(024)$ sapphire
+reflection, see \cref{fig:task4_rsm}. The left-hand side shows the full map, while
+the right-hand side displays the region of interest. A high-intensity peak can
+be observed at $q_{\parallel}= \qty{3.61}{\per\angstrom}$, and a broader peak below at
+$q_{\parallel}= \qty{3.549}{\per\angstrom}$, corresponding to the thin film. Using $c
+_{\mathrm{film}}=\qty{1.3042(5)}{\nano\meter}$, the thin film in-plane lattice
+constant can be calculated:
 \begin{equation}
 	\lvert \mathbf{q}_{024}\rvert^{2}=k^{2}\lvert \mathbf{b}_{2}\rvert^{2}+l^{2}\lvert
 	\mathbf{b}_{3}\rvert^{2}=2^{2}\frac{16\pi^{2}}{3a^{2}}+4^{2}\frac{4\pi^{2}}{c^{2}}
 \end{equation}
-This results in $a_{\mathrm{film}}=\qty{4.088}{\nano\meter}$.
+This results in $a_{\mathrm{film}}=\qty{4.088}{\angstrom}$.
 
-The broadening in the
-$\hat{q}_{\parallel}$ direction originates from the finite thickness of the respective
-layer. Broadening in the $\hat{q}_{\perp}$ direction of a symmetrical reflection originates from the lateral
-coherence length of the individual crystallites as well as the film mosaicity.
+The broadening in the $\hat{q}_{\parallel}$ direction originates from the finite thickness
+of the respective layer. Broadening in the $\hat{q}_{\perp}$ direction of a
+symmetrical reflection originates from the lateral coherence length of the
+individual crystallites as well as the film mosaicity.

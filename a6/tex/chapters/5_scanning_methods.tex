@@ -20,10 +20,9 @@ a special sequence of $\omega$-scans.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{../assets/scan_miscut.png}
-	\caption{A miscut tilts the reciprocal-lattice vector $\mathbf{G}$ by the
+	\caption{Visualization of a miscut that tilts the reciprocal-lattice vector $\mathbf{G}$ by the
 	angle $\gamma$ out of the $\hat{q}_{\perp}$ direction. Rotating the sample about
-	$\varphi$ sweeps the projection onto the scattering plane, which is measured
-	at $\varphi = 0^{\circ}, 90^{\circ}, 180^{\circ}, 270^{\circ}$.}
+	$\varphi$ sweeps the projection onto the scattering plane.}
 	\label{fig:scan_miscut}
 \end{figure}
 
@@ -102,21 +101,20 @@ lattice constants (see \cref{sec:reciprocal_space}).
 
 \begin{figure}
 	\centering
-	\begin{subfigure}
-		[t]{0.55\linewidth}
+	\begin{minipage}[t]{0.55\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/scan_2to.png}
-		\caption{Trajectories through reciprocal space.}
+		\subcaption{Trajectories of $2\theta\text{-}\omega$ and $\omega$ scans.}
 		\label{fig:scan_2to}
-	\end{subfigure}
+	\end{minipage}
 	\hfill
-	\begin{subfigure}
-		[t]{0.35\linewidth}
+	\begin{minipage}[t]{0.35\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/scan_2to_error.png}
-		\caption{Peak broadening in $\hat{q}_{\perp}$ direction.}
+		\subcaption{Peak broadening in $\hat{q}_{\perp}$ direction, originating from the
+		finite layer thickness.}
 		\label{fig:scan_2to_error}
-	\end{subfigure}
+	\end{minipage}
 	\caption{The $2\theta\text{-}\omega$-scan changes only the magnitude of the
 	scattering vector $\mathbf{q}$, while its direction remains fixed.}
 	\label{fig:scan_2to_full}
