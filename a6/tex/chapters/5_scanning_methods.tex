@@ -9,10 +9,11 @@ The goniometer movement changes the scattering vector $\mathbf{q}$ as well as th
 relative position of the laboratory coordinate system with respect to the reciprocal
 crystal lattice. Different constraints on the goniometer motion lead to a
 variety of scanning methods. Each has a different trajectory through the Ewald sphere
-and therefore reveals different information about the sample. The scanning methods
-used in this laboratory course are: $2\theta\text{-}\omega$-scans, $\omega$-scans
-and reciprocal space maps. Additionally, the sample miscut can be calculated by
-a special sequence of $\omega$-scans. This section is based on the findings of \autocite{wsi2007hrxrd}.
+and therefore reveals different information about the sample. The scanning
+methods used in this laboratory course are: $2\theta\text{-}\omega$-scans,
+$\omega$-scans and reciprocal space maps. Additionally, the sample miscut can be
+calculated by a special sequence of $\omega$-scans. This section is based on the findings
+of \autocite{wsi2007hrxrd}.
 
 \subsection{Miscut Identification}
 \label{sec:miscut}
@@ -32,8 +33,8 @@ angular range out of the scattering plane over which the diffractometer can
 still detect a reflection. For those reflexes, the diffractometer effectively
 measures the projection onto the scattering plane.
 
-A symmetrical peak with a miscut, depicted in \cref{fig:scan_miscut}, can be described
-with respect to the laboratory coordinate system as:
+A symmetrical peak with a miscut, depicted in \cref{fig:scan_miscut}, can be
+described with respect to the laboratory coordinate system as:
 \begin{equation}
 	\mathbf{G}=\lvert \mathbf{G}\rvert
 	\begin{pmatrix}
@@ -43,7 +44,8 @@ with respect to the laboratory coordinate system as:
 	\end{pmatrix}.
 \end{equation}
 The first component corresponds to $q_{\parallel}$, the third component to
-$q_{\perp}$. The second component describes the out-of-scattering-plane amount.
+$q_{\perp}$. The second component describes the direction perpendicular to the incidence
+plane.
 
 A perfectly aligned crystal features $\gamma = 0$. Since the miscut is small, the
 reflex lies within the axial acceptance for all $\varphi$. Therefore, the projection
@@ -56,34 +58,35 @@ is measured as:
 \end{equation}
 Since the miscut is small, the length change of the projection is negligible.
 Therefore, all reflexes are observed for a fixed $\theta_{\mathrm{B}}$. Using
-\cref{eq:coordinate_transformation}, a relation $\omega(\varphi)$ can be
-established to fit the data with $\varphi_{0}$ and $\gamma$ as parameters:
+\cref{eq:coordinate_transformation}, a relation $\omega(\varphi)$ can be established
+to fit the data with $\varphi_{0}$ and $\gamma$ as parameters:
 \begin{equation}
 	\omega-\theta_{\mathrm{B}}=\arctan\left( \frac{q_{\parallel}}{q_{\perp}}\right)
 	=\arctan[\tan(\gamma)\cos(\varphi+\varphi_{0})].
 \end{equation}
-The $\omega(\varphi)$ data are obtained by performing an $\omega$-scan at the fixed
-Bragg angle $\theta_{\mathrm{B}}$ for each $\varphi$ angle and recording the $\omega$
-position of maximum intensity.
+The $\omega(\varphi)$ data are obtained by performing an $\omega$-scan at the
+fixed Bragg angle $\theta_{\mathrm{B}}$ for each $\varphi$ angle and recording
+the $\omega$ position of maximum intensity.
 
-\citeauthoryear{sass_x-ray_2006} define the following helper angles
-$\gamma_{0,180}$ and $\gamma_{90,270}$, which are related to $\gamma$ as:
+\citeauthoryear{sass_x-ray_2006} define the following helper angles $\gamma_{0,180}$
+and $\gamma_{90,270}$, which are related to $\gamma$ as:
 \begin{align}
 	\gamma_{0, 180}  & =\frac{1}{2}[(\omega_{0}-\theta_{\mathrm{B}})-(\omega_{180}-\theta_{\mathrm{B}})]=\arctan[\tan(\gamma) \cos(\varphi_{0})]    \\
 	\gamma_{90, 270} & = \frac{1}{2}[(\omega_{270}-\theta_{\mathrm{B}})-(\omega_{90}-\theta_{\mathrm{B}})]=\arctan[\tan(\gamma) \sin(\varphi_{0})].
 \end{align}
-This yields the following identity: $\tan(\gamma_{0, 180})^{2}+\tan(\gamma_{90, 270}
-)^{2}=\tan^{2}(\gamma)$. Using the small-angle approximation results in
-$\gamma^{2}=\gamma_{0, 180}^{2}+\gamma_{90, 270}^{2}$.
+This yields the following identity:
+$\tan(\gamma_{0, 180})^{2}+\tan(\gamma_{90, 270})^{2}=\tan^{2}(\gamma)$. Using the
+small-angle approximation results in $\gamma^{2}=\gamma_{0, 180}^{2}+\gamma_{90, 270}
+^{2}$.
 
 \subsection{$2\theta\text{-}\omega$-Scans}
 \label{sec:2to}
 
 In a $2\theta\text{-}\omega$-scan, the sample is rotated around the $\omega$-axis
-while the detector rotates at twice the angular velocity, $\chi$ and $\varphi$ angles
-are kept constant. This routine only changes the magnitude of the scattering
-vector $\mathbf{q}$. Its direction remains constant, since the scattering vector
-is given by \cref{eq:coordinate_transformation} as:
+while the detector rotates at twice the angular velocity, $\chi$ and $\varphi$
+angles are kept constant. This routine only changes the magnitude of the scattering
+vector $\mathbf{q}$. Its direction remains constant, since the scattering vector is
+given by \cref{eq:coordinate_transformation} as:
 \begin{equation}
 	\mathbf{q}= 2k \sin(\theta)
 	\begin{pmatrix}
@@ -91,16 +94,16 @@ is given by \cref{eq:coordinate_transformation} as:
 		\cos(\omega-\theta)
 	\end{pmatrix}.
 \end{equation}
-Symmetrical reflexes are reflexes that can be described by a reciprocal space vector
-parallel to $\hat{q}_{\perp}$. These reflexes can be observed by setting $\omega=\theta$.
+Symmetrical reflexes are reflexes that can be described by a reciprocal space
+vector parallel to $\hat{q}_{\perp}$. These reflexes can be observed by setting $\omega
+=\theta$.
 
 Measuring an intensity maximum in a $2\theta\text{-}\omega$-scan therefore yields
-the magnitude of the scattering vector $\mathbf{q}$. Given an assumption about which
-lattice plane the reflex corresponds to, this magnitude allows conclusions to be drawn
-about the lattice constants (see \cref{sec:reciprocal_space}). This is illustrated in
-\cref{fig:scan_2to}, which shows the trajectory through reciprocal space. Due to the
-finite layer thickness, the peak broadens in the $\hat{q}_{\perp}$ direction
-(\cref{fig:scan_2to_error}).
+the magnitude of the scattering vector $\mathbf{q}$. Given an assumption about
+which lattice plane the reflex corresponds to, this magnitude allows conclusions to
+be drawn about the lattice constants (see \cref{sec:reciprocal_space}). This is
+illustrated in \cref{fig:scan_2to}, which shows the trajectory through reciprocal
+space.
 
 \begin{figure}
 	\centering
@@ -126,7 +129,7 @@ but limited by the layer thickness, which is on the order of
 $\qty{100}{\nano\meter}$. The delta-distribution approximation in the $z$-direction
 of the intensity integral in \cref{eq:periodic_intensity} does not hold. Instead,
 the reflex acquires the finite width of the $\mathrm{sinc}$ function and broadens
-in the $\hat{q}_{\perp}$ direction:
+in the $\hat{q}_{\perp}$ direction (\cref{fig:scan_2to_error}):
 \begin{equation}
 	I(\mathbf{q}) \propto \left| \int_{V}\exp(\mathrm{i}(\mathbf{G}-\mathbf{q})\cdot
 	\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right|^{2}\simeq l_{x}l_{y}\delta(q_{x}
@@ -158,11 +161,10 @@ effects are neglected, the thickness can be determined by:
 	\label{fig:scan_omega_full}
 \end{figure}
 
-In an $\omega$-scan, the sample is rotated around the $\omega$-axis while
-$\theta$, $\varphi$ and $\chi$ are kept constant. This routine moves the
-scattering vector along a circular path around the origin, as explained by \cref{eq:coordinate_transformation}.
-The peak broadening mechanisms are illustrated in \cref{fig:scan_omega_error} and
-\cref{fig:scan_omega_mosaicity}:
+In an $\omega$-scan, the sample is rotated around the $\omega$-axis while $\theta$,
+$\varphi$ and $\chi$ are kept constant. This routine moves the scattering vector along
+a circular path around the origin, as explained by
+\cref{eq:coordinate_transformation}:
 \begin{equation}
 	\mathbf{q}= 2k \sin(\theta)
 	\begin{pmatrix}
@@ -171,23 +173,24 @@ The peak broadening mechanisms are illustrated in \cref{fig:scan_omega_error} an
 	\end{pmatrix}.
 \end{equation}
 
-Due to the columnar growth mode, the lateral planes perpendicular to the growth
-direction have a finite width (coherence length) for scattering, limited by the crystallite
-size. As in the discussion in \cref{sec:2to}, this leads to peak broadening
-in the $q_{\mathrm{\parallel}}$ direction. For a symmetrical rocking curve, assuming that
-the limited coherence size is the only cause of peak broadening, the coherence
-length can be estimated as:
+Due to the columnar growth mode, the lateral planes perpendicular to the growth direction
+have a finite width (coherence length) for scattering, limited by the
+crystallite size. As in the discussion in \cref{sec:2to}, this leads to peak
+broadening in the $q_{\mathrm{\parallel}}$ direction. For a symmetrical rocking curve,
+assuming that the limited coherence size is the only cause of peak broadening, the
+coherence length can be estimated as:
 \begin{equation}
 	L_{\parallel}=\frac{0.9 \lambda}{2\Delta\omega\cdot \sin(\theta)}.\label{eq:coherence_length}
 \end{equation}
 
-Another broadening mechanism originates from the tilt of the crystallites. A mosaic
-crystal is built up of many crystallites with tilt angles $\delta\omega$. These
-crystallites can be grouped into ensembles: rotating the sample around the $\omega$-axis
-selects different ensembles. The width of a symmetrical rocking curve is
-therefore influenced by the finite crystal size and the tilt of the crystallites. The FWHM
-values of these peaks become a figure of merit. The smaller they are, the better the
-crystallites are aligned and the larger their size.
+Another broadening mechanism originates from the tilt of the crystallites. A
+mosaic crystal is built up of many crystallites with tilt angles $\delta\omega$. These
+crystallites can be grouped into ensembles: rotating the sample around the
+$\omega$-axis selects different ensembles. The width of a symmetrical rocking curve
+is therefore influenced by the finite crystal size and the tilt of the crystallites.
+The FWHM values of these peaks become a figure of merit. The smaller they are,
+the better the crystallites are aligned and the larger their size. The peak broadening
+mechanisms are illustrated in \cref{fig:scan_omega_error} and \cref{fig:scan_omega_mosaicity}
 
 The crystallite misorientation has two independent components: a tilt about axes lying
 in the surface plane and a twist about the growth direction $\hat{q}_{\perp}$. A
@@ -220,7 +223,7 @@ out by repeating an $\omega$-scan over a defined range followed by a small shift
 the $2\theta\text{-}\omega$ scan mode to change the length of the scattering vector.
 The angles can be related to the $q_{\parallel}$ and $q_{\perp}$ components via
 \cref{eq:coordinate_transformation}. The map is therefore usually plotted in $q$ coordinates
-rather than in the raw goniometer angles, which provides a direct visualization of
-the measured region of reciprocal space and the underlying Ewald sphere
+rather than in the raw goniometer angles, which provides a direct visualization
+of the measured region of reciprocal space and the underlying Ewald sphere
 construction. Broadening due to finite coherence length, mosaicity and finite
 layer thickness is visible.

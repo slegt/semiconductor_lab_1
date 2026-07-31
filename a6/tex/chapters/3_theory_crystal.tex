@@ -165,45 +165,45 @@ oxygen layer below and since the stoichiometry of aluminum oxide is $\ce{Al2O3}$
 2/3 of these interstices are occupied by aluminum atoms. The remaining 1/3 of
 the interstices are empty and are called holes. These holes are regions of negative
 localized charge. The requirement of an ordered aluminum sublattice leads to an
-in-plane solution maximizing the separation of the holes due to their negative charge. To
-fulfill this condition in-plane, the holes are arranged in a wider hexagonal ``hole''
-mesh as a subset of the interstitial mesh, shown in \cref{fig:corundum_2}.
+in-plane solution maximizing the separation of the holes due to their negative
+charge. To fulfill this condition in-plane, the holes are arranged in a wider
+hexagonal ``hole'' mesh as a subset of the interstitial mesh, shown in \cref{fig:corundum_2}.
 
 The arrangement of holes between adjacent meshes is not arbitrary. Requiring an
 ordered sublattice with maximum separation between the holes uniquely determines
 the arrangement. The holes in adjacent meshes are shifted relative to each other along
-the close-packed direction of the oxygen hcp lattice by one oxygen-oxygen
-distance. This out-of-plane shift of the holes is depicted in
-\cref{fig:corundum_3}. Since a translation of three out-of-plane shift vectors results
-in an identical arrangement, three different hole layers exist, labeled A, B, and
-C. The oxygen hcp meshes are labeled with `1' and `2'. The structural repeat unit
-of the corundum structure is then given by the sequence 1A2B1C2A1B2C, consisting of
-six oxygen layers.
+the close-packed direction of the oxygen hcp lattice by one oxygen-oxygen distance.
+This out-of-plane shift of the holes is depicted in \cref{fig:corundum_3}. Since a
+translation of three out-of-plane shift vectors results in an identical arrangement,
+three different hole layers exist, labeled A, B, and C. The oxygen hcp meshes
+are labeled with `1' and `2'. The structural repeat unit of the corundum structure
+is then given by the sequence 1A2B1C2A1B2C, consisting of six oxygen layers.
 
-The corundum structure is illustrated using \ce{Al2O3} as a representative
-material, with reference to the hcp oxygen sublattice and an aluminum interstitial
-mesh, though these may in general be substituted by other anions/cations. \ac{algao}
-also crystallizes in the corundum structure, where Al and Ga occupy the interstitial lattice
+The corundum structure is illustrated using \ce{Al2O3} as a representative material,
+with reference to the hcp oxygen sublattice and an aluminum interstitial mesh, though
+these may in general be substituted by other anions/cations. \ac{algao} also crystallizes
+in the corundum structure, where Al and Ga occupy the interstitial lattice
 \autocite{peelaers_structural_2018}.
 
 \subsection{Reciprocal Space}
 \label{sec:reciprocal_space}
 
-The reciprocal lattice is an important concept in the subsequent considerations of
-periodic structures. The goal is to construct a function that is lattice-periodic
-in the direct lattice. This function should therefore satisfy $f(\mathbf{x})=f(\mathbf{x}
-+\mathbf{A})$ if $\mathbf{A}=\sum_{i=1}^{3}\alpha_{i}\mathbf{a}_{i}$. Using a series
-expansion, the following form is obtained:
+The reciprocal lattice is an important concept in the subsequent considerations
+of periodic structures. The goal is to construct a function that is lattice-periodic
+in the direct lattice. This function should therefore satisfy
+$f(\mathbf{x})=f(\mathbf{x}+\mathbf{A})$ if
+$\mathbf{A}=\sum_{i=1}^{3}\alpha_{i}\mathbf{a}_{i}$. Using a series expansion,
+the following form is obtained:
 \begin{align}
-	f(\mathbf{x})            & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot\mathbf{x}), \notag                                                                                                                  \\
-	f(\mathbf{x}+\mathbf{A}) & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{x})\cdot \notag \underbrace{ \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A}) }_{ \stackrel{!}{=}1 }\stackrel{!}{=}f(\mathbf{x}).
+	f(\mathbf{x})            & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot\mathbf{x}), \notag                                                                                                           \\
+	f(\mathbf{x}+\mathbf{A}) & =\sum_{\mathbf{B}}a_{\mathbf{B}}\cdot \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{x})\cdot \underbrace{ \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A}) }_{ \stackrel{!}{=}1 }\stackrel{!}{=}f(\mathbf{x}).
 \end{align}
 This implies the necessary condition $\exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A})=
 1$, which is equivalent to $\mathbf{B}\cdot \mathbf{A}=2\pi z$ with
-$z \in \mathbb{Z}$. It is possible to define the reciprocal lattice as the set $\{
-\mathbf{B}\,\vert\, \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A})=1 \quad \forall \mathbf{A}
-\in \text{span}(\mathbf{a}_{i}) \}$ \autocite{Ashcroft}. Analogously to real space,
-primitive vectors can also be formed as:
+$z \in \mathbb{Z}$. It is possible to define the reciprocal lattice as the set $\mathcal{G}
+=\{\mathbf{B}\,\vert\, \exp(\mathrm{i}\mathbf{B}\cdot \mathbf{A})=1 \quad \forall
+\mathbf{A}\in \text{span}(\mathbf{a}_{i}) \}$ \autocite{Ashcroft}. Analogously to
+real space, primitive vectors can also be formed as:
 \begin{equation}
 	\mathbf{b}_{1}= 2\pi \cdot \frac{\mathbf{a}_{2}\times \mathbf{a}_{3}}{V_{\mathrm{UC}}}
 	\quad \mathbf{b}_{2}= 2\pi \cdot \frac{\mathbf{a}_{3}\times \mathbf{a}_{1}}{V_{\mathrm{UC}}}
@@ -255,8 +255,8 @@ lattice planes using reciprocal lattice vectors.
 To label families of lattice planes, Miller indices are used. Let $\mathbf{b}$ be
 the shortest reciprocal lattice vector perpendicular to the plane being characterized.
 This can be represented as
-$\mathbf{b}= h \mathbf{b_1}+ k \mathbf{b_2}+ l \mathbf{b_3}$. The entries of the tuple $(h\,k\,l
-)$ are the Miller indices, which by definition must be integers.
+$\mathbf{b}= h \mathbf{b_1}+ k \mathbf{b_2}+ l \mathbf{b_3}$. The entries of the tuple
+$(h\,k\,l )$ are the Miller indices, which by definition must be integers.
 
 There is a geometric interpretation that allows the indices to be visualized in
 real space. For every lattice plane, a corresponding $A \in \mathbb{R}$ can be
@@ -316,10 +316,10 @@ ideal crystal structure, i.e. defects. A small concentration of defects can fund
 influence the crystal's properties.
 
 Most thin films differ chemically from their substrate. In that case, the film grows
-heteroepitaxially, as depicted in \cref{fig:film_growth}. If the lattice constants do
-not differ too much, the film adopts the substrate's in-plane lattice constant
-$a$. This is called pseudomorphic growth. A figure of merit to quantify the
-degree of relaxation is given as:
+heteroepitaxially, as depicted in \cref{fig:film_growth}. If the lattice constants
+do not differ too much, the film adopts the substrate's in-plane lattice
+constant $a$. This is called pseudomorphic growth. A figure of merit to quantify
+the degree of relaxation is given as:
 \begin{equation}
 	r = \frac{a_{\mathrm{film}}- a_{\mathrm{substrate}}}{a_{\mathrm{film}}^{\mathrm{relax}}-
 	a_{\mathrm{substrate}}}.

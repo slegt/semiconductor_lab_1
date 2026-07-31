@@ -2,9 +2,9 @@ import json
 from pathlib import Path
 
 import numpy as np
-from matplotlib import pyplot as plt
 from config import SINGLE_COLUMN
 from exporter import update_json_file
+from matplotlib import pyplot as plt
 from parser import XRDMLParser
 from scipy.optimize import curve_fit
 

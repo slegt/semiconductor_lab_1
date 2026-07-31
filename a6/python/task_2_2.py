@@ -1,9 +1,9 @@
 from pathlib import Path
 
 import numpy as np
-from matplotlib import pyplot as plt
 from config import SINGLE_COLUMN
 from exporter import update_json_file
+from matplotlib import pyplot as plt
 from parser import XRDMLParser
 from scipy.optimize import curve_fit
 
@@ -101,6 +101,7 @@ exportable_data["b_para"] = b_para
 exportable_data["screw_dislocation_density"] = rho_screw
 exportable_data["coherence_length"] = L
 exportable_data["coherence_length_delta"] = delta_L
+exportable_data["theta"] = theta_B
 update_json_file(data_dict=exportable_data, key="task_2_024")
 
 # plot
