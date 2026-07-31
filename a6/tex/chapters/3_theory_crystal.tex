@@ -140,8 +140,7 @@ vectors:
 		0 \\
 		0 \\
 		1
-	\end{pmatrix}.
-	\label{eq:hex}
+	\end{pmatrix}. \label{eq:hex}
 \end{equation}
 These vectors create a lattice featuring points at the corners of a hexagon and
 at the centers of its hexagonal faces, as shown in \cref{hex}. The hexagonal
@@ -309,41 +308,43 @@ $\langle u\,v\,w\rangle$ is used accordingly.
 	\label{fig:film_growth}
 \end{figure*}
 
-As the crystal is in energy exchange with its environment, it minimizes the free
-energy $F=U-TS$ instead of its internal energy $U$. This introduces deviations from
-the ideal crystal structure, i.e. defects. A small concentration of defects can
-fundamentally influence the crystal's properties.
+This subsection is based on \autocite{wsi2007hrxrd}.
 
-Most thin films differ chemically from their substrate. In that case, the film
-grows heteroepitaxially, depicted in \cref{fig:film_growth}. If the lattice
-constants do not differ too much, the film adopts the substrate's in-plane lattice
-constant $a$. This is called pseudomorphic growth. A figure of merit to quantify the
+As the crystal is in energy exchange with its environment, it minimizes the free energy
+$F=U-TS$ instead of its internal energy $U$. This introduces deviations from the
+ideal crystal structure, i.e. defects. A small concentration of defects can fundamentally
+influence the crystal's properties.
+
+Most thin films differ chemically from their substrate. In that case, the film grows
+heteroepitaxially, depicted in \cref{fig:film_growth}. If the lattice constants do
+not differ too much, the film adopts the substrate's in-plane lattice constant
+$a$. This is called pseudomorphic growth. A figure of merit to quantify the
 degree of relaxation is given as:
 \begin{equation}
 	r = \frac{a_{\mathrm{film}}- a_{\mathrm{substrate}}}{a_{\mathrm{film}}^{\mathrm{relax}}-
 	a_{\mathrm{substrate}}}.
 \end{equation}
-In this equation, $a_{\mathrm{film / substrate}}$ is the measured in-plane lattice
-constant of a thin film / substrate, and $a_{\mathrm{film}}^{\mathrm{relax}}$ is
-the fully relaxed lattice constant. $r=0$ corresponds to pseudomorphic growth,
+In this equation, $a_{\mathrm{film / substrate}}$ is the measured in-plane
+lattice constant of a thin film / substrate, and $a_{\mathrm{film}}^{\mathrm{relax}}$
+is the fully relaxed lattice constant. $r=0$ corresponds to pseudomorphic growth,
 while $r=1$ corresponds to a fully relaxed film. $r<1$ induces material strain.
 
-As the strain of the film increases with each deposited layer, strain energy is
-released by one-dimensional defects: dislocations. The dislocation's orientation
-is characterized by a dislocation vector $\mathbf{L}$. Most of the time,
-dislocations appear parallel to the growth direction. By moving in a loop around the
-dislocation using the local lattice coordinate system, the starting point is not
-reached. The difference between start and end point is defined by the Burgers vector
-$\mathcal{B}$, depicted in \cref{fig:dislocations}. Depending on the orientation of
-$\mathcal{B}$ relative to $\mathbf{L}$, one can distinguish between screw-type
+As the strain of the film increases with each deposited layer, strain energy is released
+by one-dimensional defects: dislocations. The dislocation's orientation is characterized
+by a dislocation vector $\mathbf{L}$. Most of the time, dislocations appear parallel
+to the growth direction. By moving in a loop around the dislocation using the
+local lattice coordinate system, the starting point is not reached. The
+difference between start and end point is defined by the Burgers vector
+$\mathcal{B}$, depicted in \cref{fig:dislocations}. Depending on the orientation
+of $\mathcal{B}$ relative to $\mathbf{L}$, one can distinguish between screw-type
 dislocations ($\mathcal{B}\parallel \mathbf{L}$) and edge-type dislocations ($\mathcal{B}
 \perp \mathbf{L}$).
 
-Edge-type dislocations prefer to group together in order to minimize the total
-strain energy. This agglomeration of dislocations results in grain boundaries which
-separate monocrystalline regions of the thin film, called crystallites. They are twisted
-by an angle $\delta$. By analog reasoning, an agglomeration of screw-type dislocations
-results in a tilt of the crystallites.
+Edge-type dislocations prefer to group together in order to minimize the total strain
+energy. This agglomeration of dislocations results in grain boundaries which
+separate monocrystalline regions of the thin film, called crystallites. They are
+twisted by an angle $\delta$. By analog reasoning, an agglomeration of screw-type
+dislocations results in a tilt of the crystallites.
 
 \begin{figure}
 	\centering
