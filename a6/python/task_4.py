@@ -2,11 +2,11 @@ import json
 from pathlib import Path
 
 import numpy as np
+from config import DOUBLE_COLUMN
+from exporter import update_json_file
 from matplotlib import pyplot as plt
 from matplotlib.colors import LogNorm
 from matplotlib.patches import Rectangle
-from config import DOUBLE_COLUMN
-from exporter import update_json_file
 from parser import XRDMLParser
 
 plt.rcParams.update(DOUBLE_COLUMN)
@@ -33,11 +33,11 @@ intensity = np.array([scan.get_plot_data()["intensity"] for scan in scans])
 # convert (omega, 2theta) to reciprocal space coordinates [1/Angstrom].
 # Qx is in-plane, Qz out-of-plane; q = k_out - k_in with k = 2 pi / lambda,
 # so |q| = 4 pi sin(theta) / lambda.
-k = 2 * np.pi / wavelength
+k_0 = 2 * np.pi / wavelength
 om = np.deg2rad(omega)
 tt = np.deg2rad(two_theta)
-q_x = k * (np.cos(tt - om) - np.cos(om))
-q_z = k * (np.sin(tt - om) + np.sin(om))
+q_x = k_0 * (np.cos(tt - om) - np.cos(om))
+q_z = k_0 * (np.sin(tt - om) + np.sin(om))
 
 # locate the two prominent reflections in reciprocal space. Both sit at
 # essentially the same in-plane q_parallel; they differ in q_perp: the
@@ -73,12 +73,31 @@ c_film = float(export_data["task_3_006"]["peak_film_c"])
 l = 4
 k = 2
 
+# literature lattice constants of the corundum-phase end members [m]
+a_al2o3, c_al2o3 = 4.75925e-10, 12.9929e-10
+a_ga2o3, c_ga2o3 = 4.98e-10, 13.43e-10
+
 
 def lattice_a(q, c):
+    """In-plane lattice parameter ``a`` from |G|^2 = k^2 b2^2 + l^2 b3^2 with
+    b2 = 4 pi / (sqrt(3) a) and b3 = 2 pi / c."""
     b3 = 2 * np.pi / c
-    b2 = np.sqrt((q**2 - l**2 * b3) / k**2)
+    b2 = np.sqrt((q**2 - l**2 * b3**2) / k**2)
     return 4 * np.pi / (np.sqrt(3) * b2)
 
+
+def vegard(measured, pure_al2o3, pure_ga2o3):
+    """Ga content x of an (Al_{1-x}Ga_x)_2O_3 alloy, from a linear interpolation
+    of the given lattice constant between the two end members."""
+    return (measured - pure_al2o3) / (pure_ga2o3 - pure_al2o3)
+
+
+a_film = lattice_a(q_film, c_film)
+x_ga_from_a = vegard(a_film, a_al2o3, a_ga2o3)
+x_ga_from_c = vegard(c_film, c_al2o3, c_ga2o3)
+
+print(f"a_film = {a_film * 1e10:.4f} Angstrom -> x_Ga = {x_ga_from_a:.3f}")
+print(f"c_film = {c_film * 1e10:.4f} Angstrom -> x_Ga = {x_ga_from_c:.3f}")
 
 # export peak positions
 exportable_data = {
@@ -86,7 +105,9 @@ exportable_data = {
     "substrate_q_perp": float(substrate[1]),
     "film_q_parallel": float(film[0]),
     "film_q_perp": float(film[1]),
-    "film_a": float(lattice_a(q_film, c_film)),
+    "film_a": float(a_film),
+    "film_x_ga_from_a": float(x_ga_from_a),
+    "film_x_ga_from_c": float(x_ga_from_c),
 }
 update_json_file(data_dict=exportable_data, key="task_4")
 

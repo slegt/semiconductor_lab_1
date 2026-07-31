@@ -165,6 +165,7 @@ the $(036)$ reflection is related to both the $a$ and $c$ lattice constants:
 Substituting $c_{\mathrm{substrate}}$ yields
 $a_{\mathrm{substrate}}=\qty{4.75925(1)}{\angstrom}$.
 
+\clearpage
 \subsection{Reciprocal Space Map}
 
 \begin{figure}
@@ -178,17 +179,38 @@ $a_{\mathrm{substrate}}=\qty{4.75925(1)}{\angstrom}$.
 A reciprocal space map was recorded around the symmetrical $(024)$ sapphire
 reflection, see \cref{fig:task4_rsm}. The left-hand side shows the full map, while
 the right-hand side displays the region of interest. A high-intensity peak can
-be observed at $q_{\parallel}= \qty{3.61}{\per\angstrom}$, and a broader peak below it at
-$q_{\parallel}= \qty{3.549}{\per\angstrom}$, corresponding to the thin film. Using $c
-_{\mathrm{film}}=\qty{1.3042(5)}{\nano\meter}$, the thin film in-plane lattice
-constant can be calculated:
+be observed at $q_{\perp}= \qty{3.61}{\per\angstrom}$, and a broader peak below it at
+$q_{\perp}= \qty{3.549}{\per\angstrom}$, corresponding to the thin film. Using $c
+_{\mathrm{film}}=\qty{1.3042(5)}{\nano\meter}$, the thin film lattice
+constant $a$ can be calculated:
 \begin{equation}
 	\lvert \mathbf{q}_{024}\rvert^{2}=k^{2}\lvert \mathbf{b}_{2}\rvert^{2}+l^{2}\lvert
 	\mathbf{b}_{3}\rvert^{2}=2^{2}\frac{16\pi^{2}}{3a^{2}}+4^{2}\frac{4\pi^{2}}{c^{2}}.
 \end{equation}
-This results in $a_{\mathrm{film}}=\qty{4.088}{\angstrom}$.
+This results in $a_{\mathrm{film}}=\qty{4.868}{\angstrom}$.
 
 The broadening in the $\hat{q}_{\parallel}$ direction originates from the finite thickness
 of the respective layer. Broadening in the $\hat{q}_{\perp}$ direction of a
 symmetric reflection originates from the lateral coherence length of the
 individual crystallites as well as the film mosaicity.
+
+\subsection{Gallium Concentration}
+
+The thin film is an $\mathrm{(Al_{1-x}Ga_{x})_{2}O_{3}}$ alloy, whose lattice
+constants are approximated by a linear interpolation between the two end members
+\ce{Al2O3} and \ce{Ga2O3}, known as Vegard's law:
+\begin{equation}
+	x=\frac{L_{\mathrm{film}}-L_{\mathrm{Al_{2}O_{3}}}}{L_{\mathrm{Ga_{2}O_{3}}}-L
+	_{\mathrm{Al_{2}O_{3}}}}, \label{eq:vegard}
+\end{equation}
+where $L$ denotes either the $a$ or the $c$ lattice constant. Using the reference
+values $a=\qty{4.75925}{\angstrom}$ and $c=\qty{12.9929}{\angstrom}$ for
+\ce{Al2O3}, and $a=\qty{4.98}{\angstrom}$ and $c=\qty{13.43}{\angstrom}$ for
+\ce{Ga2O3}, the measured constants $c_{\mathrm{film}}=\qty{13.042}{\angstrom}$
+and $a_{\mathrm{film}}=\qty{4.868}{\angstrom}$ yield gallium concentrations of
+$x_{c}=\qty{11}{\percent}$ and $x_{a}=\qty{49}{\percent}$, respectively.
+
+Both estimates differ considerably. The heteroepitaxial growth on the
+lattice-mismatched substrate induces strain in the film, so that its lattice
+constants deviate from those of a relaxed alloy. Evaluating \cref{eq:vegard} with
+$a$ and $c$ therefore leads to different concentrations.
