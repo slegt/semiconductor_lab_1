@@ -9,7 +9,7 @@ that govern the observable reflexes.
 A spherical electromagnetic wave is of the following form:
 \begin{equation}
 	E(\mathbf{r}, t)=\frac{E_{0}}{\lvert \mathbf{r} \rvert }\exp(\mathrm{i}(k \lvert
-	\mathbf{r}\rvert - \omega t)) \label{eq:spherical_wave}
+	\mathbf{r}\rvert - \omega t)). \label{eq:spherical_wave}
 \end{equation}
 If the wave is observed in a small region $\mathcal{M}$ far away from its origin,
 it can be approximated as a planar wave. Let the center of $\mathcal{M}$ be at
@@ -21,7 +21,7 @@ as:
 	\lvert \mathbf{r}\rvert =\lvert \mathbf{R}+\Delta \mathbf{r}\rvert =\sqrt{ R^{2}+2\mathbf{R}\cdot\Delta
 	\mathbf{r}+\Delta r^{2}}\simeq R \sqrt{ 1+\frac{2\mathbf{R}\cdot\Delta \mathbf{r}}{R^{2}}}
 	\simeq R\cdot\left( 1+\frac{\mathbf{R}\cdot\Delta \mathbf{r}}{R^{2}}\right) =\hat
-	{\mathbf{R}}\cdot(\mathbf{R}+\Delta \mathbf{r}) \label{eq:norm_approximation}
+	{\mathbf{R}}\cdot(\mathbf{R}+\Delta \mathbf{r}). \label{eq:norm_approximation}
 \end{equation}
 Defining $\mathbf{k}_{\mathrm{in}}=k \hat{\mathbf{R}}$ and substituting
 \cref{eq:norm_approximation} into \cref{eq:spherical_wave} directly results in a
@@ -30,7 +30,7 @@ planar wave:
 	E(\mathbf{R}+\Delta\mathbf{r}, t) =\frac{E_{0}}{\lvert \mathbf{R}+\Delta\mathbf{r}
 	\rvert }\exp(\mathrm{i}(k \lvert \mathbf{R}+\Delta\mathbf{r}\rvert - \omega t))
 	\simeq \frac{E_{0}}{\lvert \mathbf{R} \rvert }\exp(\mathrm{i}(\mathbf{k}\cdot(\mathbf{R}
-	+\Delta \mathbf{r})-\omega t))
+	+\Delta \mathbf{r})-\omega t)).
 \end{equation}
 
 \subsection{X-Ray Scattering Intensity}
@@ -39,7 +39,7 @@ planar wave:
 	\centering
 	\includegraphics[width=0.8\linewidth]{../assets/scattering_intensity.png}
 	\caption{Geometrical setup of radiation source, sample and detector. Image
-	taken from \autocite{wsi2007hrxrd}}
+	taken from \autocite{wsi2007hrxrd}.}
 	\label{fig:scattering_setup}
 \end{figure}
 
@@ -54,7 +54,7 @@ is the x-ray wavelength) leads to:
 \begin{equation}
 	E_{\mathrm{in}}(\mathbf{R}+\Delta\mathbf{r}, t) \simeq \frac{E_{0}}{\lvert
 	\mathbf{R} \rvert }\exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot(\mathbf{R}
-	+\Delta \mathbf{r})-\omega t\right)\right)
+	+\Delta \mathbf{r})-\omega t\right)\right).
 \end{equation}
 The position of the material relative to the x-ray source dictates the direction of
 the planar wave vector. Its magnitude is defined via $\lambda$. Incoming radiation
@@ -66,7 +66,7 @@ outgoing spherical wave originating from a single point $\mathbf{P}=\mathbf{R}+\
 \mathbf{r}$ with scattering strength $f$ can be described as:
 \begin{equation}
 	E_{\mathrm{out}}(\mathbf{r},t)_{\mathbf{P}}=f E_{\mathrm{in}}(\mathbf{P}, t) \frac{\exp(\mathrm{i}k_{\mathrm{out}}\lvert
-	\mathbf{r}-\mathbf{P}\rvert )}{\lvert \mathbf{r}-\mathbf{P} \rvert }
+	\mathbf{r}-\mathbf{P}\rvert )}{\lvert \mathbf{r}-\mathbf{P} \rvert }.
 \end{equation}
 Assume that an x-ray detector is located far away from the sample at position
 $\mathbf{D}=\mathbf{R}+\mathbf{R}'$. The electric field at the detector's position
@@ -74,7 +74,7 @@ is given by:
 \begin{equation}
 	E_{\mathrm{out}}(\mathbf{D}, t)_{\mathbf{P}}=f E_{\mathrm{in}}(\mathbf{P},t) \frac{\exp(\mathrm{i}k_{\mathrm{out}}\lvert
 	\mathbf{R}' -\Delta \mathbf{r}\rvert )}{\lvert \mathbf{R}'-\Delta \mathbf{r} \rvert
-	}
+	}.
 \end{equation}
 Since $\mathbf{R}'\gg \Delta \mathbf{r}$, the spherical wave can be approximated by
 a planar wave using $\mathbf{k}_{\mathrm{out}}=k_{\mathrm{out}}\hat{\mathbf{R}}'$.
@@ -84,7 +84,7 @@ _{\mathrm{out}}$ is defined. Substituting $E_{\mathrm{in}}$ results in:
 	\begin{aligned}
 		E_{\mathrm{out}}(\mathbf{D}, t)_{\mathbf{P}} & =\frac{f E_{0}}{\lvert \mathbf{R} \rvert \lvert \mathbf{R}' \rvert }\exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot(\mathbf{R}+\Delta \mathbf{r})-\omega t\right)\right) \exp\left(\mathrm{i}\mathbf{k}_{\mathrm{out}}\cdot(\mathbf{R}'-\Delta \mathbf{r})\right)                                                                                              \\
 		                                             & =\frac{f}{\lvert \mathbf{R}' \rvert }\cdot \underbrace{ \frac{E_{0}}{\lvert \mathbf{R} \rvert } \exp\left(\mathrm{i}\left(\mathbf{k}_{\mathrm{in}}\cdot\mathbf{R}+\mathbf{k}_{\mathrm{out}}\cdot\mathbf{R}'\right)-\mathrm{i}\omega t\right) }_{ =E_{0}' }\cdot \exp\left(\mathrm{i}(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot \Delta \mathbf{r}\right) \\
-		                                             & =f \frac{E_{0}'}{\lvert \mathbf{R}' \rvert }\exp\left(\mathrm{i}(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot\Delta \mathbf{r}\right)
+		                                             & =f \frac{E_{0}'}{\lvert \mathbf{R}' \rvert }\exp\left(\mathrm{i}(\mathbf{k}_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot\Delta \mathbf{r}\right).
 	\end{aligned}
 \end{equation}
 The expression above defines the electromagnetic response of a single atom. To
@@ -98,7 +98,7 @@ $n(\Delta \mathbf{r})$, resulting in:
 	E_{\mathrm{out}}(\mathbf{D}, t) \propto \frac{E_{0}'(\mathbf{R}, \mathbf{R}', t)}{\lvert
 	\mathbf{R} '\rvert }\int_{V}n(\Delta \mathbf{r}) \exp\left(\mathrm{i}(\mathbf{k}
 	_{\mathrm{in}}-\mathbf{k}_{\mathrm{out}})\cdot\Delta \mathbf{r}\right ) \, \mathrm{d}
-	V(\Delta \mathbf{r})
+	V(\Delta \mathbf{r}).
 \end{equation}
 By defining the scattering vector
 $\mathbf{q}=\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}$, which depends only
@@ -106,7 +106,7 @@ on the experimental geometry, the intensity is expressed as:
 \begin{equation}
 	I(\mathbf{q}) \propto \frac{\lvert \langle E_{0}'(\mathbf{R}, \mathbf{R}') \rangle_{t}\rvert^{2}}{\lvert
 	\mathbf{R}' \rvert^{2}}\left\lvert \int_{V}n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}
-	\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert^{2}\label{eq:intensity_raw}
+	\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert^{2}.\label{eq:intensity_raw}
 \end{equation}
 The intensity is proportional to the modulus squared of the Fourier transform of the
 electron density in the crystal.
@@ -118,7 +118,7 @@ it can be represented using the Reciprocal Lattice:
 \begin{equation}
 	I(\mathbf{q}) \propto \left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}
 	(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert
-	^{2}
+	^{2}.
 \end{equation}
 The integral evaluates to:
 \begin{equation}
@@ -131,15 +131,15 @@ The integral evaluates to:
 Substituting \cref{eq:exp_integral} into \cref{eq:intensity_raw} yields the Laue
 condition:
 \begin{equation}
-	I(\mathbf{q})&\propto\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}
+	I(\mathbf{q})\propto\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}\int_{V}\exp(\mathrm{i}
 	(\mathbf{G}-\mathbf{q})\cdot\mathbf{r}) \, \mathrm{d}V(\mathbf{r}) \right\rvert
-	^{2}&=\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}V \delta(\mathbf{q}, \mathbf{G}
+	^{2}=\left\lvert \sum_{\mathbf{G}}n_{\mathbf{G}}V \delta(\mathbf{q}, \mathbf{G}
 	) \right\rvert^{2}=\left\{
 	\begin{matrix}
 		\lvert n_{\mathbf{q}}\rvert^{2}V^{2} & \mathbf{q}\in \mathcal{G} \\
 		0                                    & \mathrm{else}
 	\end{matrix}
-	\right. \label{eq:periodic_intensity}
+	\right..\label{eq:periodic_intensity}
 \end{equation}
 Reflexes can only be observed if $\mathbf{q}=\mathbf{G}$. The scattering is
 proportional to $V^{2}$ and therefore proportional to $N^{2}$, with $N$ being the
@@ -152,7 +152,7 @@ when this happens, use the Fourier transform of the electron density:
 \begin{equation}
 	n(\mathbf{q}) =\mathcal{F}^{-1}[n(\mathbf{r})] =\frac{1}{V_{\mathrm{uc}}}\int_{{\mathrm{uc}}}
 	n(\mathbf{r}) \exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}) \, \mathrm{d}V(\mathbf{r}
-	)
+	).
 \end{equation}
 Due to the periodicity of the electron density, the region of integration reduces
 to the unit cell with volume $V_{\mathrm{UC}}$. Since the main contribution to
@@ -163,14 +163,14 @@ densities $n_{\alpha}(\boldsymbol{\rho})$ within the unit cell:
 	n(\mathbf{r}) = \sum_{\alpha}n_{\alpha}(\mathbf{r}-\mathbf{r}_{\alpha}) = \sum_{\alpha}
 	\int n_{\alpha}(\boldsymbol{\rho}) \delta(\mathbf{r}-\mathbf{r}_{\alpha}-\boldsymbol
 	{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) =\sum_{\alpha}n_{\alpha}(\mathbf{r}) *
-	\delta(\mathbf{r}-\mathbf{r}_{\alpha})
+	\delta(\mathbf{r}-\mathbf{r}_{\alpha}).
 \end{equation}
 The last term is a sum over all basis atoms' electron densities convolved with
 the delta distribution centered at $\mathbf{r}_{\alpha}$. Substituting this back into
 the Fourier transform yields:
 \begin{align}
 	n(\mathbf{q}) & =\sum_{\alpha}\mathcal{F}^{-1}[\delta(\mathbf{r}-\mathbf{r}_{\alpha})] \cdot \mathcal{F}^{-1}[n_{\alpha}(\mathbf{r})]                                                                                                                                         \\
-	              & =\frac{1}{V_{\mathrm{uc}}}\sum_{\alpha}\exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}_{\alpha}) \underbrace{ \int n_{\alpha}(\boldsymbol{\rho}) \exp(-\mathrm{i} \mathbf{q}\cdot\boldsymbol{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) }_{ f_{\alpha}(\mathbf{q}) }
+	              & =\frac{1}{V_{\mathrm{uc}}}\sum_{\alpha}\exp(-\mathrm{i}\mathbf{q}\cdot \mathbf{r}_{\alpha}) \underbrace{ \int n_{\alpha}(\boldsymbol{\rho}) \exp(-\mathrm{i} \mathbf{q}\cdot\boldsymbol{\rho}) \, \mathrm{d}V(\boldsymbol{\rho}) }_{ f_{\alpha}(\mathbf{q}) }.
 \end{align}
 $f_{\alpha}(\mathbf{q})$ is the Fourier transform of the atomic electron density
 and is also called the atomic scattering factor. The quantity $n(\mathbf{q})$ is also
@@ -178,7 +178,7 @@ known as the structure factor $S_{hkl}$ by setting $\mathbf{q}_{hkl}=h \mathbf{b
 _{1}+k\mathbf{b}_{2}+l\mathbf{b}_{3}$:
 \begin{equation}
 	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-\mathrm{i}\mathbf{q}_{hkl}
-	\cdot \mathbf{r}_{\alpha})
+	\cdot \mathbf{r}_{\alpha}).
 \end{equation}
 Representing
 $\mathbf{r}_{\alpha}=u_{\alpha}\mathbf{a}_{1}+v_{\alpha}\mathbf{a}_{2}+w_{\alpha}
@@ -187,7 +187,7 @@ with $u_{\alpha}, v_{\alpha}, w_{\alpha}\in[0, 1)$, the structure factor can be 
 as
 \begin{equation}
 	S_{hkl}=\sum_{\alpha}f_{\alpha}(\mathbf{q}_{hkl}) \exp(-2\pi \mathrm{i}(hu_{\alpha}
-	+kv_{\alpha}+l w_{\alpha}))
+	+kv_{\alpha}+l w_{\alpha})).
 \end{equation}
 
 \subsection{Bragg Equation}
@@ -197,7 +197,7 @@ as
 	\includegraphics[width=0.95\linewidth]{../assets/bragg.png}
 	\caption{ Visualization of the Laue Condition: (a) Definition of the angle
 	$2\theta$, used to describe the scattering vector. (b) Interference at
-	diffracting (lattice) planes. Image taken from \autocite{wsi2007hrxrd}}.
+	diffracting (lattice) planes. Image taken from \autocite{wsi2007hrxrd}.}
 	\label{fig:bragg}
 \end{figure}
 
@@ -210,7 +210,7 @@ $\lvert \mathbf{q}\rvert$ using the diffractometer angles, defined in \cref{sec:
 yields the Bragg equation:
 \begin{align}
 	d_{hkl}  & =\frac{2\pi n}{2\sin\theta\cdot2\pi /\lambda} \\
-	n\lambda & =2d_{hkl}\sin( \theta)
+	n\lambda & =2d_{hkl}\sin( \theta).
 \end{align}
 
 The same equation can be obtained by treating these crystal planes as diffracting
@@ -221,7 +221,7 @@ interference is expected.
 
 Performing maximum error estimation of the Bragg equation results in:
 \begin{equation}
-	\frac{\Delta\lambda}{\lambda}=\cot(\theta) \Delta\theta+\frac{\Delta d_{hkl}}{d_{hkl}}
+	\frac{\Delta\lambda}{\lambda}=\cot(\theta) \Delta\theta+\frac{\Delta d_{hkl}}{d_{hkl}}.
 \end{equation}
 To determine the distance $d_{hkl}$ accurately, it is essential to use a highly
 monochromatic incident beam and a detector with excellent angular resolution.
@@ -232,7 +232,8 @@ monochromatic incident beam and a detector with excellent angular resolution.
 	\centering
 	\includegraphics[width=0.6\linewidth]{../assets/ewald_sphere.png}
 	\caption{Visualization of the Laue Condition: Ewald Sphere, intensity is only
-	measured if $\mathbf{q}$ is identical to a reciprocal space vector.}
+	measured if $\mathbf{q}$ is identical to a reciprocal space vector. Image taken
+	from \autocite{wsi2007hrxrd}.}
 	\label{fig:ewald_sphere}
 \end{figure}
 
@@ -246,7 +247,7 @@ Since the magnitude $\lvert \mathbf{k}_{\mathrm{in}}\rvert =\lvert \mathbf{k}_{\
 \rvert$ is defined as $k=2 \pi /\lambda$, the scattering vector satisfies
 \begin{equation}
 	\lvert \mathbf{q}\rvert =\lvert \mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}
-	\rvert \leq 2k
+	\rvert \leq 2k.
 \end{equation}
 In reciprocal space, this defines the Ewald Sphere for $\mathbf{q}$ with radius $2
 k$. Observable reflexes correspond to reciprocal lattice points within that

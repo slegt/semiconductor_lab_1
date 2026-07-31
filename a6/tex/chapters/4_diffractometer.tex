@@ -5,14 +5,14 @@
 	\begin{minipage}[t]{0.6\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/xrd_setup.png}
-		\captionof{figure}{XRD instrument setup. Image taken from \autocite{harrington_back--basics_2021}}
+		\captionof{figure}{XRD instrument setup. Image taken from \autocite{harrington_back--basics_2021}.}
 		\label{fig:xrd_setup}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.3\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/source.png}
-		\captionof{figure}{Internal design of the x-ray tube. Image taken from \autocite{harrington_back--basics_2021}}
+		\captionof{figure}{Internal design of the x-ray tube. Image taken from \autocite{harrington_back--basics_2021}.}
 		\label{fig:xray_tube}
 	\end{minipage}
 \end{figure}
@@ -66,21 +66,21 @@ responding non-linearly or even sustains damage.
 	\begin{minipage}[t]{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/optics.png}
-		\captionof{figure}{Incident and receiving optics. Image taken from \autocite{harrington_back--basics_2021}}
+		\captionof{figure}{Incident and receiving optics. Image taken from \autocite{harrington_back--basics_2021}.}
 		\label{fig:optics}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.45\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../assets/goniometer.png}
-		\captionof{figure}{Goniometer geometry. Image taken from \autocite{harrington_back--basics_2021}}
+		\captionof{figure}{Goniometer geometry. Image taken from \autocite{harrington_back--basics_2021}.}
 		\label{fig:goniometer}
 	\end{minipage}
 \end{figure}
 
 A major challenge of the diffraction setup is to condition the divergent x-rays
 that leave the source into a parallel beam before it reaches the sample. This conditioning
-occurs within the incident beam optics. The procedure is necessary to avoid
+occurs within the incident beam optics, see \cref{fig:optics}. The procedure is necessary to avoid
 divergence errors, as small deviations of the incoming radiation direction smear out
 the scattering vector. A suitable conditioning device is a laterally graded
 multilayer mirror. This mirror is designed for a specific wavelength, thus
@@ -126,32 +126,26 @@ reciprocal lattice (blue), which is defined by the crystal structure.
 	\settowidth{\coordSysWidth}{\includegraphics{
 		../assets/coordinate_system_1.pdf
 	}}
-	\begin{subfigure}
-		[t]{\coordSysWidth}
+	\begin{minipage}[t]{\coordSysWidth}
 		\centering
 		\includegraphics{../assets/coordinate_system_1.pdf}
-		\caption{Laboratory frame}
+		\captionof{figure}{Laboratory Frame and Reciprocal Lattice.}
 		\label{fig:coordinate_system_1}
-	\end{subfigure}
-	\settowidth{\coordSysWidth}{\includegraphics{
-		../assets/coordinate_system_2.pdf
-	}}
-	\begin{subfigure}
-		[t]{\coordSysWidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{\coordSysWidth}
 		\centering
 		\includegraphics{../assets/coordinate_system_3.pdf}
-		\caption{Reciprocal lattice}
+		\captionof{figure}{Definition of $\omega$ and $2\theta$ angles.}
 		\label{fig:coordinate_system_2}
-	\end{subfigure}
-	\begin{subfigure}
-		[t]{\coordSysWidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{\coordSysWidth}
 		\centering
 		\includegraphics{../assets/coordinate_system_2.pdf}
-		\caption{Reciprocal lattice}
+		\captionof{figure}{Definition of $\varphi$ and $\chi$ angles.}
 		\label{fig:coordinate_system_3}
-	\end{subfigure}
-
-	\caption{Laboratory frame and reciprocal lattice coordinate systems.}
+	\end{minipage}
 	\label{fig:coordinate_systems}
 \end{figure}
 
@@ -174,7 +168,7 @@ and $\omega$ is the angle between the sample holder surface and $\mathbf{k}_{\ma
 The magnitude of $\mathbf{q}$ can be represented using only $\theta$ as:
 \begin{align}
 	\lvert \mathbf{q}\rvert^{2} & =\lvert \mathbf{k}_{\mathrm{out}}- \mathbf{k}_{\mathrm{in}}\rvert^{2}=k^{2}+k^{2}-2k^{2}\cos(2\theta)=2k^{2}(1-\cos(2\theta))=4k^{2}\sin^{2}(\theta) \\
-	\lvert \mathbf{q}\rvert     & =2k \sin(\theta)
+	\lvert \mathbf{q}\rvert     & =2k \sin(\theta).
 \end{align}
 This reproduces the chord length of the Ewald sphere construction shown in \cref{fig:ewald_sphere},
 which could previously only be expressed in terms of $\mathbf{k}_{\mathrm{in}}$
@@ -188,7 +182,7 @@ $\mathbf{k}_{\mathrm{in}}$ by $2\theta$:
 \begin{align}
 	\mathbf{k}_{\mathrm{in}}  & = k \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix} \nonumber                                                                                                                                                                                                                  \\
 	\mathbf{k}_{\mathrm{out}} & = k \begin{pmatrix}\cos(2 \theta) & -\sin(2\theta) \\ +\sin(2\theta) & \cos(2\theta)\end{pmatrix} \begin{pmatrix}\cos(\omega) \\ -\sin(\omega)\end{pmatrix} =k \begin{pmatrix}\cos(2\theta-\omega) \\ \sin(2\theta-\omega)\end{pmatrix} \nonumber                                        \\
-	\mathbf{q}                & =\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}=k \begin{pmatrix}\cos(2\theta-\omega)-\cos(\omega) \\ \sin(2\theta-\omega) + \sin(\omega)\end{pmatrix} = 2k \sin(\theta) \begin{pmatrix}\sin(\omega-\theta) \\ \cos(\omega-\theta)\end{pmatrix} \label{eq:coordinate_transformation}
+	\mathbf{q}                & =\mathbf{k}_{\mathrm{out}}-\mathbf{k}_{\mathrm{in}}=k \begin{pmatrix}\cos(2\theta-\omega)-\cos(\omega) \\ \sin(2\theta-\omega) + \sin(\omega)\end{pmatrix} = 2k \sin(\theta) \begin{pmatrix}\sin(\omega-\theta) \\ \cos(\omega-\theta)\end{pmatrix}. \label{eq:coordinate_transformation}
 \end{align}
 This equation also implies $q_{\parallel}/ q_{\perp}=\tan(\omega-\theta)$.
 

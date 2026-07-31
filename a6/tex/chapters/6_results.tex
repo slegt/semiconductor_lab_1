@@ -11,22 +11,22 @@ and demonstrates different broadening mechanisms.
 \subsection{Miscut Determination}
 
 \begin{figure}
-	\begin{subfigure}
+	\begin{minipage}
 		{0.48\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/task_1_omega.pdf}
 		\caption{$\omega$-scans of the $(024)$ reflection for
 		$\varphi= \SIlist{0;90;180;270}{\degree}$.}
 		\label{fig:task1_omega}
-	\end{subfigure}
-	\begin{subfigure}
+	\end{minipage}
+	\begin{minipage}
 		{0.48\linewidth}
 		\centering
 		\includegraphics[width=\textwidth]{../plots/task_1_phi.pdf}
 		\caption{Peak position $\omega_{\mathrm{max}}$ as a function of $\varphi$, fitted
 		to determine the miscut angle $\gamma$.}
 		\label{fig:task1_phi}
-	\end{subfigure}
+	\end{minipage}
 \end{figure}
 
 To measure the miscut angle $\gamma$ of the sapphire substrate, four $\omega$-scans
@@ -40,7 +40,7 @@ different $\omega$ values. The data $\omega_{\mathrm{max}}(\varphi)$ can be fitt
 as:
 \begin{equation}
 	\omega_{\mathrm{max}}-\theta=\arctan[\tan(\gamma)\cos(\varphi+\varphi
-	_{0})]
+	_{0})].
 \end{equation}
 The resulting fit, shown in \cref{fig:task1_phi}, yields an offset angle of
 $\varphi_{0}=\ang{-24.044}$ and a miscut angle of $\gamma=\ang{0.18(1)}$.
@@ -63,7 +63,7 @@ $\varphi_{0}=\ang{-24.044}$ and a miscut angle of $\gamma=\ang{0.18(1)}$.
 		\caption{$(006)$ reflection}
 		\label{fig:task2_006}
 	\end{subfigure}
-	\caption{$\omega$-rocking curves of the symmetric $(024)$ and asymmetric
+	\caption{$\omega$ scans of the symmetric $(024)$ and asymmetric
 	$(006)$ reflections, each fitted with pseudo-Voigt peaks.}
 	\label{fig:task2}
 \end{figure}
@@ -89,13 +89,13 @@ A suitable Burgers vector must be a direct lattice vector parallel to
 $\mathbf{L}$. Taking the ansatz $\mathcal{B}=u \mathbf{a}_{1}+ v \mathbf{a}_{2}+ w
 \mathbf{a}_{3}\propto \mathbf{b}_{2}+ 2 \mathbf{b}_{3}$ yields with $\lambda \in \mathbb{R}$:
 \begin{equation}
-	u=\lambda\quad v = 2\lambda \quad w=3 \frac{a^{2}}{c^{2}}\lambda \simeq 0.4 \lambda
+	u=\lambda\quad v = 2\lambda \quad w=3 \frac{a^{2}}{c^{2}}\lambda \simeq 0.4 \lambda.
 \end{equation}
 A promising approximation is the $[241]$ direction, with a magnitude of \qty{28}{\angstrom}.
 Using \cref{eq:rho_screw}, this yields a screw-type dislocation density of $\rho_{\mathrm{screw}}
 =\qty{0.86e9}{\per\meter\squared}$.
 
-The centarl peak in \cref{fig:task2_006} is located at \ang{20.887} and features
+The central peak in \cref{fig:task2_006} is located at \ang{20.887} and features
 an FWHM of \ang{0.01}. A suitable Burgers vector must be perpendicular to
 $\mathbf{L}$ and is given by $\mathbf{a}_{1}$, since $\mathbf{a}_{1}\circ (\mathbf{b}
 _{2}+2\mathbf{b}_{3})=0$. Although the $(006)$ reflection is not purely in-plane
@@ -160,7 +160,7 @@ the $(036)$ reflection is related to both $a$ and $c$ lattice constants:
 
 \begin{equation}
 	\lvert \mathbf{q}_{036}\rvert^{2}=k^{2}\lvert \mathbf{b}_{2}\rvert^{2}+l^{2}\lvert
-	\mathbf{b}_{3}\rvert^{2}=3^{2}\frac{16\pi^{2}}{3a^{2}}+6^{2}\frac{4\pi^{2}}{c^{2}}
+	\mathbf{b}_{3}\rvert^{2}=3^{2}\frac{16\pi^{2}}{3a^{2}}+6^{2}\frac{4\pi^{2}}{c^{2}}.
 \end{equation}
 Substituting $c_{\mathrm{substrate}}$ yields
 $a_{\mathrm{substrate}}=\qty{4.75925(1)}{\angstrom}$.
@@ -184,7 +184,7 @@ _{\mathrm{film}}=\qty{1.3042(5)}{\nano\meter}$, the thin film in-plane lattice
 constant can be calculated:
 \begin{equation}
 	\lvert \mathbf{q}_{024}\rvert^{2}=k^{2}\lvert \mathbf{b}_{2}\rvert^{2}+l^{2}\lvert
-	\mathbf{b}_{3}\rvert^{2}=2^{2}\frac{16\pi^{2}}{3a^{2}}+4^{2}\frac{4\pi^{2}}{c^{2}}
+	\mathbf{b}_{3}\rvert^{2}=2^{2}\frac{16\pi^{2}}{3a^{2}}+4^{2}\frac{4\pi^{2}}{c^{2}}.
 \end{equation}
 This results in $a_{\mathrm{film}}=\qty{4.088}{\angstrom}$.
 
