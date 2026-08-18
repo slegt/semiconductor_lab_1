@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%logic
+\usepackage{pgffor}
+\usepackage{ifthen}
+%science
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+%language
+\usepackage[english]{babel}
+%formatting
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage[small]{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage[doublespacing]{setspace}
+\usepackage{layouts}
+%images and plots
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{pgf}
+\usepackage{import}
+\usepackage{tikz}
+\usepackage{jsonparse}
+%tables
+\usepackage{booktabs}
+\usepackage{makecell}
+%citation, quatation and lists
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
+url=false,isbn=false,eprint=false]{biblatex}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+\usepackage{acro}
+
+
+%setup plugins
+\addbibresource{literature.bib}
+
+\captionsetup{justification=centering}
+\hypersetup{colorlinks=true,linkcolor=blue}
+
+
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\bar{bar}
+\sisetup{
+	range-phrase = { to }
+}
+
+% Custom \citeauthoryear command with hyperref -> Rost et al. (2019)
+\DeclareCiteCommand{\citeauthoryear}
+{\boolfalse{citetracker}%
+\boolfalse{pagetracker}%
+\usebibmacro{prenote}}
+{\ifciteindex
+{\indexnames{labelname}\indexfield{year}}
+{}%
+\printtext[bibhyperref]{%
+    \printnames{labelname}%
+    \setunit{\addspace}%
+    \printtext{(}%
+    \printfield{year}%
+    \printtext{)}}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
+
+%  setup custom commands
+\newcommand{\imcite}[2][]{From \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Based on \cite[#1]{#2}.}
+\newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
+\newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
+
+% TODO: declare acronyms used throughout this report, e.g.
+% \DeclareAcronym{qe}{
+%     short = QE,
+%     long = quantum efficiency
+% }
+
+\newcommand{\CellWithForceBreak}[2][c]{
+\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+
+% Document
+\begin{document}
+    \pagenumbering{arabic}
+    \input{chapters/1_titel.tex}
+    \input{chapters/2_introduction.tex}
+    \input{chapters/3_theory_semiconductor.tex}
+    \input{chapters/3_theory_radiometry.tex}
+    \input{chapters/4_setup.tex}
+    \input{chapters/5_methods.tex}
+    \input{chapters/6_results.tex}
+    \clearpage
+    \printbibliography
+    \listoffigures
+    \listoftables
+\end{document}

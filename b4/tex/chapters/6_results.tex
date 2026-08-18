@@ -1,0 +1,91 @@
+\clearpage
+\section{Results}
+% TODO: short intro paragraph summarizing the six results subsections below.
+
+\subsection{Diode Current Spectrum}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/photocurrent.pdf}
+	\caption{Photocurrent $I_\mathrm{ph}$ of the four photodiodes as a function of
+		wavelength $\lambda$. Markers indicate the maximum of each spectrum
+		at $\lambda_\mathrm{max}$.}
+	\label{fig:photocurrent}
+\end{figure}
+
+\subsection{Reference Spectra}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{../plots/reference_spectra.pdf}
+		\caption{Linear scale.}
+		\label{fig:reference_spectra}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{../plots/reference_spectra_log.pdf}
+		\caption{Logarithmic scale.}
+		\label{fig:reference_spectra_log}
+	\end{subfigure}
+	\caption{Optical power $P_\mathrm{opt}$ of the reference spectra recorded at the
+		beginning and at the end of the experiment, together with their average.}
+	\label{fig:reference}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/reference_spread.pdf}
+	\caption{Relative deviation between the two reference spectra with respect to
+		their average.}
+	\label{fig:reference_spread}
+\end{figure}
+
+\subsection{Spectral Responsivity and Quantum Efficiency}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/responsivity.pdf}
+	\caption{Spectral responsivity $R_\lambda$ of the four photodiodes obtained by
+		normalizing the photocurrent spectra with the reference spectrum.}
+	\label{fig:responsivity}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/quantum_efficiency.pdf}
+	\caption{External quantum efficiency $\eta$ of the four photodiodes as a function
+		of wavelength $\lambda$.}
+	\label{fig:quantum_efficiency}
+\end{figure}
+
+\subsection{Photodiode Detector Linearity}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/linearity.pdf}
+	\caption{Relative photocurrent of diodes 4 and 5 as a function of the relative
+		incident photon flux, together with power-law fits of slope $m$.}
+	\label{fig:linearity}
+\end{figure}
+
+\subsection{Human Eye Response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/human_eye.pdf}
+	\caption{Normalized spectral responsivity of diode 4 compared to the photopic and
+		scotopic response curves $V(\lambda)$ of the human eye.}
+	\label{fig:human_eye}
+\end{figure}
+
+\subsection{Chopper Frequency Dependence}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{../plots/chopper.pdf}
+	\caption{Photocurrent $I_\mathrm{ph}$ as a function of the chopper frequency $f$.}
+	\label{fig:chopper}
+\end{figure}
