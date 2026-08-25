@@ -4,80 +4,179 @@
 
 \subsection{Diode Current Spectrum}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/photocurrent.pdf}
-	\caption{Photocurrent $I_\mathrm{ph}$ of the four photodiodes as a function of
-		wavelength $\lambda$. Markers indicate the maximum of each spectrum
-		at $\lambda_\mathrm{max}$.}
+	\caption{Photocurrent $I_{\mathrm{ph}}$ of the four photodiodes as a function
+	of wavelength $\lambda$. Markers indicate the maximum of each spectrum at $\lambda
+	_{\mathrm{max}}$.}
 	\label{fig:photocurrent}
 \end{figure}
 
-\subsection{Reference Spectra}
+Photocurrent spectra of five photodiodes were recorded and are depicted in \cref{fig:photocurrent}.
+As all photodiodes are silicon-based, the band gap of \qty{1.124}{\electronvolt} states
+a minimal energy to excite electrons. This corresponds to a threshhold
+wavelength of
+$\lambda_{\mathrm{max}}=hc / E_{\mathrm{g}}=\qty{1103}{\nano\meter}$. Above this threshhold
+wavelength, no signal intensity is measured.
 
-\begin{figure}[H]
+Below the threshhold wavelength, a signal is measured. The photocurrent-spectra
+can be grouped into two categories, based on their line shape: Diode three and
+five peak at \qty{1000}{\nano \meter} while diode one, two and four around \qty{600}{\nano\meter}.
+This difference is explained in \cref{subsec:comparison}. It should be noted,
+that the photocurrent significantly drops for small wavelengths. This originates from
+the decrease in optical power of the halogen lamp, see
+\cref{subsec:reference_spectra}.
+
+\subsection{Reference Spectra}
+\label{subsec:reference_spectra}
+
+\begin{figure}
 	\centering
-	\begin{subfigure}{0.48\linewidth}
+	\begin{subfigure}
+		{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/reference_spectra.pdf}
 		\caption{Linear scale.}
 		\label{fig:reference_spectra}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}{0.48\linewidth}
+	\begin{subfigure}
+		{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/reference_spectra_log.pdf}
 		\caption{Logarithmic scale.}
 		\label{fig:reference_spectra_log}
 	\end{subfigure}
-	\caption{Optical power $P_\mathrm{opt}$ of the reference spectra recorded at the
-		beginning and at the end of the experiment, together with their average.}
+	\caption{Optical power $P_{\mathrm{opt}}$ of the reference spectra recorded at
+	the beginning and at the end of the experiment, together with their average.}
 	\label{fig:reference}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/reference_spread.pdf}
 	\caption{Relative deviation between the two reference spectra with respect to
-		their average.}
+	their average.}
 	\label{fig:reference_spread}
 \end{figure}
 
+To present the spectral responsivity, a reference spectrum needs to be recorded. A
+calibrated reference detector with single-point calibration at \qty{633}{\nano\meter}
+for radiometric power measurement was used to determine the optical power spectrum.
+To capture the thermal shifts of the halogen-lamp, the spectrum was recorded at the
+beginning and the end of the experiment, see \cref{fig:reference}. As the lamp was
+operating throughout the day, only a small shift is observed. Time-dependent effects
+can be neglected.
+
+The relative deviation of the optical power is shown in \cref{fig:reference_spread}.
+As the intensity drops below \qty{550}{\nano\meter}, the signal enters the noise range.
+Subsequent calculations only consider wavelength greater thatn \qty{550}{\nano\meter}.
+
 \subsection{Spectral Responsivity and Quantum Efficiency}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/responsivity.pdf}
-	\caption{Spectral responsivity $R_\lambda$ of the four photodiodes obtained by
-		normalizing the photocurrent spectra with the reference spectrum.}
+	\caption{Spectral responsivity $R_{\lambda}$ of the four photodiodes obtained
+	by normalizing the photocurrent spectra with the reference spectrum.}
 	\label{fig:responsivity}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/quantum_efficiency.pdf}
-	\caption{External quantum efficiency $\eta$ of the four photodiodes as a function
-		of wavelength $\lambda$.}
+	\caption{External quantum efficiency $\eta$ of the four photodiodes as a
+	function of wavelength $\lambda$.}
 	\label{fig:quantum_efficiency}
 \end{figure}
 
+Using the average reference spectrum, the responsivity
+$R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was calculated
+and is depicted in \cref{fig:responsivity}. The responsivity does not depend on the
+optical sources power and is therefore a better device characteristic. The band
+gap still determines the highest wavelength threshold. THe maximum responsivity wavelengths
+for each diodes are depicted in \cref{fig:responsivity}, they are similar to raw
+maxima. The steep increase at low wavelengths is mostly gone, as it was caused
+by the vanishing detector power.
+
+The external quantum efficiency spectrum is plotted in
+\cref{fig:quantum_efficiency}. Diode three features the highest efficiency maximum
+at \qty{37.14}{\percent} while diode five features the lowest quantum efficiency maximum
+at \qty{2.32}{\percent}.
+
+Direct comparison between the quantum efficiencies is not meaningful, given the
+high systematic error in the measurement setup. The photodiode mount was readjusted
+after each photodiode installation. The detecttion area generally differs from
+diode to diode as well as in comparison to the detector. Therefore, the external
+quantum efficiency is only a rough estimate.
+
 \subsection{Photodiode Detector Linearity}
 
-\begin{figure}[H]
+For a fixed wavelength, the photocurrent was measured while the optical power
+was variied using neutral density filters. As the theory suggests $I_{\mathrm{ph}}
+\propto \P_{\mathrm{opt}}$, the following relations holds true:
+\begin{equation}
+	\frac{I}{I_{0}}=\frac{P}{P_{0}}.
+\end{equation}
+Using a double logarithmic plot, see \cref{fig:linearity}, the slope of a linear function
+$y=mx+n$ indicates the exponent as $y=exp(n)x^{n}$.
+
+Diode four shows a nearly linear scaling as $m=0.92$. Diode five however shows
+two regimes, with an unphysical break between them at \num{2e-2}. While the second
+regime features a nearly linear scaling with $m=0.94$, the first regime only
+scales as $m=0.62$.
+
+\begin{figure}
 	\centering
 	\includegraphics{../plots/linearity.pdf}
 	\caption{Relative photocurrent of diodes 4 and 5 as a function of the relative
-		incident photon flux, together with power-law fits of slope $m$.}
+	incident photon flux, together with power-law fits of slope $m$.}
 	\label{fig:linearity}
 \end{figure}
+
+\subsection{Comparison between Si- and UV-Enhanced Si- Photodiodes}
+\label{subsec:comparison}
+
+Both, the Si-Photodiode (D3) as well as the uv-enhanced Si-Photodiode (D1) are silicon
+based and therefore share the threshhold wavelength of \qty{1103}{\nano\meter}.
+
+However, D1 has a maximum responsivity at \qty{558}{\nano\meter}, while D3 features
+a maxmimum responsivity at \qty{898}{\nano\meter}. D3 features a single borad
+peak while D1 looks like a step-function.
+
+As the measurement does not enter the UV-regime (\qtyrange{250}{400}{\nano\meter}),
+no statement can made about their responsivity spectrum. However, it is expected
+that D1 features a significantly higher responsivity, as it's optimized for this regime.
+
+However, this optimization leads to a responsivity loss in the near infrared
+regime (\qtyrange{780}{2500}{\nano\meter}). This is a result of different diode
+geometry and dopinc concentrations. The Schottky photodiode features a responsivity
+falloff in the UV-regime attributed to the presence of an inversion layer in the depletion
+region.
+
+For an ordinary photodiode, infrared radiation penetrates deeply into the
+material due to a reduced absorption coefficient and generation in the whole SCR
+is observed. However UV radiation does not penetrate depp into the material and a
+large proportion of electron-hole generation happens in the inversion layer.
+
+Using higher doping concentrations $N_{\mathrm{D}}$ leads to a shrinking inversion
+layer width as well as a shrinking space charge region width as both scale as $\propto
+1 / \sqrt{N_{\mathrm{D}}}$. UV radiation still reaches the full SCR and electron-hole
+excitation results in a current. However the SCR is too small for IR wavelengths,
+radiation is only partially absorbed in the SCR.
+
+Therefore, a decrese in IR responsivity is observed. Also different coating may
+influence the responsivity. By comparing line shapes, D5 could also be an
+ordinary photodiode, while D2 and D4 might be uv-enhanced photodiodes.
 
 \subsection{Human Eye Response}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{../plots/human_eye.pdf}
-	\caption{Normalized spectral responsivity of diode 4 compared to the photopic and
-		scotopic response curves $V(\lambda)$ of the human eye.}
+	\caption{Normalized spectral responsivity of diode 4 compared to the photopic
+	and scotopic response curves $V(\lambda)$ of the human eye.}
 	\label{fig:human_eye}
 \end{figure}
 
@@ -86,6 +185,7 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics{../plots/chopper.pdf}
-	\caption{Photocurrent $I_\mathrm{ph}$ as a function of the chopper frequency $f$.}
+	\caption{Photocurrent $I_{\mathrm{ph}}$ as a function of the chopper frequency
+	$f$.}
 	\label{fig:chopper}
 \end{figure}
