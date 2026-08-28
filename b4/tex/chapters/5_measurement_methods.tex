@@ -1,5 +1,13 @@
 \section{Measurement Methods}
+\label{sec:methods}
 % TODO: short intro paragraph listing the six measurement tasks covered below.
+
+\begin{figure}
+	\centering
+	\includegraphics{../assets/measurement_setup.pdf}
+	\caption{Schematic of the measurement setup.}
+	\label{fig:measurement_setup}
+\end{figure}
 
 \subsection{Halogen Lamp}
 
@@ -7,26 +15,34 @@
 
 \subsection{Lock-In Amplifier}
 
-As signals are buried in noise, dedicated techniques are required to improve the \emph{signal-to-noise
-ratio}. If the \emph{carrier frequency} is known, the signal can be extracted from
+As signals are buried in noise, dedicated techniques are required to improve the signal-to-noise
+ratio. If the carrier frequency is known, the signal can be extracted from
 a noisy environment using a \textbf{Lock-In amplifier}. Signals up to a million times
 smaller than the noise components can be detected reliably using this method.
 
 A Lock-In Amplifier comprises a two-step arrangement. Some parameter of the
 source signal is modulated to make it periodic, while the detected signal is demodulated
-with respect to a \emph{reference signal}. The modulation of the source signal is
-realized using a \emph{chopper} that rotates with the reference frequency. This modulation
+with respect to a reference signal. The modulation of the source signal is
+realized using a chopper that rotates with the reference frequency. This modulation
 moves the source signal above the $1 /f$ background noise.
 
 \subsection{Circuit Design}
 
-![[Pasted image 20260824164703.png]]
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../assets/lock_in.png}
+	\caption{Circuit realizing a Lock-In amplifier. The input signal is split onto an
+	inverting and a non-inverting amplifier, between which the FET switch toggles at
+	the reference frequency. The resulting mixing signal is averaged by the lowpass
+	filter formed by $R$ and $C$.}
+	\label{fig:lock_in}
+\end{figure}
 
-The simplest circuit that realizes a Lock-In amplifier is depicted above. The
+The simplest circuit that realizes a Lock-In amplifier is depicted in \cref{fig:lock_in}. The
 input signal is passed through two linear amplifiers: an upper amplifier that inverts
 the signal as well as a lower amplifier that outputs the input signal identically.
-The reference signal is applied to a \emph{FET switch} that creates a \emph{mixing
-signal}. The mixing signal is then passed to a \emph{lowpass filter} that
+The reference signal is applied to a FET switch that creates a mixing
+signal. The mixing signal is then passed to a lowpass filter that
 effectively extracts the mixing signal average, from which the signal voltage can
 be recovered. Signal noise that appears at different frequencies is attenuated.
 
@@ -34,53 +50,51 @@ be recovered. Signal noise that appears at different frequencies is attenuated.
 
 Assume that an input signal $V_{\mathrm{s}}$ is a simple cosine signal:
 
-\[
+\begin{equation}
 	V_{\mathrm{s}}(t)=V_{0}\cos(\omega_{\mathrm{s}}t+\theta) = \frac{V_{0}}{2}[\exp
 	(\mathrm{j}\omega_{\mathrm{s}}t)\exp(\mathrm{j}\theta))+\exp(-\mathrm{j}\omega_{\mathrm{s}}
 	t) \exp(-\mathrm{j}\theta)]
-\]
-Here $V_{0}$ is the signal amplitude, $\omega_{\mathrm{s}}$ its \emph{angular
-frequency}, $\theta$ its phase relative to the reference and $\mathrm{j}$ the
-imaginary unit. The reference signal $V_{\mathrm{r}}(t)$ is a \emph{square wave}
-with angular frequency $\omega_{\mathrm{r}}$. It can be modeled using a \emph{Fourier
-series}:
+\end{equation}
+Here $V_{0}$ is the signal amplitude, $\omega_{\mathrm{s}}$ its angular
+frequency, $\theta$ its phase relative to the reference and $\mathrm{j}$ the
+imaginary unit. The reference signal $V_{\mathrm{r}}(t)$ is a square wave
+with angular frequency $\omega_{\mathrm{r}}$. It can be modeled using a Fourier
+series:
 
-\[
+\begin{equation}
 	V_{\mathrm{r}}(t) = \mathrm{sign}[\sin(\omega_{\mathrm{r}}t)] = \sum_{\substack{z \in \mathbb{Z} \\ \text{odd}}}
 	c_{z}\exp(\mathrm{j}z \omega_{\mathrm{r}}t) \quad c_{z}=-\frac{2\mathrm{j}}{\pi
 	z}
-\]
-The $c_{z}$ are the \emph{Fourier coefficients} of the square wave and $z$ is the
-\emph{harmonic order}, running over the odd integers. The output of the FET
+\end{equation}
+The $c_{z}$ are the Fourier coefficients of the square wave and $z$ is the
+harmonic order, running over the odd integers. The output of the FET
 switch is mathematically equivalent to the multiplication of $V_{\mathrm{s}}(t)$
 and $V_{\mathrm{r}}(t)$. This results in a mixing signal $V_{\mathrm{mix}}(t)=V_{\mathrm{s}}
 (t)V_{\mathrm{r}}(t)$:
 
-\[
+\begin{equation}
 	V_{\mathrm{mix}}(t)=\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}[ \exp(\mathrm{j}\theta
 	)\exp(\mathrm{j}(\underbrace{ \omega_{\mathrm{s}}+z \omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{z}
 	})t) +\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}(\underbrace{ \omega_{\mathrm{s}}-z
 	\omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{-z} })t) ]
-\]
-The mixed signal is passed to a lowpass filter with \emph{time constant}
+\end{equation}
+The mixed signal is passed to a lowpass filter with time constant
 $\tau=RC$, set by the filter resistance $R$ and capacitance $C$. The filter
-multiplies every frequency component with its \emph{transfer function} $H(\omega)
+multiplies every frequency component with its transfer function $H(\omega)
 = (1+\mathrm{j}\omega \tau)^{-1}$. This results in the following output voltage
 $V_{\mathrm{out}}(t)$:
 
-\[
-	\begin{align}
-		V_{\mathrm{out}}(t) & =\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}\left[ \frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}+\frac{\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}\omega_{\mathrm{mix}}^{-z}t)}{1 - \mathrm{j}\omega_{\mathrm{mix}}^{-z}\tau}\right] \\
-		                    & =V_{0}\sum_{z \text{ odd}}\mathrm{Re}\left[ c_{z}\frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}\right] \quad \omega_{\mathrm{mix}}^{z}=\omega_{\mathrm{s}}+z \omega_{\mathrm{r}}
-	\end{align}
-\]
+\begin{align}
+	V_{\mathrm{out}}(t) & =\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}\left[ \frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}+\frac{\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}\omega_{\mathrm{mix}}^{-z}t)}{1 - \mathrm{j}\omega_{\mathrm{mix}}^{-z}\tau}\right] \\
+	                    & =V_{0}\sum_{z \text{ odd}}\mathrm{Re}\left[ c_{z}\frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}\right] \quad \omega_{\mathrm{mix}}^{z}=\omega_{\mathrm{s}}+z \omega_{\mathrm{r}}
+\end{align}
 To obtain the detected signal, we require $\omega_{\mathrm{s}}=\omega_{\mathrm{r}}$.
 Only the term $z=-1$ contributes significantly to the sum, other terms can be neglected.
 This simplifies to:
 
-\[
+\begin{equation}
 	V_{\mathrm{out}}(t)=-\frac{2V_{0}}{\pi}\sin(\theta)
-\]
+\end{equation}
 The phase can manually be optimized to maximize the output voltage. From that,
 $V_{0}$ can be extracted directly or passed to an integration circuit to average
 the output over a fixed time period (in the order of milliseconds to seconds). Most

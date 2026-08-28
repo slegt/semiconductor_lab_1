@@ -1,5 +1,6 @@
 \clearpage
 \section{Results}
+\label{sec:results}
 % TODO: short intro paragraph summarizing the six results subsections below.
 
 \subsection{Diode Current Spectrum}
@@ -172,7 +173,7 @@ ordinary photodiode, while D2 and D4 might be uv-enhanced photodiodes.
 
 \subsection{Human Eye Response}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/human_eye.pdf}
 	\caption{Normalized spectral responsivity of diode 4 compared to the photopic
@@ -180,12 +181,53 @@ ordinary photodiode, while D2 and D4 might be uv-enhanced photodiodes.
 	\label{fig:human_eye}
 \end{figure}
 
+Human eye vision is based on four types of photorecepters: Rods as well as three
+types on cones. Depending on the incoming luminance, the brain uses different
+photoreceptor signals to determine the brightness. Under brigt-light conditions,
+the brain selects photopic vision while under low-light conditions, scotopic vision
+is activated. Each photorecepter uses a different photopigment that changes
+chemically under light absorption.
+
+Scotopic vision uses rods. The rhodopsin photopigment is more light sensitive than
+cone pigments. Photopic vision uses cones. Cones feature different photopigments with
+sligthly different absorption maxima.
+
+The $V(\lambda)$ curves for scotopic and photopic vision, depicted together with
+the normalized responsivity of D4 in \cref{fig:human_eye}, are experimentally determined.
+It is not a physical property of a photoreceptor, but the outcome of a psychophysical
+exeriment averaged over a panel of human observers. Each observer equalizes the
+brightness of a monochromatic light with $\lambda_{0}= \qty{555}{\nano\meter}$
+to that of a light source with wavelength $\lambda$ with the same radiation
+power using flicker photometry.
+
+The three curves feature a similar maximum, at around $\lambda = \qty{550}{\nano\meter}$.
+However, the peak width of D4 is significantly larger than both $V(\lambda)$ curves.
+Without any correction filter, D4 cannot be used as a photometric diode.
+
 \subsection{Chopper Frequency Dependence}
 
-\begin{figure}[H]
+In principle, a frequency dependence for a diode is expected due to capacitive effects.
+In order to observe this effect, the photocurrent was measured at a fixed wavelength
+for different reference frequencies (different chopper frequencies.). The result is
+depicted in \cref{fig:chopper}. No change in photocurrent is observed for high
+frequencies.
+
+However, a sharp falloff for low frequencies is present. A possible explanation
+of this behaviour is a coupling condensator that connects two stages acting as a
+high-pass filter. Using the fit function
+\begin{equation}
+	I_{\mathrm{ph}}(f)=\frac{I_{\mathrm{\mathrm{sat}}}f}{\sqrt{ f^{2}+f_{\mathrm{c}}^{2}}}
+\end{equation}
+
+with the saturation current $I_{\mathrm{sat}}$ and the cutoff frequency $f_{\mathrm{c}}$.
+The fit yields $f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and
+$I_{\mathrm{sat}}=\qty{125}{\nano\ampere}$
+
+\begin{figure}
 	\centering
 	\includegraphics{../plots/chopper.pdf}
-	\caption{Photocurrent $I_{\mathrm{ph}}$ as a function of the chopper frequency
-	$f$.}
+	\caption{Photocurrent $I_{\mathrm{ph}}$ as a function of the reference
+	frequency $f$. Blue/green/orange dots indicate an integration time of \qty{1}{\second}/
+	\qty{2}{\second} /\qty{10}{\second}}
 	\label{fig:chopper}
 \end{figure}

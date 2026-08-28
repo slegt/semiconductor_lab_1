@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../Documents/obsidian_main"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.xrdml": "xml"
+		}
+	}
+}

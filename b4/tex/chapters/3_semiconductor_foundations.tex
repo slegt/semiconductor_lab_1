@@ -1,90 +1,101 @@
 \section{Semiconductor Photodetector Theory}
+\label{sec:theory_basics}
 
-\subsection{Semiconductor Current Density}
+To analyze the Schottky diode analytically, some essential prerequisites from
+semiconductor physics are presented in the following sections. These are taken from
+\citeauthoryear{Grundmann}.
+
+Expressions for the current density are used together with the electron-hole
+continuity equations to find the photocurrent dependence on the generation rate. The
+generation rate itself strongly correlates with photon continuity and the Lambert-Beer
+law.
+
+\subsection{Current Density}
 \label{sec:current_density}
 
-Let $j_{\mathrm{n}}$ be the electron current density and $j_{\mathrm{p}}$ be the
-hole current density. The total current density can be calculated as
-$j_{\mathrm{tot}}= j_{\mathrm{n}}(z) + j_{\mathrm{p}}(z)$. In a device with
-constant cross section $A$, the total current is obtained as $I=A j_{\mathrm{tot}}$.
+In solid-state physics, a current-density can only be established if the electronic
+bands are neither completely empty nor completely filled. Especially in
+semiconductor physics, electrons in the almost-empty conduction band as well as holes
+in the almost-filled valence band contribute to the current-density. Let
+$j_{\mathrm{n}}$ be the electron current density and $j_{\mathrm{p}}$ be the
+hole current density. The total current density can be calculated as $j_{\mathrm{tot}}
+= j_{\mathrm{n}}(z) + j_{\mathrm{p}}(z)$. In a device with constant cross
+section $A$, the total current is obtained as $I=A j_{\mathrm{tot}}$.
 
 In semiconductor physics, currents originate either from an electric field (drift
-current) or from a concentration gradient (diffusion current). For nondegenerate
-semiconductors, this results in
+current) or from a concentration gradient (diffusion current). For nondegenerate semiconductors,
+this results in:
 \begin{align}
-	j_{\mathrm{p}} & = e \mu_{\mathrm{p}} p E - e D_{\mathrm{p}} \partial_{z}p,
-	\label{eq:j_p}                                                             \\
-	j_{\mathrm{n}} & = -e \mu_{\mathrm{n}} n E - e D_{\mathrm{n}} \partial_{z}n.
-	\label{eq:j_n}
+	j_{\mathrm{p}} & = e \mu_{\mathrm{p}}p E - e D_{\mathrm{p}}\partial_{z}p, \label{eq:j_p}   \\
+	j_{\mathrm{n}} & = -e \mu_{\mathrm{n}}n E - e D_{\mathrm{n}}\partial_{z}n. \label{eq:j_n}.
 \end{align}
-
-Those equations feature
-\begin{itemize}
-	\item Elementary charge $e$
-	\item Charge carrier concentration $n / p$
-	\item Mobility of the respective charge carrier $\mu_{\mathrm{n/p}}$
-	\item Electric field $E$
-	\item The Einstein coefficient $D= kT \mu/q$, with the Boltzmann constant
-		$k$, the temperature $T$ and the charge $q$ of the respective carrier
-\end{itemize}
+In those equations, $e$ is the elementary charge, $n / p$ are the charge carrier concentrations
+for electrons / holes, $\mu_{\mathrm{n/p}}$ is the mobility of the respective
+charge carrier, $E$ is the magnitude of the Electric field and $D= kT \mu/q$ are the
+einstein coefficients, with the Boltzmann constant $k$, the temperature $T$ and the
+charge $q$ of the respective carrier. 
 
 \subsection{Electron-Hole Continuity Equation}
 \label{sec:continuity}
 
-In an infinitesimally small volume at $\mathbf{r}$, the temporal change of electron
-and hole density is determined by generation rates, summarized in
+In an infinitesimally small volume at position $\mathbf{r}$, the temporal change of
+electron and hole density is determined by generation rates, summarized in
 $G_{\mathrm{n/p}}(\mathbf{r})$ for electrons / holes, recombination rates,
-summarized in $U_{\mathrm{n/p}}$ for electrons / holes and the current densities
-$\mathbf{j}_{\mathrm{n/p}}$ that flow through the volume's surface. The elementary
-charge is denoted by $e$.
+summarized in $U_{\mathrm{n/p}}(\mathbf{r})$ for electrons / holes and the
+current densities $\mathbf{j}_{\mathrm{n/p}}$ that flow through the volume's
+surface. This results in the following continuity equations:
 \begin{align}
-	\partial_{t}n & = G_{\mathrm{n}}- U_{\mathrm{n}}
-	+ \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{n}},                     \\
-	\partial_{t}p & = G_{\mathrm{p}}- U_{\mathrm{p}}
-	- \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{p}}.
+	\partial_{t}n & = G_{\mathrm{n}}- U_{\mathrm{n}}+ \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{n}}, \\
+	\partial_{t}p & = G_{\mathrm{p}}- U_{\mathrm{p}}- \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{p}}.
 \end{align}
 In most two-terminal devices, characteristics only depend on one direction $(z)$,
-while being independent in its cross section. This reduces the complexity as
+while being independent in its cross section. This reduces the complexity to a one-dimensional
+problem:
 \begin{align}
-	\partial_{t}n(z) & = G_{\mathrm{n}}(z) - U_{\mathrm{n}}(z)
-	+ \frac{1}{e}\partial_{z}j_{\mathrm{n}}(z),                \\
-	\partial_{t}p(z) & = G_{\mathrm{p}}(z) - U_{\mathrm{p}}(z)
-	- \frac{1}{e}\partial_{z}j_{\mathrm{p}}(z).
-	\label{eq:continuity_1d}
+	\partial_{t}n(z) & = G_{\mathrm{n}}(z) - U_{\mathrm{n}}(z) + \frac{1}{e}\partial_{z}j_{\mathrm{n}}(z),                          \\
+	\partial_{t}p(z) & = G_{\mathrm{p}}(z) - U_{\mathrm{p}}(z) - \frac{1}{e}\partial_{z}j_{\mathrm{p}}(z). \label{eq:continuity_1d}
 \end{align}
 
 \subsection{Photon Continuity Equation}
 \label{sec:photon_continuity}
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.4\linewidth]{../assets/photon_continuity.png}
+	\caption{Photon balance of a slab of width $\delta$: photons entering the slab
+	are either absorbed inside it or leave it on the opposite side.}
+	\label{fig:photon_continuity}
+\end{figure}
+
 Let $\Phi(z)$ denote the photon flux, $n_{\mathrm{ph}}(z)$ the photon density and
-$U_{\mathrm{ph}}$ the photon absorption rate per unit volume in a two-terminal
-device. For a small slab $[z, z+\delta]$ of cross section $A$, the following
-statement is true:
+$U_{\mathrm{ph}}$ the photon absorption rate per unit volume in a two-terminal device.
+For a small slab $[z, z+\delta]$ of cross section $A$, the following statement is
+true:
 \begin{equation}
-	\underbrace{ \partial_{t}(n_{\mathrm{ph}}(z,t)A\delta) }_{ \text{change of photons} }
-	= \underbrace{ \Phi(z)A }_{ \substack{\text{incoming} \\ \text{photons}} }
-	- \underbrace{ \Phi(z+\delta)A }_{ \substack{\text{outgoing} \\ \text{photons}} }
-	- \underbrace{ U_{\mathrm{ph}}A\delta }_{ \substack{\text{photon} \\ \text{sink}} }.
+	\underbrace{ \partial_{t}(n_{\mathrm{ph}}(z,t)A\delta) }_{ \text{change of
+	photons} }= \underbrace{ \Phi(z)A }_{ \substack{\text{incoming} \\ \text{photons}}
+	}- \underbrace{ \Phi(z+\delta)A }_{ \substack{\text{outgoing} \\ \text{photons}}
+	}- \underbrace{ U_{\mathrm{ph}}A\delta }_{ \substack{\text{photon} \\ \text{sink}}
+	}.
 \end{equation}
 Dividing by $\delta A$ and $\delta \to 0$ yields the photon continuity equation
-
 \begin{equation}
-	\partial_{t}n_{\mathrm{ph}}
-	= - \frac{\mathrm{d} \Phi}{\mathrm{d}z}-U_{\mathrm{ph}}.
+	\partial_{t}n_{\mathrm{ph}}= - \frac{\mathrm{d} \Phi}{\mathrm{d}z}-U_{\mathrm{ph}}
+	.
 \end{equation}
-In steady state $\partial_{t}n_{\mathrm{ph}}= 0$, resulting in
+In steady state $\partial_{t}n_{\mathrm{ph}}= 0$, resulting in:
 \begin{equation}
-	U_{\mathrm{ph}}=-\frac{\mathrm{d} \Phi}{\mathrm{d}z}.
-	\label{eq:photon_continuity_steady}
+	U_{\mathrm{ph}}=-\frac{\mathrm{d} \Phi}{\mathrm{d}z}. \label{eq:photon_continuity_steady}.
 \end{equation}
+Tge photon absorption rate is therefore equal to the negative derivative of the photon flux. 
 
 \subsection{Lambert-Beer Law}
 \label{sec:lambert_beer}
 
-Let a beam of light enter a material and let the $z$ direction be parallel to the
-beam direction. Divide the material into thin slices of width $\delta$. The radiant
-flux that is absorbed in the slice is proportional to the incoming flux and the
-slice width with proportionality constant $\alpha$:
+Let a beam of light enter a material and let the $z$ direction be parallel to
+the beam direction. Divide the material into thin slices of width $\delta$. The
+radiant flux that is absorbed in the slice is proportional to the incoming flux
+and the slice width with proportionality constant $\alpha$:
 \begin{equation}
 	\Phi(z) - \Phi(z+\delta) = \alpha(h\nu, z) \Phi(z) \delta.
 \end{equation}
@@ -93,18 +104,14 @@ Approaching $\delta \to 0$ yields the following differential equation:
 	\frac{\mathrm{d}\Phi(z)}{\mathrm{d}z}=-\alpha(h\nu, z) \Phi(z).
 \end{equation}
 The quantity $\alpha(h\nu, z)$ is the absorption coefficient, which depends on the
-photon energy $h\nu$ and on the position $z$. A general solution for
-$z$-dependent $\alpha$ can be constructed using a separation of variables ansatz:
+photon energy $h\nu$ and on the position $z$. A general solution for $z$-dependent
+$\alpha$ can be constructed using a separation of variables ansatz:
 \begin{align}
-	\frac{\Phi}{\Phi_{0}}              & = \exp\left( -\int_{0}^{z}\alpha(h \nu, z')
-	\, \mathrm{d}z' \right),                                                         \\
-	\frac{\mathrm{d}\Phi}{\mathrm{d}z} & = -\alpha(h\nu, z) \Phi_{0}
-	\exp\left( -\int_{0}^{z}\alpha(h\nu, z') \, \mathrm{d}z' \right).
-	\label{eq:flux_general}
+	\frac{\Phi}{\Phi_{0}}              & = \exp\left( -\int_{0}^{z}\alpha(h \nu, z') \, \mathrm{d}z' \right),                                                 \\
+	\frac{\mathrm{d}\Phi}{\mathrm{d}z} & = -\alpha(h\nu, z) \Phi_{0}\exp\left( -\int_{0}^{z}\alpha(h\nu, z') \, \mathrm{d}z' \right). \label{eq:flux_general}
 \end{align}
 Here, $\Phi_{0}=\Phi(z=0)$ is the incident flux entering the material. If $\alpha$
 is independent of $z$, this reduces to the well-known Lambert-Beer law
 \begin{equation}
-	\Phi(z) = \Phi_{0}\exp(-\alpha(h\nu) z).
-	\label{eq:lambert_beer}
+	\Phi(z) = \Phi_{0}\exp(-\alpha(h\nu) z). \label{eq:lambert_beer}
 \end{equation}
