@@ -1,7 +1,7 @@
 \section{Semiconductor Foundations}
 \label{sec:theory_basics}
 
-To analyze the Schottky diode analytically, some essential prerequisites from
+To analyze the Schottky diode analytically, the essential prerequisites from
 semiconductor physics are presented in the following sections. These are taken from
 \citeauthoryear{grundmann}.
 
@@ -13,10 +13,10 @@ Lambert-Beer law.
 \subsection{Current Density}
 \label{sec:current_density}
 
-In solid-state physics, a current-density can only be established if the electronic
+In solid-state physics, a current density can only be established if the electronic
 bands are neither completely empty nor completely filled. Especially in
 semiconductor physics, electrons in the almost-empty conduction band as well as holes
-in the almost-filled valence band contribute to the current-density. Let
+in the almost-filled valence band contribute to the current density. Let
 $j_{\mathrm{n}}$ be the electron current density and $j_{\mathrm{p}}$ be the
 hole current density. The total current density can be calculated as $j_{\mathrm{tot}}
 = j_{\mathrm{n}}(z) + j_{\mathrm{p}}(z)$. In a device with constant cross
@@ -30,8 +30,8 @@ gradient (diffusion current). For nondegenerate semiconductors, this results in:
 \end{align}
 In those equations, $e$ is the elementary charge, $n / p$ is the charge carrier
 concentration for electrons / holes, $\mu_{\mathrm{n/p}}$ is the mobility of the respective
-charge carrier, $E$ is the magnitude of the Electric field and $D= kT \mu/q$ are
-the einstein coefficients, with the Boltzmann constant $k$, the temperature $T$
+charge carrier, $E$ is the magnitude of the electric field and $D= kT \mu/q$ are
+the Einstein coefficients, with the Boltzmann constant $k$, the temperature $T$
 and the charge $q$ of the respective carrier.
 
 \subsection{Electron-Hole Continuity Equation}
@@ -48,13 +48,13 @@ below:
 	\partial_{t}p & = G_{\mathrm{p}}- U_{\mathrm{p}}- \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{p}}.
 \end{align}
 In most two-terminal devices, characteristics only depend on one direction $(z)$,
-while being independent in its cross section. This reduces the complexity to a
+while being independent in their cross section. This reduces the complexity to a
 one-dimensional problem:
 \begin{align}
 	\partial_{t}n(z) & = G_{\mathrm{n}}(z) - U_{\mathrm{n}}(z) + \frac{1}{e}\partial_{z}j_{\mathrm{n}}(z), \label{eq:continuity_n} \\
 	\partial_{t}p(z) & = G_{\mathrm{p}}(z) - U_{\mathrm{p}}(z) - \frac{1}{e}\partial_{z}j_{\mathrm{p}}(z). \label{eq:continuity_p}
 \end{align}
-As electorn-hole pairs are usually generated or recombined in pairs, their
+As electron-hole pairs are usually generated or recombined in pairs, their
 generation and recombination rates are identical: $G=G_{\mathrm{n}}=G_{\mathrm{p}}$
 and $U=U_{\mathrm{n}}=U_{\mathrm{p}}$.
 
@@ -73,7 +73,7 @@ Let a beam of light enter the material and let the $z$-direction be parallel to 
 beam direction. Divide the material into thin slices of width $\delta$ with
 cross section $A$. Let $\Phi(z)$ denote the photon flux, $n_{\mathrm{ph}}(z)$
 the photon density and $U_{\mathrm{ph}}$ the photon absorption rate per unit
-volume in a two-terminal device. The following statement can be obtained from \cref{fig:photon_continuity}:
+volume in a two-terminal device. The photon balance depicted in \cref{fig:photon_continuity} yields:
 \begin{equation}
 	\underbrace{ \partial_{t}(n_{\mathrm{ph}}(z,t)A\delta) }_{ \text{change of
 	photons} }= \underbrace{ \Phi(z)A }_{ \substack{\text{incoming} \\ \text{photons}}
@@ -97,7 +97,7 @@ flux.
 \subsection{Lambert-Beer Law}
 \label{sec:lambert_beer}
 
-Assume an identical setup as in \cref{sec:photon_continuity}. The radiant flux that
+Assume an identical setup as in \cref{sec:photon_continuity}. The photon flux that
 is absorbed in the slice is proportional to the incoming flux and the slice width
 with proportionality constant $\alpha$:
 \begin{equation}
@@ -108,7 +108,7 @@ Taking the limit $\delta \to 0$ yields the following differential equation:
 	\frac{\mathrm{d}\Phi(z)}{\mathrm{d}z}=-\alpha(h\nu, z) \Phi(z).
 \end{equation}
 The quantity $\alpha(h\nu, z)$ is the absorption coefficient, which depends on
-the photon energy $h\nu$ (with $h$ being the planck constant and $\nu$ the photon
+the photon energy $h\nu$ (with $h$ being the Planck constant and $\nu$ the photon
 frequency) and on the position $z$. A general solution for $z$-dependent $\alpha$
 can be constructed using a separation of variables ansatz:
 \begin{align}
@@ -116,7 +116,7 @@ can be constructed using a separation of variables ansatz:
 	\frac{\mathrm{d}\Phi}{\mathrm{d}z} & = -\alpha(h\nu, z) \Phi_{0}\exp\left( -\int_{0}^{z}\alpha(h\nu, z') \, \mathrm{d}z' \right). \label{eq:flux_general}
 \end{align}
 Here, $\Phi_{0}=\Phi(z=0)$ is the incident flux entering the material. If
-$\alpha$ is independent of $z$, this reduces to the well-known Lambert-Beer law:
+$\alpha$ is independent of $z$, this reduces to the Lambert-Beer law:
 \begin{equation}
 	\Phi(z) = \Phi_{0}\exp(-\alpha(h\nu) z). \label{eq:lambert_beer}
 \end{equation}
