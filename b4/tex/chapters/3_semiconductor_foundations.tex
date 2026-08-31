@@ -1,14 +1,14 @@
-\section{Semiconductor Photodetector Theory}
+\section{Semiconductor Foundations}
 \label{sec:theory_basics}
 
 To analyze the Schottky diode analytically, some essential prerequisites from
 semiconductor physics are presented in the following sections. These are taken from
-\citeauthoryear{Grundmann}.
+\citeauthoryear{grundmann}.
 
 Expressions for the current density are used together with the electron-hole
 continuity equations to find the photocurrent dependence on the generation rate. The
-generation rate itself strongly correlates with photon continuity and the Lambert-Beer
-law.
+generation rate itself can be described with the photon continuity equation and the
+Lambert-Beer law.
 
 \subsection{Current Density}
 \label{sec:current_density}
@@ -41,8 +41,8 @@ In an infinitesimally small volume at position $\mathbf{r}$, the temporal change
 of electron and hole density is determined by generation rates, summarized in $G_{\mathrm{n/p}}
 (\mathbf{r})$ for electrons / holes, recombination rates, summarized in $U_{\mathrm{n/p}}
 (\mathbf{r})$ for electrons / holes and the current densities $\mathbf{j}_{\mathrm{n/p}}$
-that flow through the volume's surface. This results in the continuity
-equations below:
+that flow through the volume's surface. This results in the continuity equations
+below:
 \begin{align}
 	\partial_{t}n & = G_{\mathrm{n}}- U_{\mathrm{n}}+ \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{n}}, \\
 	\partial_{t}p & = G_{\mathrm{p}}- U_{\mathrm{p}}- \frac{1}{e}\nabla \cdot \mathbf{j}_{\mathrm{p}}.
@@ -51,9 +51,12 @@ In most two-terminal devices, characteristics only depend on one direction $(z)$
 while being independent in its cross section. This reduces the complexity to a
 one-dimensional problem:
 \begin{align}
-	\partial_{t}n(z) & = G_{\mathrm{n}}(z) - U_{\mathrm{n}}(z) + \frac{1}{e}\partial_{z}j_{\mathrm{n}}(z), \label{eq:continuity_n}                          \\
+	\partial_{t}n(z) & = G_{\mathrm{n}}(z) - U_{\mathrm{n}}(z) + \frac{1}{e}\partial_{z}j_{\mathrm{n}}(z), \label{eq:continuity_n} \\
 	\partial_{t}p(z) & = G_{\mathrm{p}}(z) - U_{\mathrm{p}}(z) - \frac{1}{e}\partial_{z}j_{\mathrm{p}}(z). \label{eq:continuity_p}
 \end{align}
+As electorn-hole pairs are usually generated or recombined in pairs, their
+generation and recombination rates are identical: $G=G_{\mathrm{n}}=G_{\mathrm{p}}$
+and $U=U_{\mathrm{n}}=U_{\mathrm{p}}$.
 
 \subsection{Photon Continuity Equation}
 \label{sec:photon_continuity}
@@ -66,12 +69,11 @@ one-dimensional problem:
 	\label{fig:photon_continuity}
 \end{figure}
 
-Let a beam of light enter the material and let the $z$-direction be parallel to
-the beam direction. Divide the material into thin slices of width $\delta$ with cross
-section $A$. Let $\Phi(z)$ denote the photon flux, $n_{\mathrm{ph}}(z)$ the photon
-density and $U_{\mathrm{ph}}$ the photon absorption rate per unit volume in a two-terminal
-device. The following statement can be obtained from
-\cref{fig:photon_continuity}:
+Let a beam of light enter the material and let the $z$-direction be parallel to the
+beam direction. Divide the material into thin slices of width $\delta$ with
+cross section $A$. Let $\Phi(z)$ denote the photon flux, $n_{\mathrm{ph}}(z)$
+the photon density and $U_{\mathrm{ph}}$ the photon absorption rate per unit
+volume in a two-terminal device. The following statement can be obtained from \cref{fig:photon_continuity}:
 \begin{equation}
 	\underbrace{ \partial_{t}(n_{\mathrm{ph}}(z,t)A\delta) }_{ \text{change of
 	photons} }= \underbrace{ \Phi(z)A }_{ \substack{\text{incoming} \\ \text{photons}}
@@ -79,8 +81,8 @@ device. The following statement can be obtained from
 	}- \underbrace{ U_{\mathrm{ph}}A\delta }_{ \substack{\text{photon} \\ \text{sink}}
 	}.
 \end{equation}
-Dividing by $\delta A$ and taking the limit $\delta \to 0$ yields the photon continuity
-equation:
+Dividing by $\delta A$ and taking the limit $\delta \to 0$ yields the photon
+continuity equation:
 \begin{equation}
 	\partial_{t}n_{\mathrm{ph}}= - \frac{\mathrm{d} \Phi}{\mathrm{d}z}-U_{\mathrm{ph}}
 	.
@@ -88,18 +90,16 @@ equation:
 In steady state $\partial_{t}n_{\mathrm{ph}}= 0$, resulting in:
 \begin{equation}
 	U_{\mathrm{ph}}=-\frac{\mathrm{d} \Phi}{\mathrm{d}z}. \label{eq:photon_continuity_steady}
-	.
 \end{equation}
-The photon absorption rate is therefore equal to the negative derivative of the
-photon flux.
+The photon absorption rate is therefore equal to the negative derivative of the photon
+flux.
 
 \subsection{Lambert-Beer Law}
 \label{sec:lambert_beer}
 
-Let a beam of light enter a material and let the $z$ direction be parallel to the
-beam direction. Divide the material into thin slices of width $\delta$. The radiant
-flux that is absorbed in the slice is proportional to the incoming flux and the slice
-width with proportionality constant $\alpha$:
+Assume an identical setup as in \cref{sec:photon_continuity}. The radiant flux that
+is absorbed in the slice is proportional to the incoming flux and the slice width
+with proportionality constant $\alpha$:
 \begin{equation}
 	\Phi(z) - \Phi(z+\delta) = \alpha(h\nu, z) \Phi(z) \delta.
 \end{equation}
@@ -108,14 +108,15 @@ Taking the limit $\delta \to 0$ yields the following differential equation:
 	\frac{\mathrm{d}\Phi(z)}{\mathrm{d}z}=-\alpha(h\nu, z) \Phi(z).
 \end{equation}
 The quantity $\alpha(h\nu, z)$ is the absorption coefficient, which depends on
-the photon energy $h\nu$ and on the position $z$. A general solution for $z$-dependent
-$\alpha$ can be constructed using a separation of variables ansatz:
+the photon energy $h\nu$ (with $h$ being the planck constant and $\nu$ the photon
+frequency) and on the position $z$. A general solution for $z$-dependent $\alpha$
+can be constructed using a separation of variables ansatz:
 \begin{align}
 	\frac{\Phi}{\Phi_{0}}              & = \exp\left( -\int_{0}^{z}\alpha(h \nu, z') \, \mathrm{d}z' \right),                                                 \\
 	\frac{\mathrm{d}\Phi}{\mathrm{d}z} & = -\alpha(h\nu, z) \Phi_{0}\exp\left( -\int_{0}^{z}\alpha(h\nu, z') \, \mathrm{d}z' \right). \label{eq:flux_general}
 \end{align}
 Here, $\Phi_{0}=\Phi(z=0)$ is the incident flux entering the material. If
-$\alpha$ is independent of $z$, this reduces to the well-known Lambert-Beer law
+$\alpha$ is independent of $z$, this reduces to the well-known Lambert-Beer law:
 \begin{equation}
 	\Phi(z) = \Phi_{0}\exp(-\alpha(h\nu) z). \label{eq:lambert_beer}
 \end{equation}
