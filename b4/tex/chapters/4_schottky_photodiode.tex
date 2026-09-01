@@ -1,15 +1,16 @@
 \section{Schottky Photodiode}
 \label{sec:schottky}
 
-In a Schottky photodiode, light with energy $h\nu > E_{\mathrm{g}}$, i.e.\ above
-the band gap energy $E_{\mathrm{g}}$, excites an electron-hole pair, such that
-the excited electron resides in the conduction band while the excited hole
-exists in the valence band. The excitation may occur inside the \ac{scr} or in
-the neutral $n$-region. Inside the \ac{scr}, the built-in electric field separates
-both charge carriers and creates a drift current, such that only holes are
-transported through the metal contact, while electrons move towards the neutral $n$-region.
-Charge carriers generated in the $n$-region may recombine. As there is no electric
-field present in this region, currents arise solely through diffusion.
+The following section is based on \citeauthoryear{gartner}. In a Schottky photodiode,
+light with energy $h\nu > E_{\mathrm{g}}$, i.e.\ above the band gap energy
+$E_{\mathrm{g}}$, excites an electron-hole pair, such that the excited electron
+resides in the conduction band while the excited hole exists in the valence band.
+The excitation may occur inside the \ac{scr} or in the neutral $n$-region. Inside
+the \ac{scr}, the built-in electric field separates both charge carriers and creates
+a drift current, such that only holes are transported through the metal contact, while
+electrons move towards the neutral $n$-region. Charge carriers generated in the
+$n$-region may recombine. As there is no electric field present in this region,
+currents arise solely through diffusion.
 
 The Schottky diode is one-dimensional along the $z$ direction, with cross section
 $A$, as depicted in \cref{fig:schottky_diode}. It features three distinct regions:
@@ -138,6 +139,19 @@ Therefore, it is justified to write
 	z.
 \end{equation}
 
+\subsection{Definition of the Generation Rate}
+\label{subsec:generation_rate}
+
+The generation rate $G$ of electron-hole pairs is proportional to the photon absorption
+rate $U_{\mathrm{ph}}$, with the internal quantum efficiency $\eta$ as
+proportionality constant $G=\eta U_{\mathrm{ph}}$. Due to \cref{eq:photon_continuity_steady},
+$U_{\mathrm{ph}}=-\mathrm{d}\Phi/\mathrm{d}z$. An expression for the flux is given
+by the Lambert-Beer law of \cref{sec:lambert_beer}, which leads to:
+\begin{equation}
+	G(z)=\eta \Phi_{0}\alpha(h\nu, z) \exp\left( -\int_{0}^{z}\alpha(h \nu, z') \, \mathrm{d}
+	z' \right). \label{eq:generation_rate}
+\end{equation}
+
 \subsection{Current Characteristics}
 
 Adding the steady-state continuity \cref{eq:continuity_n,eq:continuity_p} gives $\partial
@@ -164,16 +178,24 @@ section $A$ results in an expression for the current:
 	I_{\mathrm{ph}}=Aj_{\mathrm{tot}}= -eA \int_{0}^{\infty}G(z)j(z) \, \mathrm{d}z
 	. \label{eq:photocurrent}
 \end{equation}
-
-\subsection{Definition of the Generation Rate}
-\label{subsec:generation_rate}
-
-The generation rate $G$ of electron-hole pairs is proportional to the photon absorption
-rate $U_{\mathrm{ph}}$, with the internal quantum efficiency $\eta$ as
-proportionality constant $G=\eta U_{\mathrm{ph}}$. Due to \cref{eq:photon_continuity_steady},
-$U_{\mathrm{ph}}=-\mathrm{d}\Phi/\mathrm{d}z$. An expression for the flux is given
-by the Lambert-Beer law of \cref{sec:lambert_beer}, which leads to:
+Note that the current originating from the SCR at $z_{0}$ is a pure electron current,
+while the hole current from the neutral current originates from holes only. Substituting
+\cref{eq:generation_rate} yields:
 \begin{equation}
-	G(z)=\eta \Phi_{0}\alpha(h\nu, z) \exp\left( -\int_{0}^{z}\alpha(h \nu, z') \, \mathrm{d}
-	z' \right). \label{eq:generation_rate}
+	I_{\mathrm{ph}}= -eA \eta (h \nu) \Phi_{0}\underbrace{ \int_{0}^{\infty}\alpha(h\nu,
+	z)\exp\left( - \int_{0}^{z} \alpha(h\nu, z') \, \mathrm{d}z' \right) j(z) \,
+	\mathrm{d}z }_{ C(h\nu) }
+\end{equation}
+Define $C(h\nu)$ as a material characteristic. As $A\Phi_{0}$ yields the total number
+of photons, it is equivalent to $P_{\mathrm{opt}}/h\nu$, resulting in a measurable
+expression for the photocurrent as a function of optical power:
+\begin{equation}
+	I_{\mathrm{ph}}=-e \eta P_{\mathrm{opt}}/(h\nu) C(h\nu)=R_{\lambda}P_{\mathrm{opt}}
+\end{equation}
+The external quantum efficiency $\eta_{\mathrm{ext}}$ is a measured quantity, not
+a result of the transport model. It incorporates the internal quantum efficiency
+$\eta$ as well as the absorption effects from $C(h\nu)$.
+\begin{equation}
+	\eta_{\mathrm{ext}}=C(h\nu) \eta(h\nu) = \frac{\lvert I_{\mathrm{ph}}\rvert /
+	e}{ P_{\mathrm{opt}}/ h\nu}
 \end{equation}
