@@ -4,64 +4,63 @@
 In a Schottky photodiode, light with energy $h\nu > E_{\mathrm{g}}$, i.e.\ above
 the band gap energy $E_{\mathrm{g}}$, excites an electron-hole pair, such that
 the excited electron resides in the conduction band while the excited hole
-exists in the valence band. The excitation may occur inside the \ac{scr} or in the
-neutral $n$-region. Inside the \ac{scr}, the built-in electric field separates
+exists in the valence band. The excitation may occur inside the \ac{scr} or in
+the neutral $n$-region. Inside the \ac{scr}, the built-in electric field separates
 both charge carriers and creates a drift current, such that only holes are
 transported through the metal contact, while electrons move towards the neutral $n$-region.
 Charge carriers generated in the $n$-region may recombine. As there is no electric
 field present in this region, currents arise solely through diffusion.
 
 The Schottky diode is one-dimensional along the $z$ direction, with cross section
-$A$, as depicted in \cref{fig:schottky_diode}. It features three distinct
-regions:
+$A$, as depicted in \cref{fig:schottky_diode}. It features three distinct regions:
 \begin{equation}
 	\underbrace{ z < 0 }_{ \text{metal contact} }\quad \Big| \underbrace{ \quad 0 \leq
-	z \leq z_{0} \quad }_{ \text{\acl{scr} (\acs{scr})} }\Big| \quad \underbrace{
-	z > z_{0} }_{ \text{quasi-neutral } n\text{-bulk} }.
+	z \leq z_{0} \quad }_{ \text{\acl{scr} (\acs{scr})} }\Big| \quad \underbrace{ z
+	> z_{0} }_{ \text{quasi-neutral } n\text{-bulk} }.
 \end{equation}
-Light enters from $z<0$ and propagates in the $+z$ direction. The \ac{scr} begins
-directly at the semiconductor surface.
+Light enters from $z<0$ and propagates in the $+z$ direction. The \ac{scr}
+begins directly at the semiconductor surface.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\linewidth]{../assets/schottky_diode.png}
-	\caption{Schematic of the one-dimensional Schottky photodiode.}
+	\caption{Schematic of the one-dimensional Schottky photodiode. Image based on \autocite{grundmann}}
 	\label{fig:schottky_diode}
 \end{figure}
 
-The goal is to find an expression for the photocurrent, depending on the photon generation
-rate. To this end, a differential equation is created using the continuity equation
-of \cref{sec:continuity}, together with the current densities of
-\cref{sec:current_density}. The central idea is to evaluate the current
-at the boundary between \ac{scr} and neutral region ($z=z_{0}$) and utilize the conservation
+The goal is to find an expression for the photocurrent, depending on the photon
+generation rate. To this end, a differential equation is created using the
+continuity equation of \cref{sec:continuity}, together with the current densities
+of \cref{sec:current_density}. The central idea is to evaluate the current at
+the boundary between \ac{scr} and neutral region ($z=z_{0}$) and utilize the conservation
 of the total current to obtain it at any position within the diode.
 
 \subsection{Boundary Conditions}
 
 As the electric field points towards the metal contact, electrons generated in the
-depletion layer are transported in the $+z$ direction. Only holes leave the device
-through this contact. Therefore, the boundary condition $j_{\mathrm{n}}(0)= 0$
-is valid.
+depletion layer are transported in the $+z$ direction. Only holes leave the
+device through this contact. Therefore, the boundary condition
+$j_{\mathrm{n}}(0)= 0$ is valid.
 
-Let $p_{0}$ be the equilibrium hole concentration in the absence of optical excitation.
-The electric field is assumed to extract all excess holes that arrive at $z_{0}$,
-acting as a perfect sink. Far from the junction, the bulk is undisturbed,
-as essentially all photons are absorbed beforehand. This justifies the boundary conditions
-$p(z=z_{0})= p(z \to \infty)=p_{0}$.
+Let $p_{0}$ be the equilibrium hole concentration in the absence of optical
+excitation. The electric field is assumed to extract all excess holes that arrive
+at $z_{0}$, acting as a perfect sink. Far from the junction, the bulk is
+undisturbed, as essentially all photons are absorbed beforehand. This justifies
+the boundary conditions $p(z=z_{0})= p(z \to \infty)=p_{0}$.
 
 \subsection{Continuity Equation in Depletion Layer}
 
-The first goal is the evaluation of the electron current density at $z_{0}$. As the
-electric field is strong inside the \ac{scr} and transports electrons away rapidly,
+The first goal is the evaluation of the electron current density at $z_{0}$. As
+the electric field is strong inside the \ac{scr} and transports electrons away rapidly,
 recombination in this region can be neglected. Additionally assuming steady state
 reduces the electron continuity \cref{eq:continuity_n} to:
 \begin{align}
 	\partial_{z}j_{\mathrm{n}}              & = -eG(z),                                \\
 	j_{\mathrm{n}}(z_{0})-j_{\mathrm{n}}(0) & = -e \int_{0}^{z_{0}}G(z) \,\mathrm{d}z.
 \end{align}
-Here, $G$ denotes the generation rate of electron-hole pairs, which is specified in
-\cref{subsec:generation_rate}. Applying the boundary condition $j_{\mathrm{n}}(0)
-=0$ yields:
+Here, $G$ denotes the generation rate of electron-hole pairs, which is specified
+in \cref{subsec:generation_rate}. Applying the boundary condition $j_{\mathrm{n}}
+(0) =0$ yields:
 \begin{equation}
 	j_{\mathrm{n}}(z_{0})=-e \int_{0}^{z_{0}}G(z) \, \mathrm{d}z. \label{eq:j_n_scr}
 \end{equation}
@@ -72,64 +71,64 @@ The second goal is to evaluate the hole current density at $z_{0}$. Define $\Del
 p(z)$ as the excess charge carrier density, such that
 $p(z) = p_{0}+ \Delta p(z)$ with $p_{0}$ being the constant equilibrium charge
 carrier density. Substituting the current density of \cref{sec:current_density} into
-the hole continuity \cref{eq:continuity_p}, assuming a spatially constant electric
-field, results in the transport equation:
+the hole continuity \cref{eq:continuity_p}, assuming a spatially constant
+electric field, results in the transport equation:
 \begin{equation}
-	\partial^{2}_{z}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}\Delta p(z) = \frac{U(z)-G(z)}{D_{\mathrm{p}}}
-	.
+	\partial^{2}_{z}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}
+	\Delta p(z) = \frac{U(z)-G(z)}{D_{\mathrm{p}}}.
 \end{equation}
-In equilibrium, the thermal generation rate $G_{\mathrm{th}}$ balances
-recombination as $G_{\mathrm{th}}=p_{0}/ \tau_{\mathrm{p}}$, with the minority
-carrier lifetime $\tau_{\mathrm{p}}$, i.e.\ the average time a hole survives in
-the $n$-bulk before recombining. Subtracting this equilibrium pair leaves the net
-recombination, which at low injection is linear in the excess density, with
-$\tau_{\mathrm{p}}$ as inverse proportionality constant:
+In equilibrium, the thermal generation rate $G_{\mathrm{th}}$ balances recombination
+as $G_{\mathrm{th}}=p_{0}/ \tau_{\mathrm{p}}$, with the minority carrier
+lifetime $\tau_{\mathrm{p}}$, i.e.\ the average time a hole survives in the $n$-bulk
+before recombining. Subtracting this equilibrium pair leaves the net recombination,
+which at low injection is linear in the excess density, with $\tau_{\mathrm{p}}$ as
+inverse proportionality constant:
 \begin{equation}
 	U(z)=\frac{\Delta p}{\tau_{\mathrm{p}}}.
 \end{equation}
-In the following, $G$ denotes the optical generation rate alone.
-This leads to a linear, inhomogeneous second-order differential equation:
+In the following, $G$ denotes the optical generation rate alone. This leads to a
+linear, inhomogeneous second-order differential equation:
 \begin{equation}
-	\partial_{z}^{2}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}\Delta p(z) -\frac{\Delta
-	p(z)}{D_{\mathrm{p}}\tau_{\mathrm{p}}}=-\frac{G(z)}{D_{\mathrm{p}}}.
+	\partial_{z}^{2}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}
+	\Delta p(z) -\frac{\Delta p(z)}{D_{\mathrm{p}}\tau_{\mathrm{p}}}=-\frac{G(z)}{D_{\mathrm{p}}}
+	.
 \end{equation}
 As the electric field is present only in the depletion layer, the second term vanishes:
 \begin{equation}
 	\partial_{z}^{2}\Delta p-\frac{\Delta p}{D_{\mathrm{p}}\tau_{\mathrm{p}}}=-\frac{G(z)}{D_{\mathrm{p}}}
 	. \label{eq:transport_bulk}
 \end{equation}
-Define the diffusion length $L_{\mathrm{p}}=\sqrt{ D_{\mathrm{p}}\tau_{\mathrm{p}}}$
-and use $'$ to indicate derivatives. Multiplication of the left-hand side with
-$\exp(-(z-z_{0})/L_{\mathrm{p}})$ is equivalent to differentiation:
+Define the diffusion length
+$L_{\mathrm{p}}=\sqrt{ D_{\mathrm{p}}\tau_{\mathrm{p}}}$ and use $'$ to indicate
+derivatives. Multiplication of the left-hand side with $\exp(-(z-z_{0})/L_{\mathrm{p}}
+)$ is equivalent to differentiation:
 \begin{equation}
 	\begin{split}
 		&\frac{\mathrm{d}}{\mathrm{d}z}\left[ \exp(-(z-z_{0})/L_{\mathrm{p}}) (\Delta
-		p'+\Delta p/L_{\mathrm{p}}) \right] \\&= -\frac{1}{L_{\mathrm{p}}}\exp(-(z-z_{0})
-		/L_{\mathrm{p}})(\Delta p'+\Delta p/L_{\mathrm{p}}) +\exp(-(z-z_{0})/L_{\mathrm{p}})
-		(\Delta p''+\Delta p'/L_{\mathrm{p}}) \\&= \exp(-(z-z_{0})/L_{\mathrm{p}}) (\Delta
-		p''-\Delta p/L_{\mathrm{p}}^{2}) = -\frac{G(z)}{D_{\mathrm{p}}}\exp(-(z-z_{0})/L_{\mathrm{p}}).
+		p'+\Delta p/L_{\mathrm{p}}) \right] \\&= -\frac{1}{L_{\mathrm{p}}}\exp(-(z-z_{0}
+		) /L_{\mathrm{p}})(\Delta p'+\Delta p/L_{\mathrm{p}}) +\exp(-(z-z_{0})/L_{\mathrm{p}}
+		) (\Delta p''+\Delta p'/L_{\mathrm{p}}) \\&= \exp(-(z-z_{0})/L_{\mathrm{p}}) (
+		\Delta p''-\Delta p/L_{\mathrm{p}}^{2}) = -\frac{G(z)}{D_{\mathrm{p}}}\exp(-(
+		z-z_{0})/L_{\mathrm{p}}).
 	\end{split}
 \end{equation}
 Integration from $z_{0}$ to $\infty$ and application of the boundary conditions
 $\Delta p(z_{0})=0$ and $\Delta p(z \to \infty)=0$ yields the expression below. The
-latter condition excludes the exponentially growing homogeneous solution, so that
-the boundary term at the upper limit vanishes:
+latter condition excludes the exponentially growing homogeneous solution, so
+that the boundary term at the upper limit vanishes:
 \begin{equation}
 	D_{\mathrm{p}}\Delta p'(z_{0}) = \left[ \exp(-(z-z_{0})/L_{\mathrm{p}}) (\Delta
-	p'+\Delta p/L_{\mathrm{p}}) \right]^{\infty}_{z_{0}}= -\frac{1}{D_{\mathrm{p}}}\int_{z_{0}}^{\infty}
-	G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z.
+	p'+\Delta p/L_{\mathrm{p}}) \right]^{\infty}_{z_{0}}= -\frac{1}{D_{\mathrm{p}}}
+	\int_{z_{0}}^{\infty}G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z.
 \end{equation}
 As there is no electric field, current only originates from diffusion:
 \begin{equation}
-	\begin{split}
-		j_{\mathrm{p}}(z_{0}) &= -eD_{\mathrm{p}}\partial_{z}p \big|_{z_{0}} \\&= -e \int_{z_{0}}^{\infty}
-		G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z.
-	\end{split}
-	\label{eq:j_p_bulk}
+	j_{\mathrm{p}}(z_{0})&= -eD_{\mathrm{p}}\partial_{z}p \big|_{z_{0}}= -e \int_{z_{0}}
+	^{\infty}G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z. \label{eq:j_p_bulk}
 \end{equation}
 Note that the homogeneous solution of the differential equation $\partial_{z}^{2}
-\Delta p-\Delta p/(D_{\mathrm{p}}\tau_{\mathrm{p}})=0$, together with the boundary
-condition $\Delta p(z \to \infty)$, is given as:
+\Delta p-\Delta p/(D_{\mathrm{p}}\tau_{\mathrm{p}})=0$, together with the
+boundary condition $\Delta p(z \to \infty)$, is given as:
 \begin{equation}
 	\Delta p=\Delta p_{0}\exp(-\lambda(z-z_{0})).
 \end{equation}
@@ -141,28 +140,26 @@ Therefore, it is justified to write
 
 \subsection{Current Characteristics}
 
-Adding the steady-state continuity \cref{eq:continuity_n,eq:continuity_p} gives
-$\partial_{z}j_{\mathrm{tot}}=0$, so the total current density is constant
-throughout the device. Therefore, it can be evaluated at position $z_{0}$ as
-$j_{\mathrm{tot}}=j_{\mathrm{n}}(z_{0})+j_{\mathrm{p}}(z_{0})$. Substituting
-\cref{eq:j_n_scr,eq:j_p_bulk} yields:
+Adding the steady-state continuity \cref{eq:continuity_n,eq:continuity_p} gives $\partial
+_{z}j_{\mathrm{tot}}=0$, so the total current density is constant throughout the
+device. Therefore, it can be evaluated at position $z_{0}$ as
+$j_{\mathrm{tot}}=j_{\mathrm{n}}(z_{0})+j_{\mathrm{p}}(z_{0})$. Substituting \cref{eq:j_n_scr,eq:j_p_bulk}
+yields:
 \begin{equation}
-	\begin{split}
-		j_{\mathrm{tot}} &= -e \int_{0}^{z_{0}}G(z)\, \mathrm{d}z - e\int_{z_{0}}^{\infty}
-		G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z \\&= -e \int_{0}^{\infty}G(z)
-		j(z) \, \mathrm{d}z,
-	\end{split}
+	j_{\mathrm{tot}}&= -e \int_{0}^{z_{0}}G(z)\, \mathrm{d}z - e\int_{z_{0}}^{\infty}
+	G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z = -e \int_{0}^{\infty}G(z) j
+	(z) \, \mathrm{d}z,
 \end{equation}
 with the point source current:
 \begin{equation}
 	j(z)=
 	\begin{cases}
-		1                               & z \in(0, z_{0}]      \\
+		1                               & z \in(0, z_{0}]       \\
 		\exp(-(z-z_{0})/L_{\mathrm{p}}) & z \in(z_{0}, \infty),
 	\end{cases}
 \end{equation}
-induced by the point source at position $z$. Multiplication with the cross section
-$A$ results in an expression for the current:
+induced by the point source at position $z$. Multiplication with the cross
+section $A$ results in an expression for the current:
 \begin{equation}
 	I_{\mathrm{ph}}=Aj_{\mathrm{tot}}= -eA \int_{0}^{\infty}G(z)j(z) \, \mathrm{d}z
 	. \label{eq:photocurrent}

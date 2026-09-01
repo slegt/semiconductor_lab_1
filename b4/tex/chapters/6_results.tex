@@ -2,19 +2,18 @@
 \section{Results}
 \label{sec:results}
 
-This report examines the photocurrent spectrum of five different photodiodes
-(D1--D5), see
-\cref{subsec:current_spectrum}. By recording a reference spectrum in \cref{subsec:reference_spectra},
-the spectral responsivity and quantum efficiency of those photodiodes can be
-extracted, see \cref{subsec:spectral_responsivity}. The response linearity with
-respect to the optical power is examined in
-\cref{subsec:linearity}. Although D3, an ordinary silicon photodiode, and D1, an
-\ac{uv}-enhanced silicon photodiode, are based on silicon, their responsivity
-spectra differ considerably. This difference is discussed in \cref{subsec:comparison}.
-The responsivity of D4 is compared to a human eye response curve $V(\lambda )$, see \cref{subsec:eye}.
-Finally, the modulation-frequency response of the photodiode is examined in
-\cref{subsec:chopper}, where the reference frequency, and therefore the angular
-speed of the chopper wheel, is varied at a fixed wavelength.
+This report examines the photocurrent spectrum of five different photodiodes (D1--D5),
+see \cref{subsec:current_spectrum}. By recording a reference spectrum in
+\cref{subsec:reference_spectra}, the spectral responsivity and quantum efficiency
+of those photodiodes can be extracted, see \cref{subsec:spectral_responsivity}. The
+response linearity with respect to the optical power is examined in \cref{subsec:linearity}.
+Although D3, an ordinary silicon photodiode, and D1, an \ac{uv}-enhanced silicon
+photodiode, are based on silicon, their responsivity spectra differ considerably.
+This difference is discussed in \cref{subsec:comparison}. The responsivity of D4
+is compared to a human eye response curve $V(\lambda )$, see \cref{subsec:eye}.
+Finally, the modulation-frequency response of the photodiode is examined in \cref{subsec:chopper},
+where the reference frequency, and therefore the angular speed of the chopper wheel,
+is varied at a fixed wavelength.
 
 \subsection{Diode Current Spectrum}
 \label{subsec:current_spectrum}
@@ -28,14 +27,13 @@ speed of the chopper wheel, is varied at a fixed wavelength.
 	\label{fig:photocurrent}
 \end{figure}
 
-Photocurrent spectra of five photodiodes were recorded and are depicted in \cref{fig:photocurrent}.
-As all photodiodes are silicon-based, the band gap of
-$E_{\mathrm{g}}=\qty{1.124}{\electronvolt}$
-determines a minimal energy to excite electrons. This corresponds to a threshold
-wavelength of $\lambda_{\mathrm{th}}=hc / E_{\mathrm{g}}=\qty{1103}{\nano\meter}$,
-with $h$ the Planck constant and $c$ the vacuum speed of light. Above this
-threshold wavelength the photocurrent drops by two to three orders of magnitude,
-indicating that the signal vanished.
+Photocurrent spectra of five photodiodes were recorded and are depicted in
+\cref{fig:photocurrent}. As all photodiodes are silicon-based, the band gap of
+$E_{\mathrm{g}}=\qty{1.124}{\electronvolt}$ determines a minimal energy to
+excite electrons. This corresponds to a threshold wavelength of $\lambda_{\mathrm{th}}
+=hc / E_{\mathrm{g}}=\qty{1103}{\nano\meter}$, with $h$ the Planck constant and
+$c$ the vacuum speed of light. Above this threshold wavelength the photocurrent drops
+by two to three orders of magnitude, indicating that the signal vanished.
 
 The photocurrent-spectra can be grouped into two categories, based on their line profile:
 D3 and D5 peak at \qty{1000}{\nano \meter} while D1, D2 and D4 at around \qty{600}{\nano\meter}.
@@ -48,14 +46,16 @@ optical power of the halogen lamp, see \cref{subsec:reference_spectra}.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}
+		[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/reference_spectra.pdf}
 		\caption{Linear scale.}
 		\label{fig:reference_spectra}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}
+		[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/reference_spectra_log.pdf}
 		\caption{Logarithmic scale.}
@@ -76,15 +76,16 @@ optical power of the halogen lamp, see \cref{subsec:reference_spectra}.
 
 A reference detector with a single-point calibration at \qty{633}{\nano\meter}
 for radiometric power measurement was used to determine the optical reference
-power spectrum. Its output voltage is converted into an optical power with the
-wavelength-independent factor \qty{2000}{\volt\per\watt}. 
-To capture the thermal shifts of the halogen lamp, the spectrum
-was recorded with a chopper frequency of \qty{16.7}{\hertz} at the beginning and at the end of the experiment, see \cref{fig:reference}.
-neglected.
+power spectrum. Its output voltage is converted into an optical power with the wavelength-independent
+factor \qty{2000}{\volt\per\watt}. To capture the thermal shifts of the halogen
+lamp, the spectrum was recorded with a chopper frequency of \qty{16.7}{\hertz} at
+the beginning and at the end of the experiment, see \cref{fig:reference}. As the lamp
+was operating throughout the day, only a small shift is observed. Time-dependent effects
+can be neglected.
 
 The relative deviation of the optical power is shown in \cref{fig:reference_spread}.
-As the intensity drops below \qty{550}{\nano\meter}, the signal enters the noise
-range. Subsequent procedures to identify the maximum of the spectrum only consider
+As the intensity drops below \qty{550}{\nano\meter}, the signal enters the noise range.
+Subsequent procedures to identify the maximum of the spectrum only consider
 wavelengths greater than \qty{550}{\nano\meter}.
 
 \subsection{Spectral Responsivity and Quantum Efficiency}
@@ -92,55 +93,54 @@ wavelengths greater than \qty{550}{\nano\meter}.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}
+		[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/responsivity.pdf}
 		\caption{Spectral responsivity $R_{\lambda}$.}
 		\label{fig:responsivity}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}
+		[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{../plots/quantum_efficiency.pdf}
 		\caption{External quantum efficiency $\eta$.}
 		\label{fig:quantum_efficiency}
 	\end{subfigure}
-	\caption{Spectral responsivity $R_{\lambda}$ and external quantum
-	efficiency $\eta$ of the five photodiodes as a function of wavelength
-	$\lambda$.}
+	\caption{Spectral responsivity $R_{\lambda}$ and external quantum efficiency
+	$\eta$ of the five photodiodes as a function of wavelength $\lambda$.}
 	\label{fig:responsivity_quantum_efficiency}
 \end{figure}
 
 Using the average reference spectrum $P_{\mathrm{opt}}^{\mathrm{avg}}$, the responsivity
 $R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was calculated and
-is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend on the power
-of the optical source and is therefore a better device characteristic. The band gap
-determines the highest wavelength threshold. The wavelengths
+is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend on the
+power of the optical source and is therefore a better device characteristic. The band
+gap determines the highest wavelength threshold. The wavelengths
 $\lambda_{\mathrm{max}}$ of maximum responsivity are marked in
-\cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent
-spectra. The steep decrease towards low wavelengths is corrected, as it was caused
-by the vanishing power of the source.
+\cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent spectra.
+The steep decrease towards low wavelengths is corrected, as it was caused by the vanishing
+power of the source.
 
-The external quantum efficiency spectrum is plotted in
-\cref{fig:quantum_efficiency}. Evaluated at the responsivity maximum, D3 reaches
-the highest quantum efficiency with \qty{37.14}{\percent} and D5 the lowest with
-\qty{2.32}{\percent}. The characteristic values of all photodiodes are summarized
-in \cref{tab:diodes}.
+The external quantum efficiency spectrum is plotted in \cref{fig:quantum_efficiency}.
+Evaluated at the responsivity maximum, D3 reaches the highest quantum efficiency with
+\qty{37.14}{\percent} and D5 the lowest with \qty{2.32}{\percent}. The
+characteristic values of all photodiodes are summarized in \cref{tab:diodes}.
 
-Direct comparisons between the absolute responsivities and quantum efficiencies are
-not meaningful, given the high systematic error in the measurement setup. The
-photodiode mount was readjusted after each photodiode installation. The detection
+Direct comparisons between the absolute responsivities and quantum efficiencies
+are not meaningful, given the high systematic error in the measurement setup.
+The photodiode mount was readjusted after each photodiode installation. The detection
 area generally differs from diode to diode and from that of the reference detector.
-Therefore, the responsivity and external quantum efficiency are only a rough
-estimate. 
+Therefore, the responsivity and external quantum efficiency are only a rough estimate.
 
 \begin{table}
 	\centering
 	\input{../tables/diode_table.tex}
-	\caption{Maximum responsivity $R_{\lambda}$ of each photodiode within the analysed window
-	$\lambda > \qty{550}{\nano\meter}$, at the wavelength $\lambda_{\mathrm{max}}$ at
-	which it occurs, together with the external quantum efficiency $\eta$ evaluated
-	at that same wavelength, compared to the values at the fixed wavelength
+	\caption{Maximum responsivity $R_{\lambda}$ of each photodiode within the
+	analysed window $\lambda > \qty{550}{\nano\meter}$, at the wavelength $\lambda_{\mathrm{max}}$
+	at which it occurs, together with the external quantum efficiency $\eta$
+	evaluated at that same wavelength, compared to the values at the fixed wavelength
 	\qty{550}{\nano\meter}.}
 	\label{tab:diodes}
 \end{table}
@@ -156,55 +156,55 @@ estimate.
 	\label{fig:linearity}
 \end{figure}
 
-The photocurrents of D4 and D5 were measured at a fixed wavelength while the optical
-power was varied using neutral density filters, depicted in \cref{fig:linearity}.
-At a fixed wavelength the incident photon flux is proportional to the optical power,
-so that \cref{eq:photocurrent} suggests
-$I_{\mathrm{ph}}\propto P_{\mathrm{opt}}$ and therefore
+The photocurrents of D4 and D5 were measured at a fixed wavelength while the
+optical power was varied using neutral density filters, depicted in \cref{fig:linearity}.
+At a fixed wavelength the incident photon flux is proportional to the optical
+power, so that \cref{eq:photocurrent} suggests $I_{\mathrm{ph}}\propto P_{\mathrm{opt}}$
+and therefore
 \begin{equation}
-	\frac{I}{I_{0}}=\frac{P}{P_{0}}
-	,
+	\frac{I}{I_{0}}=\frac{P}{P_{0}},
 \end{equation}
 with $I$ the photocurrent and $P$ the optical power behind the filter stack, and
-$I_{0}$ and $P_{0}$ the values measured without any filter. A straight line
-$f(x)=mx+n$ fitted to the doubly logarithmic data corresponds to the power law
-$I/I_{0}=\exp(n)(P/P_{0})^{m}$, so that its slope $m$ is the exponent of the
-original data, its intercept $n$ fixes the prefactor $\exp(n)$, and $m=1$
-describes a linear response.
+$I_{0}$ and $P_{0}$ the values measured without any filter. A straight line $f(x)
+=mx+n$ fitted to the doubly logarithmic data corresponds to the power law $I/I_{0}
+=\exp(n)(P/P_{0})^{m}$, so that its slope $m$ is the exponent of the original
+data, its intercept $n$ fixes the prefactor $\exp(n)$, and $m=1$ describes a
+linear response.
 
 D4 shows a nearly linear scaling with $m=\num{0.92(1)}$. However, D5 shows two
-regimes, with an unphysical break at \num{2e-2}. While the second regime features a
-nearly linear scaling with $m=\num{0.94(9)}$, the first regime only scales as
+regimes, with an unphysical break at \num{2e-2}. While the second regime features
+a nearly linear scaling with $m=\num{0.94(9)}$, the first regime only scales as
 $m=\num{0.62(2)}$.
 
 \subsection{Comparison between Si- and \acs{uv}-Enhanced Si-Photodiodes}
 \label{subsec:comparison}
 
-Both the Si-Photodiode D3 and the \ac{uv}-enhanced Si-Photodiode D1 are
-silicon-based and therefore share the threshold wavelength of \qty{1103}{\nano\meter}.
-However, their line profiles differ considerably. D1 has a maximum responsivity at
-\qty{558}{\nano\meter}, while D3 features a maximum responsivity at \qty{898}{\nano\meter}.
+Both the Si-Photodiode D3 and the \ac{uv}-enhanced Si-Photodiode D1 are silicon-based
+and therefore share the threshold wavelength of \qty{1103}{\nano\meter}. However,
+their line profiles differ considerably. D1 has a maximum responsivity at \qty{558}{\nano\meter},
+while D3 features a maximum responsivity at \qty{898}{\nano\meter}.
 
 As the measurement does not enter the \ac{uv}-regime (\qtyrange{250}{400}{\nano\meter}),
 no statements can be concluded about their responsivity in this region. It is
 expected that D1 features a considerably higher responsivity.
 
-For an ordinary silicon photodiode, infrared radiation penetrates deeply into
-the material due to silicon's reduced absorption coefficient: The generation of electron-hole
-pairs takes place in the whole \ac{scr}\@. However \ac{uv} radiation does not penetrate deep
-into the material due to a higher absorption coefficient. A large proportion of electron-hole
-pair generation happens in the inversion layer. These pairs have a high chance
-to recombine at the surface and effectively do not contribute to the
-photocurrent. The Schottky photodiode therefore features a responsivity falloff in
-the \ac{uv}-regime attributed to the presence of an inversion layer in the depletion region.
+For an ordinary silicon photodiode, infrared radiation penetrates deeply into the
+material due to silicon's reduced absorption coefficient: The generation of
+electron-hole pairs takes place in the whole \ac{scr}\@. However \ac{uv}
+radiation does not penetrate deep into the material due to a higher absorption
+coefficient. A large proportion of electron-hole pair generation happens in the inversion
+layer. These pairs have a high chance to recombine at the surface and
+effectively do not contribute to the photocurrent. The Schottky photodiode therefore
+features a responsivity falloff in the \ac{uv}-regime attributed to the presence
+of an inversion layer in the depletion region.
 
 \ac{uv}-enhanced Si-photodiodes may feature higher doping concentrations $N_{\mathrm{D}}$.
-This implies a shrinking inversion layer width as well as a shrinking \ac{scr}
-width as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}.
-\ac{uv} radiation is mostly absorbed in the \ac{scr} and electron-hole
-excitation results in a current. However the \ac{scr} is too narrow for infrared radiation,
-as a large proportion passes through it. This optimization leads to a responsivity
-loss in the near infrared regime.
+This implies a shrinking inversion layer width as well as a shrinking \ac{scr} width
+as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}. \ac{uv}
+radiation is mostly absorbed in the \ac{scr} and electron-hole excitation results
+in a current. However the \ac{scr} is too narrow for infrared radiation, as a
+large proportion passes through it. This optimization leads to a responsivity loss
+in the near infrared regime.
 
 Differences in the surface coating may additionally influence the responsivity.
 The line profiles suggest that D5 is an ordinary photodiode, whereas D2 and D4 are
@@ -224,10 +224,9 @@ The line profiles suggest that D5 is an ordinary photodiode, whereas D2 and D4 a
 This section is based on \citeauthoryear{paschotta}. Human eye vision is based
 on four types of photoreceptors: rods as well as three types of cones. Depending
 on the incoming luminance, different photoreceptor signals are evaluated to determine
-the brightness. Photopic vision operates under bright-light conditions, whereas
-scotopic vision operates under low-light conditions. Each
-photoreceptor uses a different photopigment that changes chemically under light
-absorption.
+the brightness. Photopic vision operates under bright-light conditions, whereas scotopic
+vision operates under low-light conditions. Each photoreceptor uses a different
+photopigment that changes chemically under light absorption.
 
 Scotopic vision uses rods, whose rhodopsin photopigment is more light sensitive than
 the cone pigments. Photopic vision uses cones, each type featuring its own photopigment
@@ -243,11 +242,11 @@ using flicker photometry. The experiment was conducted under bright-light and
 under low-light conditions and the relative radiative power is used to construct
 $V(\lambda)$.
 
-The three curves peak at comparable wavelengths: at \qty{505}{\nano\meter} for
-scotopic vision, at \qty{555}{\nano\meter} for photopic vision and at
-\qty{582}{\nano\meter} for D4. However, the peak width of D4 is considerably
-larger than that of either $V(\lambda)$ curve.
-Without any correction filter, D4 cannot be used as a photometric diode.
+The three curves peak at comparable wavelengths: at \qty{505}{\nano\meter} for scotopic
+vision, at \qty{555}{\nano\meter} for photopic vision and at \qty{582}{\nano\meter}
+for D4. However, the peak width of D4 is considerably larger than that of either
+$V(\lambda)$ curve. Without any correction filter, D4 cannot be used as a
+photometric diode.
 
 \subsection{Chopper Frequency Dependence}
 \label{subsec:chopper}
@@ -267,12 +266,12 @@ different reference frequencies, resulting in different chopper angular velociti
 The result is depicted in \cref{fig:chopper}. No change in photocurrent is observed
 for high frequencies.
 
-However, a sharp falloff at low frequencies is observed. A possible explanation
-of this behaviour is a coupling capacitor that connects two stages acting as a
-high-pass filter. Using the fit function
+However, a sharp falloff at low frequencies is observed. A possible explanation of
+this behaviour is a coupling capacitor that connects two stages acting as a high-pass
+filter. Using the fit function
 \begin{equation}
 	I_{\mathrm{ph}}(f)=\frac{I_{\mathrm{sat}}f}{\sqrt{ f^{2}+f_{\mathrm{c}}^{2}}}
 \end{equation}
 with the saturation current $I_{\mathrm{sat}}$ and the cutoff frequency
-$f_{\mathrm{c}}$, the fit yields $f_{\mathrm{c}}=\qty{0.77(2)}{\hertz}$ and
-$I_{\mathrm{sat}}=\qty{125.0(2)}{\nano\ampere}$.
+$f_{\mathrm{c}}$, the fit yields $f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and $I_{\mathrm{sat}}
+=\qty{125.0}{\nano\ampere}$.
