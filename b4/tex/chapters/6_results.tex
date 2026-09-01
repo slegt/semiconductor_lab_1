@@ -8,8 +8,8 @@ This report examines the photocurrent spectrum of five different photodiodes
 the spectral responsivity and quantum efficiency of those photodiodes can be
 extracted, see \cref{subsec:spectral_responsivity}. The response linearity with
 respect to the optical power is examined in
-\cref{subsec:linearity}. Although D3, an ordinary silicon photodiode, and D1, a
-UV-enhanced silicon photodiode, are based on silicon, their responsivity
+\cref{subsec:linearity}. Although D3, an ordinary silicon photodiode, and D1, an
+\ac{uv}-enhanced silicon photodiode, are based on silicon, their responsivity
 spectra differ considerably. This difference is discussed in \cref{subsec:comparison}.
 The responsivity of D4 is compared to a human eye response curve $V(\lambda )$, see \cref{subsec:eye}.
 Finally, the modulation-frequency response of the photodiode is examined in
@@ -137,7 +137,7 @@ estimate.
 \begin{table}
 	\centering
 	\input{../tables/diode_table.tex}
-	\caption{Maximum responsivity $R$ of each photodiode within the analysed window
+	\caption{Maximum responsivity $R_{\lambda}$ of each photodiode within the analysed window
 	$\lambda > \qty{550}{\nano\meter}$, at the wavelength $\lambda_{\mathrm{max}}$ at
 	which it occurs, together with the external quantum efficiency $\eta$ evaluated
 	at that same wavelength, compared to the values at the fixed wavelength
@@ -177,38 +177,38 @@ regimes, with an unphysical break at \num{2e-2}. While the second regime feature
 nearly linear scaling with $m=\num{0.94(9)}$, the first regime only scales as
 $m=\num{0.62(2)}$.
 
-\subsection{Comparison between Si- and UV-Enhanced Si-Photodiodes}
+\subsection{Comparison between Si- and \acs{uv}-Enhanced Si-Photodiodes}
 \label{subsec:comparison}
 
-Both the Si-Photodiode D3 and the UV-enhanced Si-Photodiode D1 are
+Both the Si-Photodiode D3 and the \ac{uv}-enhanced Si-Photodiode D1 are
 silicon-based and therefore share the threshold wavelength of \qty{1103}{\nano\meter}.
 However, their line profiles differ considerably. D1 has a maximum responsivity at
 \qty{558}{\nano\meter}, while D3 features a maximum responsivity at \qty{898}{\nano\meter}.
 
-As the measurement does not enter the UV-regime (\qtyrange{250}{400}{\nano\meter}),
+As the measurement does not enter the \ac{uv}-regime (\qtyrange{250}{400}{\nano\meter}),
 no statements can be concluded about their responsivity in this region. It is
 expected that D1 features a considerably higher responsivity.
 
 For an ordinary silicon photodiode, infrared radiation penetrates deeply into
 the material due to silicon's reduced absorption coefficient: The generation of electron-hole
-pairs takes place in the whole SCR\@. However UV radiation does not penetrate deep
+pairs takes place in the whole \ac{scr}\@. However \ac{uv} radiation does not penetrate deep
 into the material due to a higher absorption coefficient. A large proportion of electron-hole
 pair generation happens in the inversion layer. These pairs have a high chance
 to recombine at the surface and effectively do not contribute to the
 photocurrent. The Schottky photodiode therefore features a responsivity falloff in
-the UV-regime attributed to the presence of an inversion layer in the depletion region.
+the \ac{uv}-regime attributed to the presence of an inversion layer in the depletion region.
 
-UV-enhanced Si-photodiodes may feature higher doping concentrations $N_{\mathrm{D}}$.
-This implies a shrinking inversion layer width as well as a shrinking space
-charge region width as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}.
-UV radiation is mostly absorbed in the SCR and electron-hole
-excitation results in a current. However the SCR is too narrow for infrared radiation,
+\ac{uv}-enhanced Si-photodiodes may feature higher doping concentrations $N_{\mathrm{D}}$.
+This implies a shrinking inversion layer width as well as a shrinking \ac{scr}
+width as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}.
+\ac{uv} radiation is mostly absorbed in the \ac{scr} and electron-hole
+excitation results in a current. However the \ac{scr} is too narrow for infrared radiation,
 as a large proportion passes through it. This optimization leads to a responsivity
 loss in the near infrared regime.
 
 Differences in the surface coating may additionally influence the responsivity.
 The line profiles suggest that D5 is an ordinary photodiode, whereas D2 and D4 are
-UV-enhanced photodiodes.
+\ac{uv}-enhanced photodiodes.
 
 \subsection{Human Eye Response}
 \label{subsec:eye}

@@ -51,7 +51,7 @@ modulation moves the source signal above the $1 /f$ background noise.
 The simplest circuit that realizes a lock-in amplifier is depicted in
 \cref{fig:lock_in}. The input signal is passed through two linear amplifiers: an
 inverting amplifier and a non-inverting amplifier of unity gain. The reference signal
-is applied to a FET switch that creates a mixing signal. The mixing signal is
+is applied to a \ac{fet} switch that creates a mixing signal. The mixing signal is
 then passed to a low-pass filter that extracts its time average, from which the signal
 voltage can be recovered. Noise at frequencies away from the reference frequency
 is attenuated.
@@ -77,7 +77,7 @@ frequency $\omega_{\mathrm{r}}$. It can be modeled using a Fourier series:
 	z}. \label{eq:lock_in_reference}
 \end{equation}
 The $c_{z}$ are the Fourier coefficients of the square wave and $z$ is the harmonic
-order, running over the odd integers. The output of the FET switch is mathematically
+order, running over the odd integers. The output of the \ac{fet} switch is mathematically
 equivalent to the multiplication of $V_{\mathrm{s}}(t)$ and $V_{\mathrm{r}}(t)$.
 This results in a mixing signal
 $V_{\mathrm{mix}}(t)=V_{\mathrm{s}}(t)V_{\mathrm{r}}(t)$:

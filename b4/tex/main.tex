@@ -76,11 +76,19 @@ url=false,isbn=false,eprint=false]{biblatex}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
-% TODO: declare acronyms used throughout this report, e.g.
-% \DeclareAcronym{qe}{
-%     short = QE,
-%     long = quantum efficiency
-% }
+% acronyms used throughout this report
+\DeclareAcronym{scr}{
+    short = SCR,
+    long  = space-charge region
+}
+\DeclareAcronym{uv}{
+    short = UV,
+    long  = ultraviolet
+}
+\DeclareAcronym{fet}{
+    short = FET,
+    long  = field-effect transistor
+}
 
 \newcommand{\CellWithForceBreak}[2][c]{
 \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}

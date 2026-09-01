@@ -4,8 +4,8 @@
 In a Schottky photodiode, light with energy $h\nu > E_{\mathrm{g}}$, i.e.\ above
 the band gap energy $E_{\mathrm{g}}$, excites an electron-hole pair, such that
 the excited electron resides in the conduction band while the excited hole
-exists in the valence band. The excitation may occur inside the space-charge region
-(SCR) or in the neutral $n$-region. Inside the SCR, the built-in electric field separates
+exists in the valence band. The excitation may occur inside the \ac{scr} or in the
+neutral $n$-region. Inside the \ac{scr}, the built-in electric field separates
 both charge carriers and creates a drift current, such that only holes are
 transported through the metal contact, while electrons move towards the neutral $n$-region.
 Charge carriers generated in the $n$-region may recombine. As there is no electric
@@ -16,11 +16,11 @@ $A$, as depicted in \cref{fig:schottky_diode}. It features three distinct
 regions:
 \begin{equation}
 	\underbrace{ z < 0 }_{ \text{metal contact} }\quad \Big| \underbrace{ \quad 0 \leq
-	z \leq z_{0} \quad }_{ \text{space-charge region (SCR)} }\Big| \quad \underbrace{
+	z \leq z_{0} \quad }_{ \text{\acl{scr} (\acs{scr})} }\Big| \quad \underbrace{
 	z > z_{0} }_{ \text{quasi-neutral } n\text{-bulk} }.
 \end{equation}
-Light enters from $z<0$ and propagates in the $+z$ direction. The space charge region
-begins directly at the semiconductor surface.
+Light enters from $z<0$ and propagates in the $+z$ direction. The \ac{scr} begins
+directly at the semiconductor surface.
 
 \begin{figure}
 	\centering
@@ -33,7 +33,7 @@ The goal is to find an expression for the photocurrent, depending on the photon 
 rate. To this end, a differential equation is created using the continuity equation
 of \cref{sec:continuity}, together with the current densities of
 \cref{sec:current_density}. The central idea is to evaluate the current
-at the boundary between SCR and neutral region ($z=z_{0}$) and utilize the conservation
+at the boundary between \ac{scr} and neutral region ($z=z_{0}$) and utilize the conservation
 of the total current to obtain it at any position within the diode.
 
 \subsection{Boundary Conditions}
@@ -52,7 +52,7 @@ $p(z=z_{0})= p(z \to \infty)=p_{0}$.
 \subsection{Continuity Equation in Depletion Layer}
 
 The first goal is the evaluation of the electron current density at $z_{0}$. As the
-electric field is strong inside the SCR and transports electrons away rapidly,
+electric field is strong inside the \ac{scr} and transports electrons away rapidly,
 recombination in this region can be neglected. Additionally assuming steady state
 reduces the electron continuity \cref{eq:continuity_n} to:
 \begin{align}
@@ -75,7 +75,7 @@ carrier density. Substituting the current density of \cref{sec:current_density} 
 the hole continuity \cref{eq:continuity_p}, assuming a spatially constant electric
 field, results in the transport equation:
 \begin{equation}
-	\partial^{2}_{z}\Delta p(z)-\frac{eE}{kT}\partial_{z}\Delta p(z) = \frac{U(z)-G(z)}{D_{\mathrm{p}}}
+	\partial^{2}_{z}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}\Delta p(z) = \frac{U(z)-G(z)}{D_{\mathrm{p}}}
 	.
 \end{equation}
 In equilibrium, the thermal generation rate $G_{\mathrm{th}}$ balances
@@ -90,7 +90,7 @@ $\tau_{\mathrm{p}}$ as inverse proportionality constant:
 In the following, $G$ denotes the optical generation rate alone.
 This leads to a linear, inhomogeneous second-order differential equation:
 \begin{equation}
-	\partial_{z}^{2}\Delta p(z)-\frac{eE}{kT}\partial_{z}\Delta p(z) -\frac{\Delta
+	\partial_{z}^{2}\Delta p(z)-\frac{\mu_{\mathrm{p}}E}{D_{\mathrm{p}}}\partial_{z}\Delta p(z) -\frac{\Delta
 	p(z)}{D_{\mathrm{p}}\tau_{\mathrm{p}}}=-\frac{G(z)}{D_{\mathrm{p}}}.
 \end{equation}
 As the electric field is present only in the depletion layer, the second term vanishes:
