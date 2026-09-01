@@ -25,7 +25,7 @@ begins directly at the semiconductor surface.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\linewidth]{../assets/schottky_diode.png}
-	\caption{Schematic of the one-dimensional Schottky photodiode. Image based on \autocite{grundmann}}
+	\caption{Schematic of the one-dimensional Schottky photodiode. Image based on \autocite{grundmann}.}
 	\label{fig:schottky_diode}
 \end{figure}
 
@@ -124,14 +124,14 @@ that the boundary term at the upper limit vanishes:
 \end{equation}
 As there is no electric field, current only originates from diffusion:
 \begin{equation}
-	j_{\mathrm{p}}(z_{0})&= -eD_{\mathrm{p}}\partial_{z}p \big|_{z_{0}}= -e \int_{z_{0}}
+	j_{\mathrm{p}}(z_{0})= -eD_{\mathrm{p}}\partial_{z}p \big|_{z_{0}}= -e \int_{z_{0}}
 	^{\infty}G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z. \label{eq:j_p_bulk}
 \end{equation}
 Note that the homogeneous solution of the differential equation $\partial_{z}^{2}
 \Delta p-\Delta p/(D_{\mathrm{p}}\tau_{\mathrm{p}})=0$, together with the
 boundary condition $\Delta p(z \to \infty)$, is given as:
 \begin{equation}
-	\Delta p=\Delta p_{0}\exp(-\lambda(z-z_{0})).
+	\Delta p=\Delta p_{0}\exp\left( -\frac{z-z_{0}}{L_{\mathrm{p}}} \right).
 \end{equation}
 Therefore, it is justified to write
 \begin{equation}
@@ -160,7 +160,7 @@ device. Therefore, it can be evaluated at position $z_{0}$ as
 $j_{\mathrm{tot}}=j_{\mathrm{n}}(z_{0})+j_{\mathrm{p}}(z_{0})$. Substituting \cref{eq:j_n_scr,eq:j_p_bulk}
 yields:
 \begin{equation}
-	j_{\mathrm{tot}}&= -e \int_{0}^{z_{0}}G(z)\, \mathrm{d}z - e\int_{z_{0}}^{\infty}
+	j_{\mathrm{tot}}= -e \int_{0}^{z_{0}}G(z)\, \mathrm{d}z - e\int_{z_{0}}^{\infty}
 	G(z) \exp(-(z-z_{0})/L_{\mathrm{p}}) \, \mathrm{d}z = -e \int_{0}^{\infty}G(z) j
 	(z) \, \mathrm{d}z,
 \end{equation}
@@ -178,24 +178,27 @@ section $A$ results in an expression for the current:
 	I_{\mathrm{ph}}=Aj_{\mathrm{tot}}= -eA \int_{0}^{\infty}G(z)j(z) \, \mathrm{d}z
 	. \label{eq:photocurrent}
 \end{equation}
-Note that the current originating from the SCR at $z_{0}$ is a pure electron current,
-while the hole current from the neutral current originates from holes only. Substituting
+Note that the current originating from the \ac{scr} at $z_{0}$ is a pure electron current,
+while the current originating from the neutral region is a pure hole current. Substituting
 \cref{eq:generation_rate} yields:
 \begin{equation}
 	I_{\mathrm{ph}}= -eA \eta (h \nu) \Phi_{0}\underbrace{ \int_{0}^{\infty}\alpha(h\nu,
 	z)\exp\left( - \int_{0}^{z} \alpha(h\nu, z') \, \mathrm{d}z' \right) j(z) \,
-	\mathrm{d}z }_{ C(h\nu) }
+	\mathrm{d}z }_{ C(h\nu) }.
 \end{equation}
 Define $C(h\nu)$ as a material characteristic. As $A\Phi_{0}$ yields the total number
 of photons, it is equivalent to $P_{\mathrm{opt}}/h\nu$, resulting in a measurable
 expression for the photocurrent as a function of optical power:
 \begin{equation}
-	I_{\mathrm{ph}}=-e \eta P_{\mathrm{opt}}/(h\nu) C(h\nu)=R_{\lambda}P_{\mathrm{opt}}
+	I_{\mathrm{ph}}=-e \eta P_{\mathrm{opt}}/(h\nu) C(h\nu)=R_{\lambda}P_{\mathrm{opt}}.
 \end{equation}
+The proportionality constant $R_{\lambda}$ is the spectral responsivity, i.e.\ the
+photocurrent generated per incident optical power $P_{\mathrm{opt}}$, measured in
+\unit{\ampere\per\watt}.
 The external quantum efficiency $\eta_{\mathrm{ext}}$ is a measured quantity, not
 a result of the transport model. It incorporates the internal quantum efficiency
 $\eta$ as well as the absorption effects from $C(h\nu)$.
 \begin{equation}
 	\eta_{\mathrm{ext}}=C(h\nu) \eta(h\nu) = \frac{\lvert I_{\mathrm{ph}}\rvert /
-	e}{ P_{\mathrm{opt}}/ h\nu}
+	e}{ P_{\mathrm{opt}}/ h\nu}.
 \end{equation}

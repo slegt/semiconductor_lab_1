@@ -71,8 +71,8 @@ url=false,isbn=false,eprint=false]{biblatex}
 {\usebibmacro{postnote}}
 
 %  setup custom commands
-\newcommand{\imcite}[2][]{From \cite[#1]{#2}.}
-\newcommand{\imcitetwo}[2][]{Based on \cite[#1]{#2}.}
+\newcommand{\imcite}[2][]{From~\cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Based on~\cite[#1]{#2}.}
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
@@ -107,4 +107,11 @@ url=false,isbn=false,eprint=false]{biblatex}
     \printbibliography
     \listoffigures
     \listoftables
+
+    \clearpage
+    \section*{Declaration on the Use of AI Tools}
+    Claude (Anthropic) was used for spelling, grammar and language correction of this
+    report. The scientific content, the data analysis and all conclusions are the
+    authors' own work, and the authors take full responsibility for them.
+
 \end{document}

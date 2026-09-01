@@ -17,7 +17,7 @@ photocurrent. The c-meter applies a bias set through a digital-to-analog convert
 and simultaneously reads the photocurrent, converting it to a voltage in the
 manner of a transimpedance amplifier. This voltage is passed to a lock-in amplifier,
 which is explained in \cref{subsec:lock_in}. Each measurement was integrated for \qty{3}{\second}.
-Its output is digitized and collected by a PC\@. All experiments were scanning a
+Its output is digitized and collected by a PC\@. All experiments scanned a
 photon energy from \qtyrange{600}{3000}{\milli\electronvolt} in steps of \qty{30}{\milli\electronvolt},
 which corresponds to the wavelength range \qtyrange{413}{2066}{\nano\meter}.
 
@@ -42,7 +42,7 @@ modulation moves the source signal above the $1 /f$ background noise.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{../assets/lock_in.png}
-	\caption{Circuit realizing a lock-in amplifier. \imcite{horowitz}.}
+	\caption{Circuit realizing a lock-in amplifier. \imcite{horowitz}}
 	\label{fig:lock_in}
 \end{figure}
 
@@ -110,6 +110,6 @@ to
 \begin{equation}
 	V_{\mathrm{out}}=-\frac{2V_{0}}{\pi}\sin(\theta). \label{eq:lock_in_result}
 \end{equation}
-The phase can be optimized manually to maximize the output voltag. From that, $V_{0}$
+The phase can be optimized manually to maximize the output voltage. From that, $V_{0}$
 can be extracted directly or passed to an integration circuit to average the output
 over a fixed time period (on the order of milliseconds to seconds).

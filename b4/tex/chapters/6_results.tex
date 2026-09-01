@@ -35,10 +35,10 @@ excite electrons. This corresponds to a threshold wavelength of $\lambda_{\mathr
 $c$ the vacuum speed of light. Above this threshold wavelength the photocurrent drops
 by two to three orders of magnitude, indicating that the signal vanished.
 
-The photocurrent-spectra can be grouped into two categories, based on their line profile:
-D3 and D5 peak at \qty{1000}{\nano \meter} while D1, D2 and D4 at around \qty{600}{\nano\meter}.
-This difference is discussed in \cref{subsec:comparison}. The photocurrent significantly
-drops for small wavelengths. This is a direct consequence of the decrease in
+The photocurrent spectra can be grouped into two categories, based on their line profile:
+D3 and D5 peak at \qty{1000}{\nano\meter} while D1, D2 and D4 at around \qty{600}{\nano\meter}.
+This difference is discussed in \cref{subsec:comparison}. The photocurrent drops
+significantly for small wavelengths. This is a direct consequence of the decrease in
 optical power of the halogen lamp, see \cref{subsec:reference_spectra}.
 
 \subsection{Reference Spectra}
@@ -116,7 +116,8 @@ wavelengths greater than \qty{550}{\nano\meter}.
 Using the average reference spectrum $P_{\mathrm{opt}}^{\mathrm{avg}}$, the responsivity
 $R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was calculated and
 is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend on the
-power of the optical source and is therefore a better device characteristic. The band
+power of the optical source and is therefore a more suitable device characteristic
+than the raw photocurrent. The band
 gap determines the highest wavelength threshold. The wavelengths
 $\lambda_{\mathrm{max}}$ of maximum responsivity are marked in
 \cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent spectra.
@@ -185,15 +186,15 @@ their line profiles differ considerably. D1 has a maximum responsivity at \qty{5
 while D3 features a maximum responsivity at \qty{898}{\nano\meter}.
 
 As the measurement does not enter the \ac{uv}-regime (\qtyrange{250}{400}{\nano\meter}),
-no statements can be concluded about their responsivity in this region. It is
+no conclusions can be drawn about their responsivity in this region. It is
 expected that D1 features a considerably higher responsivity.
 
 For an ordinary silicon photodiode, infrared radiation penetrates deeply into the
 material due to silicon's reduced absorption coefficient: The generation of
-electron-hole pairs takes place in the whole \ac{scr}\@. However \ac{uv}
+electron-hole pairs takes place in the whole \ac{scr}\@. However, \ac{uv}
 radiation does not penetrate deep into the material due to a higher absorption
-coefficient. A large proportion of electron-hole pair generation happens in the inversion
-layer. These pairs have a high chance to recombine at the surface and
+coefficient. A large proportion of electron-hole pair generation occurs in the inversion
+layer. These pairs have a high probability of recombining at the surface and
 effectively do not contribute to the photocurrent. The Schottky photodiode therefore
 features a responsivity falloff in the \ac{uv}-regime attributed to the presence
 of an inversion layer in the depletion region.
@@ -202,7 +203,7 @@ of an inversion layer in the depletion region.
 This implies a shrinking inversion layer width as well as a shrinking \ac{scr} width
 as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}. \ac{uv}
 radiation is mostly absorbed in the \ac{scr} and electron-hole excitation results
-in a current. However the \ac{scr} is too narrow for infrared radiation, as a
+in a current. However, the \ac{scr} is too narrow for infrared radiation, as a
 large proportion passes through it. This optimization leads to a responsivity loss
 in the near infrared regime.
 
@@ -234,8 +235,8 @@ with slightly different absorption maxima.
 
 The $V(\lambda)$ curves for scotopic and photopic vision, depicted together with
 the normalized responsivity of D4 in \cref{fig:human_eye}, are experimentally determined.
-It is not a physical property of a photoreceptor, but the outcome of a psychological
-exeriment averaged over a panel of human observers \autocite{grundmann}. Each observer
+They are not physical properties of a photoreceptor, but the outcome of a psychological
+experiment averaged over a panel of human observers \autocite{grundmann}. Each observer
 equalizes the brightness of a monochromatic light with $\lambda_{0}= \qty{555}{\nano\meter}$
 to that of a light source with wavelength $\lambda$ with the same radiation power
 using flicker photometry. The experiment was conducted under bright-light and
@@ -272,6 +273,6 @@ filter. Using the fit function
 \begin{equation}
 	I_{\mathrm{ph}}(f)=\frac{I_{\mathrm{sat}}f}{\sqrt{ f^{2}+f_{\mathrm{c}}^{2}}}
 \end{equation}
-with the saturation current $I_{\mathrm{sat}}$ and the cutoff frequency
-$f_{\mathrm{c}}$, the fit yields $f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and $I_{\mathrm{sat}}
+with $f$ the reference frequency, $I_{\mathrm{sat}}$ the saturation current and
+$f_{\mathrm{c}}$ the cutoff frequency, the fit yields $f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and $I_{\mathrm{sat}}
 =\qty{125.0}{\nano\ampere}$.
