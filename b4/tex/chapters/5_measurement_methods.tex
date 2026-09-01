@@ -51,14 +51,13 @@ The simplest circuit that realizes a lock-in amplifier is depicted in
 inverting amplifier and a non-inverting amplifier of unity gain. The reference signal
 is applied to a \ac{fet} switch that creates a mixing signal. The mixing signal is
 then passed to a low-pass filter that extracts its time average, from which the
-signal voltage can be recovered. Noise at frequencies away from the reference frequency
+input signal voltage can be recovered. Noise at frequencies away from the reference frequency
 is attenuated.
 
 \subsubsection{Mathematical Modeling}
 \label{subsec:lock_in_math}
 
 Assume that an input signal $V_{\mathrm{s}}$ is a cosine signal:
-
 \begin{equation}
 	V_{\mathrm{s}}(t)=V_{0}\cos(\omega_{\mathrm{s}}t+\theta) = \frac{V_{0}}{2}[\exp
 	(\mathrm{j}\omega_{\mathrm{s}}t)\exp(\mathrm{j}\theta)+\exp(-\mathrm{j}\omega_{\mathrm{s}}
@@ -68,7 +67,6 @@ Here $V_{0}$ is the signal amplitude, $\omega_{\mathrm{s}}$ its angular frequenc
 $\theta$ its phase relative to the reference and $\mathrm{j}$ the imaginary unit.
 The reference signal $V_{\mathrm{r}}(t)$ is a square wave with angular frequency $\omega
 _{\mathrm{r}}$. It can be modeled using a Fourier series:
-
 \begin{equation}
 	V_{\mathrm{r}}(t) = \operatorname{sign}[\sin(\omega_{\mathrm{r}}t)] = \sum_{\substack{z \in \mathbb{Z} \\ \text{odd}}}
 	c_{z}\exp(\mathrm{j}z \omega_{\mathrm{r}}t) \quad c_{z}=-\frac{2\mathrm{j}}{\pi
@@ -79,7 +77,6 @@ harmonic order, running over the odd integers. The output of the \ac{fet} switch
 mathematically equivalent to the multiplication of $V_{\mathrm{s}}(t)$ and $V_{\mathrm{r}}
 (t)$. This results in a mixing signal
 $V_{\mathrm{mix}}(t)=V_{\mathrm{s}}(t)V_{\mathrm{r}}(t)$:
-
 \begin{equation}
 	V_{\mathrm{mix}}(t)=\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}[ \exp(\mathrm{j}\theta
 	)\exp(\mathrm{j}(\underbrace{ \omega_{\mathrm{s}}+z \omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{z}
@@ -91,7 +88,6 @@ by the filter resistance $R$ and capacitance $C$. The filter multiplies every
 frequency component with its transfer function
 $H(\omega) = (1+\mathrm{j}\omega \tau)^{-1}$. This results in the following output
 voltage $V_{\mathrm{out}}(t)$:
-
 \begin{align}
 	V_{\mathrm{out}}(t) & =\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}\left[ \frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}+\frac{\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}\omega_{\mathrm{mix}}^{-z}t)}{1 - \mathrm{j}\omega_{\mathrm{mix}}^{-z}\tau}\right] \\
 	                    & =V_{0}\sum_{z \text{ odd}}\operatorname{Re}\left[ c_{z}\frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}\right] \quad \omega_{\mathrm{mix}}^{z}=\omega_{\mathrm{s}}+z \omega_{\mathrm{r}}. \label{eq:lock_in_output}

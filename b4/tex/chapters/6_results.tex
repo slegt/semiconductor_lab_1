@@ -37,9 +37,9 @@ by two to three orders of magnitude, indicating that the signal vanished.
 
 The photocurrent spectra can be grouped into two categories, based on their line profile:
 D3 and D5 peak at \qty{1000}{\nano\meter} while D1, D2 and D4 at around \qty{600}{\nano\meter}.
-This difference is discussed in \cref{subsec:comparison}. The photocurrent drops
-significantly for small wavelengths. This is a direct consequence of the decrease in
-optical power of the halogen lamp, see \cref{subsec:reference_spectra}.
+This difference is discussed in \cref{subsec:comparison}. The photocurrent drops significantly
+for small wavelengths. This is a direct consequence of the decrease in optical
+power of the halogen lamp, see \cref{subsec:reference_spectra}.
 
 \subsection{Reference Spectra}
 \label{subsec:reference_spectra}
@@ -80,8 +80,8 @@ power spectrum. Its output voltage is converted into an optical power with the w
 factor \qty{2000}{\volt\per\watt}. To capture the thermal shifts of the halogen
 lamp, the spectrum was recorded with a chopper frequency of \qty{16.7}{\hertz} at
 the beginning and at the end of the experiment, see \cref{fig:reference}. As the lamp
-was operating throughout the day, only a small shift is observed. Time-dependent effects
-can be neglected.
+was operating for several hours prior the experiment, only a small shift
+is observed. Time-dependent effects can be neglected.
 
 The relative deviation of the optical power is shown in \cref{fig:reference_spread}.
 As the intensity drops below \qty{550}{\nano\meter}, the signal enters the noise range.
@@ -116,13 +116,12 @@ wavelengths greater than \qty{550}{\nano\meter}.
 Using the average reference spectrum $P_{\mathrm{opt}}^{\mathrm{avg}}$, the responsivity
 $R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was calculated and
 is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend on the
-power of the optical source and is therefore a more suitable device characteristic
-than the raw photocurrent. The band
-gap determines the highest wavelength threshold. The wavelengths
-$\lambda_{\mathrm{max}}$ of maximum responsivity are marked in
-\cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent spectra.
-The steep decrease towards low wavelengths is corrected, as it was caused by the vanishing
-power of the source.
+power of the optical source and is therefore a more suitable device
+characteristic than the raw photocurrent. The band gap determines the highest wavelength
+threshold. The wavelengths $\lambda_{\mathrm{max}}$ of maximum responsivity are
+marked in \cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent
+spectra. The steep decrease towards low wavelengths is corrected, as it was caused
+by the vanishing power of the source.
 
 The external quantum efficiency spectrum is plotted in \cref{fig:quantum_efficiency}.
 Evaluated at the responsivity maximum, D3 reaches the highest quantum efficiency with
@@ -191,21 +190,21 @@ expected that D1 features a considerably higher responsivity.
 
 For an ordinary silicon photodiode, infrared radiation penetrates deeply into the
 material due to silicon's reduced absorption coefficient: The generation of
-electron-hole pairs takes place in the whole \ac{scr}\@. However, \ac{uv}
-radiation does not penetrate deep into the material due to a higher absorption
-coefficient. A large proportion of electron-hole pair generation occurs in the inversion
-layer. These pairs have a high probability of recombining at the surface and
-effectively do not contribute to the photocurrent. The Schottky photodiode therefore
-features a responsivity falloff in the \ac{uv}-regime attributed to the presence
-of an inversion layer in the depletion region.
+electron-hole pairs takes place in the whole \ac{scr}\@. However, \ac{uv} radiation
+does not penetrate deep into the material due to a higher absorption coefficient.
+A large proportion of electron-hole pair generation occurs in the inversion
+layer. These pairs have a high probability of recombining at the surface and effectively
+do not contribute to the photocurrent. The Schottky photodiode therefore
+features a responsivity falloff in the \ac{uv}-regime attributed to the presence of
+an inversion layer in the depletion region.
 
-\ac{uv}-enhanced Si-photodiodes may feature higher doping concentrations $N_{\mathrm{D}}$.
-This implies a shrinking inversion layer width as well as a shrinking \ac{scr} width
-as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}. \ac{uv}
-radiation is mostly absorbed in the \ac{scr} and electron-hole excitation results
-in a current. However, the \ac{scr} is too narrow for infrared radiation, as a
-large proportion passes through it. This optimization leads to a responsivity loss
-in the near infrared regime.
+\ac{uv}-enhanced Si-photodiodes may feature higher doping concentrations
+$N_{\mathrm{D}}$. This implies a shrinking inversion layer width as well as a shrinking
+\ac{scr} width as both scale as $\propto 1 / \sqrt{N_{\mathrm{D}}}$~\autocite{korde}.
+\ac{uv} radiation is mostly absorbed in the \ac{scr} and electron-hole
+excitation results in a current. However, the \ac{scr} is too narrow for infrared
+radiation, as a large proportion passes through it. This optimization leads to a responsivity
+loss in the near infrared regime.
 
 Differences in the surface coating may additionally influence the responsivity.
 The line profiles suggest that D5 is an ordinary photodiode, whereas D2 and D4 are
@@ -273,6 +272,7 @@ filter. Using the fit function
 \begin{equation}
 	I_{\mathrm{ph}}(f)=\frac{I_{\mathrm{sat}}f}{\sqrt{ f^{2}+f_{\mathrm{c}}^{2}}}
 \end{equation}
-with $f$ the reference frequency, $I_{\mathrm{sat}}$ the saturation current and
-$f_{\mathrm{c}}$ the cutoff frequency, the fit yields $f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and $I_{\mathrm{sat}}
-=\qty{125.0}{\nano\ampere}$.
+with $f$ the reference frequency, $I_{\mathrm{sat}}$ the saturation current and $f
+_{\mathrm{c}}$ the cutoff frequency, the fit yields
+$f_{\mathrm{c}}=\qty{0.77}{\hertz}$ and
+$I_{\mathrm{sat}}=\qty{125.0}{\nano\ampere}$.

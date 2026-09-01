@@ -32,41 +32,42 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 %citation, quatation and lists
-\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,
-url=false,isbn=false,eprint=false]{biblatex}
-\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage[
+	style=numeric,
+	maxcitenames=2,
+	sorting=none,
+	doi=false,
+	url=false,
+	isbn=false,
+	eprint=false
+]{biblatex}
+\usepackage[noabbrev, nameinlink]{cleveref}
 \usepackage{csquotes}
 \usepackage[nottoc]{tocbibind}
 \usepackage{acro}
-
 
 %setup plugins
 \addbibresource{literature.bib}
 
 \captionsetup{justification=centering}
-\hypersetup{colorlinks=true,linkcolor=blue}
+\hypersetup{colorlinks=true, linkcolor=blue}
 
-
-\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\angstrom{\text{Å}}
 \DeclareSIUnit\bar{bar}
-\sisetup{
-	range-phrase = { to }
-}
+\sisetup{ range-phrase = { to } }
 
 % Custom \citeauthoryear command with hyperref -> Rost et al. (2019)
 \DeclareCiteCommand{\citeauthoryear}
 {\boolfalse{citetracker}%
 \boolfalse{pagetracker}%
 \usebibmacro{prenote}}
-{\ifciteindex
-{\indexnames{labelname}\indexfield{year}}
-{}%
+{\ifciteindex {\indexnames{labelname}\indexfield{year}} {}%
 \printtext[bibhyperref]{%
-    \printnames{labelname}%
-    \setunit{\addspace}%
-    \printtext{(}%
-    \printfield{year}%
-    \printtext{)}}}
+\printnames{labelname}%
+\setunit{\addspace}%
+\printtext{(}%
+\printfield{year}%
+\printtext{)}}}
 {\multicitedelim}
 {\usebibmacro{postnote}}
 
@@ -77,41 +78,29 @@ url=false,isbn=false,eprint=false]{biblatex}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 
 % acronyms used throughout this report
-\DeclareAcronym{scr}{
-    short = SCR,
-    long  = space-charge region
-}
-\DeclareAcronym{uv}{
-    short = UV,
-    long  = ultraviolet
-}
-\DeclareAcronym{fet}{
-    short = FET,
-    long  = field-effect transistor
-}
+\DeclareAcronym{scr}{ short = SCR, long = space-charge region }
+\DeclareAcronym{uv}{ short = UV, long = ultraviolet }
+\DeclareAcronym{fet}{ short = FET, long = field-effect transistor }
 
 \newcommand{\CellWithForceBreak}[2][c]{
-\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-
+\begin{tabular}[#1]{@{}c@{}}
+	#2
+\end{tabular}}
 
 % Document
 \begin{document}
-    \pagenumbering{arabic}
-    \input{chapters/1_titel.tex}
-    \input{chapters/2_introduction.tex}
-    \input{chapters/3_semiconductor_foundations.tex}
-    \input{chapters/4_schottky_photodiode.tex}
-    \input{chapters/5_measurement_methods.tex}
-    \input{chapters/6_results.tex}
-    \clearpage
-    \printbibliography
-    \listoffigures
-    \listoftables
-
-    \clearpage
-    \section*{Declaration on the Use of AI Tools}
-    Claude (Anthropic) was used for spelling, grammar and language correction of this
-    report. The scientific content, the data analysis and all conclusions are the
-    authors' own work, and the authors take full responsibility for them.
-
+	\pagenumbering{arabic}
+	\input{chapters/1_titel.tex}
+	\input{chapters/2_introduction.tex}
+	\input{chapters/3_semiconductor_foundations.tex}
+	\input{chapters/4_schottky_photodiode.tex}
+	\input{chapters/5_measurement_methods.tex}
+	\input{chapters/6_results.tex}
+	\clearpage
+	\printbibliography
+	\listoffigures \listoftables
+	\section*{Declaration on the Use of AI Tools}
+	Claude (Anthropic) was used for spelling, grammar and language correction of
+	this report. The scientific content, the data analysis and all conclusions are
+	the authors' own work, and the authors take full responsibility for them.
 \end{document}
