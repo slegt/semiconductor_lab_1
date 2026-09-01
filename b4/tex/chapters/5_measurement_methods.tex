@@ -4,64 +4,67 @@
 \begin{figure}
 	\centering
 	\includegraphics{../assets/measurement_setup.pdf}
-	\caption{Schematic of the measurement setup.}
+	\caption{Schematic of the measurement setup. \imcitetwo{script}}
 	\label{fig:measurement_setup}
 \end{figure}
 
 The measurement setup is depicted in \cref{fig:measurement_setup}. A halogen lamp
-generates a continuous photospectrum from near ultraviolet to deep into the infrared.
-It can be modeled with black-body radiation. The radiation enters a monochromator,
-that selects a specified wavelength. The light hits a chopper wheel that modulates
-the light with a reference frequency. The radiation reaches the photodiode where
-it is converted to a photocurrent. The c-meter is able to set a voltage while reading
-the photocurrent. Using a current to voltage converter (for example a transimpedance
-amplifier), the voltage-signal is passed to a lock-in amplifier, which is
-explained in \cref{subsec:lock_in}. The extracted signal is then collected by a PC. 
+generates a continuous spectrum, approximately that of a black body, which is delivered
+over the range \qtyrange{413}{2066}{\nano\meter} scanned here. The radiation enters
+a monochromator, which selects a specified wavelength, and is then incident on a chopper
+wheel that modulates it with a reference frequency. Each point was integrated
+for \qty{3}{\second}. The radiation reaches the photodiode, mounted in a
+cryostat, where it is converted to a photocurrent. The c-meter applies a bias
+set through a digital-to-analog converter and simultaneously reads the
+photocurrent, converting it to a voltage in the manner of a transimpedance amplifier.
+This voltage is passed to a lock-in amplifier, which is explained in \cref{subsec:lock_in}.
+Its output is digitized and collected by a PC\@. All experiments were scanning a
+photon energy from \qtyrange{600}{3000}{\milli\electronvolt} in steps of \qty{30}{\milli\electronvolt},
+which corresponds to the wavelength range \qtyrange{413}{2066}{\nano\meter}.
 
 \subsection{Lock-In Amplifier}
 \label{subsec:lock_in}
 
-As signals are buried in noise, dedicated techniques are required to improve the
-signal-to-noise ratio. If the carrier frequency is known, the signal can be
-extracted from a noisy environment using a \textbf{Lock-In amplifier}. Signals
+As signals are obscured by noise, specialized measurement techniques are required
+to improve the signal-to-noise ratio. If the carrier frequency is known, the signal
+can be extracted from a noisy environment using a lock-in amplifier. 
+Signals
 up to a million times smaller than the noise components can be detected reliably
 using this method. This section is based on \citeauthoryear{horowitz}. 
 
-A Lock-In Amplifier comprises a two-step arrangement. Some parameter of the source
-signal is modulated to make it periodic, while the detected signal is
-demodulated with respect to a reference signal. The modulation of the source signal
-is realized using a chopper that rotates with the reference frequency. This
+A lock-in amplifier comprises a two-step arrangement. Some parameter of the
+source signal is modulated to make it periodic, while the detected signal is demodulated
+with respect to a reference signal. The modulation of the source signal is
+realized using a chopper that rotates with the reference frequency. This
 modulation moves the source signal above the $1 /f$ background noise.
 
 \subsection{Circuit Design}
+\label{subsec:circuit_design}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{../assets/lock_in.png}
-	\caption{Circuit realizing a Lock-In amplifier. The input signal is split onto an
-	inverting and a non-inverting amplifier, between which the FET switch toggles
-	at the reference frequency. The resulting mixing signal is averaged by the lowpass
-	filter formed by $R$ and $C$.}
+	\caption{Circuit realizing a lock-in amplifier. \imcite{horowitz}.}
 	\label{fig:lock_in}
 \end{figure}
 
-The simplest circuit that realizes a Lock-In amplifier is depicted in
+The simplest circuit that realizes a lock-in amplifier is depicted in
 \cref{fig:lock_in}. The input signal is passed through two linear amplifiers: an
-upper amplifier that inverts the signal as well as a lower amplifier that
-outputs the input signal identically. The reference signal is applied to a FET switch
-that creates a mixing signal. The mixing signal is then passed to a lowpass
-filter that effectively extracts the mixing signal average, from which the signal
-voltage can be recovered. Signal noise that appears at different frequencies is
-attenuated.
+inverting amplifier and a non-inverting amplifier of unity gain. The reference signal
+is applied to a FET switch that creates a mixing signal. The mixing signal is
+then passed to a low-pass filter that extracts its time average, from which the signal
+voltage can be recovered. Noise at frequencies away from the reference frequency
+is attenuated.
 
-\subsection{Mathematical Modelling}
+\subsection{Mathematical Modeling}
+\label{subsec:lock_in_math}
 
-Assume that an input signal $V_{\mathrm{s}}$ is a simple cosine signal:
+Assume that an input signal $V_{\mathrm{s}}$ is a cosine signal:
 
 \begin{equation}
 	V_{\mathrm{s}}(t)=V_{0}\cos(\omega_{\mathrm{s}}t+\theta) = \frac{V_{0}}{2}[\exp
-	(\mathrm{j}\omega_{\mathrm{s}}t)\exp(\mathrm{j}\theta))+\exp(-\mathrm{j}\omega_{\mathrm{s}}
-	t) \exp(-\mathrm{j}\theta)]
+	(\mathrm{j}\omega_{\mathrm{s}}t)\exp(\mathrm{j}\theta)+\exp(-\mathrm{j}\omega_{\mathrm{s}}
+	t) \exp(-\mathrm{j}\theta)]. \label{eq:lock_in_signal}
 \end{equation}
 Here $V_{0}$ is the signal amplitude, $\omega_{\mathrm{s}}$ its angular
 frequency, $\theta$ its phase relative to the reference and $\mathrm{j}$ the imaginary
@@ -69,9 +72,9 @@ unit. The reference signal $V_{\mathrm{r}}(t)$ is a square wave with angular
 frequency $\omega_{\mathrm{r}}$. It can be modeled using a Fourier series:
 
 \begin{equation}
-	V_{\mathrm{r}}(t) = \mathrm{sign}[\sin(\omega_{\mathrm{r}}t)] = \sum_{\substack{z \in \mathbb{Z} \\ \text{odd}}}
+	V_{\mathrm{r}}(t) = \operatorname{sign}[\sin(\omega_{\mathrm{r}}t)] = \sum_{\substack{z \in \mathbb{Z} \\ \text{odd}}}
 	c_{z}\exp(\mathrm{j}z \omega_{\mathrm{r}}t) \quad c_{z}=-\frac{2\mathrm{j}}{\pi
-	z}
+	z}. \label{eq:lock_in_reference}
 \end{equation}
 The $c_{z}$ are the Fourier coefficients of the square wave and $z$ is the harmonic
 order, running over the odd integers. The output of the FET switch is mathematically
@@ -83,30 +86,34 @@ $V_{\mathrm{mix}}(t)=V_{\mathrm{s}}(t)V_{\mathrm{r}}(t)$:
 	V_{\mathrm{mix}}(t)=\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}[ \exp(\mathrm{j}\theta
 	)\exp(\mathrm{j}(\underbrace{ \omega_{\mathrm{s}}+z \omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{z}
 	})t) +\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}(\underbrace{ \omega_{\mathrm{s}}-z
-	\omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{-z} })t) ]
+	\omega_{\mathrm{r}} }_{ \omega_{\mathrm{mix}}^{-z} })t) ]. \label{eq:lock_in_mixing}
 \end{equation}
-The mixed signal is passed to a lowpass filter with time constant $\tau=RC$, set by
-the filter resistance $R$ and capacitance $C$. The filter multiplies every
+The mixed signal is passed to a low-pass filter with time constant $\tau=RC$, set
+by the filter resistance $R$ and capacitance $C$. The filter multiplies every
 frequency component with its transfer function
 $H(\omega) = (1+\mathrm{j}\omega \tau)^{-1}$. This results in the following output
 voltage $V_{\mathrm{out}}(t)$:
 
 \begin{align}
 	V_{\mathrm{out}}(t) & =\frac{V_{0}}{2}\sum_{z \text{ odd}}c_{z}\left[ \frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}+\frac{\exp(-\mathrm{j}\theta) \exp(-\mathrm{j}\omega_{\mathrm{mix}}^{-z}t)}{1 - \mathrm{j}\omega_{\mathrm{mix}}^{-z}\tau}\right] \\
-	                    & =V_{0}\sum_{z \text{ odd}}\mathrm{Re}\left[ c_{z}\frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}\right] \quad \omega_{\mathrm{mix}}^{z}=\omega_{\mathrm{s}}+z \omega_{\mathrm{r}}
+	                    & =V_{0}\sum_{z \text{ odd}}\operatorname{Re}\left[ c_{z}\frac{\exp(\mathrm{j}\theta)\exp(\mathrm{j}\omega_{\mathrm{mix}}^{z}t)}{1 + \mathrm{j}\omega_{\mathrm{mix}}^{z}\tau}\right] \quad \omega_{\mathrm{mix}}^{z}=\omega_{\mathrm{s}}+z \omega_{\mathrm{r}}. \label{eq:lock_in_output}
 \end{align}
-To obtain the detected signal, we require
-$\omega_{\mathrm{s}}=\omega_{\mathrm{r}}$. Only the term $z=-1$ contributes significantly
-to the sum, other terms can be neglected. This simplifies to:
+The detected signal is obtained for $\omega_{\mathrm{s}}=\omega_{\mathrm{r}}$,
+which is guaranteed here because the same chopper wheel generates both the
+modulation and the reference. In that case $\omega_{\mathrm{mix}}^{z}=(1+z)\omega
+_{\mathrm{r}}$, and since $z$ runs over the odd integers, $1+z$ is even and vanishes
+only for $z=-1$. All remaining terms therefore lie at
+$2\omega_{\mathrm{r}}, 4\omega_{\mathrm{r}}, \dots$ and are suppressed by the
+low-pass filter. Only the term $z=-1$ therefore survives, and the sum simplifies
+to:
 
 \begin{equation}
-	V_{\mathrm{out}}(t)=-\frac{2V_{0}}{\pi}\sin(\theta)
+	V_{\mathrm{out}}=-\frac{2V_{0}}{\pi}\sin(\theta). \label{eq:lock_in_result}
 \end{equation}
-The phase can manually be optimized to maximize the output voltage. From that, $V
-_{0}$ can be extracted directly or passed to an integration circuit to average the
-output over a fixed time period (in the order of milliseconds to seconds). Most
-of the noise signals are not in the vicinity of $z \omega_{\mathrm{r}}$. This leads
-to large mixing frequencies which are strongly attenuated by the lowpass filter.
-It is therefore required to choose a sufficiently large time constant
-$\tau \gg T=2\pi/ \omega_{\mathrm{r}}$, with $T$ the period of the reference signal,
-for strong attenuation.
+The phase can be optimized manually to maximize the output voltage, which by
+\cref{eq:lock_in_result} occurs in quadrature to the reference. From that,
+$V_{0}$ can be extracted directly or passed to an integration circuit to average
+the output over a fixed time period (on the order of milliseconds to seconds). The
+same time constant $\tau \gg T=2 \pi / \omega_{\mathrm{r}}$ also suppresses the noise:
+most noise components are not in the vicinity of $z \omega_{\mathrm{r}}$, so they
+mix to high frequencies and are strongly attenuated by the low-pass filter.
