@@ -27,13 +27,14 @@ is varied at a fixed wavelength.
 	\label{fig:photocurrent}
 \end{figure}
 
-Photocurrent spectra of five photodiodes were recorded and are depicted in
-\cref{fig:photocurrent}. As all photodiodes are silicon-based, the band gap of
-$E_{\mathrm{g}}=\qty{1.124}{\electronvolt}$ determines a minimal energy to
-excite electrons. This corresponds to a threshold wavelength of $\lambda_{\mathrm{th}}
-=hc / E_{\mathrm{g}}=\qty{1103}{\nano\meter}$, with $h$ the Planck constant and
-$c$ the vacuum speed of light. Above this threshold wavelength the photocurrent drops
-by two to three orders of magnitude, indicating that the signal vanished.
+Photocurrent spectra of five photodiodes were recorded with an integration time
+of \qty{1}{\second} and are depicted in \cref{fig:photocurrent}. As all photodiodes
+are silicon-based, the band gap of $E_{\mathrm{g}}=\qty{1.124}{\electronvolt}$
+determines a minimal energy to excite electrons. This corresponds to a threshold wavelength
+of $\lambda_{\mathrm{th}}=hc / E_{\mathrm{g}}=\qty{1103}{\nano\meter}$, with $h$
+the Planck constant and $c$ the vacuum speed of light. Above this threshold wavelength
+the photocurrent drops by two to three orders of magnitude, indicating that the
+signal vanishes.
 
 The photocurrent spectra can be grouped into two categories, based on their line profile:
 D3 and D5 peak at \qty{1000}{\nano\meter} while D1, D2 and D4 at around \qty{600}{\nano\meter}.
@@ -79,14 +80,15 @@ for radiometric power measurement was used to determine the optical reference
 power spectrum. Its output voltage is converted into an optical power with the wavelength-independent
 factor \qty{2000}{\volt\per\watt}. To capture the thermal shifts of the halogen
 lamp, the spectrum was recorded with a chopper frequency of \qty{16.7}{\hertz} at
-the beginning and at the end of the experiment, see \cref{fig:reference}. As the lamp
-was operating for several hours prior the experiment, only a small shift
-is observed. Time-dependent effects can be neglected.
+the beginning and at the end of the experiment, see \cref{fig:reference}. Each data
+point was integrated for \qty{3}{\second}. As the lamp was operating for several
+hours prior to the experiment, only a small shift is observed. Time-dependent
+effects can be neglected.
 
-The relative deviation of the optical power is shown in \cref{fig:reference_spread}.
-As the intensity drops below \qty{550}{\nano\meter}, the signal enters the noise range.
-Subsequent procedures to identify the maximum of the spectrum only consider
-wavelengths greater than \qty{550}{\nano\meter}.
+The relative deviation of the optical power is shown in
+\cref{fig:reference_spread}. As the intensity drops below \qty{550}{\nano\meter},
+the signal enters the noise range. Subsequent procedures to identify the maximum of
+the spectrum only consider wavelengths greater than \qty{550}{\nano\meter}.
 
 \subsection{Spectral Responsivity and Quantum Efficiency}
 \label{subsec:spectral_responsivity}
@@ -113,26 +115,27 @@ wavelengths greater than \qty{550}{\nano\meter}.
 	\label{fig:responsivity_quantum_efficiency}
 \end{figure}
 
-Using the average reference spectrum $P_{\mathrm{opt}}^{\mathrm{avg}}$, the responsivity
-$R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was calculated and
-is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend on the
-power of the optical source and is therefore a more suitable device
-characteristic than the raw photocurrent. The band gap determines the highest wavelength
-threshold. The wavelengths $\lambda_{\mathrm{max}}$ of maximum responsivity are
-marked in \cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent
-spectra. The steep decrease towards low wavelengths is corrected, as it was caused
-by the vanishing power of the source.
+Using the average reference spectrum $P_{\mathrm{opt}}^{\mathrm{avg}}$, the
+responsivity $R_{\lambda}=I_{\mathrm{ph}}/ P_{\mathrm{opt}}^{\mathrm{avg}}$ was
+calculated and is depicted in \cref{fig:responsivity}. $R_{\lambda}$ does not depend
+on the power of the optical source and is therefore a more suitable device characteristic
+than the raw photocurrent. The band gap determines the highest wavelength
+threshold. The wavelengths $\lambda_{\mathrm{max}}$ of maximum responsivity are marked
+in \cref{fig:responsivity}; they lie close to the maxima of the raw photocurrent
+spectra. The steep decrease towards low wavelengths is corrected, as it was
+caused by the vanishing power of the source.
 
-The external quantum efficiency spectrum is plotted in \cref{fig:quantum_efficiency}.
-Evaluated at the responsivity maximum, D3 reaches the highest quantum efficiency with
-\qty{37.14}{\percent} and D5 the lowest with \qty{2.32}{\percent}. The
-characteristic values of all photodiodes are summarized in \cref{tab:diodes}.
+The external quantum efficiency spectrum is plotted in
+\cref{fig:quantum_efficiency}. Evaluated at the responsivity maximum, D3 reaches
+the highest quantum efficiency with \qty{37.14}{\percent} and D5 the lowest with
+\qty{2.32}{\percent}. The characteristic values of all photodiodes are summarized
+in \cref{tab:diodes}.
 
-Direct comparisons between the absolute responsivities and quantum efficiencies
-are not meaningful, given the high systematic error in the measurement setup.
-The photodiode mount was readjusted after each photodiode installation. The detection
-area generally differs from diode to diode and from that of the reference detector.
-Therefore, the responsivity and external quantum efficiency are only a rough estimate.
+Direct comparisons between the absolute responsivities and quantum efficiencies are
+not meaningful, given the high systematic error in the measurement setup. The photodiode
+mount was readjusted after each photodiode installation. The detection area
+generally differs from diode to diode and from that of the reference detector. Therefore,
+the responsivity and external quantum efficiency are only a rough estimate.
 
 \begin{table}
 	\centering
@@ -156,25 +159,26 @@ Therefore, the responsivity and external quantum efficiency are only a rough est
 	\label{fig:linearity}
 \end{figure}
 
-The photocurrents of D4 and D5 were measured at a fixed wavelength while the
-optical power was varied using neutral density filters, depicted in \cref{fig:linearity}.
-At a fixed wavelength the incident photon flux is proportional to the optical
-power, so that \cref{eq:photocurrent} suggests $I_{\mathrm{ph}}\propto P_{\mathrm{opt}}$
-and therefore
+The photocurrents of D4 and D5 were measured at a fixed wavelength while the optical
+power was varied using neutral density filters, depicted in \cref{fig:linearity}.
+At a fixed wavelength the incident photon flux is proportional to the optical power,
+so that \cref{eq:photocurrent} suggests
+$I_{\mathrm{ph}}\propto P_{\mathrm{opt}}$ and therefore
 \begin{equation}
 	\frac{I}{I_{0}}=\frac{P}{P_{0}},
 \end{equation}
 with $I$ the photocurrent and $P$ the optical power behind the filter stack, and
-$I_{0}$ and $P_{0}$ the values measured without any filter. A straight line $f(x)
-=mx+n$ fitted to the doubly logarithmic data corresponds to the power law $I/I_{0}
-=\exp(n)(P/P_{0})^{m}$, so that its slope $m$ is the exponent of the original
-data, its intercept $n$ fixes the prefactor $\exp(n)$, and $m=1$ describes a
-linear response.
+$I_{0}$ and $P_{0}$ the values measured without any filter. A straight line
+$f(x)=mx+n$ fitted to the doubly logarithmic data corresponds to the power law
+$I/I_{0}=\exp(n)(P/P_{0})^{m}$, so that its slope $m$ is the exponent of the original
+data, its intercept $n$ fixes the prefactor $\exp(n)$, and $m=1$ describes a linear
+response.
 
-D4 shows a nearly linear scaling with $m=\num{0.92(1)}$. However, D5 shows two
-regimes, with an unphysical break at \num{2e-2}. While the second regime features
-a nearly linear scaling with $m=\num{0.94(9)}$, the first regime only scales as
-$m=\num{0.62(2)}$.
+D4 shows a nearly linear scaling with $m=\num{0.92(1)}$. However, D5 shows two regimes,
+with an unphysical break at \num{2e-2}. While the second regime features a
+nearly linear scaling with $m=\num{0.94(9)}$, the first regime only scales as
+$m=\num{0.62(2)}$. A plausible explanation for this deviation is a defect in the
+neutral density filter stack.
 
 \subsection{Comparison between Si- and \acs{uv}-Enhanced Si-Photodiodes}
 \label{subsec:comparison}
