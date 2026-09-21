@@ -1,7 +1,7 @@
 import pathlib
 
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 # Define a function to standardize optical power units to nanowatts (nW)
