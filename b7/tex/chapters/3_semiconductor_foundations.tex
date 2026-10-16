@@ -1,0 +1,162 @@
+% !TEX root = ../main.tex
+\section{Semiconductor Foundations}
+\label{sec:semiconductor_foundations}
+
+\subsection{Carrier Statistics}
+\label{sec:carrier_statistics}
+
+In thermal equilibrium, the probability that an electronic state of energy $E$ is
+occupied is given by the Fermi-Dirac distribution:
+\begin{equation}
+	f(E)=\frac{1}{1+\exp\left[(E-E_{\mathrm{F}})/k_{\mathrm{B}}T\right]}.
+\end{equation}
+In thermal equilibrium, the carrier concentrations in solid-state materials are consequently
+determined by the Fermi level $E_{\mathrm{F}}$.
+
+However, under non-equilibrium conditions (e.g., under an applied external voltage),
+electron and hole densities can take arbitrary values in principle. In many
+practically relevant cases, the carriers within each band are locally in thermal equilibrium
+among themselves, but not with other bands. Instead of a constant Fermi level,
+electron and hole densities are described using quasi-Fermi levels
+$F_{\mathrm{n}}(\mathbf{r})$ and $F_{\mathrm{p}}(\mathbf{r})$, and the respective
+occupation probabilities are given by:
+\begin{align}
+	f_{\mathrm{n}}(E, \mathbf{r}) & = \frac{1}{1+\exp\left[(E-F_{\mathrm{n}}(\mathbf{r})/k_{\mathrm{B}}T\right]}, \\
+	f_{\mathrm{p}}(E, \mathbf{r}) & = \frac{1}{1+\exp\left[(F_{\mathrm{p}}(\mathbf{r}-E)/k_{\mathrm{B}}T\right]}.
+\end{align}
+The electron and hole densities are obtained by integrating the product of the
+occupation probability and the Density of States:
+\begin{equation}
+	n(\mathbf{r}) = \int_{E_{\mathrm{C}}}^{\infty}D_{\mathrm{n}}(E)\, f_{\mathrm{n}}
+	(E,\mathbf{r}) \,\mathrm{d}E, \qquad p(\mathbf{r}) = \int_{-\infty}^{E_{\mathrm{V}}}
+	D_{\mathrm{p}}(E)\, f_{\mathrm{p}}(E,\mathbf{r}) \,\mathrm{d}E.
+\end{equation}
+Using the Boltzmann approximation, the integrals can be evaluated analytically, resulting
+in:
+\begin{align}
+	n(\mathbf{r}) & = n_{\mathrm{i}}\exp\left[\frac{F_{\mathrm{n}}(\mathbf{r}) - E_{\mathrm{i}}(\mathbf{r})}{k_{\mathrm{B}}T}\right], \\
+	p(\mathbf{r}) & = n_{\mathrm{i}}\exp\left[\frac{E_{\mathrm{i}}(\mathbf{r}) - F_{\mathrm{p}}(\mathbf{r})}{k_{\mathrm{B}}T}\right].
+\end{align}
+
+The splitting $\Delta F(\mathbf{r})=F_{\mathrm{n}}(\mathbf{r})-F_{\mathrm{p}}(\mathbf{r}
+)$ is a local quantity: it fixes the carrier product $np$ at each position. The applied
+voltage $V$ is a global quantity: $eV$ is the difference between the Fermi
+levels of the two contacts, with $V>0$ for forward bias. An electron-selective
+contact fixes $F_{\mathrm{n}}$ and a hole-selective contact fixes
+$F_{\mathrm{p}}$, so
+\begin{equation}
+	eV=F_{\mathrm{n}}(\text{electron contact})-F_{\mathrm{p}}(\text{hole contact}).
+\end{equation}
+
+\subsection{Joint Density of States}
+\label{sec:band_structure}
+
+Near the zone center of a direct semiconductor, the conduction and valence bands
+can often be approximated by parabolic functions:
+\begin{equation}
+	E_{\mathrm{c}}(k)=E_{\mathrm{C}}+\frac{\hbar^{2}k^{2}}{2m_{\mathrm{e}}^{*}},\qquad
+	E_{\mathrm{v}}(k)=E_{\mathrm{V}}-\frac{\hbar^{2}k^{2}}{2m_{\mathrm{h}}^{*}},\qquad
+	E_{\mathrm{g}}=E_{\mathrm{C}}-E_{\mathrm{V}}.
+\end{equation}
+The energy difference between the two bands is then given by:
+\begin{equation}
+	E_{\mathrm{cv}}(k)=E_{\mathrm{c}}(k)-E_{\mathrm{v}}(k)=E_{\mathrm{g}}+\frac{\hbar^{2}k^{2}}{2m_{\mathrm{r}}}
+	,\qquad \frac{1}{m_{\mathrm{r}}}=\frac{1}{m_{\mathrm{e}}^{*}}+\frac{1}{m_{\mathrm{h}}^{*}}
+	.
+	\label{eq:parabolic_bands}
+\end{equation}
+
+An optical transition in a semiconductor conserves energy as well as momentum of the
+participating electron and photon. As the photon wavevector is small compared to
+the extent of the Brillouin Zone, transitions can be approximated as vertical in $\mathbf{k}$-space.
+
+The rate of optical transitions at energy $E$ depends on how many pairs of electronic
+states are separated by exactly this energy. The number of available transitions
+per unit volume and per energy is called the joint density of states
+$D_{\mathrm{j}}(E)$ and is defined as:
+\begin{equation}
+	\text{\setstretch{1}
+	\begin{tabular}{@{}c@{}}
+		number of transitions per unit volume \\
+		with energy in $[E_{0}, E_{1}]$
+	\end{tabular}}= \int_{E_{0}}^{E_{1}}D_{\mathrm{j}}(E) \, \mathrm{d}E.
+\end{equation}
+Analogous to the electronic density of states, $D_{\mathrm{j}}$ can be defined
+by counting the $\mathbf{k}$-states on the surface of constant transition energy:
+\begin{equation}
+	D_{\mathrm{j}}(\hbar \omega)= \frac{2}{V}\int_{S(\hbar \omega)}\frac{\mathrm{d}^{2}S}{\left(
+	\frac{2\pi}{L}\right)^{3}\lvert \nabla_{\mathbf{k}}E_{\mathrm{cv}}(\mathbf{k}) \rvert
+	},\quad E_{\mathrm{cv}}(\mathbf{k})=E_{\mathrm{c}}(\mathbf{k})-E_{\mathrm{v}}(\mathbf{k}
+	).
+\end{equation}
+By using the Parabolic Band Approximation, this integral can be solved
+analytically:
+\begin{equation}
+	D_{\mathrm{j}}(\hbar\omega)=\frac{1}{2\pi^{2}}\left(\frac{2m_{\mathrm{r}}}{\hbar^{2}}
+	\right)^{3/2}\sqrt{\hbar\omega-E_{\mathrm{g}}}\;\Theta(\hbar\omega-E_{\mathrm{g}}
+	).
+\end{equation}
+
+\subsection{Photons}
+\label{sec:photons}
+
+The allowed states of a photon field can be constructed using periodic boundary conditions
+for the photon wave $\psi_{\mathbf{k}p}$. These conditions result in a finite
+set of allowed $\mathbf{k}$ vectors:
+\begin{equation}
+	k_{x}=l \frac{2\pi}{L}, \quad k_{y}=m \frac{2\pi}{L}, \quad k_{z}=n \frac{2\pi}{L}
+	.
+\end{equation}
+
+Analogous to the electronic density of states, the photon mode density of states $N
+(E)$ can be constructed by counting the number of available states with energy $E$.
+The factor 2 counts the two transverse polarization states of the photon:
+\begin{equation}
+	N(E) = \frac{2}{V}\sum_{\mathbf{k}}\delta(E-E_{\mathbf{k}}).
+\end{equation}
+
+Converting the sum to an integral using the mode density in $\mathbf{k}$-space
+per polarization and unit volume, $N(\mathbf{k})= V / (2\pi)^{3}$, and
+substituting the photon energy relation
+$E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ yields an
+analytical expression for $N(E)$. This assumes a dispersion-free medium, i.e. a constant
+refractive index $n_{\mathrm{r}}$ independent of energy:
+\begin{equation}
+	N(E)=\frac{n_{\mathrm{r}}^{3}E^{2}}{\pi^{2}\hbar^{3}c^{3}}.
+\end{equation}
+
+As photons are bosonic particles, they obey the Bose-Einstein Statistics. In thermal
+equilibrium with the lattice at temperature $T$, the average photon occupation
+number per mode with energy $E$ is therefore given by:
+\begin{equation}
+	n_{\mathrm{ph}}(E)=\frac{1}{\exp\left( \dfrac{E}{k_{\mathrm{B}}T} \right) - 1}.
+\end{equation}
+
+Consequently, the Spectral Photon Density at energy $E$ can be calculated as:
+\begin{equation}
+	S(E)=N(E) \cdot n_{\mathrm{ph}}(E).
+\end{equation}
+
+\subsection{Diode Current-Voltage Characteristics}
+\label{sec:carrier_injection}
+
+The current-voltage characteristic of an ideal diode is described by the
+Shockley equation:
+\begin{equation}
+	I = I_{0}\left[ \exp\left(\frac{eV_{\mathrm{a}}}{k_{\mathrm{B}}T}\right) - 1 \right
+	].
+\end{equation}
+In the forward direction ($V_{\mathrm{a}}> 0$), the current increases
+exponentially with the voltage, while in the reverse direction ($V_{\mathrm{a}}< 0$)
+it saturates at the small reverse current $-I_{0}$. Real diodes are often
+described by replacing $k_{\mathrm{B}}T$ with $n_{\mathrm{id}}k_{\mathrm{B}}T$, where
+the ideality factor $n_{\mathrm{id}}$ usually lies between 1 and 2.
+
+In a real diode, part of the applied voltage $V$ drops across the series resistance
+$R_{\mathrm{s}}$ of the semiconductor bulk and the contacts. Only the remaining
+voltage $V_{\mathrm{a}}= V - IR_{\mathrm{s}}$ is present at the junction, so the characteristic
+becomes:
+\begin{equation}
+	I = I_{0}\left[\exp\left(\frac{e(V - IR_{\mathrm{s}})}{k_{\mathrm{B}}T}\right) -
+	1\right].
+\end{equation}
