@@ -42,7 +42,7 @@
 	isbn=false,
 	eprint=false
 ]{biblatex}
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \usepackage[noabbrev, nameinlink]{cleveref}
 \usepackage{csquotes}
 \usepackage[nottoc]{tocbibind}
@@ -93,6 +93,12 @@
 \begin{document}
 	\pagenumbering{arabic}
 	\input{chapters/1_titel.tex}
+	\setcounter{tocdepth}{2}
+	\begin{singlespace}
+		\hypersetup{linkcolor=black}
+		\tableofcontents
+	\end{singlespace}
+	\clearpage
 	\input{chapters/2_introduction.tex}
 	\input{chapters/3_semiconductor_foundations.tex}
 	\input{chapters/4_optical_transitions.tex}

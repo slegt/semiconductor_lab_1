@@ -1,8 +1,8 @@
 % !TEX root = ../main.tex
-\section{Optical Transitions: Absorption, Stimulated and Spontaneous Emission}
+\section{Absorption, Stimulated and Spontaneous Emission}
 \label{sec:optical_transitions}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}[
 		x=1cm,
@@ -63,22 +63,22 @@
 			node[right] {$\hbar\omega$}
 			(14.0, 3.0);
 	\end{tikzpicture}
-	\caption{Band diagrams of the optical transitions between the conduction and
-	the valence band: spontaneous emission, absorption and stimulated emission. \imcite{benndorf_semiconductor_nodate}}
+	\caption{Band diagrams of the optical transitions between conduction and
+	valence band: spontaneous emission, absorption and stimulated emission. \imcite{benndorf_semiconductor_nodate}}
 	\label{fig:optical_transitions}
 \end{figure}
 
 An incoming photon induces a perturbation of the electronic system of the
-semiconductor, which may result in the generation of an electron-hole pair. This
+semiconductor, which may result in the generation of an electron-hole pair if there exists an
+unexcited electron-hole pair separated by the photon energy. This
 process is called absorption. For this electronic excitation to occur, the
 energy $\hbar \omega$ of the incoming photon must be at least the band gap
 energy $E_{\mathrm{g}}$.
 
-An incoming photon induces a perturbation of the electronic system of the
-semiconductor, which may result in a radiative recombination of an electron-hole pair.
+If the electron-hole pair is already excited, the perturbation may result in its
+radiative recombination.
 The incoming and the generated photon are coherent, i.e., they share the same direction,
-phase, frequency and polarization. The process requires an electron in the
-conduction band and a hole in the valence band and is called stimulated emission.
+phase, frequency and polarization. The process is called stimulated emission.
 
 Without any incoming photon, an electron in the conduction band can recombine radiatively
 with a hole in the valence band. The emitted photons have random directions and
@@ -102,7 +102,7 @@ emission. All three processes are depicted in \cref{fig:optical_transitions}.
 \end{table}
 
 Absorption, stimulated emission and spontaneous emission can all be described
-using a single formula based on Fermi's Golden Rule. The rate coefficients $r^{(i)}$,
+using a single formula based on Fermi's golden rule. The rate coefficients $r^{(i)}$,
 i.e., the rates normalized to one photon per mode, are given by:
 \begin{equation}
 	r^{(i)}(\hbar\omega)=P(\hbar\omega)\sum_{\mathbf{k}_{\mathrm{p}},\mathbf{k}_{\mathrm{n}}}
@@ -118,9 +118,7 @@ $f_{\mathrm{p}}$), not only on their difference. The remaining prefactors are gi
 by:
 \begin{equation}
 	P(\hbar\omega)=\frac{n_{\mathrm{r}}^{2}(\hbar\omega)^{2}}{\pi^{2}\hbar^{3}c^{2}}
-	\,C_{0}(\hbar\omega),\qquad C_{0}(\hbar\omega)=\frac{\pi e^{2}\hbar}{n_{\mathrm{r}}c\,\epsilon_{0}m_{0}^{2}\,\hbar\omega}
-	\quad\Rightarrow\quad P(\hbar\omega)=\frac{n_{\mathrm{r}}e^{2}}{\pi\hbar^{2}c^{3}\epsilon_{0}m_{0}^{2}}
-	\;\hbar\omega.
+	\,C_{0}(\hbar\omega),\qquad C_{0}(\hbar\omega)=\frac{\pi e^{2}\hbar}{n_{\mathrm{r}}c\,\epsilon_{0}m_{0}^{2}\,\hbar\omega}.
 \end{equation}
 
 Note that $r^{(i)}$ are normalized to one photon per mode and can therefore be regarded
@@ -137,18 +135,15 @@ rates depend on the photon occupation number $n_{\mathrm{ph}}$:
 
 Under three additional assumptions, the universal emission and absorption rates yield
 an analytical line shape:
-
-\begin{enumerate}[label=(\roman{*}), ref=(\roman{*})]
-	\item \label{ass:k_selection} Vertical transitions ($\mathbf{k}$-selection):
+\begin{enumerate*}[label=(\roman{*}), ref=(\roman{*}), itemjoin={{; }}, itemjoin*={{; and }}]
+	\item \label{ass:k_selection} vertical transitions ($\mathbf{k}$-selection):
 		$\lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}(\mathbf{k}_{\mathrm{p}},\mathbf{k}
 		_{\mathrm{n}}) \rvert^{2}=\lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}\rvert^{2}
-		\, \delta_{\mathbf{k}_{\mathrm{p}} \mathbf{k}_{\mathrm{n}}}$,
-
+		\, \delta_{\mathbf{k}_{\mathrm{p}} \mathbf{k}_{\mathrm{n}}}$
 	\item \label{ass:const_matrix} a constant matrix element:
-		$\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}=\mathrm{const.}$,
-
-	\item \label{ass:parabolic} parabolic bands, see \cref{eq:parabolic_bands}.
-\end{enumerate}
+		$\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}=\mathrm{const.}$
+	\item \label{ass:parabolic} parabolic bands, see \cref{eq:parabolic_bands}
+\end{enumerate*}.
 
 Substituting assumptions~\ref{ass:k_selection} and~\ref{ass:const_matrix} into
 \cref{eq:universal_rate_equation} yields:
@@ -158,49 +153,29 @@ Substituting assumptions~\ref{ass:k_selection} and~\ref{ass:const_matrix} into
 	)\;\Phi^{(i)}(\mathbf{k})
 \end{equation}
 
-The sum is converted to an integral with the density of $\mathbf{k}$-states
-$V/(2 \pi)^{3}$.
+The sum over $\mathbf{k}$ together with the factor $2/V$ is the joint density of
+states $D_{\mathrm{j}}(\hbar\omega)$ defined in \cref{sec:band_structure}. It counts
+the states with $E_{\mathrm{cv}}(\mathbf{k})=\hbar\omega$ per unit volume, including
+spin. For the isotropic bands of assumption~\ref{ass:parabolic}, all these states
+have the same wavevector magnitude $k_{0}$ with $E_{\mathrm{cv}}(k_{0})=\hbar\omega$
+and therefore the same occupation factor, which can be taken out of the sum:
 \begin{equation}
-	\quad r^{(i)}(\hbar\omega)= P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}
-	\rvert^{2}\, \frac{2}{(2\pi)^{3}}\int \delta\big(E_{\mathrm{cv}}(\mathbf{k})-\hbar
-	\omega\big)\;\Phi^{(i)}(\mathbf{k})\,\mathrm{d}\mathbf{k}
+	r^{(i)}(\hbar\omega)= P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}\,
+	D_{\mathrm{j}}(\hbar\omega)\;\Phi^{(i)}(k_{0})
 \end{equation}
 
-For the isotropic bands of assumption~\ref{ass:parabolic}, the integrand depends only
-on $k=\lvert\mathbf{k}\rvert$, so the angular integration can be performed
-directly and $\mathrm{d}\mathbf{k}\to4\pi k^{2}\,\mathrm{d}k$:
+With the energy zero at the valence-band maximum, the occupation factors are evaluated
+at the band energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$, which follow
+from \cref{eq:parabolic_bands} and $E_{\mathrm{cv}}(k_{0})=\hbar\omega$:
 \begin{equation}
-	r^{(i)}(\hbar\omega)= P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}
-	\rvert^{2}\, \frac{1}{\pi^{2}}\int_{0}^{\infty}k^{2}\,\delta\big(E_{\mathrm{cv}}
-	(k)-\hbar\omega\big)\;\Phi^{(i)}(k)\,\mathrm{d}k
-\end{equation}
-
-Changing the integration variable from $k$ to $E_{\mathrm{cv}}$ with the
-parabolic dispersion of assumption~\ref{ass:parabolic} yields: With $k=k(E_{\mathrm{cv}}
-)$, the occupation factor becomes $\Phi^{(i)}\big(k(E_{\mathrm{cv}})\big)$, and the
-delta distribution can be evaluated directly. It fixes
-$E_{\mathrm{cv}}(k_{0})=\hbar\omega$, i.e., $k=k_{0}$ with $k_{0}$ the magnitude of
-the wavevector at photon energy $\hbar\omega$, so that $\Phi^{(i)}$ is evaluated
-at $k_{0}$:
-\begin{align}
-	r^{(i)}(\hbar\omega) & = P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}\, \frac{1}{2\pi^{2}}\left(\frac{2m_{\mathrm{r}}}{\hbar^{2}}\right)^{3/2}\int_{E_{\mathrm{g}}}^{\infty}\sqrt{E_{\mathrm{cv}}-E_{\mathrm{g}}}\;\delta(E_{\mathrm{cv}}-\hbar\omega)\;\Phi^{(i)}\big(k(E_{\mathrm{cv}})\big)\,\mathrm{d}E_{\mathrm{cv}} \\
-	                     & = P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}\, \underbrace{\frac{1}{2\pi^{2}}\left(\frac{2m_{\mathrm{r}}}{\hbar^{2}}\right)^{3/2}\sqrt{\hbar\omega-E_{\mathrm{g}}}\;\Theta(\hbar\omega-E_{\mathrm{g}})}_{D_{\mathrm{j}}(\hbar\omega)}\;\Phi^{(i)}(k_{0})
-\end{align}
-
-In this equation, $D_{\mathrm{j}}$ is the Joint Density of States (including
-spin). With the energy zero at the valence-band maximum, $E_{\mathrm{c}}(k)=E_{\mathrm{g}}
-+\frac{\hbar^{2}k^{2}}{2m_{\mathrm{e}}^{*}}$ and $E_{\mathrm{v}}(k)=-\frac{\hbar^{2}k^{2}}{2m_{\mathrm{h}}^{*}}$,
-the occupation factors are evaluated at $k_{0}$, i.e., at the band energies $E_{\mathrm{c}}
-(k_{0})$ and $E_{\mathrm{v}}(k_{0})$:
-\begin{equation}
-	k_{0}=\frac{\sqrt{2m_{\mathrm{r}}(\hbar\omega-E_{\mathrm{g}})}}{\hbar},\qquad E
-	_{\mathrm{c}}(k_{0})=E_{\mathrm{g}}+\frac{m_{\mathrm{r}}}{m_{\mathrm{e}}^{*}}(\hbar
+	E_{\mathrm{c}}(k_{0})=E_{\mathrm{g}}+\frac{m_{\mathrm{r}}}{m_{\mathrm{e}}^{*}}(\hbar
 	\omega-E_{\mathrm{g}}),\qquad E_{\mathrm{v}}(k_{0})=-\frac{m_{\mathrm{r}}}{m_{\mathrm{h}}^{*}}
 	(\hbar\omega-E_{\mathrm{g}})
 \end{equation}
 
-The absorption and emission line shape therefore starts at $E_{\mathrm{g}}$ and rises
-as $\sqrt{\hbar\omega-E_{\mathrm{g}}}$, modulated by the prefactor
+As $D_{\mathrm{j}}\propto\sqrt{\hbar\omega-E_{\mathrm{g}}}$ for parabolic bands, the
+absorption and emission line shape starts at $E_{\mathrm{g}}$ and rises as
+$\sqrt{\hbar\omega-E_{\mathrm{g}}}$, modulated by the prefactor
 $P(\hbar \omega)$ and the occupation factor $\Phi^{(i)}(k_{0})$.
 
 \subsection{Rate Ratios}
