@@ -3,10 +3,9 @@
 \label{sec:semiconductor_foundations}
 
 Before the working principle of a laser diode can be discussed in detail, preliminary
-knowledge about carrier statistics, the joint density of states and the photon mode
-density and statistics is required. Additionally, the diode current-voltage
-characteristics are discussed here, as they are not the main focus of this laboratory
-course.
+knowledge about carrier and photon statistics is required. Furthermore, the diode
+current-voltage characteristics are discussed in this section, as they are not the
+main focus of this laboratory course.
 
 \subsection{Carrier Statistics}
 \label{sec:carrier_statistics}
@@ -29,9 +28,10 @@ occupation probabilities are given by:
 \begin{equation}
 	f_{\mathrm{n}}(E, \mathbf{r}) = \frac{1}{1+\exp\left[(E-F_{\mathrm{n}}(\mathbf{r}))/k_{\mathrm{B}}T\right]}, \qquad
 	f_{\mathrm{p}}(E, \mathbf{r}) = \frac{1}{1+\exp\left[(F_{\mathrm{p}}(\mathbf{r})-E)/k_{\mathrm{B}}T\right]}.
+	\label{eq:occupation_probabilities}
 \end{equation}
 The electron and hole densities are obtained by integrating the product of the
-occupation probability and the Density of States:
+occupation probability and the density of states:
 \begin{equation}
 	n(\mathbf{r}) = \int_{E_{\mathrm{C}}}^{\infty}D_{\mathrm{n}}(E)\, f_{\mathrm{n}}
 	(E,\mathbf{r}) \,\mathrm{d}E, \qquad p(\mathbf{r}) = \int_{-\infty}^{E_{\mathrm{V}}}
@@ -92,10 +92,9 @@ by counting the $\mathbf{k}$-states on the surface of constant transition energy
 \begin{equation}
 	D_{\mathrm{j}}(\hbar \omega)= \frac{2}{V}\int_{S(\hbar \omega)}\frac{\mathrm{d}^{2}S}{\left(
 	\frac{2\pi}{L}\right)^{3}\lvert \nabla_{\mathbf{k}}E_{\mathrm{cv}}(\mathbf{k}) \rvert
-	},\quad E_{\mathrm{cv}}(\mathbf{k})=E_{\mathrm{c}}(\mathbf{k})-E_{\mathrm{v}}(\mathbf{k}
-	).
+	}.
 \end{equation}
-By using the Parabolic Band Approximation, this integral can be solved
+By using the parabolic band approximation, this integral can be solved
 analytically:
 \begin{equation}
 	D_{\mathrm{j}}(\hbar\omega)=\frac{1}{2\pi^{2}}\left(\frac{2m_{\mathrm{r}}}{\hbar^{2}}
@@ -122,7 +121,7 @@ The factor 2 counts the two transverse polarization states of the photon:
 \end{equation}
 
 Converting the sum to an integral using the mode density in $\mathbf{k}$-space
-per polarization and unit volume, $N(\mathbf{k})= V / (2\pi)^{3}$, and
+per polarization and unit volume, $V / (2\pi)^{3}$, and
 substituting the photon energy relation
 $E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ yields an
 analytical expression for $N(E)$. This assumes a dispersion-free medium, i.e. a constant

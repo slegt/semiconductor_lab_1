@@ -1,11 +1,12 @@
 {
   "format": "vectorcraft",
   "version": 4,
-  "generator": "VectorCraft 0.11.0",
+  "generator": "VectorCraft 0.13.1",
   "document": {
     "version": 1,
     "title": "absorption_gain",
     "units": "Points",
+    "rulers": "global",
     "color_mode": "Rgb",
     "artboards": [
       {
@@ -341,7 +342,7 @@
               }
             },
             {
-              "id": 7,
+              "id": 39,
               "appearance": {
                 "items": [
                   {
@@ -382,36 +383,50 @@
                       "anchors": [
                         {
                           "p": [
-                            94.712,
-                            95.826
+                            95.17166,
+                            95.2695
                           ],
                           "out": [
-                            94.712,
-                            109.198
+                            95.17166,
+                            108.64049999999999
                           ]
                         },
                         {
                           "p": [
-                            121.454,
-                            138.168
+                            106.31466,
+                            132.03949999999998
                           ],
                           "in": [
-                            101.398,
-                            127.026
+                            98.51466,
+                            122.01149999999998
                           ],
                           "out": [
-                            139.283,
-                            148.197
+                            115.22866,
+                            143.1825
                           ]
                         },
                         {
                           "p": [
-                            210.595,
-                            178.282
+                            141.97066,
+                            159.8965
                           ],
                           "in": [
-                            170.482,
-                            162.682
+                            128.59965999999997,
+                            153.2105
+                          ],
+                          "out": [
+                            162.02766000000003,
+                            169.9245
+                          ]
+                        },
+                        {
+                          "p": [
+                            208.82666,
+                            184.40949999999998
+                          ],
+                          "in": [
+                            186.54165999999998,
+                            176.6105
                           ]
                         }
                       ],
@@ -531,161 +546,337 @@
               }
             },
             {
-              "id": 9,
-              "appearance": {
-                "items": [
+              "id": 31,
+              "kind": {
+                "type": "group",
+                "children": [
                   {
-                    "kind": "fill",
-                    "paint": {
-                      "type": "none"
+                    "id": 9,
+                    "appearance": {
+                      "items": [
+                        {
+                          "kind": "fill",
+                          "paint": {
+                            "type": "none"
+                          }
+                        },
+                        {
+                          "kind": "stroke",
+                          "paint": {
+                            "type": "solid",
+                            "color": {
+                              "model": "rgb",
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0
+                            }
+                          },
+                          "width": 1.2
+                        }
+                      ]
+                    },
+                    "kind": {
+                      "type": "path",
+                      "path": {
+                        "subpaths": [
+                          {
+                            "anchors": [
+                              {
+                                "p": [
+                                  127.026,
+                                  95.826
+                                ],
+                                "out": [
+                                  125.911,
+                                  77.998
+                                ]
+                              },
+                              {
+                                "p": [
+                                  135.94,
+                                  47.913
+                                ],
+                                "in": [
+                                  128.14,
+                                  60.17
+                                ],
+                                "out": [
+                                  143.74,
+                                  36.771
+                                ]
+                              },
+                              {
+                                "p": [
+                                  172.71,
+                                  22.285
+                                ],
+                                "in": [
+                                  157.111,
+                                  28.971
+                                ],
+                                "out": [
+                                  186.082,
+                                  16.714
+                                ]
+                              },
+                              {
+                                "p": [
+                                  207.253,
+                                  8.484722261006482
+                                ],
+                                "in": [
+                                  196.10999999999999,
+                                  12.941722261006483
+                                ]
+                              }
+                            ],
+                            "closed": false
+                          }
+                        ]
+                      }
                     }
                   },
                   {
-                    "kind": "stroke",
-                    "paint": {
-                      "type": "solid",
-                      "color": {
-                        "model": "rgb",
-                        "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0
-                      }
-                    },
-                    "width": 1.2
-                  }
-                ]
-              },
-              "kind": {
-                "type": "path",
-                "path": {
-                  "subpaths": [
-                    {
-                      "anchors": [
+                    "id": 10,
+                    "appearance": {
+                      "items": [
                         {
-                          "p": [
-                            127.026,
-                            95.826
-                          ],
-                          "out": [
-                            125.911,
-                            77.998
-                          ]
+                          "kind": "fill",
+                          "paint": {
+                            "type": "none"
+                          }
                         },
                         {
-                          "p": [
-                            135.94,
-                            47.913
-                          ],
-                          "in": [
-                            128.14,
-                            60.17
-                          ],
-                          "out": [
-                            143.74,
-                            36.771
-                          ]
-                        },
-                        {
-                          "p": [
-                            172.71,
-                            22.285
-                          ],
-                          "in": [
-                            157.111,
-                            28.971
-                          ],
-                          "out": [
-                            186.082,
-                            16.714
-                          ]
-                        },
-                        {
-                          "p": [
-                            208.367,
-                            6.686
-                          ],
-                          "in": [
-                            197.224,
-                            11.143
-                          ]
+                          "kind": "stroke",
+                          "paint": {
+                            "type": "solid",
+                            "color": {
+                              "model": "rgb",
+                              "r": 0.0,
+                              "g": 0.0,
+                              "b": 0.0
+                            }
+                          },
+                          "width": 1.2
                         }
-                      ],
-                      "closed": false
+                      ]
+                    },
+                    "kind": {
+                      "type": "path",
+                      "path": {
+                        "subpaths": [
+                          {
+                            "anchors": [
+                              {
+                                "p": [
+                                  94.712,
+                                  95.826
+                                ],
+                                "out": [
+                                  94.712,
+                                  104.741
+                                ]
+                              },
+                              {
+                                "p": [
+                                  112.54,
+                                  115.437
+                                ],
+                                "in": [
+                                  103.626,
+                                  114.769
+                                ],
+                                "out": [
+                                  120.34,
+                                  115.437
+                                ]
+                              },
+                              {
+                                "p": [
+                                  127.026,
+                                  95.826
+                                ],
+                                "in": [
+                                  127.026,
+                                  106.969
+                                ]
+                              }
+                            ],
+                            "closed": false
+                          }
+                        ]
+                      }
                     }
-                  ]
-                }
+                  }
+                ],
+                "clip": false
               }
             },
             {
-              "id": 10,
-              "appearance": {
-                "items": [
+              "id": 32,
+              "kind": {
+                "type": "group",
+                "children": [
                   {
-                    "kind": "fill",
-                    "paint": {
-                      "type": "none"
+                    "id": 33,
+                    "appearance": {
+                      "items": [
+                        {
+                          "kind": "fill",
+                          "paint": {
+                            "type": "none"
+                          }
+                        },
+                        {
+                          "kind": "stroke",
+                          "paint": {
+                            "type": "solid",
+                            "color": {
+                              "model": "rgb",
+                              "r": 0.92941177,
+                              "g": 0.10980392,
+                              "b": 0.14117648
+                            }
+                          },
+                          "width": 1.2
+                        }
+                      ]
+                    },
+                    "kind": {
+                      "type": "path",
+                      "path": {
+                        "subpaths": [
+                          {
+                            "anchors": [
+                              {
+                                "p": [
+                                  127.026,
+                                  95.756832
+                                ],
+                                "out": [
+                                  125.911,
+                                  113.58483199999999
+                                ]
+                              },
+                              {
+                                "p": [
+                                  135.94,
+                                  143.66983199999999
+                                ],
+                                "in": [
+                                  128.14,
+                                  131.41283199999998
+                                ],
+                                "out": [
+                                  143.74,
+                                  154.81183199999998
+                                ]
+                              },
+                              {
+                                "p": [
+                                  172.71,
+                                  169.297832
+                                ],
+                                "in": [
+                                  157.111,
+                                  162.611832
+                                ],
+                                "out": [
+                                  186.082,
+                                  174.868832
+                                ]
+                              },
+                              {
+                                "p": [
+                                  208.367,
+                                  182.78282837395852
+                                ],
+                                "in": [
+                                  197.224,
+                                  178.32582837395853
+                                ]
+                              }
+                            ],
+                            "closed": false
+                          }
+                        ]
+                      }
                     }
                   },
                   {
-                    "kind": "stroke",
-                    "paint": {
-                      "type": "solid",
-                      "color": {
-                        "model": "rgb",
-                        "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0
-                      }
-                    },
-                    "width": 1.2
-                  }
-                ]
-              },
-              "kind": {
-                "type": "path",
-                "path": {
-                  "subpaths": [
-                    {
-                      "anchors": [
+                    "id": 34,
+                    "appearance": {
+                      "items": [
                         {
-                          "p": [
-                            94.712,
-                            95.826
-                          ],
-                          "out": [
-                            94.712,
-                            104.741
-                          ]
+                          "kind": "fill",
+                          "paint": {
+                            "type": "none"
+                          }
                         },
                         {
-                          "p": [
-                            112.54,
-                            115.437
-                          ],
-                          "in": [
-                            103.626,
-                            114.769
-                          ],
-                          "out": [
-                            120.34,
-                            115.437
-                          ]
-                        },
-                        {
-                          "p": [
-                            127.026,
-                            95.826
-                          ],
-                          "in": [
-                            127.026,
-                            106.969
-                          ]
+                          "kind": "stroke",
+                          "paint": {
+                            "type": "solid",
+                            "color": {
+                              "model": "rgb",
+                              "r": 0.92941177,
+                              "g": 0.10980392,
+                              "b": 0.14117648
+                            }
+                          },
+                          "width": 1.2
                         }
-                      ],
-                      "closed": false
+                      ]
+                    },
+                    "kind": {
+                      "type": "path",
+                      "path": {
+                        "subpaths": [
+                          {
+                            "anchors": [
+                              {
+                                "p": [
+                                  94.712,
+                                  95.756832
+                                ],
+                                "out": [
+                                  94.712,
+                                  86.841832
+                                ]
+                              },
+                              {
+                                "p": [
+                                  112.54,
+                                  76.145832
+                                ],
+                                "in": [
+                                  103.626,
+                                  76.81383199999999
+                                ],
+                                "out": [
+                                  120.34,
+                                  76.145832
+                                ]
+                              },
+                              {
+                                "p": [
+                                  127.026,
+                                  95.756832
+                                ],
+                                "in": [
+                                  127.026,
+                                  84.613832
+                                ]
+                              }
+                            ],
+                            "closed": false
+                          }
+                        ]
+                      }
                     }
-                  ]
-                }
+                  }
+                ],
+                "clip": false
               }
             },
             {
@@ -801,7 +992,7 @@
               }
             },
             {
-              "id": 13,
+              "id": 29,
               "appearance": {
                 "items": [
                   {
@@ -816,9 +1007,9 @@
                       "type": "solid",
                       "color": {
                         "model": "rgb",
-                        "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0
+                        "r": 0.92941177,
+                        "g": 0.10980392,
+                        "b": 0.14117648
                       }
                     },
                     "width": 0.6,
@@ -839,14 +1030,14 @@
                       "anchors": [
                         {
                           "p": [
-                            142.625,
-                            129.7
+                            184.967,
+                            155.193425
                           ]
                         },
                         {
                           "p": [
-                            118.78,
-                            113.655
+                            165.579,
+                            159.31615
                           ]
                         }
                       ],
@@ -867,8 +1058,8 @@
                       "color": {
                         "model": "rgb",
                         "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0
+                        "g": 0.40784314,
+                        "b": 0.21568628
                       }
                     }
                   },
@@ -982,8 +1173,8 @@
                       "color": {
                         "model": "rgb",
                         "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0
+                        "g": 0.40784314,
+                        "b": 0.21568628
                       }
                     }
                   },
@@ -1083,152 +1274,6 @@
                     125.243,
                     94.044
                   ]
-                }
-              }
-            },
-            {
-              "id": 16,
-              "kind": {
-                "type": "text",
-                "kind": {
-                  "kind": "point"
-                },
-                "xf": [
-                  1.0,
-                  0.0,
-                  0.0,
-                  1.0,
-                  52.37,
-                  26.742
-                ],
-                "runs": [
-                  {
-                    "text": "𝛼",
-                    "style": {
-                      "font_family": "Latin Modern Math",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": "(",
-                    "style": {
-                      "font_family": "LMRoman10",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": "ℏ𝜔",
-                    "style": {
-                      "font_family": "Latin Modern Math",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": ")",
-                    "style": {
-                      "font_family": "LMRoman10",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  }
-                ],
-                "para": {
-                  "justify": "Left",
-                  "left_indent": 0.0,
-                  "right_indent": 0.0,
-                  "first_line_indent": 0.0,
-                  "space_before": 0.0,
-                  "space_after": 0.0,
-                  "hyphenate": false,
-                  "mojikumi": "lineEndHalf",
-                  "burasagari": "standard"
                 }
               }
             },
@@ -1420,7 +1465,7 @@
                   0.0,
                   1.0,
                   186.082,
-                  36.771
+                  33.51522271696516
                 ],
                 "runs": [
                   {
@@ -1554,6 +1599,152 @@
               }
             },
             {
+              "id": 30,
+              "kind": {
+                "type": "text",
+                "kind": {
+                  "kind": "point"
+                },
+                "xf": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  186.89398450000002,
+                  156.8254
+                ],
+                "runs": [
+                  {
+                    "text": "𝑔",
+                    "style": {
+                      "font_family": "Latin Modern Math",
+                      "font_style": "Regular",
+                      "size": 9.963,
+                      "tracking": 0.0,
+                      "baseline_shift": 0.0,
+                      "h_scale": 100.0,
+                      "v_scale": 100.0,
+                      "rotation": 0.0,
+                      "fill": {
+                        "type": "solid",
+                        "color": {
+                          "model": "rgb",
+                          "r": 0.92941177,
+                          "g": 0.10980392,
+                          "b": 0.14117648
+                        }
+                      },
+                      "stroke": {
+                        "type": "none"
+                      },
+                      "stroke_width": 1.0,
+                      "underline": false,
+                      "strikethrough": false,
+                      "all_caps": false
+                    }
+                  },
+                  {
+                    "text": "(",
+                    "style": {
+                      "font_family": "LMRoman10",
+                      "font_style": "Regular",
+                      "size": 9.963,
+                      "tracking": 0.0,
+                      "baseline_shift": 0.0,
+                      "h_scale": 100.0,
+                      "v_scale": 100.0,
+                      "rotation": 0.0,
+                      "fill": {
+                        "type": "solid",
+                        "color": {
+                          "model": "rgb",
+                          "r": 0.92941177,
+                          "g": 0.10980392,
+                          "b": 0.14117648
+                        }
+                      },
+                      "stroke": {
+                        "type": "none"
+                      },
+                      "stroke_width": 1.0,
+                      "underline": false,
+                      "strikethrough": false,
+                      "all_caps": false
+                    }
+                  },
+                  {
+                    "text": "ℏ𝜔",
+                    "style": {
+                      "font_family": "Latin Modern Math",
+                      "font_style": "Regular",
+                      "size": 9.963,
+                      "tracking": 0.0,
+                      "baseline_shift": 0.0,
+                      "h_scale": 100.0,
+                      "v_scale": 100.0,
+                      "rotation": 0.0,
+                      "fill": {
+                        "type": "solid",
+                        "color": {
+                          "model": "rgb",
+                          "r": 0.92941177,
+                          "g": 0.10980392,
+                          "b": 0.14117648
+                        }
+                      },
+                      "stroke": {
+                        "type": "none"
+                      },
+                      "stroke_width": 1.0,
+                      "underline": false,
+                      "strikethrough": false,
+                      "all_caps": false
+                    }
+                  },
+                  {
+                    "text": ")",
+                    "style": {
+                      "font_family": "LMRoman10",
+                      "font_style": "Regular",
+                      "size": 9.963,
+                      "tracking": 0.0,
+                      "baseline_shift": 0.0,
+                      "h_scale": 100.0,
+                      "v_scale": 100.0,
+                      "rotation": 0.0,
+                      "fill": {
+                        "type": "solid",
+                        "color": {
+                          "model": "rgb",
+                          "r": 0.92941177,
+                          "g": 0.10980392,
+                          "b": 0.14117648
+                        }
+                      },
+                      "stroke": {
+                        "type": "none"
+                      },
+                      "stroke_width": 1.0,
+                      "underline": false,
+                      "strikethrough": false,
+                      "all_caps": false
+                    }
+                  }
+                ],
+                "para": {
+                  "justify": "Left",
+                  "left_indent": 0.0,
+                  "right_indent": 0.0,
+                  "first_line_indent": 0.0,
+                  "space_before": 0.0,
+                  "space_after": 0.0,
+                  "hyphenate": false,
+                  "mojikumi": "lineEndHalf",
+                  "burasagari": "standard"
+                }
+              }
+            },
+            {
               "id": 19,
               "kind": {
                 "type": "text",
@@ -1566,7 +1757,7 @@
                   0.0,
                   1.0,
                   207.253,
-                  49.027
+                  48.4522815
                 ],
                 "runs": [
                   {
@@ -1769,8 +1960,8 @@
                   0.0,
                   0.0,
                   1.0,
-                  74.655,
-                  86.912
+                  82.7231,
+                  105.2645
                 ],
                 "runs": [
                   {
@@ -1789,8 +1980,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1818,8 +2009,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1857,8 +2048,8 @@
                   0.0,
                   0.0,
                   1.0,
-                  134.826,
-                  115.437
+                  128.809,
+                  92.489395
                 ],
                 "runs": [
                   {
@@ -1877,8 +2068,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1906,8 +2097,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1935,8 +2126,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1964,8 +2155,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -1993,154 +2184,8 @@
                         "color": {
                           "model": "rgb",
                           "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  }
-                ],
-                "para": {
-                  "justify": "Left",
-                  "left_indent": 0.0,
-                  "right_indent": 0.0,
-                  "first_line_indent": 0.0,
-                  "space_before": 0.0,
-                  "space_after": 0.0,
-                  "hyphenate": false,
-                  "mojikumi": "lineEndHalf",
-                  "burasagari": "standard"
-                }
-              }
-            },
-            {
-              "id": 22,
-              "kind": {
-                "type": "text",
-                "kind": {
-                  "kind": "point"
-                },
-                "xf": [
-                  1.0,
-                  0.0,
-                  0.0,
-                  1.0,
-                  143.74,
-                  140.843
-                ],
-                "runs": [
-                  {
-                    "text": "𝛼",
-                    "style": {
-                      "font_family": "Latin Modern Math",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": "(",
-                    "style": {
-                      "font_family": "LMRoman10",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": "ℏ𝜔",
-                    "style": {
-                      "font_family": "Latin Modern Math",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
-                        }
-                      },
-                      "stroke": {
-                        "type": "none"
-                      },
-                      "stroke_width": 0.0,
-                      "underline": false,
-                      "strikethrough": false,
-                      "all_caps": false
-                    }
-                  },
-                  {
-                    "text": ") < 0",
-                    "style": {
-                      "font_family": "LMRoman10",
-                      "font_style": "Regular",
-                      "size": 9.963,
-                      "tracking": 0.0,
-                      "baseline_shift": 0.0,
-                      "h_scale": 100.0,
-                      "v_scale": 100.0,
-                      "rotation": 0.0,
-                      "fill": {
-                        "type": "solid",
-                        "color": {
-                          "model": "rgb",
-                          "r": 0.0,
-                          "g": 0.0,
-                          "b": 0.0
+                          "g": 0.40784314,
+                          "b": 0.21568628
                         }
                       },
                       "stroke": {
@@ -3279,7 +3324,7 @@
     },
     "raster_effects_ppi": 72.0,
     "images": {},
-    "next_id": 26,
+    "next_id": 42,
     "metadata": {
       "author": "",
       "authorTitle": "",
@@ -3290,7 +3335,16 @@
       "copyrightNotice": "",
       "copyrightUrl": "",
       "created": 1792157065,
-      "modified": null
+      "modified": 1792410423
+    },
+    "last_view": {
+      "name": "",
+      "center": {
+        "x": 90.4169678701135,
+        "y": 91.35125191899564
+      },
+      "zoom": 4.498008597697541,
+      "rotation": 0.0
     }
   },
   "images": {}

@@ -70,7 +70,7 @@
 
 An incoming photon induces a perturbation of the electronic system of the
 semiconductor, which may result in the generation of an electron-hole pair if there exists an
-unexcited electron-hole pair separated by the photon energy. This
+unexcited pair separated by the photon energy. This
 process is called absorption. For this electronic excitation to occur, the
 energy $\hbar \omega$ of the incoming photon must be at least the band gap
 energy $E_{\mathrm{g}}$.
@@ -144,7 +144,6 @@ an analytical line shape:
 		$\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}=\mathrm{const.}$
 	\item \label{ass:parabolic} parabolic bands, see \cref{eq:parabolic_bands}
 \end{enumerate*}.
-
 Substituting assumptions~\ref{ass:k_selection} and~\ref{ass:const_matrix} into
 \cref{eq:universal_rate_equation} yields:
 \begin{equation}
@@ -173,26 +172,20 @@ from \cref{eq:parabolic_bands} and $E_{\mathrm{cv}}(k_{0})=\hbar\omega$:
 	(\hbar\omega-E_{\mathrm{g}})
 \end{equation}
 
-As $D_{\mathrm{j}}\propto\sqrt{\hbar\omega-E_{\mathrm{g}}}$ for parabolic bands, the
-absorption and emission line shape starts at $E_{\mathrm{g}}$ and rises as
-$\sqrt{\hbar\omega-E_{\mathrm{g}}}$, modulated by the prefactor
-$P(\hbar \omega)$ and the occupation factor $\Phi^{(i)}(k_{0})$.
-
 \subsection{Rate Ratios}
 \label{sec:rate_ratios}
 
 As absorption, stimulated emission and spontaneous emission follow from the same
 general \cref{eq:universal_rate_equation}, their ratios can be calculated easily.
 
-\subsubsection{Stimulated Emission vs Absorption}
+\paragraph{Stimulated Emission vs Absorption}
 
-Let $f_{\mathrm{n}}$ and $f_{\mathrm{p}}$ be the occupation probabilities of the
-conduction band by electrons and of the valence band by holes, described by the Quasi
-Fermi Levels $F_{\mathrm{n}}$ and $F_{\mathrm{p}}$ at the same temperature $T$:
-\begin{align}
-	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}} & =\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}}{k_{\mathrm{B}}T}\right) \\
+Inverting the occupation probabilities of \cref{eq:occupation_probabilities} at the
+band energies $E_{\mathrm{c}}$ and $E_{\mathrm{v}}$ of the transition yields:
+\begin{equation}
+	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}}=\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}}{k_{\mathrm{B}}T}\right)
 	\label{eq:f_n_identity}
-\end{align}
+\end{equation}
 
 The matrix elements cancel in the quotient of the absorption and stimulated-emission
 rates, so that it equals the ratio of the occupation factors
@@ -231,12 +224,11 @@ In thermal equilibrium, the quasi-Fermi levels coincide,
 $F_{\mathrm{n}}=F_{\mathrm{p}}$, and the photon occupation number follows the Bose-Einstein
 distribution. Using \cref{eq:abs_stim_rate} and \cref{eq:stim_spon_rate}, the rates
 satisfy:
-\begin{align}
-	\frac{R^{\mathrm{abs}}-R^{\mathrm{spon}}}{R^{\mathrm{stim}}} & =\exp\left( \frac{\hbar \omega- (F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) - \frac{1}{n_{\mathrm{ph}}}                \\
-	                                                             & =\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - \left[\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - 1\right]=1
-\end{align}
+\begin{equation}
+	\frac{R^{\mathrm{abs}}-R^{\mathrm{spon}}}{R^{\mathrm{stim}}}=\exp\left( \frac{\hbar \omega- (F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) - \frac{1}{n_{\mathrm{ph}}}=\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - \left[\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - 1\right]=1
+\end{equation}
 
-Hence, absorption and total emission are in balance
+Hence, absorption and total emission are in balance:
 $R^{\mathrm{abs}}=R^{\mathrm{stim}}+R^{\mathrm{spon}}$.
 
 \subsection{Spontaneous Emission Line Shape}
@@ -244,7 +236,7 @@ $R^{\mathrm{abs}}=R^{\mathrm{stim}}+R^{\mathrm{spon}}$.
 
 Following \cref{sec:line_shape}, the spontaneous emission rate can be expressed
 using the equilibrium absorption coefficient (see \cref{sec:absorption_coefficient_and_gain}),
-the Photon Density of States $N(\hbar \omega)$ and the occupation probabilities $f
+the photon mode density of states $N(\hbar \omega)$ and the occupation probabilities $f
 _{\mathrm{n}}$, $f_{\mathrm{p}}$.
 \begin{equation}
 	R^{\mathrm{spon}}(\hbar \omega)=N(\hbar\omega) \frac{c}{n_{\mathrm{r}}}\alpha_{0}
@@ -263,13 +255,16 @@ $\delta$-function fixes their difference to $E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}
 (k_{0})=\hbar\omega$. The individual band energies therefore drop out of the
 product and only the quasi-Fermi-level splitting
 $\Delta F=F_{\mathrm{n}}-F_{\mathrm{p}}$ and the photon energy remain:
-\begin{align}
-	f_{\mathrm{n}}f_{\mathrm{p}} & \simeq \exp \left( \frac{F_{\mathrm{n}}-F_{\mathrm{p}}-\left(E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}(k_{0})\right)}{k_{\mathrm{B}}T}\right)=\exp \left( \frac{\Delta F -\hbar \omega}{k_{\mathrm{B}}T}\right) \\
-	                             & =\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
-\end{align}
+\begin{equation}
+	\begin{aligned}
+		f_{\mathrm{n}}f_{\mathrm{p}} & \simeq \exp \left( \frac{F_{\mathrm{n}}-F_{\mathrm{p}}-\left(E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}(k_{0})\right)}{k_{\mathrm{B}}T}\right)=\exp \left( \frac{\Delta F -\hbar \omega}{k_{\mathrm{B}}T}\right) \\
+		                             & =\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+	\end{aligned}
+	\label{eq:occupation_product}
+\end{equation}
 
-Inserting this into the rate gives the analytical spontaneous emission spectrum
-(for $\hbar\omega>E_{\mathrm{g}}$), where $\Delta F$ only enters the amplitude:
+Inserting \cref{eq:occupation_product} into $R^{\mathrm{spon}}(\hbar\omega)$ gives the
+analytical spontaneous emission spectrum (for $\hbar\omega>E_{\mathrm{g}}$):
 \begin{equation}
 	R^{\mathrm{spon}}(\hbar \omega)= N(\hbar\omega)\frac{c}{n_{\mathrm{r}}}\,\alpha
 	_{0}(\hbar \omega)\,\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right
@@ -283,16 +278,15 @@ With $N\propto(\hbar\omega)^{2}$ and $\alpha_{0}\propto\sqrt{\hbar\omega-E_{\mat
 	\,\exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
 \end{equation}
 
-\subsubsection{Measurable Quantities}
+\paragraph{Measurable Quantities}
 
-The number of photons emitted per volume and time with photon energies $E=\hbar\omega$
-between $E_{1}$ and $E_{2}$ is:
+The number of photons emitted per volume and time between $E_{1}$ and $E_{2}$ is:
 \begin{equation}
 	N(E_{1}, E_{2}) = \int_{E_1}^{E_2}R^{\mathrm{spon}}(E) \, \mathrm{d}E
 \end{equation}
 
 Weighting each photon by its energy gives the spectral power density $p_{E}(E)=E\,
-R^{\mathrm{spon}}(E)$ and the emitted optical power per volume:
+R^{\mathrm{spon}}(E)$, and the emitted optical power per volume can be defined as:
 \begin{equation}
 	P(E_{1}, E_{2})=\int_{E_1}^{E_2}p_{E}(E) \, \mathrm{d}E = \int_{E_1}^{E_2}E \, R
 	^{\mathrm{spon}}(E) \, \mathrm{d}E
@@ -312,13 +306,12 @@ With $E=hc/\lambda$ (vacuum wavelength $\lambda$), the integral transforms as:
 	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
 \end{align}
 
-A real detector measures the power within a finite bandwidth $\Delta\lambda=\lambda
+A detector measures the power within a small bandwidth $\Delta\lambda=\lambda
 _{1}-\lambda_{2}$. If $p_{\lambda}(\lambda)$ varies only slightly within this
 interval, the integral can be approximated by the midpoint rule, and the
 spectral power density at the center wavelength
-$\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$ is approximately the measured
-power divided by the interval width:
+$\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$ is proportional to the measured
+power:
 \begin{equation}
-	P(\lambda_{1},\lambda_{2})\approx p_{\lambda}(\lambda_{\mathrm{c}})\,\Delta\lambda
-	\quad\Rightarrow\quad p_{\lambda}(\lambda_{\mathrm{c}})\approx\frac{P(\lambda_{1},\lambda_{2})}{\Delta\lambda}
+	p_{\lambda}(\lambda_{\mathrm{c}})\approx\frac{P(\lambda_{1},\lambda_{2})}{\Delta\lambda}
 \end{equation}

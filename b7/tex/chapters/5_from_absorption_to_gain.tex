@@ -3,7 +3,9 @@
 \label{sec:absorption_coefficient_and_gain}
 
 The absorption coefficient $\alpha(\hbar \omega)$ is a fundamental material property,
-used in the Lambert-Beer law. It can be defined universally as:
+used in the Lambert-Beer law $I(z)=I_{0}\exp(-\alpha z)$, which describes the decay
+of the light intensity $I$ with the propagation distance $z$. The absorption
+coefficient can be defined universally as:
 \begin{equation}
 	\alpha =\frac{\text{Number of photons absorbed per second per unit volume}}{\text{Number
 	of injected photons per second per unit area}}\label{eq:alpha}
@@ -95,7 +97,7 @@ through it grows exponentially instead of decaying:
 % \end{table}
 
 The gain coefficient is the negative of the absorption coefficient, so Lambert-Beer
-absorption $\exp({-\alpha z})$ turns into amplification:
+absorption turns into amplification:
 \begin{equation}
 	g(\hbar\omega)=-\alpha(\hbar\omega)=C_{0}\lvert \hat{e}\cdot\mathbf{p}_{\mathrm{cv}}
 	\rvert^{2}D_{\mathrm{j}}\,(f_{\mathrm{n}}+f_{\mathrm{p}}-1)
@@ -123,7 +125,7 @@ absorption $\exp({-\alpha z})$ turns into amplification:
 The gain curve $g(\hbar\omega)$ follows from the sign analysis above: $g=0$ below
 $E_{\mathrm{g}}$, since no transitions exist there; $g>0$ between $E_{\mathrm{g}}$
 and $F_{\mathrm{n}}-F_{\mathrm{p}}$, rising with the joint density of states and
-falling as $f_{\mathrm{n}}+f_{\mathrm{p}}-1$ shrinks, so it has a maximum in between.
+falling with $f_{\mathrm{n}}+f_{\mathrm{p}}-1$.
 $g=0$ at the transparency energy $\hbar\omega=F_{\mathrm{n}}- F_{\mathrm{p}}$
 and $g<0$ above it, approaching the equilibrium absorption $-\alpha_{0}$ at high photon
 energies.
@@ -134,14 +136,14 @@ energies.
 	\caption{Absorption coefficient $\alpha(\hbar\omega)$ under carrier injection (solid)
 	compared to the equilibrium absorption $\alpha_{0}(\hbar\omega)$ (dashed). The factor
 	$1-f_{\mathrm{n}}-f_{\mathrm{p}}$ (dashed) changes sign at $\hbar\omega=F_{\mathrm{n}}-F_{\mathrm{p}}$.
-	Between $E_{\mathrm{g}}$ and $F_{\mathrm{n}}-F_{\mathrm{p}}$, $\alpha<0$, i.e., the medium shows gain.}
+	The gain $g(\hbar\omega)=-\alpha(\hbar\omega)$ is shown in red. \imcite{chuang_physics_2009}}
 	\label{fig:absorption_gain}
 \end{figure}
 
 Note that $g$ is the material gain of the active medium alone. The gain experienced
-by a guided optical mode is reduced to the modal gain $\Gamma g$ by the Optical Confinement
-Factor $\Gamma$. Lasing additionally requires this modal gain to overcome the
-internal losses $\alpha_{\mathrm{i}}$ and the mirror losses
-$\alpha_{\mathrm{m}}$.
+by a guided optical mode is reduced to the modal gain $\Gamma g$ by the optical confinement
+factor $\Gamma$. Lasing additionally requires this modal gain to overcome the
+internal losses $\alpha_{\mathrm{i}}$ and the mirror losses (see
+\cref{sec:resonator_and_threshold}).
 
 % Gliederung: Brücke zu Kapitel 4: der Fabry-Perot-Resonator braucht $g$ für die Schwellbedingung $\Gamma g_{\mathrm{th}}=\alpha_{\mathrm i}+\alpha_{\mathrm m}$
