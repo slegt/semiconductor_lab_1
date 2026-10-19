@@ -8,7 +8,7 @@ of the light intensity $I$ with the propagation distance $z$. The absorption
 coefficient can be defined universally as:
 \begin{equation}
 	\alpha =\frac{\text{Number of photons absorbed per second per unit volume}}{\text{Number
-	of injected photons per second per unit area}}\label{eq:alpha}
+	of injected photons per second per unit area}}.\label{eq:alpha}
 \end{equation}
 The numerator of \cref{eq:alpha} is the net absorption rate,
 $R^{\mathrm{abs}}- R^{\mathrm{stim}}$ emission. Using its analytical form from \cref{sec:line_shape}
@@ -16,7 +16,7 @@ results in:
 \begin{equation}
 	R^{\mathrm{net}}=n_{\mathrm{ph}}(r^{\mathrm{abs}}-r^{\mathrm{stim}}) = n_{\mathrm{ph}}
 	\, P(\hbar\omega) \lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}\rvert^{2}D_{\mathrm{j}}
-	(\hbar\omega)\,(1-f_{\mathrm{n}}-f_{\mathrm{p}})
+	(\hbar\omega)\,(1-f_{\mathrm{n}}-f_{\mathrm{p}}).
 \end{equation}
 The denominator is the spectral photon flux, i.e. the number of injected photons
 crossing a unit area per second per photon energy. This quantity is obtained from
@@ -24,14 +24,14 @@ the spectral photon density $S=n_{\mathrm{ph}}N$, travelling at the velocity
 $c/n_{\mathrm{r}}$:
 \begin{equation}
 	F=n_{\mathrm{ph}}\cdot N \cdot \frac{c}{n_{\mathrm{r}}}= n_{\mathrm{ph}}\frac{n_{\mathrm{r}}^{2}\omega^{2}}{\pi^{2}\hbar
-	c^{2}}
+	c^{2}}.
 \end{equation}
 
 Dividing $R_{\mathrm{net}}$ by $F$ cancels $n_{\mathrm{ph}}$ and yields an
 analytical expression for the absorption coefficient:
 \begin{equation}
 	\alpha(\hbar \omega)=\frac{R^{\mathrm{net}}}{F}=C_{0}\lvert \hat{e}\cdot\mathbf{p}
-	_{\mathrm{cv}}\rvert^{2}D_{\mathrm{j}}(1-f_{\mathrm{n}}-f_{\mathrm{p}}) \label{eq:alpha_analytical}
+	_{\mathrm{cv}}\rvert^{2}D_{\mathrm{j}}(1-f_{\mathrm{n}}-f_{\mathrm{p}}). \label{eq:alpha_analytical}
 \end{equation}
 
 \subsection{Thermal Equilibrium}
@@ -44,7 +44,7 @@ approximation is valid if the considered energy interval is small:
 \begin{equation}
 	\alpha_{0}(\hbar \omega)=C_{0}\lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}\rvert
 	^{2}D_{\mathrm{j}}\propto \frac{\sqrt{ \hbar \omega -E_{\mathrm{g}}}}{\hbar
-	\omega}\simeq \sqrt{ \hbar \omega -E_{\mathrm{g}}}
+	\omega}\simeq \sqrt{ \hbar \omega -E_{\mathrm{g}}}.
 \end{equation}
 
 \subsection{Non-Equilibrium and Bernard-Duraffourg Condition}
@@ -56,7 +56,7 @@ using \cref{eq:f_n_identity} with $E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}(k_{0})=\
 \omega$:
 \begin{align}
 	1-f_{\mathrm{n}}-f_{\mathrm{p}} & =(1-f_{\mathrm{n}})(1-f_{\mathrm{p}}) - f_{\mathrm{n}}f_{\mathrm{p}}=f_{\mathrm{n}}f_{\mathrm{p}}\left[ \frac{(1-f_{\mathrm{n}})(1-f_{\mathrm{p}})}{f_{\mathrm{n}}f_{\mathrm{p}}}- 1\right] \\
-	                                & =f_{\mathrm{n}}f_{\mathrm{p}}\left[\exp\left( \frac{\hbar \omega -(F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) -1\right] \label{eq:f_n_identity_2}
+	                                & =f_{\mathrm{n}}f_{\mathrm{p}}\left[\exp\left( \frac{\hbar \omega -(F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) -1\right]. \label{eq:f_n_identity_2}
 \end{align}
 
 Substituting \cref{eq:f_n_identity_2} into $\alpha(\hbar\omega)$ with the parabolic-band
@@ -68,7 +68,7 @@ in a constant:
 	\underbrace{ f_{\mathrm{n}} }_{ >0 }\; \underbrace{ f_{\mathrm{p}} }_{ >0 }\; \underbrace{
 	\left[\exp\left( \frac{\hbar \omega -(F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}
 	\right) -1\right] }_{ <0 \text{ if } \hbar \omega <F_{\mathrm{n}}-F_{\mathrm{p}}
-	}
+	}.
 \end{equation}
 Only the bracket can change sign; every other factor in the expression is
 positive. A negative value of the bracket corresponds to gain instead of absorption.
@@ -82,7 +82,7 @@ Bernard-Duraffourg condition: $F_{\mathrm{n}}-F_{\mathrm{p}}>\hbar \omega > E_{\
 The gain $g$ is the key quantity of an active medium: the intensity of light passing
 through it grows exponentially instead of decaying:
 \begin{equation}
-	I(z)=I_{0}\, \exp(g z)
+	I(z)=I_{0}\, \exp(g z).
 \end{equation}
 
 % \begin{table}[H]
@@ -103,7 +103,7 @@ The gain coefficient is the negative of the absorption coefficient, so Lambert-B
 absorption turns into amplification:
 \begin{equation}
 	g(\hbar\omega)=-\alpha(\hbar\omega)=C_{0}\lvert \hat{e}\cdot\mathbf{p}_{\mathrm{cv}}
-	\rvert^{2}D_{\mathrm{j}}\,(f_{\mathrm{n}}+f_{\mathrm{p}}-1)
+	\rvert^{2}D_{\mathrm{j}}\,(f_{\mathrm{n}}+f_{\mathrm{p}}-1).
 \end{equation}
 
 % \begin{table}[H]

@@ -108,7 +108,7 @@ i.e., the rates normalized to one photon per mode, are given by:
 	r^{(i)}(\hbar\omega)=P(\hbar\omega)\sum_{\mathbf{k}_{\mathrm{p}},\mathbf{k}_{\mathrm{n}}}
 	\frac{2}{V}\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}(\mathbf{k}_{\mathrm{p}},\mathbf{k}
 	_{\mathrm{n}})\rvert^{2}\,\delta\big(E_{\mathrm{c}}(\mathbf{k}_{\mathrm{n}})-E_{\mathrm{v}}
-	(\mathbf{k}_{\mathrm{p}})-\hbar\omega\big)\;\Phi^{(i)}\label{eq:universal_rate_equation}
+	(\mathbf{k}_{\mathrm{p}})-\hbar\omega\big)\;\Phi^{(i)}.\label{eq:universal_rate_equation}
 \end{equation}
 The factor $2/V$ counts both spin orientations per unit volume. $\Phi^{(i)}$ is the
 occupation factor of process $i$, eludicated in \cref{tab:occupation_factors}. The
@@ -149,7 +149,7 @@ Substituting assumptions~\ref{ass:k_selection} and~\ref{ass:const_matrix} into
 \begin{equation}
 	r^{(i)}(\hbar\omega)= P(\hbar\omega)\, \frac{2}{V}\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}
 	\rvert^{2}\sum_{\mathbf{k}}\delta\big(E_{\mathrm{cv}}(\mathbf{k})-\hbar\omega\big
-	)\;\Phi^{(i)}(\mathbf{k})
+	)\;\Phi^{(i)}(\mathbf{k}).
 \end{equation}
 
 The sum over $\mathbf{k}$ together with the factor $2/V$ is the joint density of
@@ -160,7 +160,7 @@ have the same wavevector magnitude $k_{0}$ with $E_{\mathrm{cv}}(k_{0})=\hbar\om
 and therefore the same occupation factor, which can be taken out of the sum:
 \begin{equation}
 	r^{(i)}(\hbar\omega)= P(\hbar\omega)\,\lvert\hat e\cdot\mathbf{p}_{\mathrm{cv}}\rvert^{2}\,
-	D_{\mathrm{j}}(\hbar\omega)\;\Phi^{(i)}(k_{0})
+	D_{\mathrm{j}}(\hbar\omega)\;\Phi^{(i)}(k_{0}).
 \end{equation}
 
 The occupation factors are evaluated at the band energies $E_{\mathrm{c}}(k_{0})$ and
@@ -169,7 +169,7 @@ and $E_{\mathrm{cv}}(k_{0})=\hbar\omega$:
 \begin{equation}
 	E_{\mathrm{c}}(k_{0})=E_{\mathrm{C}}+\frac{m_{\mathrm{r}}}{m_{\mathrm{e}}^{*}}(\hbar
 	\omega-E_{\mathrm{g}}),\qquad E_{\mathrm{v}}(k_{0})=E_{\mathrm{V}}-\frac{m_{\mathrm{r}}}{m_{\mathrm{h}}^{*}}
-	(\hbar\omega-E_{\mathrm{g}})
+	(\hbar\omega-E_{\mathrm{g}}).
 \end{equation}
 
 \subsection{Rate Ratios}
@@ -183,7 +183,7 @@ general \cref{eq:universal_rate_equation}, their ratios can be calculated easily
 Inverting the occupation probabilities of \cref{eq:occupation_probabilities} at the
 band energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$ of the transition yields:
 \begin{equation}
-	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}(k_{0})-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}}=\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}(k_{0})}{k_{\mathrm{B}}T}\right)
+	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}(k_{0})-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}}=\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}(k_{0})}{k_{\mathrm{B}}T}\right).
 	\label{eq:f_n_identity}
 \end{equation}
 
@@ -194,7 +194,7 @@ $\Phi^{\mathrm{abs}}/\Phi^{\mathrm{stim}}$. Since the $\delta$-function fixes $E
 \begin{equation}
 	\frac{R^{\mathrm{abs}}}{R^{\mathrm{stim}}}=\frac{(1-f_{\mathrm{n}})(1-f_{\mathrm{p}})}{f_{\mathrm{n}}f_{\mathrm{p}}}
 	=\exp\left[\frac{\hbar\omega-(F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right
-	] \label{eq:abs_stim_rate}
+	]. \label{eq:abs_stim_rate}
 \end{equation}
 
 In thermal equilibrium, $F_{\mathrm{n}}=F_{\mathrm{p}}$ and $R^{\mathrm{abs}}> R^{\mathrm{stim}}$,
@@ -209,7 +209,7 @@ occupation number $n_{\mathrm{ph}}$ per mode. With the mode density $N$ and the 
 photon density $S=N\,n_{\mathrm{ph}}$, it follows that:
 \begin{equation}
 	\frac{R^{\mathrm{stim}}}{R^{\mathrm{spon}}}=n_{\mathrm{ph}}(\hbar \omega)=\frac{S(\hbar\omega)}{N(\hbar\omega)}
-	=\frac{\pi^{2}\hbar^{3}c^{3}}{n_{\mathrm{r}}^{3}}\,\frac{S(\hbar\omega)}{(\hbar\omega)^{2}}
+	=\frac{\pi^{2}\hbar^{3}c^{3}}{n_{\mathrm{r}}^{3}}\,\frac{S(\hbar\omega)}{(\hbar\omega)^{2}}.
 	\label{eq:stim_spon_rate}
 \end{equation}
 
@@ -224,7 +224,7 @@ $F_{\mathrm{n}}=F_{\mathrm{p}}$, and the photon occupation number follows the Bo
 distribution. Using \cref{eq:abs_stim_rate} and \cref{eq:stim_spon_rate}, the rates
 satisfy:
 \begin{equation}
-	\frac{R^{\mathrm{abs}}-R^{\mathrm{spon}}}{R^{\mathrm{stim}}}=\exp\left( \frac{\hbar \omega- (F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) - \frac{1}{n_{\mathrm{ph}}}=\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - \left[\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - 1\right]=1
+	\frac{R^{\mathrm{abs}}-R^{\mathrm{spon}}}{R^{\mathrm{stim}}}=\exp\left( \frac{\hbar \omega- (F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right) - \frac{1}{n_{\mathrm{ph}}}=\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - \left[\exp\left( \frac{\hbar \omega}{k_{\mathrm{B}}T}\right) - 1\right]=1.
 \end{equation}
 
 Hence, absorption and total emission are in balance:
@@ -239,14 +239,14 @@ the photon mode density of states $N(\hbar \omega)$ and the occupation probabili
 _{\mathrm{n}}$, $f_{\mathrm{p}}$.
 \begin{equation}
 	R^{\mathrm{spon}}(\hbar \omega)=N(\hbar\omega) \frac{c}{n_{\mathrm{r}}}\alpha_{0}
-	(\hbar \omega) f_{\mathrm{n}}f_{\mathrm{p}}
+	(\hbar \omega) f_{\mathrm{n}}f_{\mathrm{p}}.
 \end{equation}
 
 The occupation probabilities of \cref{eq:occupation_probabilities} are evaluated in
 the Boltzmann approximation:
 \begin{equation}
 	f_{\mathrm{n}}(E)\simeq \exp\left( \frac{F_{\mathrm{n}}-E}{k_{\mathrm{B}}T}\right),\qquad
-	f_{\mathrm{p}}(E)\simeq \exp\left( \frac{E-F_{\mathrm{p}}}{k_{\mathrm{B}}T}\right)
+	f_{\mathrm{p}}(E)\simeq \exp\left( \frac{E-F_{\mathrm{p}}}{k_{\mathrm{B}}T}\right).
 \end{equation}
 
 The factors $f_{\mathrm{n}}$ and $f_{\mathrm{p}}$ are evaluated at the band
@@ -258,7 +258,7 @@ $\Delta F=F_{\mathrm{n}}-F_{\mathrm{p}}$ and the photon energy remain:
 \begin{equation}
 	\begin{aligned}
 		f_{\mathrm{n}}f_{\mathrm{p}} & \simeq \exp \left( \frac{F_{\mathrm{n}}-F_{\mathrm{p}}-\left(E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}(k_{0})\right)}{k_{\mathrm{B}}T}\right)=\exp \left( \frac{\Delta F -\hbar \omega}{k_{\mathrm{B}}T}\right) \\
-		                             & =\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+		                             & =\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 	\end{aligned}
 	\label{eq:occupation_product}
 \end{equation}
@@ -268,42 +268,42 @@ analytical spontaneous emission spectrum (for $\hbar\omega>E_{\mathrm{g}}$):
 \begin{equation}
 	R^{\mathrm{spon}}(\hbar \omega)= N(\hbar\omega)\frac{c}{n_{\mathrm{r}}}\,\alpha
 	_{0}(\hbar \omega)\,\exp\left( \frac{\Delta F-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right
-	) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+	) \exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 \end{equation}
 
 With $N\propto(\hbar\omega)^{2}$ and $\alpha_{0}\propto\sqrt{\hbar\omega-E_{\mathrm{g}}}
 \,/\,\hbar\omega$, the spectral shape follows:
 \begin{equation}
 	R^{\mathrm{spon}}(\hbar \omega)\propto \hbar\omega\,\sqrt{\hbar\omega-E_{\mathrm{g}}}
-	\,\exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+	\,\exp\left( -\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 \end{equation}
 
 \paragraph{Measurable Quantities}
 
 The number of photons emitted per volume and time between $E_{1}$ and $E_{2}$ is:
 \begin{equation}
-	N(E_{1}, E_{2}) = \int_{E_1}^{E_2}R^{\mathrm{spon}}(E) \, \mathrm{d}E
+	N(E_{1}, E_{2}) = \int_{E_1}^{E_2}R^{\mathrm{spon}}(E) \, \mathrm{d}E.
 \end{equation}
 
 Weighting each photon by its energy gives the spectral power density $p_{E}(E)=E\,
 R^{\mathrm{spon}}(E)$, and the emitted optical power per volume can be defined as:
 \begin{equation}
 	P(E_{1}, E_{2})=\int_{E_1}^{E_2}p_{E}(E) \, \mathrm{d}E = \int_{E_1}^{E_2}E \, R
-	^{\mathrm{spon}}(E) \, \mathrm{d}E
+	^{\mathrm{spon}}(E) \, \mathrm{d}E.
 \end{equation}
 
 The extra factor $E$ turns the factor $\hbar\omega$ of the rate into $(\hbar\omega
 )^{2}$ in the power spectrum:
 \begin{equation}
 	p_{E}(E)\propto (\hbar\omega)^{2}\sqrt{ \hbar \omega-E_{\mathrm{g}}}\exp\left( -
-	\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+	\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 \end{equation}
 
 Spectrometers usually resolve the emission in wavelength rather than in energy.
 With $E(\lambda)=hc/\lambda$ (vacuum wavelength $\lambda$), the integral transforms as:
 \begin{align}
 	P(\lambda_{1}, \lambda_{2})           & =\int_{E(\lambda_{1})}^{E(\lambda_{2})}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_2}^{\lambda_1}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
-	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
+	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 	\label{eq:spontaneous_emission_line_shape}
 \end{align}
 
@@ -313,5 +313,5 @@ interval, the integral can be approximated by the midpoint rule, and, for a cons
 bandwidth $\Delta\lambda$, the measured power is proportional to the spectral power
 density at the center wavelength $\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$:
 \begin{equation}
-	P(\lambda_{1},\lambda_{2})\propto p_{\lambda}(\lambda_{\mathrm{c}})
+	P(\lambda_{1},\lambda_{2})\propto p_{\lambda}(\lambda_{\mathrm{c}}).
 \end{equation}
