@@ -46,12 +46,10 @@ in:
 
 The splitting $\Delta F(\mathbf{r})=F_{\mathrm{n}}(\mathbf{r})-F_{\mathrm{p}}(\mathbf{r}
 )$ is a local quantity: it fixes the carrier product $np$ at each position. The applied
-voltage $V$ is a global quantity: $eV$ is the difference between the Fermi
-levels of the two contacts, with $V>0$ for forward bias. An electron-selective
-contact fixes $F_{\mathrm{n}}$ and a hole-selective contact fixes
-$F_{\mathrm{p}}$, so
+voltage $V$ is a global quantity: it fixes the difference between the quasi-Fermi
+levels of the two contacts, with $V>0$ for forward bias:
 \begin{equation}
-	eV=F_{\mathrm{n}}(\text{electron contact})-F_{\mathrm{p}}(\text{hole contact}).
+	eV=F_{\mathrm{n}}(\text{n-contact})-F_{\mathrm{p}}(\text{p-contact}).
 \end{equation}
 
 \subsection{Joint Density of States}
@@ -63,6 +61,7 @@ can often be approximated by parabolic functions:
 	E_{\mathrm{c}}(k)=E_{\mathrm{C}}+\frac{\hbar^{2}k^{2}}{2m_{\mathrm{e}}^{*}},\qquad
 	E_{\mathrm{v}}(k)=E_{\mathrm{V}}-\frac{\hbar^{2}k^{2}}{2m_{\mathrm{h}}^{*}},\qquad
 	E_{\mathrm{g}}=E_{\mathrm{C}}-E_{\mathrm{V}}.
+	\label{eq:band_dispersion}
 \end{equation}
 The energy difference between the two bands is then given by:
 \begin{equation}
@@ -93,6 +92,7 @@ by counting the $\mathbf{k}$-states on the surface of constant transition energy
 	D_{\mathrm{j}}(\hbar \omega)= \frac{2}{V}\int_{S(\hbar \omega)}\frac{\mathrm{d}^{2}S}{\left(
 	\frac{2\pi}{L}\right)^{3}\lvert \nabla_{\mathbf{k}}E_{\mathrm{cv}}(\mathbf{k}) \rvert
 	}.
+	\label{eq:joint_dos_surface}
 \end{equation}
 By using the parabolic band approximation, this integral can be solved
 analytically:
@@ -115,31 +115,28 @@ set of allowed $\mathbf{k}$ vectors:
 
 Analogous to the electronic density of states, the photon mode density of states $N
 (E)$ can be constructed by counting the number of available states with energy $E$.
-The factor 2 counts the two transverse polarization states of the photon:
-\begin{equation}
-	N(E) = \frac{2}{V}\sum_{\mathbf{k}}\delta(E-E_{\mathbf{k}}).
-\end{equation}
-
-Converting the sum to an integral using the mode density in $\mathbf{k}$-space
-per polarization and unit volume, $V / (2\pi)^{3}$, and
-substituting the photon energy relation
-$E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ yields an
-analytical expression for $N(E)$. This assumes a dispersion-free medium, i.e. a constant
-refractive index $n_{\mathrm{r}}$:
+As the periodic boundary conditions lead to the same density of states in
+$\mathbf{k}$-space as for the electrons, \cref{eq:joint_dos_surface} can be used
+analogously, with a polarization factor of 2 (two transverse polarization states)
+instead of the spin factor of 2. Substituting the photon energy relation
+$E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ for a dispersion-free
+medium, i.e. a constant refractive index $n_{\mathrm{r}}$, the integral simplifies to:
 \begin{equation}
 	N(E)=\frac{n_{\mathrm{r}}^{3}E^{2}}{\pi^{2}\hbar^{3}c^{3}}.
 \end{equation}
 
-As photons are bosonic particles, they obey the Bose-Einstein Statistics. In thermal
-equilibrium with the lattice at temperature $T$, the average photon occupation
-number per mode with energy $E$ is therefore given by:
-\begin{equation}
-	n_{\mathrm{ph}}(E)=\frac{1}{\exp\left( \dfrac{E}{k_{\mathrm{B}}T} \right) - 1}.
-\end{equation}
-
-Consequently, the Spectral Photon Density at energy $E$ can be calculated as:
+The spectral photon density $S(E)$, i.e. the number of photons per unit volume and
+unit energy at energy $E$, is the product of the mode density $N(E)$ and the average
+photon occupation number per mode $n_{\mathrm{ph}}(E)$:
 \begin{equation}
 	S(E)=N(E) \cdot n_{\mathrm{ph}}(E).
+\end{equation}
+
+As photons are bosonic particles, they obey the Bose-Einstein Statistics. In thermal
+equilibrium with the lattice at temperature $T$, the occupation number $n_{\mathrm{ph}}$
+per mode with energy $E$ is therefore given by:
+\begin{equation}
+	n_{\mathrm{ph}}(E)=\frac{1}{\exp\left( \dfrac{E}{k_{\mathrm{B}}T} \right) - 1}.
 \end{equation}
 
 \subsection{Diode Current-Voltage Characteristics}

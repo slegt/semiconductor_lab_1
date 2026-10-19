@@ -163,12 +163,12 @@ and therefore the same occupation factor, which can be taken out of the sum:
 	D_{\mathrm{j}}(\hbar\omega)\;\Phi^{(i)}(k_{0})
 \end{equation}
 
-With the energy zero at the valence-band maximum, the occupation factors are evaluated
-at the band energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$, which follow
-from \cref{eq:parabolic_bands} and $E_{\mathrm{cv}}(k_{0})=\hbar\omega$:
+The occupation factors are evaluated at the band energies $E_{\mathrm{c}}(k_{0})$ and
+$E_{\mathrm{v}}(k_{0})$, which follow from \cref{eq:band_dispersion,eq:parabolic_bands}
+and $E_{\mathrm{cv}}(k_{0})=\hbar\omega$:
 \begin{equation}
-	E_{\mathrm{c}}(k_{0})=E_{\mathrm{g}}+\frac{m_{\mathrm{r}}}{m_{\mathrm{e}}^{*}}(\hbar
-	\omega-E_{\mathrm{g}}),\qquad E_{\mathrm{v}}(k_{0})=-\frac{m_{\mathrm{r}}}{m_{\mathrm{h}}^{*}}
+	E_{\mathrm{c}}(k_{0})=E_{\mathrm{C}}+\frac{m_{\mathrm{r}}}{m_{\mathrm{e}}^{*}}(\hbar
+	\omega-E_{\mathrm{g}}),\qquad E_{\mathrm{v}}(k_{0})=E_{\mathrm{V}}-\frac{m_{\mathrm{r}}}{m_{\mathrm{h}}^{*}}
 	(\hbar\omega-E_{\mathrm{g}})
 \end{equation}
 
@@ -181,29 +181,28 @@ general \cref{eq:universal_rate_equation}, their ratios can be calculated easily
 \paragraph{Stimulated Emission vs Absorption}
 
 Inverting the occupation probabilities of \cref{eq:occupation_probabilities} at the
-band energies $E_{\mathrm{c}}$ and $E_{\mathrm{v}}$ of the transition yields:
+band energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$ of the transition yields:
 \begin{equation}
-	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}}=\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}}{k_{\mathrm{B}}T}\right)
+	\frac{1-f_{\mathrm{n}}}{f_{\mathrm{n}}}=\exp\left(\frac{E_{\mathrm{c}}(k_{0})-F_{\mathrm{n}}}{k_{\mathrm{B}}T}\right),\quad \frac{1-f_{\mathrm{p}}}{f_{\mathrm{p}}}=\exp\left(\frac{F_{\mathrm{p}}-E_{\mathrm{v}}(k_{0})}{k_{\mathrm{B}}T}\right)
 	\label{eq:f_n_identity}
 \end{equation}
 
 The matrix elements cancel in the quotient of the absorption and stimulated-emission
 rates, so that it equals the ratio of the occupation factors
-$\Phi^{\mathrm{abs}}/\Phi^{\mathrm{stim}}$. Since the $\delta$-function fixes $E_{\mathrm{c}}
--E_{\mathrm{v}}=\hbar\omega$, it follows that:
+$\Phi^{\mathrm{abs}}/\Phi^{\mathrm{stim}}$. Since the $\delta$-function fixes $E_{\mathrm{c}}(k_{0})
+-E_{\mathrm{v}}(k_{0})=\hbar\omega$, it follows that:
 \begin{equation}
 	\frac{R^{\mathrm{abs}}}{R^{\mathrm{stim}}}=\frac{(1-f_{\mathrm{n}})(1-f_{\mathrm{p}})}{f_{\mathrm{n}}f_{\mathrm{p}}}
 	=\exp\left[\frac{\hbar\omega-(F_{\mathrm{n}}-F_{\mathrm{p}})}{k_{\mathrm{B}}T}\right
 	] \label{eq:abs_stim_rate}
 \end{equation}
 
-In thermal equilibrium, $F_{\mathrm{n}}=F_{\mathrm{p}}$ and $R^{\mathrm{abs}}> R^{\mathrm{stim}}$:
-absorption always dominates. However, wave amplification is present if
-$R^{\mathrm{stim}}> R^{\mathrm{abs}}$, i.e., if $F_{\mathrm{n}}-F_{\mathrm{p}}>\hbar
-\omega$. Laser operation therefore requires a quasi-Fermi level separation that
+In thermal equilibrium, $F_{\mathrm{n}}=F_{\mathrm{p}}$ and $R^{\mathrm{abs}}> R^{\mathrm{stim}}$,
+therefore absorption always dominates. However, wave amplification is present if
+$F_{\mathrm{n}}-F_{\mathrm{p}}>\hbar\omega$. Laser operation therefore requires a quasi-Fermi level separation that
 exceeds the photon energy, which can only be achieved by strong carrier injection.
 
-\subsubsection{Stimulated vs Spontaneous Emission}
+\paragraph{Stimulated vs Spontaneous Emission}
 
 The quotient of the stimulated and spontaneous emission rates equals the photon
 occupation number $n_{\mathrm{ph}}$ per mode. With the mode density $N$ and the spectral
@@ -218,7 +217,7 @@ Since the ratio $R^{\mathrm{stim}}/R^{\mathrm{spon}}$ grows linearly with $S$, a
 photon density, achieved by waveguiding and a Fabry-Perot Resonator, shifts the balance
 towards stimulated emission.
 
-\subsubsection{Thermal Equilibrium}
+\paragraph{Thermal Equilibrium}
 
 In thermal equilibrium, the quasi-Fermi levels coincide,
 $F_{\mathrm{n}}=F_{\mathrm{p}}$, and the photon occupation number follows the Bose-Einstein
@@ -243,11 +242,12 @@ _{\mathrm{n}}$, $f_{\mathrm{p}}$.
 	(\hbar \omega) f_{\mathrm{n}}f_{\mathrm{p}}
 \end{equation}
 
-The occupation factors are evaluated in the Boltzmann approximation:
-\begin{align}
-	f_{\mathrm{n}}(E) & =\frac{1}{1+\exp\left( \frac{E-F_{\mathrm{n}}}{k_{\mathrm{B}}T} \right)}\simeq \exp\left( \frac{F_{\mathrm{n}}-E}{k_{\mathrm{B}}T}\right) \\
-	f_{\mathrm{p}}(E) & =\frac{1}{1+\exp\left( \frac{F_{\mathrm{p}}-E}{k_{\mathrm{B}}T} \right)}\simeq \exp\left( \frac{E-F_{\mathrm{p}}}{k_{\mathrm{B}}T}\right)
-\end{align}
+The occupation probabilities of \cref{eq:occupation_probabilities} are evaluated in
+the Boltzmann approximation:
+\begin{equation}
+	f_{\mathrm{n}}(E)\simeq \exp\left( \frac{F_{\mathrm{n}}-E}{k_{\mathrm{B}}T}\right),\qquad
+	f_{\mathrm{p}}(E)\simeq \exp\left( \frac{E-F_{\mathrm{p}}}{k_{\mathrm{B}}T}\right)
+\end{equation}
 
 The factors $f_{\mathrm{n}}$ and $f_{\mathrm{p}}$ are evaluated at the band
 energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$ of the transition, the
@@ -300,18 +300,17 @@ The extra factor $E$ turns the factor $\hbar\omega$ of the rate into $(\hbar\ome
 \end{equation}
 
 Spectrometers usually resolve the emission in wavelength rather than in energy.
-With $E=hc/\lambda$ (vacuum wavelength $\lambda$), the integral transforms as:
+With $E(\lambda)=hc/\lambda$ (vacuum wavelength $\lambda$), the integral transforms as:
 \begin{align}
-	P(\lambda_{1}, \lambda_{2})           & =\int_{E_1}^{E_2}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_2}^{\lambda_1}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
+	P(\lambda_{1}, \lambda_{2})           & =\int_{E(\lambda_{1})}^{E(\lambda_{2})}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_2}^{\lambda_1}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
 	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right)
 \end{align}
 
 A detector measures the power within a small bandwidth $\Delta\lambda=\lambda
 _{1}-\lambda_{2}$. If $p_{\lambda}(\lambda)$ varies only slightly within this
-interval, the integral can be approximated by the midpoint rule, and the
-spectral power density at the center wavelength
-$\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$ is proportional to the measured
-power:
+interval, the integral can be approximated by the midpoint rule, and, for a constant
+bandwidth $\Delta\lambda$, the measured power is proportional to the spectral power
+density at the center wavelength $\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$:
 \begin{equation}
-	p_{\lambda}(\lambda_{\mathrm{c}})\approx\frac{P(\lambda_{1},\lambda_{2})}{\Delta\lambda}
+	P(\lambda_{1},\lambda_{2})\propto p_{\lambda}(\lambda_{\mathrm{c}})
 \end{equation}

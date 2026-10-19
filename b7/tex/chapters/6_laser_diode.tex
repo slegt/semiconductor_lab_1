@@ -5,8 +5,8 @@
 The earliest semiconductor lasers were homojunction lasers, which were
 demonstrated in 1962. These “proof of concept” lasers featured a threshold
 current density of $\SI{19000}{A/cm^{2}}$ at cryogenic temperature. A prominent vertical
-layer structure that was realized in 1969–1970 is the Double Heterostructure. In
-comparison to homojunctions, a double heterostructure (DHS) featured a significantly
+layer structure that was realized in 1969–1970 is the \ac{dhs}. In
+comparison to homojunctions, a \ac{dhs} featured a significantly
 lower threshold current density ($\SI{1600}{A/cm^{2}}$) and could be operated at room
 temperature.
 
@@ -18,10 +18,13 @@ to the thin well region reduced the threshold current density to about $\SI{500}
 Introducing strain into the quantum wells in the late 1980s lowered it further
 to $\SI{65}{A/cm^{2}}$ at room temperature.
 
+However, the working principle of a laser can be discussed using a \ac{dhs}. As it
+is educational to look at \acp{dhs}, they are discussed in the following sections.
+
 \subsection{Vertical Structure}
 \label{sec:vertical_structure}
 
-A thin layer of low-band-gap material is embedded between two layers of higher-band-gap
+In a \ac{dhs} laser, a thin layer of low-band-gap material is embedded between two layers of higher-band-gap
 material. See \cref{fig:double_heterostructure}. The band-gap step confines
 charge carriers and the refractive-index step confines light, both in the same thin
 layer. A popular material system is $\ce{GaAs}$ as gain medium with
@@ -48,26 +51,6 @@ In the transparent regime, $\epsilon'' \simeq 0$ and $n_{\mathrm{r}}\simeq \sqrt
 	\, \frac{\mathrm{d}\mathbf{k}}{(2\pi)^{3}}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\epsilon'$ & real part of the relative dielectric function & dimensionless \\
-% $e$ & elementary charge & $\mathrm{C}$ \\
-% $\epsilon_{0}$ & vacuum permittivity & $\mathrm{F\,m^{-1}}$ \\
-% $m_{0}$ & free electron mass & $\mathrm{kg}$ \\
-% $\omega_{\mathrm{cv}}$ & angular frequency of the interband transition at $\mathbf{k}$, $\hbar\omega_{\mathrm{cv}}=E_{\mathrm{c}}(\mathbf{k})-E_{\mathrm{v}}(\mathbf{k})$ & $\mathrm{rad\,s^{-1}}$ \\
-% $\mathbf{p}_{\mathrm{cv}}$ & momentum matrix element between conduction- and valence-band states & $\mathrm{kg\,m\,s^{-1}}$ \\
-% $\hbar$ & reduced Planck constant & $\mathrm{J\,s}$ \\
-% $\omega$ & angular frequency of the light & $\mathrm{rad\,s^{-1}}$ \\
-% $\mathbf{k}$ & wavevector of the electronic states & $\mathrm{m^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 If the band-gap energy decreases, $\omega_{\mathrm{cv}}$ decreases, so that all factors
 of the integrand increase. Hence, both $\epsilon'$ and $n_{\mathrm{r}}$ increase.
 A low-gap layer consequently has a higher refractive index than its surroundings,
@@ -86,10 +69,7 @@ fiber in which light is guided (see \cref{fig:refractive_index_profile}).
 	\label{fig:refractive_index_profile}
 \end{figure}
 
-% Gliederung: [[Optical Confinement Factor]]
-% ---- Optical Confinement Factor.md ----
-
-A key metric is the Optical Confinement Factor $\Gamma$. It is the fraction of the
+A key metric is the Optical Confinement Factor $\Gamma$. It is the fraction of
 light intensity, integrated over the cross section, that lies within a specified region.
 For a one-dimensional problem in which the specified region is centered at the
 origin and has the width $d$, $\Gamma$ can be expressed as:
@@ -98,29 +78,11 @@ origin and has the width $d$, $\Gamma$ can be expressed as:
 	E(x) \rvert^{2}\, \mathrm{d}x}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $E$ & electric field amplitude of the guided mode & $\mathrm{V\,m^{-1}}$ \\
-% $x$ & position perpendicular to the layers & $\mathrm{m}$ \\
-% $d$ & width of the specified region (e.g. active layer thickness) & $\mathrm{m}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 The confinement factor of the gain region is used as a figure of merit in laser
 diodes. A value of $\Gamma$ close to one is desirable.
 
 \subsection{Lateral Structure}
 \label{sec:lateral_structure}
-
-% Gliederung: [[Laser Diode]]: Abschnitte zur Schichtstruktur und lateralen Struktur (Gain Guiding, Index Guiding)
-% ---- Laser Diode.md ----
 
 The lateral structure confines current and light in the direction parallel to
 the layers; the two common approaches are gain guiding and index guiding (see
@@ -134,7 +96,7 @@ the current density profile also determines the lateral extension of the light
 wave. This mechanism is known as “gain guiding”.
 
 In a ridge waveguide structure, the p-type layer is etched away except for a
-small stripe, the so-called mesa. As a result, the effective thickness of the p-AlGaAs
+small stripe, the so-called mesa. As a result, the thickness of the p-AlGaAs
 cladding layer differs between the region below the mesa and its surroundings,
 which changes the effective refractive index. Since the effective refractive index
 is higher below the mesa, the wave is guided in this region. This mechanism is known
@@ -151,9 +113,6 @@ as “index guiding”.
 \subsection{Resonator and Threshold}
 \label{sec:resonator_and_threshold}
 
-% Gliederung: [[Fabry-Perot Resonator]]
-% ---- Fabry-Perot Resonator.md ----
-
 A crucial part of a laser is a resonator that feeds part of the light back into the
 amplifying medium. This resonator consists of two plane-parallel mirrors. In semiconductor
 lasers, the mirrors are realized as smooth cleaved facets at both ends of the
@@ -166,20 +125,7 @@ semiconductor–air interface; at normal incidence, the reflectivity is:
 	R=\left(\frac{\bar n-1}{\bar n+1}\right)^{2}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $R$ & intensity reflectivity of a cleaved facet & dimensionless \\
-% $\bar n$ & effective refractive index of the mode & dimensionless \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
-\subsubsection{Round-Trip Condition}
+\paragraph{Round-Trip Condition}
 
 The light intensity of the guided mode grows with the modal gain $\Gamma g$ and
 decays with the intrinsic loss $\alpha_{\mathrm{i}}$. As the electric field amplitude
@@ -189,106 +135,33 @@ scales with the square root of the intensity, it varies along the cavity as:
 	\beta z),\qquad \beta=\frac{2\pi\bar n}{\lambda}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $E(z), E_0$ & electric field amplitude of the mode along the cavity / at $z=0$ & $\mathrm{V\,m^{-1}}$ \\
-% $z$ & position along the cavity axis & $\mathrm{m}$ \\
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $g$ & material gain coefficient & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $\beta$ & propagation constant of the mode & $\mathrm{m^{-1}}$ \\
-% $\bar n$ & effective refractive index of the mode & dimensionless \\
-% $\lambda$ & vacuum wavelength & $\mathrm{m}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 The intrinsic loss $\alpha_{\mathrm{i}}$ originates from free-carrier absorption in
 the waveguide materials and from scattering at rough waveguide walls. At each
-facet only the fraction $r_{1}$ or $r_{2}$ of the field amplitude is reflected. After
-a round trip (length $2L$, two reflections) the field has to reproduce itself:
+facet only the fraction $r_{1/2}=\sqrt{R_{1/2}}$ of the field amplitude is reflected. After
+a round trip of length $2L$ the field has to reproduce itself:
 \begin{equation}
 	r_{1} r_{2}\,\exp\left[(\Gamma g-\alpha_{\mathrm{i}})L\right]\exp(2\mathrm{i}\beta
 	L)=1
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $r_1, r_2$ & amplitude reflection coefficients of the two facets, $R_{1,2}=\lvert r_{1,2}\rvert^2$ & dimensionless \\
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $g$ & material gain coefficient & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $L$ & length of the laser cavity & $\mathrm{m}$ \\
-% $\beta$ & propagation constant of the mode & $\mathrm{m^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 As this condition is complex-valued, it splits into one condition for the
 magnitude (threshold) and one for the phase (modes).
 
-\paragraph{Amplitude Condition: Threshold}
-
-Since the reflectivities $R_{1/2}$ refer to intensities, the amplitude reflection
-coefficients are their square roots, $r_{1}r_{2}=\sqrt{R_{1}R_{2}}$. The magnitude
-of the round-trip condition fixes the gain needed at threshold:
+The magnitude of the round-trip condition fixes the gain needed at threshold:
 \begin{equation}
 	\sqrt{R_{1}R_{2}}\,\exp\left[(\Gamma g_{\mathrm{th}}-\alpha_{\mathrm{i}})L\right
 	]\overset{!}{=}1 \quad\Rightarrow\quad \Gamma g_{\mathrm{th}}=\alpha_{\mathrm{i}}
 	+\underbrace{\frac{1}{2L}\ln\frac{1}{R_{1}R_{2}}}_{\alpha_{\mathrm{m}}}=\alpha_{\mathrm{i}}
 	+\alpha_{\mathrm{m}}
 \end{equation}
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $R_1, R_2$ & intensity reflectivities of the two facets & dimensionless \\
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $g_{\mathrm{th}}$ & gain coefficient at threshold & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% $L$ & length of the laser cavity & $\mathrm{m}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
 The mirror loss $\alpha_{\mathrm{m}}$ accounts for the light leaving through the
 facets, which forms the useful laser output. At threshold, the modal gain balances
 the intrinsic and mirror losses.
-
-\paragraph{Phase Condition: Longitudinal Modes}
 
 The phase of the round-trip condition has to be a multiple of $2\pi$:
 \begin{equation}
 	2\beta L\overset{!}{=}2\pi m\quad\Rightarrow\quad m\lambda=2L\bar n
 \end{equation}
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $m$ & longitudinal mode number & dimensionless (integer) \\
-% $\beta$ & propagation constant of the mode & $\mathrm{m^{-1}}$ \\
-% $L$ & length of the laser cavity & $\mathrm{m}$ \\
-% $\lambda$ & vacuum wavelength & $\mathrm{m}$ \\
-% $\bar n$ & effective refractive index of the mode & dimensionless \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
 The amplitude condition decides whether a mode lases, and the phase condition at which
 wavelength it lases. Using finite difference approximation as
 $\Delta m /\Delta\lambda \simeq \partial_{\lambda}m$, the mode separation for large
@@ -297,81 +170,25 @@ $m$ is given as:
 	\Delta\lambda=\frac{\lambda^{2}\Delta m}{2\bar{n}L[1-(\lambda /\bar{n})(\mathrm{d}\bar{n}/\mathrm{d}\lambda)]}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\Delta\lambda$ & wavelength spacing between modes & $\mathrm{m}$ \\
-% $\Delta m$ & difference in mode number & dimensionless (integer) \\
-% $\lambda$ & vacuum wavelength & $\mathrm{m}$ \\
-% $\bar n$ & effective refractive index of the mode & dimensionless \\
-% $\mathrm{d}\bar n/\mathrm{d}\lambda$ & dispersion of the effective refractive index & $\mathrm{m^{-1}}$ \\
-% $L$ & length of the laser cavity & $\mathrm{m}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 \subsection{P-I Characteristic}
 \label{sec:p_i_characteristic}
 
-% Gliederung: [[Laser Diode P-I Curve]]: verwendet $\Gamma$, $\alpha_{\mathrm m}$, $g_{\mathrm{th}}$ und $I_{\mathrm L}$ aus den vorherigen Abschnitten
-% ---- Laser Diode P-I Curve.md ----
-
 A rate equation can be used to
-describe the dynamics of the carrier density $n$ and the Photon Density $S$:
+describe the dynamics of the carrier density $n$ and the photon density $S$:
 \begin{equation}
 	\frac{\mathrm{d}n(t)}{\mathrm{d}t}= \eta_{\mathrm{i}}\frac{j(t)}{qd}- R(n) - v_{\mathrm{g}}
 	g(n) S(t)
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $n$ & carrier density & $\mathrm{m^{-3}}$ \\
-% $t$ & time & $\mathrm{s}$ \\
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $j$ & injection current density & $\mathrm{A\,m^{-2}}$ \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $d$ & thickness of the active region & $\mathrm{m}$ \\
-% $R(n)$ & recombination rate per volume & $\mathrm{m^{-3}\,s^{-1}}$ \\
-% $v_{\mathrm g}$ & group velocity of the light & $\mathrm{m\,s^{-1}}$ \\
-% $g(n)$ & material gain coefficient & $\mathrm{m^{-1}}$ \\
-% $S$ & photon density & $\mathrm{m^{-3}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 The first term on the right hand side describes the carrier injection into the active region with
 thickness $d$ and collection efficiency $\eta_{\mathrm{i}}$. $R(n)$ represents (radiative
 and nonradiative) recombination processes. The last term expresses the carrier
-loss due to stimulated emission.
-
-Using the ABC model, the recombination rate is given as:
+loss due to stimulated emission. Using the ABC model, the recombination rate is
+given as:
 \begin{align}
 	R(n)    & =An +Bn^{2}+Cn^{3}=\frac{n}{\tau(n)} \\
 	\tau(n) & =(A+Bn+Cn^{2})^{-1}
 \end{align}
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $R(n)$ & recombination rate per volume & $\mathrm{m^{-3}\,s^{-1}}$ \\
-% $\tau(n)$ & carrier lifetime & $\mathrm{s}$ \\
-% $n$ & carrier density & $\mathrm{m^{-3}}$ \\
-% $A, B, C$ & coefficients for defect, radiative and Auger recombination & $\mathrm{s^{-1}}$, $\mathrm{m^{3}\,s^{-1}}$, $\mathrm{m^{6}\,s^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
 where $An$ represents nonradiative recombination of carriers with defects, $Bn^{2}$
 the spontaneous emission and $Cn^{3}$ the nonradiative Auger recombination.
 
@@ -384,23 +201,6 @@ that:
 	\eta_{\mathrm{i}}\frac{j}{qd}=\frac{n}{\tau}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $j$ & injection current density & $\mathrm{A\,m^{-2}}$ \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $d$ & thickness of the active region & $\mathrm{m}$ \\
-% $n$ & carrier density & $\mathrm{m^{-3}}$ \\
-% $\tau$ & carrier lifetime & $\mathrm{s}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 The carrier density $n$ can be obtained by assuming either a constant $\tau$ or
 constant $A, B, C$ parameters. Typically, a linear relation for the peak gain
 coefficient versus carrier density is assumed using the differential gain $g'$
@@ -409,21 +209,6 @@ and the transparency concentration $n_{\mathrm{tr}}$:
 	g(n)=g' (n-n_{\mathrm{tr}})
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $g(n)$ & peak material gain coefficient & $\mathrm{m^{-1}}$ \\
-% $g'$ & differential gain & $\mathrm{m^{2}}$ \\
-% $n$ & carrier density & $\mathrm{m^{-3}}$ \\
-% $n_{\mathrm{tr}}$ & transparency carrier density & $\mathrm{m^{-3}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 \paragraph{Threshold Condition}
 
 The round-trip condition that is enforced in a Fabry-Perot Resonator (see \cref{sec:resonator_and_threshold}) results in
@@ -431,21 +216,6 @@ a threshold condition of the material gain:
 \begin{equation}
 	\Gamma g_{\mathrm{th}}=\alpha_{\mathrm{i}}+\alpha_{\mathrm{m}}
 \end{equation}
-
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $g_{\mathrm{th}}$ & gain coefficient at threshold & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
 
 The modal gain $\Gamma
 g_{\mathrm{th}}$ must equal the sum of the intrinsic loss $\alpha_{\mathrm{i}}$ and
@@ -458,29 +228,6 @@ to $n_{\mathrm{th}}$, which is reached for $j=j_{\mathrm{th}}$.
 	j_{\mathrm{th}} & =\frac{qd}{\eta_{\mathrm{i}}}(An_{\mathrm{th}}+Bn_{\mathrm{th}}^{2}+Cn_{\mathrm{th}}^{3}) \label{eq:j_th}
 \end{align}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $g_{\mathrm{th}}$ & gain coefficient at threshold & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% $\Gamma$ & optical confinement factor & dimensionless \\
-% $n_{\mathrm{th}}$ & carrier density at threshold & $\mathrm{m^{-3}}$ \\
-% $n_{\mathrm{tr}}$ & transparency carrier density & $\mathrm{m^{-3}}$ \\
-% $g'$ & differential gain & $\mathrm{m^{2}}$ \\
-% $j_{\mathrm{th}}$ & threshold current density & $\mathrm{A\,m^{-2}}$ \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $d$ & thickness of the active region & $\mathrm{m}$ \\
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $A, B, C$ & coefficients for defect, radiative and Auger recombination & $\mathrm{s^{-1}}$, $\mathrm{m^{3}\,s^{-1}}$, $\mathrm{m^{6}\,s^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 \paragraph{Light Power Output}
 
 The laser diode output consists of spontaneous emission below the threshold
@@ -491,26 +238,6 @@ $S$ directly:
 	) +v_{\mathrm{g}}g_{\mathrm{th}}S \quad \text{ for }j>j_{\mathrm{th}}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $j$ & injection current density & $\mathrm{A\,m^{-2}}$ \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $d$ & thickness of the active region & $\mathrm{m}$ \\
-% $A, B, C$ & coefficients for defect, radiative and Auger recombination & $\mathrm{s^{-1}}$, $\mathrm{m^{3}\,s^{-1}}$, $\mathrm{m^{6}\,s^{-1}}$ \\
-% $n_{\mathrm{th}}$ & carrier density at threshold & $\mathrm{m^{-3}}$ \\
-% $v_{\mathrm g}$ & group velocity of the light & $\mathrm{m\,s^{-1}}$ \\
-% $g_{\mathrm{th}}$ & gain coefficient at threshold & $\mathrm{m^{-1}}$ \\
-% $S$ & photon density & $\mathrm{m^{-3}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 Subtracting \cref{eq:j_th} results in a simple linear
 relationship between photon density and injection current density above
 threshold:
@@ -519,81 +246,22 @@ threshold:
 	\label{eq:photon_density}
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $S$ & photon density & $\mathrm{m^{-3}}$ \\
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $j, j_{\mathrm{th}}$ & injection / threshold current density & $\mathrm{A\,m^{-2}}$ \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $d$ & thickness of the active region & $\mathrm{m}$ \\
-% $v_{\mathrm g}$ & group velocity of the light & $\mathrm{m\,s^{-1}}$ \\
-% $g_{\mathrm{th}}$ & gain coefficient at threshold & $\mathrm{m^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
-The output power $P_{\mathrm{out}}$ is the (energy of a photon) times the (number of
-photons in the optical mode) times the (rate at which photons escape through the mirrors):
+The output power $P_{\mathrm{out}}$ is the energy of a photon $\hbar\omega$ times the
+number of photons in the optical mode $S\,(wLd_{\mathrm{op}})$ times the photon mirror
+escape rate $v_{\mathrm{g}}\alpha_{\mathrm{m}}$:
 \begin{equation}
 	P_{\mathrm{out}}=\hbar\omega\, S\,(wLd_{\mathrm{op}})\,(v_{\mathrm{g}}\alpha_{\mathrm{m}}
 	)
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $P_{\mathrm{out}}$ & optical output power through both mirrors & $\mathrm{W}$ \\
-% $\hbar\omega$ & photon energy & $\mathrm{J}$ (often eV) \\
-% $S$ & photon density & $\mathrm{m^{-3}}$ \\
-% $w$ & width of the optical mode & $\mathrm{m}$ \\
-% $L$ & length of the laser cavity & $\mathrm{m}$ \\
-% $d_{\mathrm{op}}$ & effective thickness of the optical mode & $\mathrm{m}$ \\
-% $v_{\mathrm g}$ & group velocity of the light & $\mathrm{m\,s^{-1}}$ \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
-In this equation, $wLd_{\mathrm{op}}$ is the effective volume of the optical mode,
-so $S\,(wLd_{\mathrm{op}})$ is the number of photons in the mode, and $v_{\mathrm{g}}
-\alpha_{\mathrm{m}}$ is the escape rate per photon. Substituting $S$ from \cref{eq:photon_density}, using $I=jw
+Substituting $S$ from \cref{eq:photon_density}, using $I=jw
 L$, $I_{\mathrm{th}}=j_{\mathrm{th}}wL$, $g_{\mathrm{th}}=(\alpha_{\mathrm{i}}+\alpha
-_{\mathrm{m}})/\Gamma$ and the confinement factor $\Gamma=d/d_{\mathrm{op}}$ (ratio
-of active-region thickness to optical-mode thickness), yields the well-known
-$P_{\mathrm{out}}(I)$ curve:
+_{\mathrm{m}})/\Gamma$ and the confinement factor $\Gamma=d/d_{\mathrm{op}}$, yields
+the well-known $P_{\mathrm{out}}(I)$ curve:
 \begin{equation}
 	P_{\mathrm{out}}=\underbrace{ \eta_{\mathrm{i}} \frac{\alpha_{\mathrm{m}}}{\alpha_{\mathrm{i}}+\alpha_{\mathrm{m}}}
 	}_{ \eta_{\mathrm{d}} }\frac{\hbar \omega}{q}(I-I_{\mathrm{th}})
 \end{equation}
-
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $P_{\mathrm{out}}$ & optical output power & $\mathrm{W}$ \\
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $\eta_{\mathrm d}$ & external differential quantum efficiency & dimensionless \\
-% $\hbar\omega$ & photon energy & $\mathrm{J}$ (often eV) \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $I$ & injection current & $\mathrm{A}$ \\
-% $I_{\mathrm{th}}$ & threshold current & $\mathrm{A}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
 
 The slope of the normalized curve $P_{\mathrm{out}}/(\hbar \omega)$ versus $I /q$
 is the external differential quantum efficiency $\eta_{\mathrm{d}}$. In contrast,
@@ -612,26 +280,6 @@ leakage current, $P_{\mathrm{out}}$ can be described as
 	(I-I_{\mathrm{th}}-\Delta I_{\mathrm{L}})
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{p{0.32\textwidth}p{0.32\textwidth}p{0.32\textwidth}}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $P_{\mathrm{out}}$ & optical output power & $\mathrm{W}$ \\
-% $\eta_{\mathrm i}$ & collection efficiency & dimensionless \\
-% $\hbar\omega$ & photon energy & $\mathrm{J}$ (often eV) \\
-% $q$ & elementary charge & $\mathrm{C}$ \\
-% $\alpha_{\mathrm m}$ & mirror loss & $\mathrm{m^{-1}}$ \\
-% $\alpha_{\mathrm i}$ & intrinsic loss & $\mathrm{m^{-1}}$ \\
-% $I$ & injection current & $\mathrm{A}$ \\
-% $I_{\mathrm{th}}$ & threshold current (including the threshold leakage current) & $\mathrm{A}$ \\
-% $\Delta I_{\mathrm L}$ & additional leakage current caused by the increase of $I$ above $I_{\mathrm{th}}$ & $\mathrm{A}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 Up to the threshold current, only a slight increase in optical power is measured.
 In this regime, the diode effectively operates as an LED. For currents above the
 threshold current, the (steep) linear relationship is established, as discussed
@@ -645,6 +293,22 @@ above. For high currents, the output power saturates. Possible causes are:
 	\item A current dependence of the intrinsic loss $\alpha_{\mathrm{i}}$
 \end{itemize}
 
+The emission spectrum changes characteristically with the operating current, see
+\cref{fig:laser_spectra}. At low operating currents, the spectrum is that of
+spontaneous emission. With increasing current, the effects of stimulated emission
+become visible: the lines become narrower, side modes are suppressed at higher
+currents, and at high currents the laser reaches single-mode operation.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{../assets/laser_spectra.png}
+	\caption{Output power per mirror of a Fabry-Perot laser diode as a function of the
+	current for a cavity length $L\approx\qty{200}{\micro\metre}$ and a stripe width
+	$b=\qty{2.3}{\micro\metre}$. The inset shows the mode spectra for output powers between
+	\qty{0.5}{\milli\watt} and \qty{3.1}{\milli\watt}. \imcite{ebeling_integrated_1993}}
+	\label{fig:laser_spectra}
+\end{figure}
+
 The threshold current density is often expressed as a function of temperature,
 using an empirical formula with the characteristic temperature $T_{0}$ over a
 temperature range near $T_{1}$:
@@ -653,42 +317,7 @@ temperature range near $T_{1}$:
 	)
 \end{equation}
 
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{lll}
-% \toprule
-% Symbol & Meaning & Unit \\
-% \midrule
-% $j_{\mathrm{th}}$ & threshold current density & $\mathrm{A\,m^{-2}}$ \\
-% $T$ & temperature & $\mathrm{K}$ \\
-% $T_{1}$ & reference temperature & $\mathrm{K}$ \\
-% $T_{0}$ & characteristic temperature & $\mathrm{K}$ \\
-% \bottomrule
-% \end{tabular}
-% \caption{TODO}
-% \end{table}
-
 A large characteristic temperature is desirable as the threshold current should not
 change significantly with temperature. Knowing the geometry of the active region,
 the threshold current density can be calculated from the threshold current as $j_{\mathrm{th}}
 =I_{\mathrm{th}}/(wL)$.
-
-\begin{figure}[H]
-	\centering
-	\fbox{\parbox[c][4cm][c]{0.6\textwidth}{\centering
-	Platzhalter:\\ \detokenize{Pasted image 20260707221008.png}}}
-	\caption{TODO}
-\end{figure}
-
-\begin{itemize}
-	\item At low operating currents, the spectrum is that of spontaneous emission
-
-	\item With increasing current, the effects of stimulated emission become
-		visible
-
-	\item The lines become narrower
-
-	\item Side modes are suppressed at higher currents
-
-	\item At high currents, the laser reaches single-mode operation
-\end{itemize}
