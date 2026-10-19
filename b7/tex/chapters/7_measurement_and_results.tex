@@ -1,24 +1,22 @@
 % !TEX root = ../main.tex
+\input{chapters/measurement_setup.tex}
+
 \section{Measurement and Results}
 \label{sec:measurement_and_results}
 
-This report examines different properties of a laser diode. Current-voltage
-characteristics were evaluated using the setup shown in \cref{fig:setup_iu}. Optical
-power-current characteristics were evaluated in \cref{sec:iu_pi} with the measurement
-setup depicted in \cref{fig:setup_pi}. The temperature dependence of the
-threshold current is examined in \cref{sec:t0}.
+This report examines different properties of a laser diode. Current-voltage characteristics
+were evaluated using the setup displayed in \cref{fig:setup_iu}. Optical power-current
+characteristics were evaluated in \cref{sec:iu_pi} with the measurement setup
+depicted in \cref{fig:setup_pi}. The temperature dependence of the threshold current
+is examined in \cref{sec:t0}.
 
-The spectrum of the laser diode is analyzed for different driving currents. Based
-on its magnitude, the diode behaves either as an LED, see \cref{sec:spontaneous_emission_spectra}
-or as a laser diode, see \cref{sec:mode_spectrum}. Finally, the power density in
-the active region is estimated in \cref{sec:power_density}.
-
-\input{chapters/measurement_setup.tex}
+The spectrum of the laser diode is analyzed for different driving currents.
+Based on its magnitude, the diode behaves either as an LED, see
+\cref{sec:spontaneous_emission_spectra} or as a laser diode, see \cref{sec:mode_spectrum}.
+Finally, the power density in the active region is estimated in \cref{sec:power_density}.
 
 \subsection{I-U and P-I Characteristics}
 \label{sec:iu_pi}
-% Task 1: I-U and P-I characteristics in forward direction up to 100 mA, contact quality,
-% threshold current, differential and total efficiency (task1.ipynb)
 
 \begin{figure}
 	\centering
@@ -28,34 +26,7 @@ the active region is estimated in \cref{sec:power_density}.
 	\label{fig:task1_V_I}
 \end{figure}
 
-\begin{itemize}
-	\item Current-voltage characteristic curve was measured at temperature of \qty{21}{\celsius}
-
-	\item for low voltage, exponential shape of ideal diode is dominant
-
-	\item for higher voltages, linear shape of series resistance becomes dominant
-
-	\item two methods to determine the series resistance to evaluate contact quality:
-		\begin{itemize}
-			\item Using ideal diode law with series resistance
-				\begin{itemize}
-					\item fit in right plot
-
-					\item $10.2 \pm 0.3$
-
-					\item ideality factor of 2.02(3)
-				\end{itemize}
-
-			\item using ohms law for high voltage
-				\begin{itemize}
-					\item fit in the left plot
-
-					\item $9.5 \pm 0.1$
-				\end{itemize}
-		\end{itemize}
-\end{itemize}
-
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/task1_I_P.pdf}
 	\caption{Power-current characteristics of the laser diode, in linear (left) and
@@ -63,45 +34,40 @@ the active region is estimated in \cref{sec:power_density}.
 	\label{fig:task1_I_P}
 \end{figure}
 
-\begin{itemize}
-	\item power-current characteristics, measured at \qty{21}{\celsius}
-
-	\item for low currents (up to $I_{\mathrm{th}}$), optical power is nearly zero
-		\begin{itemize}
-			\item pn diode acts as an LED
-
-			\item no coherent light, large emission angle
-
-			\item detector only measures small fraction of the total output power
-		\end{itemize}
-
-	\item for currents larger than $I_{\mathrm{th}}$, optical power rises sharpy
-		\begin{itemize}
-			\item critical current density is reached, every additional current is
-				used for stimulated emission, linear relationship
-
-			\item therefore, lasing starts, coherent light reaches the detector,
-				resulting in linear relationship
-
-			\item narrow emission angle
-
-			\item the slope reads a differential efficiency of $(9.44 \pm 0.02)\,\%$
-		\end{itemize}
-\end{itemize}
-
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/task1_I_eta.pdf}
-	\caption{TODO}
+	\caption{Wall-plug efficiency of the laser diode in logarithmis scaling.}
 	\label{fig:task1_I_eta}
 \end{figure}
 
+The laser diodes current-voltage characteristic curve was measured at a temperature
+of \qty{21}{\degreeCelsius} and is depicted in \cref{fig:task1_I_P}. For low
+voltages, the exponential shape of the ideal diode is dominant. For higher
+voltages, the linear shape of the series resistance is becoming increasingly significant.
+
+To evaluate the contact quality, \cref{eq:schockley_real} is used as a fit
+function for currents below \qty{14}{\milli \ampere}. The fit yields $R_{\mathrm{s}}
+=\qty{10.2(3)}{\ohm}$ and an ideality factor of $n_{\mathrm{id}}=\qty{2.02(3)}{unit}$.
+For currents above \qty{14}{\milli \ampere}, a linear fit function was applied,
+resulting in $R_{\mathrm{s}}=\qty{9.5(1)}{\milli \ampere}$.
+
+The optical power-current characteristics were measured at a temperature of \qty{21}{\degreeCelsius}
+and is displayed in \cref{fig:task1_V_I}. For low currents up to $I_{\mathrm{th}}$,
+the optical power is nearly zero. As the laser diode is effectively acting as an LED,
+the incoherent light is emitted over a large solid angle. Consequently, the
+detector only measures a small fraction of the total output power. For currents larger
+than $I_{\mathrm{th}}=\qty{12.81(1)}{\milli\ampere}$, the optical powerer rises
+sharply. As the threshold current is reached, every additional current is used
+for stimulated emission and a linear response establishes, as predicted as in \cref{eq:p_i_function}.
+Lasing starts and coherent light is emitted in a narrow solid angle. The fit yields
+a a differential efficiency of $\eta_{\mathrm{d}}=\qty{9.44(2)}{\percent}$. The
+wall-plug efficiency is displayed in \cref{fig:task1_I_eta}.
+
 \subsection{Temperature Dependence of the Threshold Current}
 \label{sec:t0}
-% Task 2: pulsed P-I characteristics at 5 temperatures between 15 and 50 degC, T_0
-% (task2.ipynb)
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/task2.pdf}
 	\caption{Power-current characteristics of the laser diode for different
@@ -109,155 +75,77 @@ the active region is estimated in \cref{sec:power_density}.
 	\label{fig:task2}
 \end{figure}
 
-\begin{itemize}
-	\item Power-current characteristic curves were recorded for different temperatures,
-		ranging from \qtyrange{14}{50}{\celsius}
-
-	\item temperature shifts the threshold current
-
-	\item this shift can be fitted empirically by eq (...)
-
-	\item this results in a characteristic temperature of $(117 \pm 7)\,\unit{\kelvin}$
-\end{itemize}
+The power-current characteristic curves of the laser diode were recorded for
+different temperatures, ranging from \qtyrange{14}{50}{\celsius}, see \cref{fig:task2}.
+For each curve, the threshold current was determined using a linear fit, similar
+to \cref{sec:iu_pi}. The threshold current as a function of temperature can be fitted
+using \cref{eq:current_temperature} and yields a characteristic temperature of $T
+_{0}=\qty{117(7)}{\kelvin}$.
 
 \subsection{Spontaneous Emission Spectra}
 \label{sec:spontaneous_emission_spectra}
-% Task 3: spectrum at very low current (LED), effective carrier temperature from the
-% high-energy flank with the line shape model
-% Task 4: spectrum at a higher current below threshold, compare with task 3
-% (task3.ipynb)
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/task3.pdf}
-	\caption{TODO}
-	% left: spectra at 0.1 mA (top) and 9.9 mA (bottom) with line shape fits,
-	% right: linearised spectra, slope gives T_c
+	\caption{Emission spectrum of the laser diode at \qty{0.1}{\milli \ampere}}
+	and \qty{9.9}{\milli \ampere} in linear (left) and logarithmic (right) scale.
 	\label{fig:task3}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\caption{TODO}
-	\label{tab:task3}
-	\begin{tabular}{lcccc}
-		\toprule        & $I_{\mathrm{D}}$         & FWHM                   & $E_{\mathrm{g}}$                     & $T_{\mathrm{c}}$         \\
-		\midrule Task 3 & \qty{0.1}{\milli\ampere} & \qty{20}{\nano\meter}  & \qty{1.574 \pm 0.004}{\electronvolt} & \qty{268 \pm 4}{\kelvin} \\
-		Task 4          & \qty{9.9}{\milli\ampere} & \qty{4.8}{\nano\meter} & \qty{1.580 \pm 0.004}{\electronvolt} & \qty{222 \pm 2}{\kelvin} \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+The spectral response of the laser diode was measured at a low current of \qty{0.1}{\milli \ampere}
+and an intermediate current of \qty{9.9}{\milli \ampere}. The curves are
+displayed in \cref{fig:task3}. As both currents are below threshold, a
+spontaneous emission response is expected. For that, the function $p_{\lambda}$, see
+\cref{eq:spontaneous_emission_line_shape} is fit logarithmically to the line shape
+on the high energy flank. As $E_{\mathrm{g}}$ is tied to the measured peak via
+$E_{\mathrm{peak}}= E_{\mathrm{g}}+ k_{\mathrm{B}}T_{\mathrm{c}}/2$, only $T_{\mathrm{c}}$
+and the amplitude are free parameters.
 
-\textbf{Method}
-\begin{itemize}
-	\item Fit of $\ln p_{\lambda}$ to the line shape model on the high-energy flank
-		only (\qtyrange{732}{775}{\nano\meter} and \qtyrange{726}{768}{\nano\meter}).
+The spectrum at $I_{\mathrm{th}}=\qty{0.1}{\milli \ampere}$ features a broad line
+with a FWHM of \qty{20}{\nano \meter}, indicating a pure LED operation. The fit yields
+a critical temperature of $T_{\mathrm{c}}= \qty{268(4)}{\kelvin}$, about \qty{27}{\kelvin}
+below room temperature. The band gap of $E_{\mathrm{g}}= \qty{1.574}{\electronvolt}$
+could indicate an active \ce{AlGaAs} active layer, which features a bandgap beteen
+\qty{1.42}{\electronvolt} and \qty{2.16}{\electronvolt}, depending on the
+composition of \ce{GaAs} and \ce{AlGaAs}.
 
-	\item $E_{\mathrm{g}}$ tied to the measured peak via $E_{\mathrm{peak}}= E_{\mathrm{g}}
-		+ k_{\mathrm{B}}T_{\mathrm{c}}/2$, separately for each spectrum (peaks at \qty{782}{\nano\meter}
-		and \qty{780}{\nano\meter}); only $T_{\mathrm{c}}$ and amplitude are free.
-
-	\item Uncertainty of $E_{\mathrm{g}}$: one \qty{2}{\nano\meter} scan step at
-		the peak. Uncertainties of $T_{\mathrm{c}}$: fit only.
-
-	\item At \qty{9.9}{\milli\ampere} the peak is the amplified part of the line,
-		so $E_{\mathrm{g}}$ from the peak is less reliable than for the LED.
-\end{itemize}
-
-\textbf{Task 3 (\qty{0.1}{\milli\ampere})}
-\begin{itemize}
-	\item Broad line (FWHM \qty{20}{\nano\meter}): spontaneous emission only, LED operation.
-
-	\item Model describes the flank over the whole fit window.
-
-	\item $T_{\mathrm{c}}= \qty{268}{\kelvin}$, about \qty{27}{\kelvin} below room
-		temperature (\qty{295}{\kelvin}). Expected:
-		$T_{\mathrm{c}}\geq T_{\mathrm{lattice}}$.
-
-	\item $E_{\mathrm{g}}= \qty{1.574}{\electronvolt}$ (\qty{788}{\nano\meter}),
-		plausible for an AlGaAs active layer emitting at \qty{780}{\nano\meter}.
-\end{itemize}
-
-\textbf{Task 4 (\qty{9.9}{\milli\ampere})}
-\begin{itemize}
-	\item Line narrows to \qty{4.8}{\nano\meter} (only two scan points above half
-		maximum): amplified spontaneous emission below threshold.
-
-	\item $T_{\mathrm{c}}= \qty{222}{\kelvin}$, lower than at \qty{0.1}{\milli\ampere}.
-		Not physical as a carrier temperature.
-
-	\item Gain decreases with photon energy above the band edge and turns into absorption
-		above $\Delta F$, which steepens the high-energy flank and lowers the
-		apparent $T_{\mathrm{c}}$.
-
-	\item The fit measures gain times spontaneous spectrum, not the carrier
-		distribution alone.
-\end{itemize}
-
-\textbf{Comparison and systematics}
-\begin{itemize}
-	\item Expected: $T_{\mathrm{c}}$ increases with current (carrier heating). Observed:
-		decrease, so the \qty{9.9}{\milli\ampere} spectrum is dominated by gain.
-
-	\item Both values below room temperature: spectral response of grating and
-		detector not calibrated, tilts the flank in the same direction for both currents.
-
-	\item $E_{\mathrm{peak}}= E_{\mathrm{g}}+ k_{\mathrm{B}}T_{\mathrm{c}}/2$ is exact
-		only for $\sqrt{x}\,e^{-x/k_\mathrm{B}T}$; the $1/\lambda^{4}$ factor shifts
-		the peak slightly, below the \qty{2}{\nano\meter} step.
-
-	\item Result depends on how $E_{\mathrm{g}}$ is determined: with
-		$E_{\mathrm{g}}$ free (LED window up to \qty{782}{\nano\meter}), $T_{\mathrm{c}}
-		= \qty{277}{\kelvin}$ and \qty{228}{\kelvin}.
-\end{itemize}
+The spectrum at \qty{9.9}{\milli\ampere} features a narrower line with a FWHM of
+\qty{4.8}{\nano\meter} and a critical temperature of
+$T_{\mathrm{c}}= \qty{222(2)}{\kelvin}$. This is not a physical carrier temperatures,
+as gain effects influence the emission behaviour.
 
 \subsection{Mode Spectrum and Effective Refractive Index}
 \label{sec:mode_spectrum}
-% Task 5: mode spectrum above threshold, effective refractive index from mode spacing and
-% resonator length, dispersion neglected (task5.ipynb)
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics{../plots/task5.pdf}
-	\caption{TODO}
+	\caption{Emission spectrum of the laser diode at \qty{19}{\milli \ampere} in
+	linear scale}
 	\label{fig:task5}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\caption{TODO}
-	\label{tab:task5}
-	\begin{tabular}{lcccc}
-		\toprule                         & $\Delta\lambda$                    & $n$ peaks & $L$ (placeholder)       & $\bar{n}$       \\
-		\midrule \qty{19}{\milli\ampere} & \qty{0.250 \pm 0.005}{\nano\meter} & 11        & \qty{300}{\micro\meter} & $4.02 \pm 0.08$ \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-\begin{itemize}
-	\item The spectrum features a series of equidistant peaks
-
-	\item notes are spaced equally with $(0.250 \pm 0.005)\,\unit{\nano\meter}$
-
-	\item mode at \qty{777.95}{\nano\meter} saturates lock-in, peak could not be
-		located exactly
-
-	\item With a cavity length of \qty{300}{\micro\meter}, this results in an
-		effective refractive index of $4.0 \pm 0.1$
-\end{itemize}
+The spectral response of the laser diode was measured for
+$I=\qty{19}{\milli \ampere}>I_{\mathrm{th}}$. and is displayed in \cref{fig:task5}.
+The spectrum features a series of equidistant peaks, that are separated equally with
+$\Delta \lambda=\qty{0.250(5)}{\nano \meter}$. Using \cref{eq:laser_spacing}, $\Delta
+m = 1$, $\mathrm{d}\bar{n}/\mathrm{d}\lambda \simeq 0$ and the cavity length of
+$L=\qty{300}{\micro \meter}$, the effective refractive index is $\bar{n}=\num{4.02(8)}
+{unit}$.
 
 \subsection{Power Density in the Active Volume}
 \label{sec:power_density}
-% Task 6: power density in the active volume in laser operation from the geometry of the
-% laser (task6.ipynb)
 
-\begin{itemize}
-	\item At \qty{19}{\milli\ampere}, the registered optical power is \qty{0.9}{\milli\watt}
-
-	\item By estimating the active volume as $L = \qty{300000}{\nano\meter}$,
-		$W = \qty{5000}{\nano\meter}$, $D = \qty{20}{\nano\meter}$ $\rightarrow$ $V =
-		\qty{3e-17}{\meter\cubed}$
-
-	\item the power density can be calculated as $P_{\mathrm{opt}}/ V = \qty{3.0e13}
-		{\watt\per\meter\cubed}$ (\qty{3.0e7}{\watt\per\centi\meter\cubed})
-\end{itemize}
+At \qty{19}{\milli\ampere}, the registered optical power is \qty{0.9}{\milli\watt}.
+By estimating the active volume as
+\begin{equation}
+	L = \qty{300000}{\nano\meter}, \quad W = \qty{5000}{\nano\meter}, \quad D = \qty
+	{20}{\nano\meter}, \qquad V=\qty{3e-17}{\meter\cubed},
+\end{equation}
+the power density can be calculated as
+$P_{\mathrm{opt}}/ V = \qty{3e13}{\watt\per\meter\cubed}$.
+For comparison, the power consumption of a Ryzen 5800X3D processor has a Default-TDP of 
+\qty{105}{\watt} and a compute die size of \qty{74}{\milli\meter\square}. By estimating 
+a chip thickness of \qty{775}{\micro\meter}, this resembles a power density of approximately
+\qty{2e9}{\watt \per \meter \cubed}. 
