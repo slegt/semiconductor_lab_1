@@ -43,8 +43,12 @@ layer, where they recombine. However, carriers with an energy higher than the
 barrier height can pass over the barrier, escape from the well and no longer recombine
 in the active layer. This effect results in a leakage current $I_{\mathrm{L}}$.
 
-In the transparent regime, $\epsilon'' \simeq 0$ and $n_{\mathrm{r}}\simeq \sqrt{
-\epsilon'}$. Using the oscillator model:
+In the transparent regime, the imaginary part $\epsilon''$ of the relative dielectric
+function is negligible, $\epsilon'' \simeq 0$, and the refractive index follows from
+its real part $\epsilon'$ as $n_{\mathrm{r}}\simeq \sqrt{\epsilon'}$. Using the
+oscillator model, with the angular frequency $\omega_{\mathrm{cv}}(\mathbf{k})=
+[E_{\mathrm{c}}(\mathbf{k})-E_{\mathrm{v}}(\mathbf{k})]/\hbar$ of the interband
+transition:
 \begin{equation}
 	\epsilon'=1 + \int \frac{e^{2}}{\epsilon_{0}m_{0}\omega_{\mathrm{cv}}^{2}}\frac{2
 	\lvert \mathbf{p}_{\mathrm{cv}}\rvert^{2}}{m_{0}\hbar \omega_{\mathrm{cv}}}\frac{1}{1-\omega^{2}/\omega_{\mathrm{cv}}^{2}}
@@ -71,8 +75,9 @@ fiber in which light is guided (see \cref{fig:refractive_index_profile}).
 
 A key metric is the Optical Confinement Factor $\Gamma$. It is the fraction of
 light intensity, integrated over the cross section, that lies within a specified region.
-For a one-dimensional problem in which the specified region is centered at the
-origin and has the width $d$, $\Gamma$ can be expressed as:
+For a one-dimensional problem with the electric field amplitude $E(x)$ of the guided
+mode, in which the specified region
+is centered at the origin and has the width $d$, $\Gamma$ can be expressed as:
 \begin{equation}
 	\Gamma=\frac{\int_{-d /2}^{d /2}\lvert E(x) \rvert^{2}\, \mathrm{d}x}{\int_{-\infty}^{\infty}\lvert
 	E(x) \rvert^{2}\, \mathrm{d}x}.
@@ -120,7 +125,8 @@ active stripe. A laser oscillates when a light wave returns after one round trip
 identical amplitude and phase. The gain must then exactly compensate all losses.
 
 The cleaved facets act as mirrors through Fresnel reflection at the
-semiconductor–air interface; at normal incidence, the reflectivity is:
+semiconductor–air interface; at normal incidence, the reflectivity $R$ for the
+effective refractive index $\bar n$ of the guided mode is:
 \begin{equation}
 	R=\left(\frac{\bar n-1}{\bar n+1}\right)^{2}.
 \end{equation}
@@ -129,7 +135,8 @@ semiconductor–air interface; at normal incidence, the reflectivity is:
 
 The light intensity of the guided mode grows with the modal gain $\Gamma g$ and
 decays with the intrinsic loss $\alpha_{\mathrm{i}}$. As the electric field amplitude
-scales with the square root of the intensity, it varies along the cavity as:
+scales with the square root of the intensity, it varies along the cavity axis $z$ as
+follows, with the amplitude $E_{0}$ at $z=0$:
 \begin{equation}
 	E(z)=E_{0}\exp\left[\tfrac{1}{2}(\Gamma g-\alpha_{\mathrm{i}})z\right]\exp(\mathrm{i}
 	\beta z),\qquad \beta=\frac{2\pi\bar n}{\lambda}.
@@ -138,7 +145,7 @@ scales with the square root of the intensity, it varies along the cavity as:
 The intrinsic loss $\alpha_{\mathrm{i}}$ originates from free-carrier absorption in
 the waveguide materials and from scattering at rough waveguide walls. At each
 facet only the fraction $r_{1/2}=\sqrt{R_{1/2}}$ of the field amplitude is reflected. After
-a round trip of length $2L$ the field has to reproduce itself:
+a round trip of twice the cavity length $L$ the field has to reproduce itself:
 \begin{equation}
 	r_{1} r_{2}\,\exp\left[(\Gamma g-\alpha_{\mathrm{i}})L\right]\exp(2\mathrm{i}\beta
 	L)=1.
@@ -147,7 +154,8 @@ a round trip of length $2L$ the field has to reproduce itself:
 As this condition is complex-valued, it splits into one condition for the
 magnitude (threshold) and one for the phase (modes).
 
-The magnitude of the round-trip condition fixes the gain needed at threshold:
+The magnitude of the round-trip condition fixes the gain needed at
+threshold to $g_{\mathrm{th}}$:
 \begin{equation}
 	\sqrt{R_{1}R_{2}}\,\exp\left[(\Gamma g_{\mathrm{th}}-\alpha_{\mathrm{i}})L\right
 	]\overset{!}{=}1 \quad\Rightarrow\quad \Gamma g_{\mathrm{th}}=\alpha_{\mathrm{i}}
@@ -158,14 +166,16 @@ The mirror loss $\alpha_{\mathrm{m}}$ accounts for the light leaving through the
 facets, which forms the useful laser output. At threshold, the modal gain balances
 the intrinsic and mirror losses.
 
-The phase of the round-trip condition has to be a multiple of $2\pi$:
+The phase of the round-trip condition has to be a multiple of $2\pi$, with the integer
+mode number $m$:
 \begin{equation}
 	2\beta L\overset{!}{=}2\pi m\quad\Rightarrow\quad m\lambda=2L\bar n.
 \end{equation}
 The amplitude condition decides whether a mode lases, and the phase condition at which
 wavelength it lases. Using finite difference approximation as
-$\Delta m /\Delta\lambda \simeq \partial_{\lambda}m$, the mode separation for large
-$m$ is given as:
+$\Delta m /\Delta\lambda \simeq \partial_{\lambda}m$, the wavelength separation
+$\Delta\lambda$ of two modes whose mode numbers differ by $\Delta m$ is given for
+large $m$ as follows:
 \begin{equation}
 	\Delta\lambda=\frac{\lambda^{2}\Delta m}{2\bar{n}L[1-(\lambda /\bar{n})(\mathrm{d}\bar{n}/\mathrm{d}\lambda)]}.
 	\label{eq:laser_spacing}
@@ -175,23 +185,27 @@ $m$ is given as:
 \label{sec:p_i_characteristic}
 
 A rate equation can be used to
-describe the dynamics of the carrier density $n$ and the photon density $S$:
+describe the dynamics of the carrier density $n$ and the photon density $S$ as a
+function of time $t$:
 \begin{equation}
 	\frac{\mathrm{d}n(t)}{\mathrm{d}t}= \eta_{\mathrm{i}}\frac{j(t)}{qd}- R(n) - v_{\mathrm{g}}
 	g(n) S(t).
 \end{equation}
 
 The first term on the right hand side describes the carrier injection into the active region with
-thickness $d$ and collection efficiency $\eta_{\mathrm{i}}$. $R(n)$ represents (radiative
+thickness $d$ and collection efficiency $\eta_{\mathrm{i}}$ for the injection current
+density $j$ and the elementary charge $q=e$. $R(n)$ represents (radiative
 and nonradiative) recombination processes. The last term expresses the carrier
-loss due to stimulated emission. Using the ABC model, the recombination rate is
-given as:
+loss due to stimulated emission, with the group velocity $v_{\mathrm{g}}$ of the light
+and the material gain $g(n)$. Using the ABC model, the recombination rate is
+given by the following expressions, with the carrier lifetime $\tau(n)$:
 \begin{align}
-	R(n)    & =An +Bn^{2}+Cn^{3}=\frac{n}{\tau(n)} \\
+	R(n)    & =An +Bn^{2}+Cn^{3}=\frac{n}{\tau(n)}, \\
 	\tau(n) & =(A+Bn+Cn^{2})^{-1},
 \end{align}
-where $An$ represents nonradiative recombination of carriers with defects, $Bn^{2}$
-the spontaneous emission and $Cn^{3}$ the nonradiative Auger recombination.
+where $A$, $B$ and $C$ are recombination coefficients: $An$ represents nonradiative
+recombination of carriers with defects, $Bn^{2}$ the spontaneous emission and $Cn^{3}$
+the nonradiative Auger recombination.
 
 \paragraph{Steady State with Low Current Density}
 
@@ -249,14 +263,15 @@ threshold:
 
 The output power $P_{\mathrm{out}}$ is the energy of a photon $\hbar\omega$ times the
 number of photons in the optical mode $S\,(wLd_{\mathrm{op}})$ times the photon mirror
-escape rate $v_{\mathrm{g}}\alpha_{\mathrm{m}}$:
+escape rate $v_{\mathrm{g}}\alpha_{\mathrm{m}}$, where $w$ and $d_{\mathrm{op}}$ are the
+width and the thickness of the optical mode and $L$ is the cavity length:
 \begin{equation}
 	P_{\mathrm{out}}=\hbar\omega\, S\,(wLd_{\mathrm{op}})\,(v_{\mathrm{g}}\alpha_{\mathrm{m}}
 	).
 \end{equation}
 
-Substituting $S$ from \cref{eq:photon_density}, using $I=jw
-L$, $I_{\mathrm{th}}=j_{\mathrm{th}}wL$, $g_{\mathrm{th}}=(\alpha_{\mathrm{i}}+\alpha
+Substituting $S$ from \cref{eq:photon_density}, using the injection current $I=jw
+L$, the threshold current $I_{\mathrm{th}}=j_{\mathrm{th}}wL$, $g_{\mathrm{th}}=(\alpha_{\mathrm{i}}+\alpha
 _{\mathrm{m}})/\Gamma$ and the confinement factor $\Gamma=d/d_{\mathrm{op}}$, yields
 the well-known $P_{\mathrm{out}}(I)$ curve:
 \begin{equation}
@@ -276,7 +291,8 @@ In real devices, a leakage current exists due to the finite barrier height in th
 double heterostructure. The model can be extended by splitting the total current
 into the current injected into the active region $I_{\mathrm{A}}$ and the
 leakage current $I_{\mathrm{L}}$. If $I_{\mathrm{th}}$ additionally includes the threshold
-leakage current, $P_{\mathrm{out}}$ can be described as
+leakage current, $P_{\mathrm{out}}$ can be described as follows, with the additional
+leakage current $\Delta I_{\mathrm{L}}$:
 \begin{equation}
 	P_{\mathrm{out}}=\eta_{\mathrm{i}}\frac{\hbar \omega}{q}\frac{\alpha_{\mathrm{m}}}{\alpha_{\mathrm{m}}+\alpha_{\mathrm{i}}}
 	(I-I_{\mathrm{th}}-\Delta I_{\mathrm{L}}).

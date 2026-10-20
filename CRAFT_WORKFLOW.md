@@ -166,25 +166,9 @@ The Flatpak cannot write into the project. Get the bytes through MCP and write t
 
 ## Review: PDF comments through PdfCraft
 
-1. The user opens `b7/build/main.pdf` in PdfCraft, adds comments (highlights, strike-outs, sticky
-   notes) and **saves**. Comments that are only in the open window are invisible to the MCP server.
-   A LaTeX build overwrites `build/main.pdf`, which deletes the comments. If they are still needed
-   after a rebuild, save a copy first.
-2. Claude: `doc_open` with the absolute path, then `comment_list`. If the user saved again, call
-   `doc_close` and `doc_open` to see the new state. Close the document when done.
-3. `comment_list` rectangles are in points from the **top-left** of the page. Map the comments to
-   the source visually: `pdftoppm -f P -l P -r 110 -png main.pdf out` draws the annotations, then
-   find the text in the `.tex` files. `text_extract` also takes a top-left `rect`.
-4. Meaning of the markup: a strike-out deletes the struck text (a struck heading removes the
-   heading only). A highlight with a comment is an instruction for the highlighted text. A sticky
-   note is a remark about the nearby object. A highlight without text next to a sticky note belongs
-   to it (for example `!=` on a `=` means `\overset{!}{=}`, "must equal").
-5. Comment shorthand: `\cref{...}` and `\imcite{*key*}` mean "insert this reference here";
-   "paragraph" means `\paragraph{...}` instead of a numbered heading; "does not need [H]" means
-   drop the `[H]` float option; "remove the empty line after the equation" means no blank line
-   between `\end{equation}` and the following text (a blank line starts a new paragraph).
-6. Apply every comment, compile into a scratch folder, check the log and the pages, and report
-   per comment what was changed. Say so if a comment was ambiguous or no longer in the file (the
-   user deletes comments they have given up on); do not guess.
-
-The page numbers in comments belong to the PDF version that was commented. They shift after edits.
+The user annotates the compiled PDF in PdfCraft and **saves** it; Claude reads the comments through
+the `pdfcraft` MCP server and applies them to the `.tex` sources. The procedure (finding the
+commented PDF, reading the markup, mapping comments to the source, compiling into a scratch
+folder) lives in the skill `pdf-review`:
+[.claude/skills/pdf-review/SKILL.md](.claude/skills/pdf-review/SKILL.md). Only the setup above
+(the `pdfcraft` entry in `.mcp.json`) is kept here.

@@ -11,18 +11,17 @@ main focus of this laboratory course.
 \label{sec:carrier_statistics}
 
 In thermal equilibrium, the probability that an electronic state of energy $E$ is
-occupied is given by the Fermi-Dirac distribution:
+occupied is given by the Fermi-Dirac distribution, with the Fermi level $E_{\mathrm{F}}$,
+the Boltzmann constant $k_{\mathrm{B}}$ and the temperature $T$:
 \begin{equation}
 	f(E)=\frac{1}{1+\exp\left[(E-E_{\mathrm{F}})/k_{\mathrm{B}}T\right]}.
 \end{equation}
-The carrier concentrations in solid-state materials are consequently
-determined by the Fermi level $E_{\mathrm{F}}$.
 
 However, under non-equilibrium conditions (e.g., under an applied external voltage),
 electron and hole densities can take arbitrary values in principle. In many
 practically relevant cases, the carriers within each band are locally in thermal equilibrium
 among themselves, but not with other bands. Instead of a constant Fermi level,
-electron and hole densities are described locally using quasi-Fermi levels
+electron and hole densities are described locally at position $\mathbf{r}$ using quasi-Fermi levels
 $F_{\mathrm{n}}(\mathbf{r})$ and $F_{\mathrm{p}}(\mathbf{r})$, and the respective
 occupation probabilities are given by:
 \begin{equation}
@@ -30,15 +29,19 @@ occupation probabilities are given by:
 	f_{\mathrm{p}}(E, \mathbf{r}) = \frac{1}{1+\exp\left[(F_{\mathrm{p}}(\mathbf{r})-E)/k_{\mathrm{B}}T\right]}.
 	\label{eq:occupation_probabilities}
 \end{equation}
-The electron and hole densities are obtained by integrating the product of the
-occupation probability and the density of states:
+The electron density $n(\mathbf{r})$ and the hole density $p(\mathbf{r})$ are obtained
+by integrating the product of the occupation probability and the density of states
+$D_{\mathrm{n}}(E)$ or $D_{\mathrm{p}}(E)$ of the electrons or holes, respectively.
+The integration runs over the conduction band above its edge $E_{\mathrm{C}}$ and
+over the valence band below its edge $E_{\mathrm{V}}$:
 \begin{equation}
 	n(\mathbf{r}) = \int_{E_{\mathrm{C}}}^{\infty}D_{\mathrm{n}}(E)\, f_{\mathrm{n}}
 	(E,\mathbf{r}) \,\mathrm{d}E, \qquad p(\mathbf{r}) = \int_{-\infty}^{E_{\mathrm{V}}}
 	D_{\mathrm{p}}(E)\, f_{\mathrm{p}}(E,\mathbf{r}) \,\mathrm{d}E.
 \end{equation}
 Using the Boltzmann approximation, the integrals can be evaluated analytically, resulting
-in:
+in the following expressions with the intrinsic carrier density $n_{\mathrm{i}}$ and the
+intrinsic Fermi level $E_{\mathrm{i}}(\mathbf{r})$:
 \begin{equation}
 	n(\mathbf{r}) = n_{\mathrm{i}}\exp\left[\frac{F_{\mathrm{n}}(\mathbf{r}) - E_{\mathrm{i}}(\mathbf{r})}{k_{\mathrm{B}}T}\right], \qquad
 	p(\mathbf{r}) = n_{\mathrm{i}}\exp\left[\frac{E_{\mathrm{i}}(\mathbf{r}) - F_{\mathrm{p}}(\mathbf{r})}{k_{\mathrm{B}}T}\right].
@@ -47,7 +50,7 @@ in:
 The splitting $\Delta F(\mathbf{r})=F_{\mathrm{n}}(\mathbf{r})-F_{\mathrm{p}}(\mathbf{r}
 )$ is a local quantity: it fixes the carrier product $np$ at each position. The applied
 voltage $V$ is a global quantity: it fixes the difference between the quasi-Fermi
-levels of the two contacts, with $V>0$ for forward bias:
+levels of the two contacts, with $V>0$ for forward bias and the elementary charge $e$:
 \begin{equation}
 	eV=F_{\mathrm{n}}(\text{n-contact})-F_{\mathrm{p}}(\text{p-contact}).
 \end{equation}
@@ -63,7 +66,12 @@ can often be approximated by parabolic functions:
 	E_{\mathrm{g}}=E_{\mathrm{C}}-E_{\mathrm{V}}.
 	\label{eq:band_dispersion}
 \end{equation}
-The energy difference between the two bands is then given by:
+Here, $k$ is the magnitude of the wavevector, $\hbar$ the reduced Planck constant,
+$m_{\mathrm{e}}^{*}$ and $m_{\mathrm{h}}^{*}$ the effective masses of electrons and
+holes, $E_{\mathrm{C}}$ and $E_{\mathrm{V}}$ the conduction band minimum and the
+valence band maximum, and $E_{\mathrm{g}}$ the band gap. The energy difference
+$E_{\mathrm{cv}}(k)$ between the two bands can be stated using the reduced mass
+$m_{\mathrm{r}}$:
 \begin{equation}
 	E_{\mathrm{cv}}(k)=E_{\mathrm{c}}(k)-E_{\mathrm{v}}(k)=E_{\mathrm{g}}+\frac{\hbar^{2}k^{2}}{2m_{\mathrm{r}}}
 	,\qquad \frac{1}{m_{\mathrm{r}}}=\frac{1}{m_{\mathrm{e}}^{*}}+\frac{1}{m_{\mathrm{h}}^{*}}
@@ -87,15 +95,18 @@ $D_{\mathrm{j}}(E)$ and is defined as:
 	\end{tabular}}= \int_{E_{0}}^{E_{1}}D_{\mathrm{j}}(E) \, \mathrm{d}E.
 \end{equation}
 Analogous to the electronic density of states, $D_{\mathrm{j}}$ can be defined
-by counting the $\mathbf{k}$-states on the surface of constant transition energy:
+by counting the $\mathbf{k}$-states on the surface $S(\hbar\omega)$ of constant
+transition energy $E_{\mathrm{cv}}(\mathbf{k})=\hbar\omega$, where $\omega$ is the
+angular frequency of the photon:
 \begin{equation}
 	D_{\mathrm{j}}(\hbar \omega)= \frac{2}{V}\int_{S(\hbar \omega)}\frac{\mathrm{d}^{2}S}{\left(
 	\frac{2\pi}{L}\right)^{3}\lvert \nabla_{\mathbf{k}}E_{\mathrm{cv}}(\mathbf{k}) \rvert
 	}.
 	\label{eq:joint_dos_surface}
 \end{equation}
-By using the parabolic band approximation, this integral can be solved
-analytically:
+The factor 2 counts the two spin orientations, and $V=L^{3}$ is the volume of the
+periodic boundary box with edge length $L$. By using the parabolic band approximation,
+this integral can be solved analytically, with the Heaviside step function $\Theta$:
 \begin{equation}
 	D_{\mathrm{j}}(\hbar\omega)=\frac{1}{2\pi^{2}}\left(\frac{2m_{\mathrm{r}}}{\hbar^{2}}
 	\right)^{3/2}\sqrt{\hbar\omega-E_{\mathrm{g}}}\;\Theta(\hbar\omega-E_{\mathrm{g}}
@@ -107,7 +118,8 @@ analytically:
 
 The allowed states of a photon field can be constructed using periodic boundary conditions
 for the photon wave $\psi_{\mathbf{k}}$. These conditions result in a finite
-set of allowed $\mathbf{k}$ vectors:
+set of allowed $\mathbf{k}$ vectors, with integers $l$, $m$, $n$ and the edge length
+$L$ of the periodic boundary box:
 \begin{equation}
 	k_{x}=l \frac{2\pi}{L}, \quad k_{y}=m \frac{2\pi}{L}, \quad k_{z}=n \frac{2\pi}{L}
 	.
@@ -119,8 +131,9 @@ As the periodic boundary conditions lead to the same density of states in
 $\mathbf{k}$-space as for the electrons, \cref{eq:joint_dos_surface} can be used
 analogously, with a polarization factor of 2 (two transverse polarization states)
 instead of the spin factor of 2. Substituting the photon energy relation
-$E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ for a dispersion-free
-medium, i.e. a constant refractive index $n_{\mathrm{r}}$, the integral simplifies to:
+$E(\mathbf{k})=\hbar \lvert \mathbf{k}\rvert c /n_{\mathrm{r}}$ with the vacuum speed
+of light $c$ for a dispersion-free medium, i.e. a constant refractive index
+$n_{\mathrm{r}}$, the integral simplifies to:
 \begin{equation}
 	N(E)=\frac{n_{\mathrm{r}}^{3}E^{2}}{\pi^{2}\hbar^{3}c^{3}}.
 \end{equation}
@@ -143,7 +156,8 @@ per mode with energy $E$ is therefore given by:
 \label{sec:carrier_injection}
 
 The current-voltage characteristic of an ideal diode is described by the
-Shockley equation:
+Shockley equation for the current $I$, with the saturation current $I_{0}$ and the
+voltage $V_{\mathrm{a}}$ across the junction:
 \begin{equation}
 	I = I_{0}\left[ \exp\left(\frac{eV_{\mathrm{a}}}{k_{\mathrm{B}}T}\right) - 1 \right
 	].

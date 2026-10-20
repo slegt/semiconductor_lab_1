@@ -110,12 +110,17 @@ i.e., the rates normalized to one photon per mode, are given by:
 	_{\mathrm{n}})\rvert^{2}\,\delta\big(E_{\mathrm{c}}(\mathbf{k}_{\mathrm{n}})-E_{\mathrm{v}}
 	(\mathbf{k}_{\mathrm{p}})-\hbar\omega\big)\;\Phi^{(i)}.\label{eq:universal_rate_equation}
 \end{equation}
-The factor $2/V$ counts both spin orientations per unit volume. $\Phi^{(i)}$ is the
+Here, $\mathbf{k}_{\mathrm{n}}$ and $\mathbf{k}_{\mathrm{p}}$ are the wavevectors of the
+electron and hole state, $\hat e$ is the polarization unit vector of the light and
+$\mathbf{p}_{\mathrm{cv}}$ is the momentum matrix element between the conduction and
+valence band states. The factor $2/V$ counts
+both spin orientations per unit volume $V$. $\Phi^{(i)}$ is the
 occupation factor of process $i$, eludicated in \cref{tab:occupation_factors}. The
 occupation factors depend on $E_{\mathrm{c}}(\mathbf{k}_{\mathrm{n}})$ and $E_{\mathrm{v}}
 (\mathbf{k}_{\mathrm{p}})$ individually (via $f_{\mathrm{n}}$ and
 $f_{\mathrm{p}}$), not only on their difference. The remaining prefactors are given
-by:
+by the following expressions, with the vacuum permittivity $\epsilon_{0}$ and the free
+electron mass $m_{0}$:
 \begin{equation}
 	P(\hbar\omega)=\frac{n_{\mathrm{r}}^{2}(\hbar\omega)^{2}}{\pi^{2}\hbar^{3}c^{2}}
 	\,C_{0}(\hbar\omega),\qquad C_{0}(\hbar\omega)=\frac{\pi e^{2}\hbar}{n_{\mathrm{r}}c\,\epsilon_{0}m_{0}^{2}\,\hbar\omega}.
@@ -123,7 +128,8 @@ by:
 
 Note that $r^{(i)}$ are normalized to one photon per mode and can therefore be regarded
 as material-specific quantities. However, the actual absorption and stimulated emission
-rates depend on the photon occupation number $n_{\mathrm{ph}}$:
+rates $R^{\mathrm{abs}}$ and $R^{\mathrm{stim}}$ depend on the photon occupation number
+$n_{\mathrm{ph}}$, whereas the spontaneous emission rate $R^{\mathrm{spon}}$ does not:
 \begin{equation}
 	R^{\mathrm{abs}}= n_{\mathrm{ph}}\cdot r^{\mathrm{abs}}, \qquad R^{\mathrm{stim}}
 	= n_{\mathrm{ph}}\cdot r^{\mathrm{stim}}, \qquad R^{\mathrm{spon}}=r^{\mathrm{spon}}
@@ -234,7 +240,7 @@ $R^{\mathrm{abs}}=R^{\mathrm{stim}}+R^{\mathrm{spon}}$.
 \label{sec:spontaneous_emission}
 
 Following \cref{sec:line_shape}, the spontaneous emission rate can be expressed
-using the equilibrium absorption coefficient (see \cref{sec:absorption_coefficient_and_gain}),
+using the equilibrium absorption coefficient $\alpha_{0}(\hbar\omega)$ (see \cref{sec:absorption_coefficient_and_gain}),
 the photon mode density of states $N(\hbar \omega)$ and the occupation probabilities $f
 _{\mathrm{n}}$, $f_{\mathrm{p}}$.
 \begin{equation}
@@ -299,8 +305,9 @@ The extra factor $E$ turns the factor $\hbar\omega$ of the rate into $(\hbar\ome
 	\frac{\hbar \omega-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 \end{equation}
 
-Spectrometers usually resolve the emission in wavelength rather than in energy.
-With $E(\lambda)=hc/\lambda$ (vacuum wavelength $\lambda$), the integral transforms as:
+Spectrometers usually resolve the emission in wavelength $\lambda$ rather than in energy.
+With $E(\lambda)=hc/\lambda$ (Planck constant $h=2\pi\hbar$), the integral over the
+wavelength interval $[\lambda_{2},\lambda_{1}]$ transforms as:
 \begin{align}
 	P(\lambda_{1}, \lambda_{2})           & =\int_{E(\lambda_{1})}^{E(\lambda_{2})}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_2}^{\lambda_1}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
 	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).

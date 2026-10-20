@@ -4,21 +4,22 @@
 
 The absorption coefficient $\alpha(\hbar \omega)$ is a fundamental material property,
 used in the Lambert-Beer law $I(z)=I_{0}\exp(-\alpha z)$, which describes the decay
-of the light intensity $I$ with the propagation distance $z$. The absorption
+of the light intensity $I$ with the propagation distance $z$, starting from the
+incident intensity $I_{0}$ at $z=0$. The absorption
 coefficient can be defined universally as:
 \begin{equation}
 	\alpha =\frac{\text{Number of photons absorbed per second per unit volume}}{\text{Number
 	of injected photons per second per unit area}}.\label{eq:alpha}
 \end{equation}
-The numerator of \cref{eq:alpha} is the net absorption rate,
-$R^{\mathrm{abs}}- R^{\mathrm{stim}}$ emission. Using its analytical form from \cref{sec:line_shape}
+The numerator of \cref{eq:alpha} is the net absorption rate
+$R^{\mathrm{net}}=R^{\mathrm{abs}}- R^{\mathrm{stim}}$. Using its analytical form from \cref{sec:line_shape}
 results in:
 \begin{equation}
 	R^{\mathrm{net}}=n_{\mathrm{ph}}(r^{\mathrm{abs}}-r^{\mathrm{stim}}) = n_{\mathrm{ph}}
 	\, P(\hbar\omega) \lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}\rvert^{2}D_{\mathrm{j}}
 	(\hbar\omega)\,(1-f_{\mathrm{n}}-f_{\mathrm{p}}).
 \end{equation}
-The denominator is the spectral photon flux, i.e. the number of injected photons
+The denominator is the spectral photon flux $F$, i.e. the number of injected photons
 crossing a unit area per second per photon energy. This quantity is obtained from
 the spectral photon density $S=n_{\mathrm{ph}}N$, travelling at the velocity
 $c/n_{\mathrm{r}}$:
@@ -27,7 +28,7 @@ $c/n_{\mathrm{r}}$:
 	c^{2}}.
 \end{equation}
 
-Dividing $R_{\mathrm{net}}$ by $F$ cancels $n_{\mathrm{ph}}$ and yields an
+Dividing $R^{\mathrm{net}}$ by $F$ cancels $n_{\mathrm{ph}}$ and yields an
 analytical expression for the absorption coefficient:
 \begin{equation}
 	\alpha(\hbar \omega)=\frac{R^{\mathrm{net}}}{F}=C_{0}\lvert \hat{e}\cdot\mathbf{p}
@@ -146,7 +147,7 @@ absorption $-\alpha_{0}$ at high photon energies.
 
 Note that $g$ is the material gain of the active medium alone. The gain
 experienced by a guided optical mode is reduced to the modal gain $\Gamma g$ by
-the optical confinement factor $\Gamma$. Lasing additionally requires this modal gain
+the optical confinement factor $\Gamma$ (see \cref{sec:vertical_structure}). Lasing additionally requires this modal gain
 to overcome the internal losses and the mirror losses (see
 \cref{sec:resonator_and_threshold}).
 
