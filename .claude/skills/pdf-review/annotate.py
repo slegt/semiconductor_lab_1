@@ -4,7 +4,7 @@
 usage: annotate.py <suggestions.json> <clean.pdf> <out.pdf>
 
 <suggestions.json> is a list of {"find": "...", "type": "strikeout"|"highlight", "contents": "...",
-"page": N (optional), "all": true (optional)}. The text in "find" must occur exactly once in the
+"page": N (optional), "all": true (optional), "color": "#RRGGBB" (optional)}. The text in "find" must occur exactly once in the
 document, or exactly once on "page" when that is given. <out.pdf> is a copy of <clean.pdf>
 (written inside the folder the Flatpak may write to) with the comments added and saved.
 """
@@ -48,7 +48,8 @@ def main(suggestions_path, clean, out):
             print(f"SKIP ({len(hits)} matches): {s['find']!r}")
             continue
         args = {"doc": 1, "page": hits[0], "type": s["type"], "find": s["find"],
-                "contents": s["contents"], "author": AUTHOR, "color": COLORS[s["type"]]}
+                "contents": s["contents"], "author": AUTHOR,
+                "color": s.get("color", COLORS[s["type"]])}
         if s.get("all"):
             args["all"] = True
         steps.append({"tool": "comment_add", "args": args})

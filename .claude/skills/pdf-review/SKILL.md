@@ -87,7 +87,22 @@ round (`main_symbols_changes_commented.pdf`) and the current review PDF (`main_<
      `contents` before the ` | `; the rest is category (Rechtschreibung, Grammatik, Ausdruck,
      Konsistenz, Typografie, Einheit, Terminologie) and a short reason, in German. A strike-out
      whose replacement is empty is a deletion.
-   - An orange highlight is a remark or question without a replacement (cross-reference, layout,
-     notation); the user decides what to do.
-   - To apply the user's answers: untouched suggestions are not approvals; see the reply, the
-     review status or a deleted comment, and ask when it is unclear.
+   - A highlight is a remark or question without a replacement (cross-reference, layout,
+     notation, physics); the user decides what to do. In a content review (formulas, derivations,
+     evaluation) the text starts with `Hinweis`, `Frage` or `Anregung` plus `[severity | category]`,
+     and the colour encodes the severity: red `[hoch]` (wrong result or logical error), orange
+     `[mittel]`, green `[niedrig]` (notation, minor). For such a review check the claims against the
+     numbers, not only the text: read `<report>/python/*.ipynb`, recompute key results from
+     `<report>/data/`, and look at every plot (axis labels and units, scales against the caption,
+     fit window, uncertainties, truncated or saturated data).
+   - Questions in the user's replies are answered in the same thread with
+     `python3 .claude/skills/pdf-review/reply.py <replies.json> <review.pdf>` (list of
+     `{"id", "text"}`, in-place save; close the PDF in the MCP first). Implement only after the user
+     has set the status.
+   - The user answers with the review status of each comment and with replies in `replies`
+     (`comment_list` shows both). `Accepted` means apply, and a reply changes the instruction
+     (for example "make a new sentence", "write ', see figure 4' instead"). `Rejected` means leave
+     the text alone. `Completed` on a remark means it is answered; the reply says what to do (often
+     nothing). A suggestion without status is not an approval: ask. A deleted comment counts as
+     rejected; say so in the report. The user's own strike-outs and highlights in the same PDF are
+     further instructions (for example a strike-out over a subscript of a remark).

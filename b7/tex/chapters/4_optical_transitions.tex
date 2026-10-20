@@ -64,13 +64,13 @@
 			(14.0, 3.0);
 	\end{tikzpicture}
 	\caption{Band diagrams of the optical transitions between conduction and
-	valence band: spontaneous emission, absorption and stimulated emission. \imcite{benndorf_semiconductor_nodate}}
+	valence band: spontaneous emission, absorption and stimulated emission. \imcitetwo{benndorf_semiconductor_nodate}}
 	\label{fig:optical_transitions}
 \end{figure}
 
 An incoming photon induces a perturbation of the electronic system of the
-semiconductor, which may result in the generation of an electron-hole pair if there exists an
-unexcited pair separated by the photon energy. This
+semiconductor, which may result in the generation of an electron-hole pair if a filled valence-band state and an empty conduction-band state exist that are
+separated by the photon energy. This
 process is called absorption. For this electronic excitation to occur, the
 energy $\hbar \omega$ of the incoming photon must be at least the band gap
 energy $E_{\mathrm{g}}$.
@@ -115,7 +115,7 @@ electron and hole state, $\hat e$ is the polarization unit vector of the light a
 $\mathbf{p}_{\mathrm{cv}}$ is the momentum matrix element between the conduction and
 valence band states. The factor $2/V$ counts
 both spin orientations per unit volume $V$. $\Phi^{(i)}$ is the
-occupation factor of process $i$, eludicated in \cref{tab:occupation_factors}. The
+occupation factor of process $i$, elucidated in \cref{tab:occupation_factors}. The
 occupation factors depend on $E_{\mathrm{c}}(\mathbf{k}_{\mathrm{n}})$ and $E_{\mathrm{v}}
 (\mathbf{k}_{\mathrm{p}})$ individually (via $f_{\mathrm{n}}$ and
 $f_{\mathrm{p}}$), not only on their difference. The remaining prefactors are given
@@ -204,8 +204,8 @@ $\Phi^{\mathrm{abs}}/\Phi^{\mathrm{stim}}$. Since the $\delta$-function fixes $E
 \end{equation}
 
 In thermal equilibrium, $F_{\mathrm{n}}=F_{\mathrm{p}}$ and $R^{\mathrm{abs}}> R^{\mathrm{stim}}$,
-therefore absorption always dominates. However, wave amplification is present if
-$F_{\mathrm{n}}-F_{\mathrm{p}}>\hbar\omega$. Laser operation therefore requires a quasi-Fermi level separation that
+so that absorption always dominates. However, wave amplification is present if
+$F_{\mathrm{n}}-F_{\mathrm{p}}>\hbar\omega$. Laser operation therefore requires a quasi-Fermi-level separation that
 exceeds the photon energy, which can only be achieved by strong carrier injection.
 
 \paragraph{Stimulated vs Spontaneous Emission}
@@ -220,8 +220,8 @@ photon density $S=N\,n_{\mathrm{ph}}$, it follows that:
 \end{equation}
 
 Since the ratio $R^{\mathrm{stim}}/R^{\mathrm{spon}}$ grows linearly with $S$, a high
-photon density, achieved by waveguiding and a Fabry-Perot Resonator, shifts the balance
-towards stimulated emission.
+photon density, achieved by waveguiding and a Fabry-Perot resonator, shifts the balance
+toward stimulated emission.
 
 \paragraph{Thermal Equilibrium}
 
@@ -256,7 +256,7 @@ the Boltzmann approximation:
 \end{equation}
 
 The factors $f_{\mathrm{n}}$ and $f_{\mathrm{p}}$ are evaluated at the band
-energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$ of the transition, the
+energies $E_{\mathrm{c}}(k_{0})$ and $E_{\mathrm{v}}(k_{0})$ of the transition. The
 $\delta$-function fixes their difference to $E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}
 (k_{0})=\hbar\omega$. The individual band energies therefore drop out of the
 product and only the quasi-Fermi-level splitting
@@ -307,16 +307,16 @@ The extra factor $E$ turns the factor $\hbar\omega$ of the rate into $(\hbar\ome
 
 Spectrometers usually resolve the emission in wavelength $\lambda$ rather than in energy.
 With $E(\lambda)=hc/\lambda$ (Planck constant $h=2\pi\hbar$), the integral over the
-wavelength interval $[\lambda_{2},\lambda_{1}]$ transforms as:
+wavelength interval $[\lambda_{1},\lambda_{2}]$ transforms as:
 \begin{align}
-	P(\lambda_{1}, \lambda_{2})           & =\int_{E(\lambda_{1})}^{E(\lambda_{2})}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_2}^{\lambda_1}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
+	P(\lambda_{1}, \lambda_{2})           & =\int_{E(\lambda_{2})}^{E(\lambda_{1})}p_{E}(E)\,\mathrm{d}E=\int_{\lambda_1}^{\lambda_2}\underbrace{p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}}_{p_{\lambda}(\lambda)}\,\mathrm{d}\lambda                          \\
 	\Rightarrow\quad p_{\lambda}(\lambda) & =p_{E}\!\left(\frac{hc}{\lambda}\right)\frac{hc}{\lambda^{2}}\propto\frac{1}{\lambda^{4}}\sqrt{\frac{hc}{\lambda}-E_{\mathrm{g}}}\,\exp\left( -\frac{\frac{hc}{\lambda}-E_{\mathrm{g}}}{k_{\mathrm{B}}T}\right).
 	\label{eq:spontaneous_emission_line_shape}
 \end{align}
 
 A detector measures the power within a small bandwidth $\Delta\lambda=\lambda
-_{1}-\lambda_{2}$. If $p_{\lambda}(\lambda)$ varies only slightly within this
-interval, the integral can be approximated by the midpoint rule, and, for a constant
+_{2}-\lambda_{1}$. If $p_{\lambda}(\lambda)$ varies only slightly within this
+interval, the integral can be approximated by the midpoint rule. For a constant
 bandwidth $\Delta\lambda$, the measured power is proportional to the spectral power
 density at the center wavelength $\lambda_{\mathrm{c}}=(\lambda_{1}+\lambda_{2})/2$:
 \begin{equation}

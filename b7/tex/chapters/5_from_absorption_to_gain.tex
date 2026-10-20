@@ -4,7 +4,7 @@
 
 The absorption coefficient $\alpha(\hbar \omega)$ is a fundamental material property,
 used in the Lambert-Beer law $I(z)=I_{0}\exp(-\alpha z)$, which describes the decay
-of the light intensity $I$ with the propagation distance $z$, starting from the
+of the light intensity $I$, starting from the
 incident intensity $I_{0}$ at $z=0$. The absorption
 coefficient can be defined universally as:
 \begin{equation}
@@ -19,9 +19,9 @@ results in:
 	\, P(\hbar\omega) \lvert \hat{e}\cdot \mathbf{p}_{\mathrm{cv}}\rvert^{2}D_{\mathrm{j}}
 	(\hbar\omega)\,(1-f_{\mathrm{n}}-f_{\mathrm{p}}).
 \end{equation}
-The denominator is the spectral photon flux $F$, i.e. the number of injected photons
+The denominator is the spectral photon flux $F$, i.e., the number of injected photons
 crossing a unit area per second per photon energy. This quantity is obtained from
-the spectral photon density $S=n_{\mathrm{ph}}N$, travelling at the velocity
+the spectral photon density $S=n_{\mathrm{ph}}N$, traveling at the velocity
 $c/n_{\mathrm{r}}$:
 \begin{equation}
 	F=n_{\mathrm{ph}}\cdot N \cdot \frac{c}{n_{\mathrm{r}}}= n_{\mathrm{ph}}\frac{n_{\mathrm{r}}^{2}\omega^{2}}{\pi^{2}\hbar
@@ -37,7 +37,7 @@ analytical expression for the absorption coefficient:
 
 \subsection{Thermal Equilibrium}
 
-In an undoped, unexcited semiconductor at low temperature ($k_{\mathrm{B}}T\ll E_{\mathrm{g}}$),
+In an undoped, unexcited semiconductor at low temperature,
 the valence band is full and the conduction band is empty,
 $f_{\mathrm{n}}\approx 0$ and $f_{\mathrm{p}}\approx0$. The expression above then
 reduces to the equilibrium absorption coefficient $\alpha_{0}$. The
@@ -49,6 +49,7 @@ approximation is valid if the considered energy interval is small:
 \end{equation}
 
 \subsection{Non-Equilibrium and Bernard-Duraffourg Condition}
+\label{sec:bernard_duraffourg}
 
 Away from equilibrium, $f_{\mathrm{n}}$ and $f_{\mathrm{p}}$ are governed by
 separate quasi-Fermi levels, so $1-f_{\mathrm{n}}-f_{\mathrm{p}}$ can in principle
@@ -61,8 +62,7 @@ using \cref{eq:f_n_identity} with $E_{\mathrm{c}}(k_{0})-E_{\mathrm{v}}(k_{0})=\
 \end{align}
 
 Substituting \cref{eq:f_n_identity_2} into $\alpha(\hbar\omega)$ with the parabolic-band
-joint density of states gives, with all energy-independent prefactors collected
-in a constant:
+joint density of states gives:
 \begin{equation}
 	\alpha(\hbar \omega) = \underbrace{ \mathrm{const.} }_{ >0 }\; \underbrace{ \frac{\sqrt{
 	\hbar \omega-E_{\mathrm{g}}}}{\hbar \omega} }_{ \hbar \omega >E_{\mathrm{g}} }\;
@@ -126,7 +126,7 @@ absorption turns into amplification:
 % \caption{TODO}
 % \end{table}
 
-The gain curve $g(\hbar\omega)$ follows from the sign analysis above and is
+The gain curve $g(\hbar\omega)$ is
 depicted in \cref{fig:absorption_gain}: $g=0$ below $E_{\mathrm{g}}$, since no
 transitions exist there; $g>0$ between $E_{\mathrm{g}}$ and $F_{\mathrm{n}}-F_{\mathrm{p}}$,
 rising with the joint density of states and falling with
@@ -141,14 +141,14 @@ absorption $-\alpha_{0}$ at high photon energies.
 	(solid) compared to the equilibrium absorption $\alpha_{0}(\hbar\omega)$ (dashed).
 	The factor $1-f_{\mathrm{n}}-f_{\mathrm{p}}$ (dashed) changes sign at $\hbar\omega
 	=F_{\mathrm{n}}-F_{\mathrm{p}}$. The gain
-	$g(\hbar\omega)=-\alpha(\hbar\omega)$ is shown in red. \imcite{chuang_physics_2009}}
+	$g(\hbar\omega)=-\alpha(\hbar\omega)$ is shown in red. \imcitetwo{chuang_physics_2009}}
 	\label{fig:absorption_gain}
 \end{figure}
 
 Note that $g$ is the material gain of the active medium alone. The gain
 experienced by a guided optical mode is reduced to the modal gain $\Gamma g$ by
 the optical confinement factor $\Gamma$ (see \cref{sec:vertical_structure}). Lasing additionally requires this modal gain
-to overcome the internal losses and the mirror losses (see
+to overcome the intrinsic losses and the mirror losses (see
 \cref{sec:resonator_and_threshold}).
 
 % Gliederung: Brücke zu Kapitel 4: der Fabry-Perot-Resonator braucht $g$ für die Schwellbedingung $\Gamma g_{\mathrm{th}}=\alpha_{\mathrm i}+\alpha_{\mathrm m}$
